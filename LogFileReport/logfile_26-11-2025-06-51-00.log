@@ -1,0 +1,16 @@
+2025-11-26 18:51:06 INFO  :455 - Start Entering...
+2025-11-26 18:51:06 INFO  :457 - //input[@id='txtLoginName']: Input Data : (sakti)
+2025-11-26 18:51:07 INFO  :463 - End Entering...
+2025-11-26 18:51:07 INFO  :455 - Start Entering...
+2025-11-26 18:51:07 INFO  :457 - //input[@id='txtPassword']: Input Data : (Sakti@123)
+2025-11-26 18:51:08 INFO  :463 - End Entering...
+2025-11-26 18:51:08 INFO  :419 - Start Clicking on (Login Button)
+2025-11-26 18:51:09 INFO  :424 - ( //input[@id='btnLogin'] )
+2025-11-26 18:51:09 INFO  :426 - Clicked on (Login Button)
+2025-11-26 18:51:09 INFO  :419 - Start Clicking on (Login Yes)
+2025-11-26 18:51:10 INFO  :424 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2025-11-26 18:51:10 INFO  :426 - Clicked on (Login Yes)
+2025-11-26 18:51:15 INFO  :360 - Clicked on (FO_Dashboard)
+2025-11-26 18:51:19 INFO  :360 - Clicked on (Yes Popup)
+2025-11-26 18:51:20 INFO  :360 - Clicked on (AddPatient)
+2025-11-26 18:51:24 INFO  :360 - Clicked on (PatientRegistration)

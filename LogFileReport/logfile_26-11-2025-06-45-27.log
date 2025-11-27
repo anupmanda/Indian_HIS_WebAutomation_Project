@@ -1,0 +1,23 @@
+2025-11-26 18:45:33 INFO  :455 - Start Entering...
+2025-11-26 18:45:33 INFO  :457 - //input[@id='txtLoginName']: Input Data : (sakti)
+2025-11-26 18:45:34 INFO  :463 - End Entering...
+2025-11-26 18:45:34 INFO  :455 - Start Entering...
+2025-11-26 18:45:34 INFO  :457 - //input[@id='txtPassword']: Input Data : (Sakti@123)
+2025-11-26 18:45:35 INFO  :463 - End Entering...
+2025-11-26 18:45:35 INFO  :419 - Start Clicking on (Login Button)
+2025-11-26 18:45:36 INFO  :424 - ( //input[@id='btnLogin'] )
+2025-11-26 18:45:36 INFO  :426 - Clicked on (Login Button)
+2025-11-26 18:45:36 INFO  :419 - Start Clicking on (Login Yes)
+2025-11-26 18:45:37 INFO  :424 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2025-11-26 18:45:37 INFO  :426 - Clicked on (Login Yes)
+2025-11-26 18:45:41 INFO  :360 - Clicked on (FO_Dashboard)
+2025-11-26 18:45:46 INFO  :360 - Clicked on (Yes Popup)
+2025-11-26 18:45:47 INFO  :360 - Clicked on (AddPatient)
+2025-11-26 18:45:51 INFO  :360 - Clicked on (PatientRegistration)
+2025-11-26 18:45:59 INFO  :360 - Clicked on (Click On Radio Button )
+2025-11-26 18:46:18 INFO  :360 - Clicked on (SaveRegistration)
+2025-11-26 18:46:19 INFO  :360 - Clicked on (Age Below 10 Years Yes Popup)
+2025-11-26 18:46:20 INFO  :360 - Clicked on (Close Duplicate Popup)
+2025-11-26 18:46:22 INFO  :360 - Clicked on (Yes Confirm Patient Details Popup)
+2025-11-26 18:46:23 INFO  :360 - Clicked on (Skip General Consent Button)
+2025-11-26 18:46:26 INFO  :360 - Clicked on (NoBillingPage)

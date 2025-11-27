@@ -1,0 +1,19 @@
+2025-11-27 13:59:36 INFO  CommanUtill:455 - Start Entering...
+2025-11-27 13:59:36 INFO  CommanUtill:457 - //input[@id='txtLoginName']: Input Data : (sakti)
+2025-11-27 13:59:37 INFO  CommanUtill:463 - End Entering...
+2025-11-27 13:59:37 INFO  CommanUtill:455 - Start Entering...
+2025-11-27 13:59:37 INFO  CommanUtill:457 - //input[@id='txtPassword']: Input Data : (Anup@123)
+2025-11-27 13:59:38 INFO  CommanUtill:463 - End Entering...
+2025-11-27 13:59:38 INFO  CommanUtill:419 - Start Clicking on (Login Button)
+2025-11-27 13:59:39 INFO  CommanUtill:424 - ( //input[@id='btnLogin'] )
+2025-11-27 13:59:39 INFO  CommanUtill:426 - Clicked on (Login Button)
+2025-11-27 13:59:39 INFO  CommanUtill:419 - Start Clicking on (Login Yes)
+2025-11-27 13:59:39 INFO  CommanUtill:424 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2025-11-27 13:59:39 INFO  CommanUtill:426 - Clicked on (Login Yes)
+2025-11-27 13:59:51 INFO  CommanUtill:360 - Clicked on (FO_Dashboard)
+2025-11-27 13:59:56 INFO  CommanUtill:360 - Clicked on (Yes Popup)
+2025-11-27 13:59:58 INFO  CommanUtill:360 - Clicked on (Doctor Menu)
+2025-11-27 14:00:00 INFO  CommanUtill:360 - Clicked on (Appointment Page)
+2025-11-27 14:00:04 INFO  CommanUtill:360 - Clicked on (Spceility_Serach_Icon)
+2025-11-27 14:00:37 INFO  CommanUtill:360 - Clicked on (Click On Appointment Save Button)
+2025-11-27 14:00:43 INFO  CommanUtill:360 - Clicked on (Click On Add Patient Registration)
