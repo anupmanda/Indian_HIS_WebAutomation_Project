@@ -2057,6 +2057,12 @@ public class CommanUtill extends GeneralBrowserSetting {
 			        Assert.fail("Error while Switching Back to Parent Window for (" + fieldName + ")");
 			    }
 			}
+//update clear filed 
+		 
+		 public static void clearUsingJS(String xpath) throws IOException {
+			    WebElement element = driver.findElement(By.xpath(xpath));
+			    ((JavascriptExecutor)driver).executeScript("arguments[0].value='';", element);
+			}
 
  
 }

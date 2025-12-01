@@ -3,12 +3,14 @@
  */
 package com.test.frontoffice.page;
 
+import java.awt.Window;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
@@ -54,11 +56,11 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String nationality = "//select[@id='nationality']";
 
 	// ---------------------- VIP & Remarks ----------------------
-	protected static String vipCheckbox = "//input[@id='vip']";
+	protected static String vipCheckbox = "//input[@name='vip' and @type ='checkbox']";
 	protected static String vipText = "//input[@id='vipText']";
-	
-	protected static String remarksCheckbox = "//input[@id='remarks']";
-	protected static String remarksText = "//input[@id='remarksText']";
+
+	protected static String remarksCheckbox = "//input[@name='remarks' and @type='checkbox']";
+	protected static String remarksText = "//textarea[@id='remarksText']";
 
 	// ---------------------- NRI & ID ----------------------
 	protected static String nri = "//input[@id='nri']";
@@ -78,7 +80,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String city = "//select[@id='city']";
 	protected static String locolity = "//input[@id='locationid']";
 	protected static String pincode = "//input[@id='PostalCode']";
-	
+
 	protected static String addNewCity = "//input[@id='addcity']";
 	protected static String auto_State_drp = "//select[@id='state']";
 	protected static String pin_zip_auto = "//input[@id='pin']";
@@ -97,12 +99,12 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String add_locality_Popup = "//input[@id='local']";
 	protected static String add_new_locality_save_btn = "//a[@id='Save']";
 
-	
+
 	// ---------------------- Referral & Language ----------------------
 	protected static String refer = "//input[@id='refDr']";
 	protected static String language = "//select[@id='lang']";
 	protected static String month_income = "//input[@id='monthly_income']";
-	
+
 	// ---------------------- Others ----------------------
 	protected static String occupation = "//select[@id='occupation']";
 	protected static String qualification = "//select[@id='qualification']";
@@ -112,10 +114,9 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String source_information = "//select[@id='sref']";
 	protected static String sub_source = "//select[@id='sub_src']";
 	protected static String other_source_text = "//input[@id='txtOtherSS']";
-	
 
 	// ---------------------- Financial & Scheme ----------------------
-	
+
 	protected static String financialCheckbox = "//input[@id='fin']";
 	protected static String companyType = "//select[@id='companytype']";
 	protected static String company = "//select[@id='company']";
@@ -125,22 +126,26 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String insurance_company = "//select[@id='ins_com']";
 	protected static String purpopse_viste = "//select[@id='PurposeofVisit']";
 	protected static String company_department = "//select[@id='Companydepartment']";
-	
+
 	protected static String Insurance_Company_icon = "//img[@src='/sanitywebhistree/images/action_Newbtn/bankrej.svg']";
 	protected static String policy_no_text = "//select[@id='ins_com']";
 	protected static String validity_date_popup= "//input[@id='valid_till']";
 	protected static String certificate_no_text = "//input[@id='certificate_no']";
 	protected static String plush_icon_click = "//span[@id='add_com']//i[@class='fa fa-plus']";
-	
-//mofdification reason
+	//----------------------DigPIN-----------------------
+	protected static String digpin_text = "//input[@id='txtDig']";
+
+	//---------------------------------mofdification reason-------------------------------------
+	protected static String update_registrion = "//i[@class='fa fa-edit']";
 	protected static String reason_for_modification_text = "//textarea[@id='_reasonForModifiaction']";
-	
+	protected static String enter_uhid = "//input[@id='uHid']";
+
 	// ---------------------- kin details ----------------------
 
 	protected static String kin_name = "//input[@id='KinName']";
 	protected static String kin_relationship = "//select[@id='kinRelationship']";
 	protected static String kin_phone = "//input[@id='kinPhone']";
-	
+
 	// ---------------------- Care Giver Details ----------------------
 	protected static String care_giver_checkbox = "//a[@class='addCareKin']//i[@title='Add']";
 	protected static String care_giver_type = "//select[@id='KinCareGiverType']";
@@ -149,7 +154,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String care_giver_contact_number = "//input[@id='KinCareGiverPhone']";
 	protected static String care_giver_timeing_remaks = "//input[@id='KinCareGiverRemarks']";
 	protected static String care_giver_add_save = "//i[@id='AddmultipleCareGiver']";
-	
+
 
 	//------------------------scheme---------------------------------------------
 	protected static String schemeCheckbox = "//input[@id='chkscheme']";
@@ -174,16 +179,42 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String confirmPatientDetails_Yes_Popup = "//a[@id='btnyesss']";
 	protected static String confirmYesButton = "//input[@id='btnyesss']";
 	protected static String registeredSuccessPopup = "//header[contains(text(),'Registered Successfully')]";
-	
-	
+
+
 	protected static String registerSuccessNoButton = "//div[@class='popup-area']//div[@class='modal-block-new']//a[contains(text(),'No')]";
 	protected static String registration_billing_no_popup = "//a[@id='btnno']";
 	protected static String registration_yes_billing_page = "//a[@id='btnyes']";
-    protected static String skip_general_consent = "//a[@id='skipconsent']";
-	
+	protected static String skip_general_consent = "//a[@id='skipconsent']";
+
 	//-------------Paient Under 10 year ---------------
-    protected static String under_regi_age_popup = "//a[@id='popupPediatricPatientYes']";
+	protected static String under_regi_age_popup = "//a[@id='popupPediatricPatientYes']";
 	protected static String home_page = "//img[@id='showmenuIcon']";
+
+	//-----------------------update popup-------------------------------
+
+	protected static String modification_yes_popup = "//a[@id='btnyessss']";
+	protected static String modification_yes_bill_popup = "//a[@id='btnyes']";	
+	protected static String modification_no_bill_popup = "//a[@id='btnno']";
+
+	//----------------------Alias----------------------------
+
+	protected static String alias_ckkbox = "//input[@id='chkalias']";
+
+	//----------------------- Passport Details -----------------------
+
+	protected static String click_passport = "//a[@id='_passportdetails']";
+	protected static String passport_no = "//input[@id='PassportNo']";
+	protected static String issue_date = "//input[@id='IssueDtae']";
+	protected static String expiry_date = "//input[@id='Expiry_date']";
+	protected static String issured_at = "//input[@id='Issued']";
+
+	protected static String visa_number = "//input[@id='txtVisaNo']";
+	protected static String visa_no_valid_from = "//input[@id='VisaValidFrom']";
+	protected static String visa_no_valid_to = "//input[@id='VisaValidTo']";
+	protected static String passoport_remaks = "//textarea[@id='VisaRemarks']";
+	protected static String passoport_yes = "//a[@id='btnyessssinter']";
+	protected static String passoport_clear = "//a[@id='btnnoooointer']";
+
 
 
 
@@ -241,7 +272,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.clickFunction(ageRadio, Age_Radio_Btn);
 		CommanUtill.textEnter(age, age_text);
 	}
-	
+
 	public void selectByMaritalStatus(String maritalStatusText) throws IOException, InterruptedException {
 
 		CommanUtill.dropdownSelectByVisibleText(maritalStatus, maritalStatusText);
@@ -270,7 +301,13 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	}
 
 	// ---------------------- VIP & Remarks ----------------------
-	public void clickOnVIPCheckbox(String vip_check_box , String vipValue) throws IOException, InterruptedException {
+	public void clickOnVIPCheckbox(String vip_check_box , String vipValue) 
+			throws IOException, InterruptedException {
+
+		//((JavascriptExecutor) driver) .executeScript("arguments[0].scrollIntoView(true);", 
+		//   driver.findElement(By.xpath(vipCheckbox)));
+		((JavascriptExecutor) driver).executeScript("window.scroll(500,0)");
+		Thread.sleep(500); 
 
 		CommanUtill.clickFunction(vipCheckbox, vip_check_box);
 		CommanUtill.textEnter(vipText, vipValue);
@@ -278,9 +315,29 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 	public void clickOnRemarksCheckbox(String remaks_check_box , String remaks_text) throws IOException, InterruptedException {
 
+		((JavascriptExecutor) driver).executeScript("window.scroll(500,0)");
 		CommanUtill.clickFunction(remarksCheckbox, remaks_check_box);
 		CommanUtill.textEnter(remarksText, remaks_text);
 	}
+	/*	
+	public void clickOnRemarksCheckbox(String remaks_check_box , String remaks_text) throws IOException, InterruptedException {
+
+
+	    WebElement ele = driver.findElement(By.xpath(remarksCheckbox));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ele);
+	    Thread.sleep(500);
+
+	    // Force JS Click 
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", ele);
+	    CommanUtill.clickFunction(remarksCheckbox, remaks_check_box);
+
+	    // Force JS Remaks
+	    WebElement sco =driver.findElement(By.xpath(remaks_text));
+	    ((JavascriptExecutor) driver) .executeScript("arguments[0].scrollIntoView(true);" ,sco);
+	    CommanUtill.textEnter(remarksText, remaks_text);
+	}
+
+	 */
 
 
 	// ---------------------- NRI & ID ----------------------
@@ -295,7 +352,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.textEnter(nationalId, ID_Number_Text);
 	}
 
-	
+
 	// ---------------------- Contact ----------------------
 	public void enterOnTelephone(String telephoneText) throws IOException, InterruptedException {
 
@@ -343,19 +400,19 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 		CommanUtill.dropdownSelectByVisibleText(auto_State_drp, autoStateText);
 	}
-	
+
 	public void enterAutoSelectZip_PinCodeState(String autoStateText) throws IOException, InterruptedException {
 
 		CommanUtill.textEnter(pin_zip_auto, autoStateText);
 	}
-	
+
 	public void selectAutoSelatedCountry(String autoCountryText) throws IOException, InterruptedException {
 
 		CommanUtill.dropdownSelectByVisibleText(auto_Country_drp, autoCountryText);
 	}
 
 	// ---------------------- Add New City & Locality ----------------------
-	
+
 	public void AddNewCityPopup(String add_city_btn , String Country_drp , String State_drp , String District_Drp,
 			String City_Drp , String Save_Button) throws IOException, InterruptedException {
 		CommanUtill.clickFunction(add_new_city_popup_btn, add_city_btn);
@@ -376,10 +433,28 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.textEnter(add_pin_code_popup, Pin_text);
 		CommanUtill.clickFunction(add_new_locality_save_btn, Save_Locality);
 	}
-	
+
 	public void enterOnReasonForModification(String reasonText) throws IOException, InterruptedException {
 
 		CommanUtill.textEnter(reason_for_modification_text, reasonText);
+	}
+
+	public void enterUHID(String uhid) throws IOException, InterruptedException {
+		if(uhid == null || uhid.trim().isEmpty()) {
+			throw new RuntimeException("UHID is NULL in enterUHID()");
+		}
+		CommanUtill.textEnter(enter_uhid, uhid);
+	}
+
+	public void updatePatientUHIDIconButton(String update_icon ) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(update_registrion, update_icon);
+
+	}
+	public void enterOnDigPinText(String Dig_pin)  throws IOException, InterruptedException {
+
+		CommanUtill.textEnter(digpin_text, Dig_pin);
+
 	}
 
 	// ---------------------- Referral & Language ----------------------
@@ -434,8 +509,8 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 	public void enterOnOtherSourceOfInformation(String otherSourceInfoText) throws IOException, InterruptedException {
 
-        CommanUtill.textEnter(other_source_text, otherSourceInfoText);
-    }
+		CommanUtill.textEnter(other_source_text, otherSourceInfoText);
+	}
 
 	public void clickOnFinancialCheckbox(String financial_Details) throws IOException, InterruptedException {
 
@@ -447,7 +522,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.dropdownSelectByVisibleText(companyType, companyTypeText);
 	}
 
-	
+
 	public void selectByCompanyDropdown(String companyText) throws IOException, InterruptedException {
 
 		CommanUtill.dropdownSelectByVisibleText(company, companyText);
@@ -468,9 +543,9 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.clickFunction(showAll, show_all_company);
 		CommanUtill.dropdownSelectByVisibleText(insurance_company, insuranceCompanyText);
 	}
-	
+
 	//purpose of visit and department
-	
+
 	public void selectByPurposeOfVisitDropdown(String purposeText) throws IOException, InterruptedException {
 
 		CommanUtill.dropdownSelectByVisibleText(purpopse_viste, purposeText);
@@ -480,13 +555,13 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 		CommanUtill.dropdownSelectByVisibleText(company_department, departmentText);
 	}
-	
+
 	public void clickOnHomeInsuranceCompanyDetails(String click_home_insurance_comp , String policy_number , String cetificate_no_text)
 			throws IOException, InterruptedException {
 
-               CommanUtill.clickFunction(Insurance_Company_icon, click_home_insurance_comp);
-               CommanUtill.dropdownSelectByVisibleText(policy_no_text, policy_number);
-               CommanUtill.textEnter(certificate_no_text, cetificate_no_text);
+		CommanUtill.clickFunction(Insurance_Company_icon, click_home_insurance_comp);
+		CommanUtill.dropdownSelectByVisibleText(policy_no_text, policy_number);
+		CommanUtill.textEnter(certificate_no_text, cetificate_no_text);
 	}
 	//Scheme
 
@@ -504,20 +579,18 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.dropdownSelectByVisibleText(kin_relationship, Kin_Relationship_drp);
 		CommanUtill.textEnter(kin_phone, Kin_Phome_no);
 	}
-	
+
 	public void clickOnCareGiverCheckboxAndEnterDetails(String  Care_kin_plush_icon, String Care_Giver_Type_drp, String Care_Giver_Name_text,
 			String Care_Giver_Relation_drp, String Care_Giver_Contact_Number_text , String Care_Giver_Timeing_Remaks_text)
-			throws IOException, InterruptedException {
+					throws IOException, InterruptedException {
 		CommanUtill.clickFunction(care_giver_checkbox, "Care_kin_plush_icon");
 		CommanUtill.dropdownSelectByVisibleText(care_giver_type, Care_Giver_Type_drp);
 		CommanUtill.textEnter(care_giver_name, Care_Giver_Name_text);
 		CommanUtill.dropdownSelectByVisibleText(care_giver_relationship, Care_Giver_Relation_drp);
 		CommanUtill.textEnter(care_giver_contact_number, Care_Giver_Contact_Number_text);
 		CommanUtill.textEnter(care_giver_add_save, Care_Giver_Timeing_Remaks_text);
-		
+
 	}
-	
-	//__________________________________save__________________________________________________________
 
 	// ------------------ Save Registration ------------------
 
@@ -525,7 +598,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 		CommanUtill.clickFunction(click_save_reg_btn, fieldName);
 	}
-	
+
 	public void clickOnSkipGeneralConsentButton(String skip_popup) throws IOException, InterruptedException {
 
 		CommanUtill.clickFunction(skip_general_consent, skip_popup);
@@ -569,7 +642,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 			System.out.println("No Billing Page  did not appear.");
 		}	
 	}
-	
+
 	public void YesBillingPageInRegistrationPagePopup(String filedname) throws IOException, InterruptedException {
 
 		CommanUtill.clickFunction(registration_yes_billing_page, filedname);
@@ -608,9 +681,9 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.clickFunction(home_page, filedname);
 
 	}
-	
-//-----------------------------Registration Age Under Popup---------------------------
-	
+
+	//-----------------------------Registration Age Under Popup---------------------------
+
 	public void yespopupUnderAgeRegistration(String Below_age) throws IOException, InterruptedException {
 		if (CommanUtill.isElementPresent(under_regi_age_popup)) {
 			CommanUtill.clickFunction(under_regi_age_popup, Below_age);
@@ -620,5 +693,68 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		}
 	}
 
+	public void yesPopupModificationOFUHID(String yes_popup) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(modification_yes_popup, yes_popup);
+	}
+
+	public void NOPopupModificationOFUHIDBillingPage(String No_popup_bill) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(modification_no_bill_popup, No_popup_bill);
+	}
+	
+	//------------------------------Passport Details ---------------------------------
+	public void ClickOnPassportDetailsIcon(String Passport_icon) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(click_passport, Passport_icon);
+
+	}
+	public void enterPassportNumber(String Passport_no) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(passport_no, Passport_no);
+		
+	}
+	
+	public void enterPassportIssueAndExpiryDate(String issue , String expiry) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(issue_date, issue);
+		CommanUtill.textEnter(expiry_date, expiry);
+
+	}
+	
+	public void enterIssueExpiryDate(String issueDate, String expiryDate) throws IOException, InterruptedException {
+
+	    CommanUtill.clearUsingJS(issue_date);
+	    CommanUtill.textEnter(issue_date, issueDate);
+
+	    CommanUtill.clearUsingJS(issue_date);
+	    CommanUtill.textEnter(issue_date, expiryDate);
+	}
+	
+  public void enterOnIssuedAt(String Issured)  throws IOException , InterruptedException{
+		
+		CommanUtill.textEnter(issured_at, Issured);
+		
+	}
+	public void enterVisaNumber(String visa_text) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(visa_number, visa_text);
+	}
+
+	public void enterVisaValidFromAndTODate(String validfrom , String validto) throws IOException , InterruptedException{
+		
+		CommanUtill.textEnter(visa_no_valid_from, validfrom);
+		CommanUtill.textEnter(visa_no_valid_to, validto);
+	}
+	
+	public void enterPassportRemaks(String remaks) throws IOException , InterruptedException{
+		
+		CommanUtill.textEnter(passoport_remaks, remaks);
+	}
+
+  public void saveYesPassportDetails(String yes_save) throws IOException , InterruptedException{
+		
+		CommanUtill.clickFunction(passoport_yes, yes_save);
+	}
 
 }

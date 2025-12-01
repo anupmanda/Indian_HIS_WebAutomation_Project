@@ -32,11 +32,12 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 
 	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 1)
 
-	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, String Middle_Name_text,
-			String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , String Age_Int, String Marital_Status_drp, 
-			String Mother_Middle_Name_text, String Father_Name_Text, String Spouse_Text, String Nationality_drp, String Telephone_Int, 
-			String Country_Code, String Mobile_Number, String Email_Text, String House_Flat_No, String city_drp, String locality_po_Drp, 
-			String Enter_Pin, String Auto_State, String Auto_PIN_Zip, String Auto_Country_Drp, String Company_Type_Drp, String Auto_Company_Drp, 
+	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
+			String Middle_Name_text, String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , 
+			String Age_Int, String Marital_Status_drp, String Mother_Middle_Name_text, String Father_Name_Text, 
+			String Spouse_Text, String Nationality_drp, String Telephone_Int, String Country_Code, String Mobile_Number, 
+			String Email_Text, String House_Flat_No, String city_drp, String locality_po_Drp, String Enter_Pin, String Auto_State, 
+			String Auto_PIN_Zip, String Auto_Country_Drp, String enter_dig_pin , String Company_Type_Drp, String Auto_Company_Drp, 
 			String Corporate_Company_Drp, String Auto_Rate_Contract, String Insurance_Company_drp, String Purpose_OF_Visite_Drp, 
 			String Company_department_drp, String companyDetails_policy_no_text, String Certificate_No_text, String Reason_for_Moddification_text,
 			String vip_text, String Remarks_text, String id_card_type_drp, String National_ID_text, String ABHA_text, String ABHA_Add_text,

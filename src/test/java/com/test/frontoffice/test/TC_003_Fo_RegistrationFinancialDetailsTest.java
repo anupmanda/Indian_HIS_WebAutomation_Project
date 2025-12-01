@@ -32,11 +32,12 @@ public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOff
 
 	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1)	
 		
-	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, String Middle_Name_text,
-			String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , String Age_Int, String Marital_Status_drp, 
-			String Mother_Middle_Name_text, String Father_Name_Text, String Spouse_Text, String Nationality_drp, String Telephone_Int, 
-			String Country_Code, String Mobile_Number, String Email_Text, String House_Flat_No, String city_drp, String locality_po_Drp, 
-			String Enter_Pin, String Auto_State, String Auto_PIN_Zip, String Auto_Country_Drp, String Company_Type_Drp, String Auto_Company_Drp, 
+	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
+			String Middle_Name_text, String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , 
+			String Age_Int, String Marital_Status_drp, String Mother_Middle_Name_text, String Father_Name_Text, 
+			String Spouse_Text, String Nationality_drp, String Telephone_Int, String Country_Code, String Mobile_Number, 
+			String Email_Text, String House_Flat_No, String city_drp, String locality_po_Drp, String Enter_Pin, String Auto_State, 
+			String Auto_PIN_Zip, String Auto_Country_Drp, String enter_dig_pin , String Company_Type_Drp, String Auto_Company_Drp, 
 			String Corporate_Company_Drp, String Auto_Rate_Contract, String Insurance_Company_drp, String Purpose_OF_Visite_Drp, 
 			String Company_department_drp, String companyDetails_policy_no_text, String Certificate_No_text, String Reason_for_Moddification_text,
 			String vip_text, String Remarks_text, String id_card_type_drp, String National_ID_text, String ABHA_text, String ABHA_Add_text,
@@ -47,7 +48,7 @@ public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOff
 			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
            throws IOException, InterruptedException, ClassNotFoundException {
 
-		logger = extent.createTest("Front Office Registration ", "Front Office Patient Registration with All Required Fields");
+		logger = extent.createTest("FO Registration With Financial Details ", "Front Office Patient Registration with All Required Fields And Non Required");
 		
 		frontofficeregistration.selectByFacilityDropdwon(Facility_Drp);
 		// open front office dashboard and navigate to registration
@@ -68,6 +69,7 @@ public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOff
 		frontofficeregistration.selectByGenderDropdown(Gender_Drp);
 		frontofficeregistration.enterOnDOB("Click On Radio Button ",DOB);
 		
+		frontofficeregistration.selectByMaritalStatus(Marital_Status_drp);
 		frontofficeregistration.selectByNationality(Nationality_drp);
 		frontofficeregistration.closePossibleDuplicatePopup("Close Duplicate Popup");
 		
@@ -76,6 +78,7 @@ public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOff
 		
 		frontofficeregistration.enterLocalityPODropdown(locality_po_Drp + CommanUtill.randomAlphabets(3));
 		frontofficeregistration.closePossibleDuplicatePopup("Close Duplicate Popup");
+		frontofficeregistration.enterOnDigPinText(enter_dig_pin);
 		
 		//financial details
 		frontofficeregistration.clickOnFinancialCheckbox("Financial Checkbox");
@@ -87,23 +90,13 @@ public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOff
 		
 	//	frontofficeregistration.clickOnShowAllCheckbox ("Show All Checkbox Insurance" ,Insurance_Company_drp);
 		
-	//	frontofficeregistration.selectByPurposeOfVisitDropdown(Purpose_OF_Visite_Drp);
+		frontofficeregistration.selectByPurposeOfVisitDropdown(Purpose_OF_Visite_Drp);
 	//	frontofficeregistration.selectByCompanyDepartmentDropdown(Company_department_drp);
 		
 	//	frontofficeregistration.clickOnHomeInsuranceCompanyDetails("Home Insurance Company Details",companyDetails_policy_no_text,Certificate_No_text );
 		
-		//modify patient details
-	//	frontofficeregistration.enterOnReasonForModification(Reason_for_Moddification_text);
-		//VIP Selection
-		//frontofficeregistration.clickOnVIPCheckbox("VIP Checkbox",vip_text);
-		//frontofficeregistration.clickOnRemarksCheckbox("Remarks Text Area",Remarks_text);
-		
-		//identification details
-		//frontofficeregistration.clickOnNRICheckbox("NRI Checkbox");
-		//frontofficeregistration.selectByIDCardDropdwonAndIDNumber(id_card_type_drp , National_ID_text);
-			
 		//other details
-		 frontofficeregistration.enterOnReferredBy(refered_by_text);
+		 //frontofficeregistration.enterOnReferredBy(refered_by_text);
 		 frontofficeregistration.selectByPreferredLanguageDropdown(preferred_language_drp);
 		 frontofficeregistration.enterOnMonthlyIncome(Monthly_Income_Text);
 		 frontofficeregistration.selectByOccupationDropdown(Occupation_Drp);
@@ -114,15 +107,9 @@ public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOff
 		 
 		 frontofficeregistration.selectByCategoryDropdown(Category_Drp);
 		 frontofficeregistration.selectBySourceOfInformationAndSubSorurceDropdown(Soruce_of_Information_Drp ,Sub_Source_of_Information_Drp);
-		// frontofficeregistration.enterOnOtherSourceOfInformation(Other_Source_of_Information_text);
-		 
+		
 		 //kin details
 		 frontofficeregistration.enterKinDetails(Kin_Details_Name_text , Kin_Details_Relation_drp , Kin_Details_Contact_Number_text );
-		// frontofficeregistration.clickOnCareGiverCheckboxAndEnterDetails("Click On Add Care KinS",Care_GiverType_Drp , CareGiver_Name_text , CareGiver_Relation_drp ,
-			//	 CareGiver_Contact_Number_text,Timing_Remaks_text );
-		 
-		 //scheme details
-		 
 		 frontofficeregistration.clickOnSchemeCheckboxAndSelectScheme("Scheme Dropdown",Scheme_Drp);
 		 
 		// Save registration and handle potential popups
@@ -142,7 +129,6 @@ public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOff
 
 }
 
-//Check
 
 
 

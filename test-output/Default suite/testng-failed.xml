@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.frontoffice.test.TC_004_Fo_RegistrationKinDetailsTest">
+      <class name="com.test.frontoffice.test.FrontOfficeAppointmentSchedulingTest">
         <methods>
+          <include name="FoAppointmentINUHID" invocation-numbers="0"/>
+          <include name="FoAppointmentInLinkUHIDAndBilling" invocation-numbers="0"/>
           <include name="reportclosewindows"/>
-          <include name="verifyPatientRegistration" invocation-numbers="0"/>
           <include name="launchBrowser"/>
+          <include name="frontOfficeAppointmentSchedulingAndRegistration" invocation-numbers="0"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.frontoffice.test.TC_004_Fo_RegistrationKinDetailsTest -->
+      </class> <!-- com.test.frontoffice.test.FrontOfficeAppointmentSchedulingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
