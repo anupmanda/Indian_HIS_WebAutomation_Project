@@ -600,8 +600,14 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	}
 
 	public void clickOnSkipGeneralConsentButton(String skip_popup) throws IOException, InterruptedException {
-
-		CommanUtill.clickFunction(skip_general_consent, skip_popup);
+		
+		if(CommanUtill.isElementPresent(skip_general_consent)) {
+			CommanUtill.clickFunction(skip_general_consent, skip_popup);
+			System.out.println("Skip General Consent");
+		}
+		else {
+			System.out.println("Skip General Consent did not appear");
+		}
 	}
 
 	//-------------------------------otp--------------------------------------

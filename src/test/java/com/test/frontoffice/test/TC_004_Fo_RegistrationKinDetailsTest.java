@@ -32,7 +32,7 @@ public class TC_004_Fo_RegistrationKinDetailsTest extends FrontOfficePatientRegi
 
 	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1)	
 		
-	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
+	public void PatientRegistrationWithKinDetails(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
 			String Middle_Name_text, String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , 
 			String Age_Int, String Marital_Status_drp, String Mother_Middle_Name_text, String Father_Name_Text, 
 			String Spouse_Text, String Nationality_drp, String Telephone_Int, String Country_Code, String Mobile_Number, 

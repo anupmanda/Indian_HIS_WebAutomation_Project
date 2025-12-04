@@ -32,7 +32,7 @@ public class TC_007_Fo_RegistrationPassportDetailsTest extends FrontOfficePatien
 
 	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1)	
 		
-	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp , String Passport_Number  , String Passport_Issue_date ,
+	public void PatientRegistrationWithPassportDetails(String Facility_Drp, String Station_Drp , String Passport_Number  , String Passport_Issue_date ,
 			String Passport_Expiry_date , String Passport_Issued_At, String Visa_Number ,String Visa_Vaild_From , String Visa_valid_to ,
 			String Passport_Remaks , String title_drp ,String First_name_text, String Middle_Name_text, String LAst_Name_Text, 
 			String Gender_Drp, String DOB,String under_10_years , String Age_Int, String Marital_Status_drp , String Nationality_drp ,

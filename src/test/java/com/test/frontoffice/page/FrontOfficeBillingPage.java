@@ -143,7 +143,7 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String billing_header_Yes_popup  = "//div[@id='modal_paymentprocess']";
 	protected static String click_bill_Yes_popup  = "//a[@id='btnyesbal2']";
 	protected static String billing_header_No_popup  = "//a[@id='btnnobal2']";	
-	
+
 	protected static String process_payment_save_btn  = "//a[@id='verify_modes']//i[@class='fa fa-save']";
 
 	//--------------------------processPayment Popup----------------------
@@ -211,13 +211,14 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String opd_card_print_Yes_popup  = "//a[@id='btnyesopd']";
 	protected static String opd_card_print_No_popup  = "//a[@id='btnnoopd']";
 
+	//----------------------Scheme Details Popup -------------------------
 
-
-
-
-
-
-
+	protected static String scheme_Chkk_popup  = "//input[@id='chkscheme']";
+	protected static String scheme_select_popup  = "//select[@id='ddlscheme']";
+	protected static String scheme_date_popup   = "//input[@id='schemevalidity']";
+	protected static String scheme_authorised_popup   = "//select[@id='ddlschemeauth']";
+	protected static String scheme_save_popup   = "//a[@id='btnokscheme']";
+	
 
 
 
@@ -228,8 +229,8 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String cancel_investigation_Instruction_popup  = "//button[@id='cancel_invInstruction']";
 
 
-	
-	
+
+
 	protected static String close_bill_popup  = "//div[@id='modal_opdcardrpt']//i[@class='fa fa-times']";
 
 	protected static String same_doctor_visite_yes  = "//button[@class='btn btn-default'][normalize-space()='Yes']";
@@ -269,6 +270,16 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String rebilling_specility_drp  = "//select[@id='ddlspec2']";
 	protected static String rebilling_doctor_name_drp  = "//select[@id='ddldoc2']";
 
+	//------------------------------Billing Source ----------------------------
+
+	protected static String source_select  = "//select[@id='Source_id']";
+	protected static String Subsource_select  = "//select[@id='Subsource_id']";
+	protected static String billing_remaks  = "//textarea[@id='billremark']";
+
+
+
+
+
 
 
 	public void selectByFacilityDropdwon(String facilityText) throws IOException, InterruptedException {
@@ -293,11 +304,13 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	public void enterOnUHIDBilling(String filedname) throws IOException, InterruptedException { 
 
 		CommanUtill.textEnter(enter_uhid, filedname);
-		WebElement uhid = driver.findElement(By.xpath(enter_uhid));
-		uhid.sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(enter_uhid)).sendKeys(Keys.ENTER);;
+	}
+	public void enterOnUHIDBillingPage(String filedname) throws IOException, InterruptedException { 
+
+		CommanUtill.textEnter(enter_uhid, filedname);
 
 	}
-
 	public void enterOnCardNumberBilling(String filedname) throws IOException, InterruptedException {
 
 		CommanUtill.textEnter(enter_card_number, filedname);
@@ -362,8 +375,18 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 			System.out.println("Scheme for Patient details did not appear.");
 		}
 	}
-
-
+	
+	protected static String selectschemepatient = "//table[@id='schamesageabiablity']//tr[1]//td";
+	
+	public void SelectSchemesForPatientPopup(String scheme_patient_popup) throws IOException, InterruptedException {
+		if (CommanUtill.isElementPresent(selectschemepatient)) {
+			CommanUtill.clickFunction(selectschemepatient, scheme_patient_popup);
+			System.out.println("Scheme for Patient details popup appeared and was select.");
+		} else {
+			System.out.println("Scheme for Patient details did not appear.");
+		}
+	}
+	
 
 	public void visitSpecialityAndDoctorName(String visit_icon , String specility_drp , String doctorName)
 			throws IOException , InterruptedException{
@@ -434,6 +457,41 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 		CommanUtill.clickFunction(click_add_to_bill, filedName);
 	}
 
+	//--------------------- Scheme Details Popup -------------------------------
+
+	public void schemeCheckBoxPopup(String checkbox) throws IOException, InterruptedException{
+
+		CommanUtill.clickFunction(scheme_Chkk_popup, checkbox);
+	}
+	public void selectSchemekDropdwonPopup(String scheme) throws IOException, InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(scheme_select_popup, scheme);
+	}
+
+	public void enterSchemekDatePopup(String date) throws IOException, InterruptedException{
+
+		CommanUtill.textEnter(scheme_date_popup, date);
+	}
+	public void selectSchemeAuthorisedByPopup(String authorised_by) throws IOException, InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(scheme_authorised_popup, authorised_by);
+		
+		if(CommanUtill.isElementPresent(scheme_authorised_popup)) {
+			CommanUtill.dropdownSelectByVisibleText(scheme_authorised_popup, authorised_by);
+			CommanUtill.clickFunction(scheme_save_popup, authorised_by);
+			System.out.println("Scheme Details Popup appear");
+		}
+		else {
+		    System.out.println("Did't not Appear Scheme Details Popup");
+		}
+		
+	}
+
+	public void saveSchemeDetailsPopup(String SaveIcon) throws IOException, InterruptedException{
+
+		CommanUtill.clickFunction(scheme_save_popup, SaveIcon);
+	}
+	
 	public void clickOnBillingOnHeader(String filedName) throws IOException, InterruptedException{ 
 
 		CommanUtill.clickFunction(click_bill_header_btn, filedName);
@@ -450,17 +508,17 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 		CommanUtill.clickFunction(process_payment_save_btn, filedName);
 
 	}
-	
-	public void YesPopupConsultationSameDoctorPopup(String filedName) throws IOException, InterruptedException{
+
+	public void YesPopupConsultationSameDoctorPopup(String Same_doctor) throws IOException, InterruptedException{
 
 		if (CommanUtill.isElementPresent(same_doctor_visite_yes)) {
-			CommanUtill.clickFunction(same_doctor_visite_yes, filedName);
-			System.out.println("Same doctor popup appeared and was closed.");
+			CommanUtill.clickFunction(same_doctor_visite_yes, Same_doctor);
+			System.out.println("Same doctor popup appeared and Yes Button");
 		} else {
-			System.out.println("same doctor visie did not appear.");
+			System.out.println("same doctor visit did not appear.");
 		}
 	}
-	
+
 	public void clickOngeneratedsuccessfullyPrintBillPopup(String filedName) throws IOException, InterruptedException{ 
 
 		CommanUtill.clickFunction(yes_popup_bill_genrate, filedName);
@@ -468,17 +526,31 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 		click_bod.click();
 	}
 
-  public void YesPopupOPDCArdPrint(String OPD_Card) throws IOException ,InterruptedException{
-	  
-	  CommanUtill.clickFunction(opd_card_print_Yes_popup, OPD_Card);
-  }
-	
-	
-	
-	
-	
-	
-	
+	public void YesPopupOPDCArdPrint(String OPD_Card) throws IOException ,InterruptedException{
+
+		CommanUtill.clickFunction(opd_card_print_Yes_popup, OPD_Card);
+	}
+
+	public void selectBySourceTypeDropDwon(String source) throws IOException ,InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(source_select, source);
+	}
+
+	public void selectBySubSourceTypeDropDwon(String Subsource) throws IOException ,InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(Subsource_select, Subsource);
+	}
+
+	public void enterBillingRemaks(String Remaks) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(billing_remaks, Remaks);
+
+	}
+
+
+
+
+
 
 
 	public void clickOnAddInvestigationInstructionPopup(String filedName) throws IOException, InterruptedException{  
@@ -507,7 +579,7 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 
 
 	}
-	
+
 	public void closePrintBillPopup(String filedName) throws IOException, InterruptedException{
 
 		CommanUtill.clickFunction(close_bill_popup, filedName);

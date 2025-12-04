@@ -5,6 +5,7 @@ package com.test.frontoffice.test;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -84,6 +85,12 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 
 		String patientRegistrationId = frontofficeregistration.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is: " + patientRegistrationId);
+		
+		Assert.assertNotNull(patientRegistrationId, "UHID is null");
+		//Assert.assertTrue(patientRegistrationId.length() > 5, "UHID is too short");
+		
+		//Assert.assertTrue(patientRegistrationId.startsWith("SPSL"), 
+		      //  "UHID is not valid: " + patientRegistrationId);
 
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("NoBillingPage");
 
