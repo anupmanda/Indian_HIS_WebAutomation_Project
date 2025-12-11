@@ -3,9 +3,6 @@
  */
 package com.test.frontoffice.test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.testng.Assert.assertEquals;
-
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -23,73 +20,25 @@ import com.test.ui.helper.CommanUtill;
  *
  * 01-Dec-2025
  */
-public class TC_009_Fo_DoctorAppointmentTest extends FrontOfficeAppointmentSchedulingPage{
+public class TC_010_Fo_DoctorAppointmentTest  extends FrontOfficePatientRegistrationPage {
 
-	public FrontOfficeAppointmentSchedulingPage appointment = new FrontOfficeAppointmentSchedulingPage();
 	public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOfficePatientRegistrationPage();
+	public FrontOfficeAppointmentSchedulingPage appointment = new FrontOfficeAppointmentSchedulingPage();
 	public FrontOfficeBillingPage frontofficebilling = new FrontOfficeBillingPage();	
-
-	private final String SheetName_1 = "FO_Appointment_Scheduling";
-	private final String SheetName_2 = "FO_Registration_Page";
-	private final String SheetName_3 = "FO_Billing_Page";
+    public String patientRegistrationId;
 	
-	@DataProvider(name = "AppointmentDataProvider")
-	public Object[][] getAppointmentData() throws IOException {
-
-		System.out.println("====Tc_009_Fetching data from Excel sheet: " + SheetName_1 +" ====");
-		return ExcelSheetDataProvider.getExcelData(SheetName_1);
-	}
-
-	@Test(dataProvider = "AppointmentDataProvider" , priority = 1)	
-
-	public void frontOfficeAppointmentSchedulingAndRegistration(String Facility_Drp ,String Station_Drp , String Specility_Drp , 
-			String Select_Doctor_name, String Appointment_Booking_Date , String Appoint_First_Name , String Appoint_Middle_Name , 
-			String Appoint_Last_Name , String Appont_Mobile_number , String Appoint_Age,String Apoint_gender_drp , 
-			String Appoint_Visit_Type_Drp , String Appoint_Source_drp , String Appoint_SubSource_drp , String Appoint_Patient_Type, 
-			String Appoint_Lacolity_text , String Appoint_Remaks_Text , String Enter_UHID , String UHID_Appoint_Visit_Type_Drp ,
-			String Existing_Link_UHID_Enter) 
-					throws Exception , InterruptedException , ClassNotFoundException , IllegalAccessException {
-
-		logger = extent.createTest("_TC_009 Fo Appointment Scheduling And Registration Billing ", "Appointment Scheduling And Registration Page");
-
-		appointment.selectByFacilityDropdwon(Facility_Drp);
-		appointment.clickOnDashboardFrontOfficeBtn("FO_Dashboard",Station_Drp , "Yes Popup");
-		appointment.ApponintmentScheduling("Doctor Menu", "Appointment Page");
-
-		appointment.selectBySpecilityDrp(Specility_Drp,"Spceility_Serach_Icon");
-		appointment.selectByDoctorName(Select_Doctor_name);
-
-		appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
-
-		appointment.enterAppointmentPopupFirstMIddileAndLastName(Appoint_First_Name + CommanUtill.randomAlphabets(3),
-				Appoint_Middle_Name + CommanUtill.randomAlphabets(3) , Appoint_Last_Name + CommanUtill.randomAlphabets(3));
-		appointment.enterAppointmentPopupMobileNumber(Appont_Mobile_number + CommanUtill.randomDigits(3));
-		appointment.enterAppointmentPopupAge(Appoint_Age);
-		appointment.selectByAppointmentPopupGenderDrp(Apoint_gender_drp);
-
-		appointment.selectByAppointmentPopupVisitTypeDrp(Appoint_Visit_Type_Drp);
-		appointment.SelectByAppointmentSourceAndSubSourceTypeDrp(Appoint_Source_drp , Appoint_SubSource_drp);
-		appointment.SelectByAppointmentPatientTypeDrp(Appoint_Patient_Type);
-
-		appointment.enterLocolityAppointmentpopup(Appoint_Lacolity_text);
-		appointment.enterRemaksAppointmentPopup(Appoint_Remaks_Text);
-		appointment.SaveIconAppointmentPopup("Click On Appointment Save Button");
-		appointment.printPopupMessagefield();    //print Popup Appointment Message 
-		
-		Thread.sleep(1500);
-		appointment.rightClickOnBookedYellowSlot();    //Yellow Slot Right Click 
-		appointment.clickAddPatientFromContextMenu("Click On Add Patient Registration");  
-		
-	}
+	private final String sheetName_01 = "FO_Registration_Page";
+	private final String sheetName_02 = "FO_Appointment_Scheduling";
+	private final String SheetName_03 = "FO_Billing_Page";
 	
-	@DataProvider(name = "AppointmentRegistrationDataProvider")
-	public Object[][] getRegistrationData() throws IOException {
+	@DataProvider(name = "RegistrionDataProvider")
+	public Object[][] getRegistrionPageData() throws IOException {
 
-		System.out.println("====TC_009_Fetching data from Excel sheet: " + SheetName_2 + " ====");
-		return ExcelSheetDataProvider.getExcelData(SheetName_2);
+		System.out.println("====TC_010 Fetching data from Excel sheet: " + sheetName_01 + " ====");
+		return ExcelSheetDataProvider.getExcelData(sheetName_01);
 	}
 
-	@Test(dataProvider = "AppointmentRegistrationDataProvider", priority = 2)
+	@Test(dataProvider = "RegistrionDataProvider", priority = 1)
 
 	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
 			String Middle_Name_text, String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , 
@@ -107,11 +56,24 @@ public class TC_009_Fo_DoctorAppointmentTest extends FrontOfficeAppointmentSched
 			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
 			throws IOException, InterruptedException, ClassNotFoundException {
 
-		logger = extent.createTest("TC_009 Front Office Registration Only Mondotry Filed ", "Front Office Patient Registration");
+		logger = extent.createTest("TC 010 Fo Registration Appointment And Billing ", "Front Office Patient Registration");
 
-		
+		frontofficeregistration.selectByFacilityDropdwon(Facility_Drp);
+
+		try {
+			frontofficeregistration.clickOnDashboardFrontOfficeBtn("FO_Dashboard", Station_Drp, "Yes Popup");
+		} catch (Exception e) {
+		}
+
+		frontofficeregistration.clickOnAddPatientMenu("AddPatient", "PatientRegistration");
+
 		frontofficeregistration.selectByTitleDropdown(title_drp);
+		frontofficeregistration.enterOnFirstName(First_name_text);
+		frontofficeregistration.selectByGenderDropdown(Gender_Drp);
 		
+		//frontofficeregistration.enterOnDOB("Click On Radio Button ",DOB);
+		frontofficeregistration.clickOnAgeRadioButtonAndAgeText("Age Radio Button", Age_Int);
+        
 		frontofficeregistration.selectByMaritalStatus(Marital_Status_drp);
 		frontofficeregistration.selectByNationality(Nationality_drp);
 		frontofficeregistration.closePossibleDuplicatePopup("Close Duplicate Popup");
@@ -128,23 +90,62 @@ public class TC_009_Fo_DoctorAppointmentTest extends FrontOfficeAppointmentSched
 		frontofficeregistration.handleYESConfirmPatientDetailsPopup("Yes Confirm Patient Details Popup");
 		frontofficeregistration.clickOnSkipGeneralConsentButton("Skip General Consent Button");
 
-		String patientRegistrationId = frontofficeregistration.getUHIDOfPatient();
+		patientRegistrationId = frontofficeregistration.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is: " + patientRegistrationId);
 		
 		Assert.assertNotNull(patientRegistrationId, "UHID is null");
 		Assert.assertTrue(patientRegistrationId.length() > 5, "UHID is too short");
-	
-		frontofficeregistration.YesBillingPageInRegistrationPagePopup("Yes To Billing Page");
+		frontofficeregistration.NoBillingPageInRegistrationPagePopup("No Billing Page");
 		
+		frontofficeregistration.clickOnThreeLineRightSide(" Click On Side Icon Meanu Bar");
+	}
+	
+	@DataProvider(name = "AppointmentDataProvider")
+	public Object[][] getAppointmentData() throws IOException {
+
+		System.out.println("====Tc_010 Fetching data from Excel sheet: " + sheetName_02 +" ====");
+		return ExcelSheetDataProvider.getExcelData(sheetName_02);
+	}
+	
+	@Test(dataProvider = "AppointmentDataProvider" , priority = 2)	
+	public void FoAppointmentGOTOBill(String Facility_Drp ,String Station_Drp , String Specility_Drp , 
+			String Select_Doctor_name, String Appointment_Booking_Date , String Appoint_First_Name , String Appoint_Middle_Name , 
+			String Appoint_Last_Name , String Appont_Mobile_number , String Appoint_Age,String Apoint_gender_drp , 
+			String Appoint_Visit_Type_Drp , String Appoint_Source_drp , String Appoint_SubSource_drp , String Appoint_Patient_Type, 
+			String Appoint_Lacolity_text , String Appoint_Remaks_Text , String Enter_UHID , String UHID_Appoint_Visit_Type_Drp ,
+			String Existing_Link_UHID_Enter) 
+					throws Exception , InterruptedException , ClassNotFoundException , IllegalAccessException {
+
+		logger = extent.createTest("TC_010 Front Office Appointment GO To Bill", "Fo Appointment And Link UHID And Billing");
+
+		appointment.ApponintmentScheduling("Doctor Menu", "Appointment Page");
+		appointment.selectBySpecilityDrp(Specility_Drp,"Spceility_Serach_Icon");
+		appointment.selectByDoctorName(Select_Doctor_name);
+
+		appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
+
+		appointment.enterUHIDNumberRegistrationId(patientRegistrationId);
+		appointment.enterAppointmentPopupMobileNumber(Appont_Mobile_number + CommanUtill.randomDigits(3));
+		
+		appointment.selectByAppointmentPopupVisitTypeDrp(Appoint_Visit_Type_Drp);
+		appointment.SelectByAppointmentSourceAndSubSourceTypeDrp(Appoint_Source_drp , Appoint_SubSource_drp);
+		appointment.SelectByAppointmentPatientTypeDrp(Appoint_Patient_Type);
+		
+		appointment.SaveIconAppointmentPopup("Click On Appointment Save Button");
+		appointment.yesPopupAgainSameDoctorAppointment("Appointment is already schedule Yes Popup");
+
+		Thread.sleep(1500);
+		appointment.rightClickOnBookedYellowSlot();    //Yellow Slot Right Click 
+		appointment.clickAddTOBillPatient("Click On Add Bill Patient Button");  
+
 	}
 	
 	@DataProvider(name = "FOBillingDataProvider")
 	public Object[][] getBillingData() throws IOException {
 		
-		System.out.println("====TC_009 Fetching data from Excel sheet: " + SheetName_3 +" ====");
-		return ExcelSheetDataProvider.getExcelData(SheetName_3);
+		System.out.println("====TC_010 Fetching data from Excel sheet: " + SheetName_03 +" ====");
+		return ExcelSheetDataProvider.getExcelData(SheetName_03);
 	}
-
 	@Test(dataProvider = "FOBillingDataProvider" , priority = 3)	
 	
 	public void frontOfficeBillingTest(String Facility_Drp ,String Station_Drp , String enter_UHID_Billing_text ,String Visit_Choose_Speciality_Drp,
@@ -154,7 +155,7 @@ public class TC_009_Fo_DoctorAppointmentTest extends FrontOfficeAppointmentSched
 			String Billing_Source_Drp , String Billing_SubSource_Drp , String enter_remaks) 
 			throws Exception , InterruptedException , ClassNotFoundException , IllegalAccessException {
 		
-		logger = extent.createTest("TC_009 Doctor Appointment Registration And Billing", "Front Office Patient Billing");
+		logger = extent.createTest("TC_010 Doctor Appointment Registration And Billing", "Front Office Patient Billing");
 
 		frontofficebilling.closeSchemePopup("Scheme Close Popup");
 		frontofficebilling.closeCompanyDetailsPopup("Company Details Popup Close Btn");
@@ -171,6 +172,7 @@ public class TC_009_Fo_DoctorAppointmentTest extends FrontOfficeAppointmentSched
 		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
 		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
 		frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
+		
 	}
 
 }
