@@ -5,6 +5,7 @@ package com.test.frontoffice.page;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -230,33 +231,68 @@ public class FrontOfficeAppointmentSchedulingPage extends GeneralBrowserSetting 
 	
 	public void selectFirstAvailableDateAndTimeGreenSlot() throws IOException, InterruptedException {
 
-	    List<WebElement> rows = driver.findElements(By.xpath(scheduleTableRows));
-	    LocalTime now = LocalTime.now();
+	    LocalDate todayDate = LocalDate.now();
+	    String todayStr = todayDate.format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"));
 
-	    // loop over each row (TIME)
+	    // --------- FIND TODAY COLUMN INDEX FROM HEADER ---------
+	    List<WebElement> headers = driver.findElements(By.xpath("//table/thead/tr/th"));
+	    int todayColumnIndex = -1;
+
+	    for (int h = 1; h < headers.size(); h++) {  // h=1 because th[1] = TIME
+	        String headerText = headers.get(h).getText().trim();
+	        if (headerText.contains(todayStr)) {
+	            todayColumnIndex = h - 1;  // because cells start from td[2] → j=0
+	            break;
+	        }
+	    }
+
+	    if (todayColumnIndex == -1) {
+	        throw new RuntimeException("Unable to detect today's date column!");
+	    }
+
+	    LocalTime now = LocalTime.now();
+	    List<WebElement> rows = driver.findElements(By.xpath(scheduleTableRows));
+
+	    // -------------------------------------------------------------
+	    //  STEP 1: Check ONLY today's column for valid green future slot
+	    // -------------------------------------------------------------
 	    for (int i = 0; i < rows.size(); i++) {
 
 	        WebElement row = rows.get(i);
 
+	        // TIME
 	        String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
 	        timeText = timeText.replace("am", "AM").replace("pm", "PM").trim();
 
-	        LocalTime slotTime = null;
+	        LocalTime slotTime;
 	        try {
 	            slotTime = LocalTime.parse(timeText, DateTimeFormatter.ofPattern("h:mm a"));
 	        } catch (Exception e) {
-	            try {
-	                slotTime = LocalTime.parse(timeText, DateTimeFormatter.ofPattern("hh:mm a"));
-	            } catch (Exception e2) {
-	                System.out.println("Could not parse time: " + timeText);
-	                continue;
-	            }
+	            continue;
 	        }
 
+	        // Get TODAY column cell only
+	        WebElement todayCell = row.findElement(By.xpath("./td[" + (todayColumnIndex + 2) + "]"));
+	        String bgColor = todayCell.getCssValue("background-color");
+
+	        boolean isGreen = bgColor.contains("135, 235, 135");
+
+	        if (isGreen && !slotTime.isBefore(now)) {
+
+	            clickCell(todayCell, timeText, i, todayColumnIndex);
+	            return;
+	        }
+	    }
+
+	    // -------------------------------------------------------------
+	    //  STEP 2: Today no slot found → scan FUTURE date columns
+	    // -------------------------------------------------------------
+	    for (int i = 0; i < rows.size(); i++) {
+
+	        WebElement row = rows.get(i);
 	        List<WebElement> cells = row.findElements(By.xpath("./td[position()>1]"));
 
-	        // loop over each DATE column cell
-	        for (int j = 0; j < cells.size(); j++) {
+	        for (int j = todayColumnIndex + 1; j < cells.size(); j++) {
 
 	            WebElement cell = cells.get(j);
 	            String bgColor = cell.getCssValue("background-color");
@@ -264,26 +300,16 @@ public class FrontOfficeAppointmentSchedulingPage extends GeneralBrowserSetting 
 	            boolean isGreen = bgColor.contains("135, 235, 135");
 
 	            if (isGreen) {
-
-	                // Case A: today’s date column
-	                if (j == 0) {  
-	                    if (!slotTime.isBefore(now)) {
-
-	                        clickCell(cell, timeText, i, j);
-	                        return;
-	                    }
-	                }
-	                // Case B: future date column
-	                else {
-
-	                    clickCell(cell, timeText, i, j);
-	                    return;
-	                }
+	                String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
+	                clickCell(cell, timeText, i, j);
+	                return;
 	            }
 	        }
 	    }
-	    throw new RuntimeException("No available green slot found today OR in FUTURE dates!");
+
+	    throw new RuntimeException("No available green slot found!");
 	}
+
 
 	private void clickCell(WebElement cell, String timeText, int i, int j)
 	        throws IOException, InterruptedException {

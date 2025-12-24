@@ -53,7 +53,7 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
 			throws IOException, InterruptedException, ClassNotFoundException {
 
-		logger = extent.createTest("TC_001 Fo Registration Without Scheme", "Billing Type Visit Charge, Diagnostics , Manual Tests");
+		logger = extent.createTest("TC_001 Fo Registration Without Scheme And Biling", "Proces to Payment");
 
 		frontofficeregistration.selectByFacilityDropdwon(Facility_Drp);
 
@@ -97,7 +97,6 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 		
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("No Billing Page");
 		frontofficeregistration.clickOnThreeLineRightSide("Click On Side Meanu Bar Icon");
-
 	}
 	
 	@DataProvider(name = "FoBillingDataProvider")
@@ -108,15 +107,22 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 	}
 
 	@Test(dataProvider = "FoBillingDataProvider" , priority = 2)	
-	public void frontOfficeBillingTest(String Facility_Drp ,String Station_Drp , String enter_UHID_Billing_text ,String Visit_Choose_Speciality_Drp,
+	public void frontOfficeCashBillingTest(String Facility_Drp ,String Station_Drp , String enter_UHID_Billing_text , String Bill_Company_types_Drp ,
+			String Bill_Company_Drp , String Bill_Rate_Contract_Drp ,String Company_Document_Id_Type_popup ,String Visit_Choose_Speciality_Drp,
 			String Visit_Doctor_Name ,String Visit_Room_numver_drp , String Diagnostics_Test_Serach_Name , String Diagnostics_Test_Priority_drp ,
 			String Diagnostics_Test_Speciality_drp, String Diagnostics_Test_Doctor_Name_drp , String Manual_Service_Name_drp , 
-			String Manual_Description , String Manual_Quantity , String Manual_Price , String Referred_By , String Facilitator_Name_Drp ,
-			String Billing_Source_Drp , String Billing_SubSource_Drp , String enter_remaks, String Bill_Scheme_Drp , String Bill_Scheme_Date,
-			String Scheme_Authorised_By_drp) 
+			String Manual_Description , String Manual_Quantity , String Manual_Price ,String Other_services_name_drp,String Enter_other_Services_Name,
+			String other_servics_Priority_drp , String Other_servics_Speciality_drp , String other_servics_Performing_Doctor_drp , String Referred_By ,
+			String Facilitator_Name_Drp , String Billing_Source_Drp , String Billing_SubSource_Drp , String enter_remaks, String Bill_Scheme_Drp ,
+			String Bill_Scheme_Date, String Scheme_Authorised_By_drp , String Discount_On_bill_Drp , String Discount_on_servics , String Discount_On_Items , 
+			String Discount_Head_Drp , String Discount_Reason_Drp , String Discount_Service_Name_Drp , String Discount_Item_Doctor_Name_Drp, 
+			String Discount_Authorised_by , String Discount_Remaks_Text , String Approve_Discount_User_Name, String Approve_Discount_Password,
+			String Payment_Mode_Cheque_drp , String Cheque_no_Text , String Cheque_Bank_Name_Drp , String Cheque_Branch_Name_text , String Payment_Mode_Credit_drp ,
+			String Credit_Card_type_Drp , String Credit_Card_no , String Credit_Card_Bank_name_Drp, String Credit_Card_Trans_no) 
 			throws Exception , InterruptedException , ClassNotFoundException , IllegalAccessException {
 		
-		logger = extent.createTest("TC_002 Billing Type Visit Charge Diagnostics  Manual Tests", "Front Office Patient Billing");
+		logger = extent.createTest("TC_002 Billing Type Visit Charge Diagnostics Manual Tests ,Other Servics " , 
+				"Fo Billing Cash Billing");
 		
 		frontofficebilling.clickOnBillingButton("BillingMenu", "BillingPage");
 		frontofficebilling.enterOnUHIDBillingPage(patientRegistrationId);
@@ -139,6 +145,11 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 		frontofficebilling.enterManualTestPriceAndQulity("Click On Manual Btn", Manual_Service_Name_drp , Manual_Description 
 				, Manual_Quantity , Manual_Price , "Verify Button");
 		
+		//frontofficebilling.otherSevicesAndChooseServices("Click On Other Services Btn" ,"Other Services Check Box" ,Other_services_name_drp);
+		//frontofficebilling.serachOtherServicesAndCkick(Enter_other_Services_Name ,"Click On Services Name");
+		//frontofficebilling.enterOtherServicesPrioritySpecialityPerformingDoctor(other_servics_Priority_drp , Other_servics_Speciality_drp ,
+				//other_servics_Performing_Doctor_drp );
+		
 		frontofficebilling.enterOnReferredBy(Referred_By);
 		frontofficebilling.enterFacilitatorNameText(Facilitator_Name_Drp);
 		
@@ -152,6 +163,118 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
 		//frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
 		
+		driver.navigate().refresh();
+		Thread.sleep(1000);
+		
+	}
+	
+	@Test(dataProvider = "FoBillingDataProvider" , priority = 3)	
+	public void frontOfficeChwqueBillingTest(String Facility_Drp ,String Station_Drp , String enter_UHID_Billing_text , String Bill_Company_types_Drp ,
+			String Bill_Company_Drp , String Bill_Rate_Contract_Drp ,String Company_Document_Id_Type_popup ,String Visit_Choose_Speciality_Drp,
+			String Visit_Doctor_Name ,String Visit_Room_numver_drp , String Diagnostics_Test_Serach_Name , String Diagnostics_Test_Priority_drp ,
+			String Diagnostics_Test_Speciality_drp, String Diagnostics_Test_Doctor_Name_drp , String Manual_Service_Name_drp , 
+			String Manual_Description , String Manual_Quantity , String Manual_Price ,String Other_services_name_drp,String Enter_other_Services_Name,
+			String other_servics_Priority_drp , String Other_servics_Speciality_drp , String other_servics_Performing_Doctor_drp , String Referred_By ,
+			String Facilitator_Name_Drp , String Billing_Source_Drp , String Billing_SubSource_Drp , String enter_remaks, String Bill_Scheme_Drp ,
+			String Bill_Scheme_Date, String Scheme_Authorised_By_drp , String Discount_On_bill_Drp , String Discount_on_servics , String Discount_On_Items , 
+			String Discount_Head_Drp , String Discount_Reason_Drp , String Discount_Service_Name_Drp , String Discount_Item_Doctor_Name_Drp, 
+			String Discount_Authorised_by , String Discount_Remaks_Text , String Approve_Discount_User_Name, String Approve_Discount_Password,
+			String Payment_Mode_Cheque_drp , String Cheque_no_Text , String Cheque_Bank_Name_Drp , String Cheque_Branch_Name_text , String Payment_Mode_Credit_drp ,
+			String Credit_Card_type_Drp , String Credit_Card_no , String Credit_Card_Bank_name_Drp, String Credit_Card_Trans_no) 
+			throws Exception , InterruptedException , ClassNotFoundException , IllegalAccessException {
+		
+		logger = extent.createTest("TC_002 Billing Type Visit Charge Diagnostics  Manual Tests", 
+				"Process To Payment By CHEQUE ");
+		
+		frontofficebilling.enterOnUHIDBillingPage(patientRegistrationId);
+	
+		frontofficebilling.closeCompanyDetailsPopup("Company Details Popup Close Btn");
+		frontofficebilling.closeSchemePopup("Scheme Close Popup");
+		frontofficebilling.selectSchemeAuthorisedByPopup(Scheme_Authorised_By_drp);    // Scheme Authorised BY
+		
+		frontofficebilling.closeSchemeDetailsPopup("Scheme Details Popup Close Btn");	
+		frontofficebilling.closeSchemesForPatientPopup("Close Schemes For Patient Popup Btn");
+		
+		frontofficebilling.visitSpecialityAndDoctorName("Click On Visit Icon Button", Visit_Choose_Speciality_Drp, Visit_Doctor_Name);
+		frontofficebilling.YesPopupConsultationSameDoctorPopup("Again Consultation Same Doctor");
+		frontofficebilling.selectByVisitRoomNumberDrp(Visit_Room_numver_drp);
+		
+		frontofficebilling.otherSevicesAndChooseServices("Click On Other Services Btn" ,"Other Services Check Box" ,Other_services_name_drp);
+		frontofficebilling.serachOtherServicesAndCkick(Enter_other_Services_Name ,"Click On Services Name");
+		//frontofficebilling.enterOtherServicesPrioritySpecialityPerformingDoctor(other_servics_Priority_drp , Other_servics_Speciality_drp ,
+				//other_servics_Performing_Doctor_drp );
+		
+		frontofficebilling.enterOnReferredBy(Referred_By);
+		frontofficebilling.enterFacilitatorNameText(Facilitator_Name_Drp);
+		
+		frontofficebilling.clickOnAddToBillButton("Click On Add To Bill Button");
+		Thread.sleep(2000);
+		frontofficebilling.clickOnBillingOnHeader("Click Bill Icon");
+		Thread.sleep(1000);
+		frontofficebilling.clickOnBillingYesPopup("Yes Popup Bill Genrate");
+		
+		frontofficebilling.processToPaymentByCheque(Payment_Mode_Cheque_drp , Cheque_no_Text , Cheque_Bank_Name_Drp ,
+				Cheque_Branch_Name_text);
+		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
+		
+		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
+		//frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
+		
+		driver.navigate().refresh();
+		Thread.sleep(1000);
 	}
 
+	@Test(dataProvider = "FoBillingDataProvider" , priority = 4)	
+	public void frontOfficeCreditCardBillingTest(String Facility_Drp ,String Station_Drp , String enter_UHID_Billing_text , String Bill_Company_types_Drp ,
+			String Bill_Company_Drp , String Bill_Rate_Contract_Drp ,String Company_Document_Id_Type_popup ,String Visit_Choose_Speciality_Drp,
+			String Visit_Doctor_Name ,String Visit_Room_numver_drp , String Diagnostics_Test_Serach_Name , String Diagnostics_Test_Priority_drp ,
+			String Diagnostics_Test_Speciality_drp, String Diagnostics_Test_Doctor_Name_drp , String Manual_Service_Name_drp , 
+			String Manual_Description , String Manual_Quantity , String Manual_Price ,String Other_services_name_drp,String Enter_other_Services_Name,
+			String other_servics_Priority_drp , String Other_servics_Speciality_drp , String other_servics_Performing_Doctor_drp , String Referred_By ,
+			String Facilitator_Name_Drp , String Billing_Source_Drp , String Billing_SubSource_Drp , String enter_remaks, String Bill_Scheme_Drp ,
+			String Bill_Scheme_Date, String Scheme_Authorised_By_drp , String Discount_On_bill_Drp , String Discount_on_servics , String Discount_On_Items , 
+			String Discount_Head_Drp , String Discount_Reason_Drp , String Discount_Service_Name_Drp , String Discount_Item_Doctor_Name_Drp, 
+			String Discount_Authorised_by , String Discount_Remaks_Text , String Approve_Discount_User_Name, String Approve_Discount_Password,
+			String Payment_Mode_Cheque_drp , String Cheque_no_Text , String Cheque_Bank_Name_Drp , String Cheque_Branch_Name_text , String Payment_Mode_Credit_drp ,
+			String Credit_Card_type_Drp , String Credit_Card_no , String Credit_Card_Bank_name_Drp, String Credit_Card_Trans_no) 
+			throws Exception , InterruptedException , ClassNotFoundException , IllegalAccessException {
+		
+		logger = extent.createTest("TC_002 Billing Type Visit Charge And Other Services ", 
+				"Process To Payment By Credit Card ");
+		
+		frontofficebilling.enterOnUHIDBillingPage(patientRegistrationId);
+	
+		frontofficebilling.closeCompanyDetailsPopup("Company Details Popup Close Btn");
+		frontofficebilling.closeSchemePopup("Scheme Close Popup");
+		frontofficebilling.selectSchemeAuthorisedByPopup(Scheme_Authorised_By_drp);    // Scheme Authorised BY
+		
+		frontofficebilling.closeSchemeDetailsPopup("Scheme Details Popup Close Btn");	
+		frontofficebilling.closeSchemesForPatientPopup("Close Schemes For Patient Popup Btn");
+		
+		frontofficebilling.visitSpecialityAndDoctorName("Click On Visit Icon Button", Visit_Choose_Speciality_Drp, Visit_Doctor_Name);
+		frontofficebilling.YesPopupConsultationSameDoctorPopup("Again Consultation Same Doctor");
+		frontofficebilling.selectByVisitRoomNumberDrp(Visit_Room_numver_drp);
+		
+		frontofficebilling.otherSevicesAndChooseServices("Click On Other Services Btn" ,"Other Services Check Box" ,Other_services_name_drp);
+		frontofficebilling.serachOtherServicesAndCkick(Enter_other_Services_Name ,"Click On Services Name");
+		//frontofficebilling.enterOtherServicesPrioritySpecialityPerformingDoctor(other_servics_Priority_drp , Other_servics_Speciality_drp ,
+				//other_servics_Performing_Doctor_drp );
+		
+		frontofficebilling.enterOnReferredBy(Referred_By);
+		frontofficebilling.enterFacilitatorNameText(Facilitator_Name_Drp);
+		
+		frontofficebilling.clickOnAddToBillButton("Click On Add To Bill Button");
+		Thread.sleep(2000);
+		frontofficebilling.clickOnBillingOnHeader("Click Bill Icon");
+		Thread.sleep(1000);
+		frontofficebilling.clickOnBillingYesPopup("Yes Popup Bill Genrate");
+		
+		frontofficebilling.processToPaymentByCreditCard(Payment_Mode_Credit_drp , Credit_Card_type_Drp , Credit_Card_no , Credit_Card_Bank_name_Drp,
+				Credit_Card_Trans_no);
+		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
+		
+		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
+		//frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
+		
+	}
 }

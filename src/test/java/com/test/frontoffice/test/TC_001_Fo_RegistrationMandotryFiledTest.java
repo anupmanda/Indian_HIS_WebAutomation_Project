@@ -21,7 +21,7 @@ import com.test.ui.helper.CommanUtill;
 public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientRegistrationPage {
 
 	public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOfficePatientRegistrationPage();
-
+	public String patientRegistrationId;
 	private final String sheetName = "FO_Registration_Page";
 
 	@DataProvider(name = "ExcelUniversalDataProvider")
@@ -31,7 +31,7 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
-	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 1)
+	//@Test(dataProvider = "ExcelUniversalDataProvider", priority = 1)
 
 	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
 			String Middle_Name_text, String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , 
@@ -47,9 +47,9 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 			String Sub_Source_of_Information_Drp, String Other_Source_of_Information_text, String Kin_Details_Name_text,
 			String Kin_Details_Relation_drp, String Kin_Details_Contact_Number_text, String Scheme_Drp, String Care_GiverType_Drp,
 			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
-			throws IOException, InterruptedException, ClassNotFoundException {
+					throws IOException, InterruptedException, ClassNotFoundException {
 
-		logger = extent.createTest("Front Office Registration Only Mondotry Filed ", "Front Office Patient Registration");
+		logger = extent.createTest("TC_001 Front Office Registration Only Mondotry Filed ", "Front Office Patient Registration");
 
 		frontofficeregistration.selectByFacilityDropdwon(Facility_Drp);
 
@@ -63,10 +63,10 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 		frontofficeregistration.selectByTitleDropdown(title_drp);
 		frontofficeregistration.enterOnFirstName(First_name_text);
 		frontofficeregistration.selectByGenderDropdown(Gender_Drp);
-		
+
 		frontofficeregistration.enterOnDOB("Click On Radio Button ",DOB);
 		//frontofficeregistration.clickOnAgeRadioButtonAndAgeText("Age Radio Button", Age_Int);
-        
+
 		frontofficeregistration.selectByMaritalStatus(Marital_Status_drp);
 		frontofficeregistration.selectByNationality(Nationality_drp);
 		frontofficeregistration.closePossibleDuplicatePopup("Close Duplicate Popup");
@@ -83,16 +83,15 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 		frontofficeregistration.handleYESConfirmPatientDetailsPopup("Yes Confirm Patient Details Popup");
 		frontofficeregistration.clickOnSkipGeneralConsentButton("Skip General Consent Button");
 
-		String patientRegistrationId = frontofficeregistration.getUHIDOfPatient();
+		patientRegistrationId = frontofficeregistration.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is: " + patientRegistrationId);
-		
+
 		Assert.assertNotNull(patientRegistrationId, "UHID is null");
-		//Assert.assertTrue(patientRegistrationId.length() > 5, "UHID is too short");
-		
-		//Assert.assertTrue(patientRegistrationId.startsWith("SPSL"), 
-		      //  "UHID is not valid: " + patientRegistrationId);
+		Assert.assertTrue(patientRegistrationId.length() > 5, "UHID is too short");
 
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("NoBillingPage");
 
+	
 	}
+
 }

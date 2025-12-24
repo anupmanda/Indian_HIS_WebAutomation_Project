@@ -30,8 +30,8 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String click_dashbord_front_office_btn  = "//*[@id=\"OPDSubmit\"]/span[1]/a/img";
 	protected static String department_drp = "//select[@id='Department']";
 	protected static String clik_yes_popup = "//*[@id=\"btn_yes_desh\"]";
-	protected static String addPatient_meanu                    = "//*[@id=\"FOAddPatientMenu\"]/a/span";
-	protected static String patient_registration_page          = "//*[@id=\"FOAddPatientMenu\"]/ul/li[1]/a";
+	protected static String addPatient_meanu = "//*[@id=\"FOAddPatientMenu\"]/a/span";
+	protected static String patient_registration_page = "//*[@id=\"FOAddPatientMenu\"]/ul/li[1]/a";
 
 	// ---------------------- Basic Info ----------------------
 	protected static String title = "//select[@id='title']";
@@ -128,10 +128,11 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String company_department = "//select[@id='Companydepartment']";
 
 	protected static String Insurance_Company_icon = "//img[@src='/sanitywebhistree/images/action_Newbtn/bankrej.svg']";
-	protected static String policy_no_text = "//select[@id='ins_com']";
+	protected static String policy_no_text = "//input[@id='policy_no']";
 	protected static String validity_date_popup= "//input[@id='valid_till']";
 	protected static String certificate_no_text = "//input[@id='certificate_no']";
 	protected static String plush_icon_click = "//span[@id='add_com']//i[@class='fa fa-plus']";
+	
 	//----------------------DigPIN-----------------------
 	protected static String digpin_text = "//input[@id='txtDig']";
 
@@ -215,7 +216,20 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	protected static String passoport_yes = "//a[@id='btnyessssinter']";
 	protected static String passoport_clear = "//a[@id='btnnoooointer']";
 
-
+	//-------------------------------vaccine Details---------------------------------
+	protected static String vaccine_btn = "//a[@id='vacine_btn']";
+	protected static String vaccine_drp = "//select[@id='Vaccine']";
+	protected static String vaccine_dose = "//select[@id='VaccineDose']";
+	protected static String vaccine_brand = "//select[@id='VaccineBrand']";
+	protected static String vaccine_date = "//input[@id='VaccineDate']";
+	protected static String vaccine_remaks = "//textarea[@id='Remarks']";
+	protected static String vaccine_save = "//a[@id='btn_yes_desh']";
+	protected static String vaccine_delete = "//i[@id='delete']";
+	protected static String vaccine_delete_yes_popup = "//a[@id='btn_yes']";
+	
+//-------------------------------OPD card Print ----------------------------------
+	protected static String opd_card_print = "//a[@id='print_report']";
+	
 
 
 	public void selectByFacilityDropdwon(String facilityText) throws IOException, InterruptedException {
@@ -445,6 +459,12 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		}
 		CommanUtill.textEnter(enter_uhid, uhid);
 	}
+	public void enterUHID_1(String uhid) throws IOException, InterruptedException {
+
+		CommanUtill.textEnter(enter_uhid, uhid);
+		driver.findElement(By.xpath(enter_uhid)).sendKeys(Keys.ENTER);
+	}
+
 
 	public void updatePatientUHIDIconButton(String update_icon ) throws IOException, InterruptedException {
 
@@ -538,9 +558,8 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.dropdownSelectByVisibleText(rate, rateText);
 	}
 	//insurance company
-	public void clickOnShowAllCheckbox(String show_all_company , String insuranceCompanyText) throws IOException, InterruptedException {
+	public void selectByINsuranceCompanyTypeDrp(String insuranceCompanyText) throws IOException, InterruptedException {
 
-		CommanUtill.clickFunction(showAll, show_all_company);
 		CommanUtill.dropdownSelectByVisibleText(insurance_company, insuranceCompanyText);
 	}
 
@@ -556,14 +575,21 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.dropdownSelectByVisibleText(company_department, departmentText);
 	}
 
+	//--------------------------Home Company Details---------------------------
+
 	public void clickOnHomeInsuranceCompanyDetails(String click_home_insurance_comp , String policy_number , String cetificate_no_text)
 			throws IOException, InterruptedException {
 
 		CommanUtill.clickFunction(Insurance_Company_icon, click_home_insurance_comp);
-		CommanUtill.dropdownSelectByVisibleText(policy_no_text, policy_number);
+		CommanUtill.textEnter(policy_no_text, policy_number);
 		CommanUtill.textEnter(certificate_no_text, cetificate_no_text);
 	}
-	//Scheme
+
+	public void PlushIconOnCompanyDetailsPopup(String Company_Plush_icon) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(plush_icon_click, Company_Plush_icon);
+	}
+	//-------------------------Scheme ---------------------------------
 
 	public void clickOnSchemeCheckboxAndSelectScheme(String scheme_check_box , String Scheme_drp) throws IOException, InterruptedException {
 
@@ -600,7 +626,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	}
 
 	public void clickOnSkipGeneralConsentButton(String skip_popup) throws IOException, InterruptedException {
-		
+
 		if(CommanUtill.isElementPresent(skip_general_consent)) {
 			CommanUtill.clickFunction(skip_general_consent, skip_popup);
 			System.out.println("Skip General Consent");
@@ -708,7 +734,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 		CommanUtill.clickFunction(modification_no_bill_popup, No_popup_bill);
 	}
-	
+
 	//------------------------------Passport Details ---------------------------------
 	public void ClickOnPassportDetailsIcon(String Passport_icon) throws IOException , InterruptedException{
 
@@ -718,29 +744,29 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	public void enterPassportNumber(String Passport_no) throws IOException , InterruptedException{
 
 		CommanUtill.textEnter(passport_no, Passport_no);
-		
+
 	}
-	
+
 	public void enterPassportIssueAndExpiryDate(String issue , String expiry) throws IOException , InterruptedException{
 
 		CommanUtill.textEnter(issue_date, issue);
 		CommanUtill.textEnter(expiry_date, expiry);
 
 	}
-	
+
 	public void enterIssueExpiryDate(String issueDate, String expiryDate) throws IOException, InterruptedException {
 
-	    CommanUtill.clearUsingJS(issue_date);
-	    CommanUtill.textEnter(issue_date, issueDate);
+		CommanUtill.clearUsingJS(issue_date);
+		CommanUtill.textEnter(issue_date, issueDate);
 
-	    CommanUtill.clearUsingJS(issue_date);
-	    CommanUtill.textEnter(issue_date, expiryDate);
+		CommanUtill.clearUsingJS(issue_date);
+		CommanUtill.textEnter(issue_date, expiryDate);
 	}
-	
-  public void enterOnIssuedAt(String Issured)  throws IOException , InterruptedException{
-		
+
+	public void enterOnIssuedAt(String Issured)  throws IOException , InterruptedException{
+
 		CommanUtill.textEnter(issured_at, Issured);
-		
+
 	}
 	public void enterVisaNumber(String visa_text) throws IOException , InterruptedException{
 
@@ -748,19 +774,64 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	}
 
 	public void enterVisaValidFromAndTODate(String validfrom , String validto) throws IOException , InterruptedException{
-		
+
 		CommanUtill.textEnter(visa_no_valid_from, validfrom);
 		CommanUtill.textEnter(visa_no_valid_to, validto);
 	}
-	
+
 	public void enterPassportRemaks(String remaks) throws IOException , InterruptedException{
-		
+
 		CommanUtill.textEnter(passoport_remaks, remaks);
 	}
 
-  public void saveYesPassportDetails(String yes_save) throws IOException , InterruptedException{
-		
+	public void saveYesPassportDetails(String yes_save) throws IOException , InterruptedException{
+
 		CommanUtill.clickFunction(passoport_yes, yes_save);
 	}
 
+	//-------------------------vaccine Details -----------------------------
+
+	public void clickOnVaccineDetailsIcon(String Vaccine) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(vaccine_btn, Vaccine);
+
+	}
+	public void covidDetailsVaccineAndVaccineDoseAndBrand(String Vaccine , String Vacine_dose , String vaccine_brand_drp) 
+			throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(vaccine_drp, Vaccine);
+		CommanUtill.dropdownSelectByVisibleText(vaccine_dose, Vacine_dose);
+		CommanUtill.dropdownSelectByVisibleText(vaccine_brand, vaccine_brand_drp);
+	}
+
+	public void enterVaccineDate(String vacinedate) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(vaccine_date, vacinedate);
+	}
+
+	public void enterVaccineRemaks(String vacineRemaks) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(vaccine_remaks, vacineRemaks);
+	}
+
+	public void saveVaccineDetailsPopup(String vacinesave) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(vaccine_save, vacinesave);
+	}
+
+	public void VaccineDeleteIcon(String vacineicon , String delete_icon , String Yes_Popup) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(vaccine_btn, vacineicon);
+		CommanUtill.clickFunction(vaccine_delete, delete_icon);
+        CommanUtill.clickFunction(vaccine_delete_yes_popup, Yes_Popup);
+	}
+	
+	public void clickOnOPDCardPrint(String OPDCardPrint) throws IOException , InterruptedException{
+		
+		CommanUtill.clickFunction(opd_card_print, OPDCardPrint);
+		
+	}
+
 }
+
+

@@ -17,7 +17,7 @@ import com.test.ui.helper.CommanUtill;
  *
  * 26-Nov-2025
  */
-public class TC_002_Fo_RegistrationUnder10YearsMandotryFiledTest extends FrontOfficePatientRegistrationPage {
+public class TC_005_Fo_RegistrationUnder10YearsMandotryFiledTest extends FrontOfficePatientRegistrationPage {
 
 	public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOfficePatientRegistrationPage();
 
@@ -26,7 +26,7 @@ public class TC_002_Fo_RegistrationUnder10YearsMandotryFiledTest extends FrontOf
 	@DataProvider(name = "ExcelUniversalDataProvider")
 	public Object[][] getData() throws IOException {
 
-		System.out.println("====TC_002Fetching data from Excel sheet: " + sheetName + " ====");
+		System.out.println("====TC_005 Fetching data from Excel sheet: " + sheetName + " ====");
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
@@ -48,7 +48,7 @@ public class TC_002_Fo_RegistrationUnder10YearsMandotryFiledTest extends FrontOf
 			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
 			throws IOException, InterruptedException, ClassNotFoundException {
  
-		logger = extent.createTest("Front Office Registration Under 10 Years", "Fo Registration Below 10 Years");
+		logger = extent.createTest("TC_005 Front Office Registration Under 10 Years", "Fo Registration Below 10 Years");
 
 		frontofficeregistration.selectByFacilityDropdwon(Facility_Drp);
 
@@ -63,7 +63,7 @@ public class TC_002_Fo_RegistrationUnder10YearsMandotryFiledTest extends FrontOf
 		frontofficeregistration.enterOnFirstName(First_name_text);
 		frontofficeregistration.selectByGenderDropdown(Gender_Drp);
 		
-		frontofficeregistration.enterOnDOB("Click On Radio Button ",under_10_years);
+		frontofficeregistration.enterOnDOB("Click On Radio Button ", under_10_years);
 		
 		//frontofficeregistration.clickOnAgeRadioButtonAndAgeText("Age Radio Button", Age_Int);
         
@@ -90,6 +90,7 @@ public class TC_002_Fo_RegistrationUnder10YearsMandotryFiledTest extends FrontOf
 
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("NoBillingPage");
 		
+		//Done
 	}	
 
 }

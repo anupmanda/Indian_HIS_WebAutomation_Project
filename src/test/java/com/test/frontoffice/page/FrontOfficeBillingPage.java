@@ -11,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.test.browser.setup.GeneralBrowserSetting;
 import com.test.ui.helper.CommanUtill;
@@ -73,18 +74,26 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String manual_refresh_btn  = "//a[@id='new_manual_refresh']";
 
 	//------------------ other Service-----------------------
-	protected static String click_other_service_btn = "//a[@id='opbillservices']";
+	protected static String other_service_btn = "//a[@id='opbillservices']";
 	protected static String other_service_Checkbox  = "//input[@id='otherServiceChk']";
 	protected static String other_service_Serive_name_dropDown  = "//select[@id='ddotherservice']";
 	protected static String other_service_serach_Field = "//input[@id='autocomplete_other_service']";
-	protected static String other_service_select_service  = "//ul[@id='ui-id-3']//li[contains(.,'<<OTHER_SERVICE>>')]";
-	protected static String other_service_qty_specility_drp  = "//select[@id='osspec3']";
-	protected static String other_service_performing_doctor_drp  = "//select[@id='osdoc3']";
+	protected static String other_service_select_service  = "//ul[@id='otherservice_list']//li[1]";
+	protected static String other_service_priority_service  = "//select[@class='PriorityClNu']";
+	protected static String other_service_specility_drp  = "//select[starts-with(@id,'osspec0')]";
+	protected static String other_service_performing_doctor_drp  = "//select[starts-with(@id,'osdoc0')]";
 
 	//--------------------------- Opd Packing-----------------------
-	protected static String click_opd_packing_btn = "//a[@id='opbillopdpackage']";
-	protected static String opd_package_serach_Field = "//div[@class='master_panel']";
-	protected static String opd_package_select_service  = "//ul[@id='ui-id-3']//li[contains(.,'<<OPD_PACKAGE>>')]";
+	protected static String opd_packing_btn = "//a[@id='opbillopdpackage']";
+	protected static String opd_package_serach_Field = "//input[@id='autocomplete_opdpckg']";
+	protected static String opd_package_select_service  = "//ul[@class='OPDpckg_list clsopdpkg_list']//li[not(contains(@style,'display: none'))][1]";
+
+	protected static String opd_package_name_poup_ok  = "//a[@id='opdPackageDetailPopupOK']";
+	protected static String opd_package_courier_address_yes  = "//a[@id='opdPackageCourieraAddressPopupOK']";
+	protected static String opd_packing_doctor_drp = "//select[starts-with(@id,'ddlopddoc')]";
+	protected static String opd_packing_doctor_token = "//select[@id='ddlopdtoken']";
+	protected static String opd_packing_doctor_yes = "//a[@id='btnpkgyes']";
+
 
 	// --------------------------- Referral-----------------------
 	protected static String ref  = "//input[@id='autocomplete_refby']";
@@ -102,15 +111,22 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String scheme_details_authorised_by  = "//select[@id='ddlschemeauth']";
 	protected static String scheme_details_approve_icon  = "//a[@id='btnokscheme']//i[@class='fa fa-check']";
 
-	//--------------------------Company Details Cash Home Icon----------------------	
-	protected static String click_company_details_home_icon  = "//img[@src='../../images/action_Newbtn/bankrej.svg']";
+	//--------------------------Company Details Home Icon----------------------	
+	protected static String click_company_details_home_icon  = "//a[@id='insurance_company']";
 	protected static String company_details_cash_chekk_box  = "//input[@id='r_cash']";	
 	protected static String company_details_Insurance_Company_chekk_box  = "//input[@id='r_com_insurance']";
 	protected static String company_details_free_bill_chekk_box  = "//input[@id='chkfreebill']";
+
 	protected static String company_details_company_type_drp  = "//select[@id='company_type']";	
 	protected static String company_details_company_drp  = "//select[@id='company']";	
+	protected static String company_details_rate_contract_drp  = "//select[@id='rate_contract']";
+
+	protected static String company_details_document_check_list_No  = "//input[@class='textbox']";
+	protected static String company_details_document_check_list_Chek_box_popup  = "//input[@id='_alldoccheck']";
+	protected static String company_details_document_check_list_Save_popup= "//a[@id='_savelist']";
+	protected static String company_details_document_check_list_close_popup= "//a[@id='_closelistpop']//i[@class='fa fa-times']";
+
 	protected static String company_details_corporate_company_drp  = "//select[@id='corporate_company']";
-	protected static String company_details_rate_contract_drp  = "//select[@id='rate_contract']";	
 	protected static String company_details_insurance_company_drp  = "//select[@id='tpa']";	
 	protected static String company_details_company_department  = "//select[@id='CompanyDeptbilling']";	
 	protected static String company_details_policy_number  = "//input[@id='policy_number']";	
@@ -126,6 +142,7 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String company_details_standard_Copay  = "//select[@id='ddlIsCoPayAmtType']";
 	protected static String company_details_copay  = "//input[@id='ci_copay']";	
 	protected static String company_details_Show_all_companies_chkk  = "//input[@id='all_companies']";
+	protected static String company_details_Yes_popup  = "//button[@id='btnyespolicy']";
 
 	//--------------------------Employer Coverage----------------------
 	protected static String company_employer_coverage_with_emp  = "//input[@id='employeeName']";
@@ -147,30 +164,27 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String process_payment_save_btn  = "//a[@id='verify_modes']//i[@class='fa fa-save']";
 
 	//--------------------------processPayment Popup----------------------
-	protected static String process_payment_mode_cash_drp  = "//div[@id='modal_paymentprocess']";
+	protected static String process_payment_mode_cash_drp  = "//select[starts-with(@id,'paymentMode1')]";
 	protected static String process_payment_mode_country_code  = "//select[@id='CountryCodes']";
 	protected static String process_payment_mode_amount_drp  = "//input[@id='payment_mode_value1']";	
 	protected static String process_payment_mode_cash_recieved  = "//span[@class='float_field']//input[@id='payable_amount']";	
 	protected static String process_payment_direct_OP_Cash_Deposit  = "//input[@id='DirectOPCashDepositchk']";	
 
 	//--------------------------process Payment Cheque Popup----------------------
-	protected static String process_payment_mode_cheque_drp  = "//select[@id='paymentMode1']";
+	protected static String process_payment_mode_cheque_drp  = "//select[starts-with(@id,'paymentMode1')]";
 	protected static String process_payment_mode_cheque_number  = "//input[@id='chequeNo']";
 	protected static String process_payment_mode_cheque_date  = "//input[@id='chequeDate']";	
 	protected static String process_payment_mode_cheque_validaty_date  = "//input[@id='chequeValidaty']";	
 	protected static String process_payment_mode_cheque_bank_name  = "//select[@id='ChequeBank']";	
 	protected static String process_payment_mode_cheque_branch_name  = "//input[@id='ChequeBranch']";
-	protected static String process_payment_mode_cheque_save  = "//a[@id='verify_modes']//i[@class='fa fa-save']";
 
 	//--------------------------Process payment Credit Card Popup----------------------
-	protected static String process_payment_mode_credit_card_drp  = "//select[@id='paymentMode1']";
+	protected static String process_payment_mode_credit_card_drp  = "//select[starts-with(@id,'paymentMode1')]";
 	protected static String process_payment_mode_credit_card_type_drp  = "//select[@id='ccType']";
 	protected static String process_payment_mode_credit_card_number  = "//input[@id='ccNumber']";
 	protected static String process_payment_mode_credit_card_validaty  = "//input[@id='ccValidaty']";
 	protected static String process_payment_mode_credit_card_bank_name_drp  = "//select[@id='ccbank']";
 	protected static String process_payment_mode_credit_card_trans_no  = "//input[@id='approvalno']";
-	protected static String process_payment_mode_credit_card_other_details  = "//input[@id='ccOtherDetails']";	
-	protected static String process_payment_mode_credit_card_save  = "//a[@id='verify_modes']//i[@class='fa fa-save']";
 
 	//--------------------------process Payment NEFT Popup----------------------
 	protected static String process_payment_mode_neft_drp  = "//select[@id='paymentMode1']";
@@ -218,7 +232,35 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String scheme_date_popup   = "//input[@id='schemevalidity']";
 	protected static String scheme_authorised_popup   = "//select[@id='ddlschemeauth']";
 	protected static String scheme_save_popup   = "//a[@id='btnokscheme']";
-	
+
+	//----------------------------- Discount Billing--------------------------------
+
+	protected static String discount_Chkk_box   = "//input[@id='discount_checkbox']";
+	protected static String discount_yes_popup   = "//a[@id='btndscyes']";
+	protected static String discount_no_popup   = "//a[@id='btndscno']";
+	protected static String discount_process_Discount_on_drp   = "//select[starts-with(@id,'discount_on1')]";
+	protected static String discount_process_service_name_drp   = "//select[starts-with(@id,'dropdownservice1')]";
+	protected static String discount_process_item_doctor_name_drp   = "//select[starts-with(@id,'dropdownitmname1')]";
+	protected static String discount_process_total_amount   = "//input[starts-with(@id,'total_amount1')]";
+	protected static String discount_process_discount_head_drp   = "//select[starts-with(@id,'discounthead1')]";
+	protected static String discount_process_discount_reason   = "//select[starts-with(@id,'discountreason1')]";
+	protected static String discount_process_discount_per   = "//input[starts-with(@id,'discount_percent1')]";
+	protected static String discount_process_net_amount   = "//input[starts-with(@id,'net_amount1')]";
+
+	protected static String discount_process_new_discount_item_btn   = "//a[@id='new_discount']";
+	protected static String discount_process_calculate_dis_per   = "//a[@id='CalculateDiscount']";
+	protected static String discount_process_authorised_by   = "//select[@id='ddlAuthorised_dis']";
+	protected static String discount_process_on_patient_radio   = "//input[@id='rdbdispat']";
+	protected static String discount_process_on_compant_radio   = "//input[@id='rdbdispat']";
+
+	protected static String discount_process_user_namme   = "//input[@id='Approvedtext']";
+	protected static String discount_process_password   = "//input[@id='passwordtext']";
+	protected static String discount_process_approve_remaks   = "//textarea[@id='ApprovalRemarks']";
+	protected static String discount_process_on_verify_approve_btn   = "//a[@id='ApprovedPassword']//i[@class='fa fa-check']";
+	protected static String discount_process_click_send_approval_req   = "//a[@id='ApprovalRequest']";
+
+
+
 
 
 
@@ -375,9 +417,9 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 			System.out.println("Scheme for Patient details did not appear.");
 		}
 	}
-	
+
 	protected static String selectschemepatient = "//table[@id='schamesageabiablity']//tr[1]//td";
-	
+
 	public void SelectSchemesForPatientPopup(String scheme_patient_popup) throws IOException, InterruptedException {
 		if (CommanUtill.isElementPresent(selectschemepatient)) {
 			CommanUtill.clickFunction(selectschemepatient, scheme_patient_popup);
@@ -386,12 +428,10 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 			System.out.println("Scheme for Patient details did not appear.");
 		}
 	}
-	
-
 	public void visitSpecialityAndDoctorName(String visit_icon , String specility_drp , String doctorName)
 			throws IOException , InterruptedException{
 
-		CommanUtill.clickFunction(click_visite_charge_icon, visit_icon);
+		//CommanUtill.clickFunction(click_visite_charge_icon, visit_icon);
 		CommanUtill.dropdownSelectByVisibleText(visite_speciality_drp, specility_drp);
 		CommanUtill.textEnter(serach_doctor, doctorName);
 
@@ -416,7 +456,6 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 		CommanUtill.textEnter(search_diagnostic_test, serach_diagnostics_box);
 
 	}
-
 	public void diagnosticsTestAndPrioritySpecialityDoctorName(String select_diagnostics ,String Priorty_drp , String diagnostics_speciality , String Doctor_Name) 
 			throws IOException, InterruptedException{
 
@@ -435,7 +474,6 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 		CommanUtill.textEnter(manual_Quantity_Field, Quantity_text);
 		CommanUtill.textEnter(manual_price_field, Price_text);
 		CommanUtill.clickFunction(manual_verify, verify_btn);
-
 	}
 
 	public void enterOnReferredBy(String refered_doctor) throws IOException, InterruptedException{
@@ -474,24 +512,22 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	}
 	public void selectSchemeAuthorisedByPopup(String authorised_by) throws IOException, InterruptedException{
 
-		CommanUtill.dropdownSelectByVisibleText(scheme_authorised_popup, authorised_by);
-		
 		if(CommanUtill.isElementPresent(scheme_authorised_popup)) {
 			CommanUtill.dropdownSelectByVisibleText(scheme_authorised_popup, authorised_by);
 			CommanUtill.clickFunction(scheme_save_popup, authorised_by);
 			System.out.println("Scheme Details Popup appear");
 		}
 		else {
-		    System.out.println("Did't not Appear Scheme Details Popup");
+			System.out.println("Did't not Appear Scheme Details Popup");
 		}
-		
+
 	}
 
 	public void saveSchemeDetailsPopup(String SaveIcon) throws IOException, InterruptedException{
 
 		CommanUtill.clickFunction(scheme_save_popup, SaveIcon);
 	}
-	
+
 	public void clickOnBillingOnHeader(String filedName) throws IOException, InterruptedException{ 
 
 		CommanUtill.clickFunction(click_bill_header_btn, filedName);
@@ -503,12 +539,16 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 
 	}
 
-	public void clickOnProcessPaymentSaveIcon(String filedName) throws IOException, InterruptedException{  
+	public void clickOnProcessPaymentSaveIcon(String save_icon) throws IOException, InterruptedException{  
 
-		CommanUtill.clickFunction(process_payment_save_btn, filedName);
-
+		if(CommanUtill.isElementPresent(process_payment_save_btn)){
+			CommanUtill.clickFunction(process_payment_save_btn, save_icon);
+			System.out.println("Process TO Payment Save Icon Popup");
+		}
+		else {
+			System.out.println("Process to Payment Save Icon Did Not Appears");
+		}
 	}
-
 	public void YesPopupConsultationSameDoctorPopup(String Same_doctor) throws IOException, InterruptedException{
 
 		if (CommanUtill.isElementPresent(same_doctor_visite_yes)) {
@@ -546,12 +586,177 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 		CommanUtill.textEnter(billing_remaks, Remaks);
 
 	}
+	//------------------------- Billing Other Service ---------------------------------
 
+	public void otherSevicesAndChooseServices(String Other_Services , String choose_otherServices, String select_otherservices_drp)
+			throws IOException , InterruptedException{
 
+		CommanUtill.clickFunction(other_service_btn, Other_Services);
+		CommanUtill.clickFunction(other_service_Checkbox, choose_otherServices);
+		CommanUtill.dropdownSelectByVisibleText(other_service_Serive_name_dropDown, select_otherservices_drp);
+	}
 
+	public void serachOtherServicesAndCkick(String Other_services_name , String services_click) throws IOException , InterruptedException{
 
+		CommanUtill.textEnter(other_service_serach_Field, Other_services_name);
+		CommanUtill.clickFunction(other_service_select_service, services_click);
+	}
 
+	public void enterOtherServicesPrioritySpecialityPerformingDoctor(String Priority_drp , String Speciality_drp , String PerformingDoctor_drp) 
+			throws IOException , InterruptedException{
 
+		CommanUtill.dropdownSelectByVisibleText(other_service_priority_service, Priority_drp);
+		CommanUtill.dropdownSelectByVisibleText(other_service_specility_drp, Speciality_drp);
+		CommanUtill.dropdownSelectByVisibleText(other_service_performing_doctor_drp, PerformingDoctor_drp);
+
+	}
+
+	//--------------------------OPD Pakage Billing -------------------------------	
+	public void clickOnOPDPakagesSerachAndSelect(String opd_btn , String opdpakages_Serach, String Select_opd_Pakages , String opd_pakage_name_ok_popup) 
+			throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(opd_packing_btn, opd_btn);
+		CommanUtill.textEnter(opd_package_serach_Field, opdpakages_Serach);
+		CommanUtill.clickFunction(opd_package_select_service, Select_opd_Pakages);
+		CommanUtill.clickFunction(opd_package_name_poup_ok, opd_pakage_name_ok_popup);
+	}
+
+	public void clickOnCourierAddressOPDPakage(String Courier_address_yes) throws IOException , InterruptedException{ 
+
+		CommanUtill.clickFunction(opd_package_courier_address_yes, Courier_address_yes);
+	}
+
+	public void enterOPDPakagesDoctorNameAndToken(String OPD_Doctor_name , String Tolken_no , String Yes_Popup) throws IOException , InterruptedException{ 
+
+		CommanUtill.dropdownSelectByVisibleText(opd_packing_doctor_drp, OPD_Doctor_name);
+		//CommanUtill.dropdownSelectByVisibleText(opd_packing_doctor_token, Tolken_no);
+		CommanUtill.clickFunction(opd_packing_doctor_yes, Yes_Popup);
+	}
+
+	public void HomeIconInCompanyInsurranceIcon(String Home_Icon) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(click_company_details_home_icon, Home_Icon);
+	}
+
+	public void clickOnBillTypeRadioButton(String Insurance_radio_Button) throws IOException , InterruptedException{ 
+
+		CommanUtill.clickFunction(company_details_Insurance_Company_chekk_box, Insurance_radio_Button);
+	}
+
+	public void selectByCompanyType_CompanyAndRateContract(String company_type_drp , String Company_drp , String Rate_con_drp ) 
+			throws IOException , InterruptedException{ 
+
+		CommanUtill.dropdownSelectByVisibleText(company_details_company_type_drp, company_type_drp);
+		CommanUtill.dropdownSelectByVisibleText(company_details_company_drp, Company_drp);
+		CommanUtill.dropdownSelectByVisibleText(company_details_rate_contract_drp, Rate_con_drp);
+	}
+
+	public void  PopupDocumentCheckListInCompanyDetails(String Insurance_Card , String CheckBox , String SavePopup)  
+			throws IOException , InterruptedException{ 
+
+		CommanUtill.textEnter(company_details_document_check_list_No, Insurance_Card);
+		CommanUtill.clickFunction(company_details_document_check_list_Chek_box_popup, CheckBox);
+		CommanUtill.clickFunction(company_details_document_check_list_Save_popup, SavePopup);
+	}
+
+	public void YesPopupleasere_validate(String Yes_Popup)  throws IOException , InterruptedException{ 
+
+		if(CommanUtill.isElementPresent(company_details_Yes_popup)) {
+			CommanUtill.clickFunction(company_details_Yes_popup, Yes_Popup);
+			System.out.println("Yes Popup Apperared Policy information");
+		}
+		else {
+			System.out.println("Did Not Appear Popup Policy information");
+
+		}
+	}
+	
+	//----------------------------- Discount bill--------------------------------
+	
+	public void clickOnCheckBoxDiscountAndYespopup(String chkk_box ,String  Yes_popup) throws IOException , InterruptedException{ 
+
+		CommanUtill.clickFunction(discount_Chkk_box, chkk_box);
+		CommanUtill.clickFunction(discount_yes_popup, Yes_popup);
+	}
+
+	public void selectByProcessDiscounts_DiscountOnDrp(String Discount_on) throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(discount_process_Discount_on_drp, Discount_on);
+
+	}
+	public void selectByDiscountHeadAndReasonDrp(String discount_head , String Reason_drp) throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(discount_process_discount_head_drp, discount_head);
+		CommanUtill.dropdownSelectByVisibleText(discount_process_discount_reason, Reason_drp);
+	}
+
+	public void selectByServiceNameDrp(String service_name) throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(discount_process_service_name_drp, service_name);
+	}
+
+	public void selectByItem_DoctorNameNameDrp(String doctor_name) throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(discount_process_item_doctor_name_drp, doctor_name);
+	}
+	
+	public void clickOnPlushNewDiscountItemBtn(String new_discount_iteam) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(discount_process_new_discount_item_btn, new_discount_iteam);
+	}
+
+	public void clickOnCalculateDiscountPercentageBtn(String Calculate_Discount) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(discount_process_calculate_dis_per, Calculate_Discount);
+	}
+
+	public void SelectByAuthorisedbyDrp(String Authorised_by) throws IOException , InterruptedException{
+		
+		CommanUtill.dropdownSelectByVisibleText(discount_process_authorised_by, Authorised_by);	
+	}
+	
+	public void enterProcessDiscountsRequestRemaks(String remkas) throws IOException , InterruptedException{
+		
+		CommanUtill.textEnter(discount_process_approve_remaks, remkas);
+	}
+	
+	public void enterApproveUserNamePasswordAndVerify(String user_name ,String password ,String verify_btn) 
+			throws IOException , InterruptedException{
+		CommanUtill.textEnter(discount_process_user_namme, user_name);
+		CommanUtill.textEnter(discount_process_password, password);
+		CommanUtill.clickFunction(discount_process_on_verify_approve_btn, verify_btn);
+	}
+//------------------------Mode Of Payment------------------------	
+	
+public void processToPaymentByCheque(String payment_mode , String ChequeNo , String bank_name , String branch) 
+		throws IOException , InterruptedException{
+	
+	CommanUtill.dropdownSelectByVisibleText(process_payment_mode_cheque_drp, payment_mode);
+	CommanUtill.textEnter(process_payment_mode_cheque_number, ChequeNo);
+	CommanUtill.dropdownSelectByVisibleText(process_payment_mode_cheque_bank_name, bank_name);
+	CommanUtill.textEnter(process_payment_mode_cheque_branch_name, branch);
+}
+	
+	public void processToPaymentByCreditCard(String payment_mode , String Card_type_drp , String Card_no , String Bank_Name , String Trans_no) 
+			throws IOException , InterruptedException{
+		
+		CommanUtill.dropdownSelectByVisibleText(process_payment_mode_credit_card_drp, payment_mode);
+		CommanUtill.dropdownSelectByVisibleText(process_payment_mode_credit_card_type_drp, Card_type_drp);
+		CommanUtill.textEnter(process_payment_mode_credit_card_number, Card_no);
+		CommanUtill.dropdownSelectByVisibleText(process_payment_mode_credit_card_bank_name_drp, Bank_Name);
+		CommanUtill.textEnter(process_payment_mode_credit_card_trans_no, Trans_no);
+	}
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public void clickOnAddInvestigationInstructionPopup(String filedName) throws IOException, InterruptedException{  
 

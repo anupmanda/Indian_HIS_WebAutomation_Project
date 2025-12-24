@@ -17,7 +17,7 @@ import com.test.ui.helper.CommanUtill;
  *
  * 28-Nov-2025
  */
-public class TC_007_Fo_RegistrationPassportDetailsTest extends FrontOfficePatientRegistrationPage {
+public class TC_006_Fo_RegistrationPassportDetailsTest extends FrontOfficePatientRegistrationPage {
 	
 	public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOfficePatientRegistrationPage();
 	
@@ -26,7 +26,7 @@ public class TC_007_Fo_RegistrationPassportDetailsTest extends FrontOfficePatien
 	@DataProvider(name = "ExcelUniversalDataProvider")
 	public Object[][] getData() throws IOException {
 		
-		System.out.println("====TC_007_Fetching data from Excel sheet: " + sheetName +" ====");
+		System.out.println("====TC_006_Fetching data from Excel sheet: " + sheetName +" ====");
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
@@ -41,7 +41,7 @@ public class TC_007_Fo_RegistrationPassportDetailsTest extends FrontOfficePatien
 	
            throws IOException, InterruptedException, ClassNotFoundException {  
 
-		logger = extent.createTest("Front Office Registration ", "Front Office Patient Registration with All Required Fields");
+		logger = extent.createTest("TC_006 Front Office Registration ", "Front Office Patient Registration with All Required Fields");
 		
 		frontofficeregistration.selectByFacilityDropdwon(Facility_Drp);
 		
@@ -102,7 +102,7 @@ public class TC_007_Fo_RegistrationPassportDetailsTest extends FrontOfficePatien
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("NoBillingPage");
 		//frontofficeregistration.YesBillingPageInRegistrationPagePopup("YesBillingPage");
 			
-		
+	//done	
 	}
 
   }

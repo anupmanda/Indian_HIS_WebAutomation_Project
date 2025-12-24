@@ -17,7 +17,7 @@ import com.test.ui.helper.CommanUtill;
  *
  * 01-Dec-2025
  */
-public class TC_008_Fo_RegistrationAliasNameTest extends FrontOfficePatientRegistrationPage {
+public class TC_007_Fo_RegistrationAliasNameTest extends FrontOfficePatientRegistrationPage {
 	
 	public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOfficePatientRegistrationPage();
 	
@@ -41,7 +41,7 @@ public class TC_008_Fo_RegistrationAliasNameTest extends FrontOfficePatientRegis
 	
            throws IOException, InterruptedException, ClassNotFoundException {  
 
-		logger = extent.createTest("Front Office Registration ", "Front Office Patient Registration with All Required Fields");
+		logger = extent.createTest("TC_007 Front Office Registration ", "Front Office Patient Registration with All Required Fields");
 		
 		frontofficeregistration.selectByFacilityDropdwon(Facility_Drp);
 		
@@ -50,18 +50,8 @@ public class TC_008_Fo_RegistrationAliasNameTest extends FrontOfficePatientRegis
 		} catch (Exception e) {
 		
 		}
-		frontofficeregistration.clickOnAddPatientMenu("AddPatient", "PatientRegistration");
-
-		frontofficeregistration.ClickOnPassportDetailsIcon("Click On Passport Details");
-		frontofficeregistration.enterPassportNumber(Passport_Number);
-		frontofficeregistration.enterIssueExpiryDate(Passport_Issue_date , Passport_Expiry_date);
-		frontofficeregistration.enterOnIssuedAt(Passport_Issued_At);
 		
-		frontofficeregistration.enterVisaNumber(Visa_Number);
-		frontofficeregistration.enterVisaValidFromAndTODate(Visa_Vaild_From , Visa_valid_to);
-		frontofficeregistration.enterPassportRemaks(Passport_Remaks);
-		frontofficeregistration.saveYesPassportDetails("Click On Save Passport Details");
-		
+	   frontofficeregistration.clickOnAddPatientMenu("AddPatient", "PatientRegistration");
        frontofficeregistration.selectByTitleDropdown(title_drp);
 	
 		frontofficeregistration.enterOnFirstName(First_name_text);
