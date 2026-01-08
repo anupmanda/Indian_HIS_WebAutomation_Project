@@ -138,7 +138,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 	//---------------------------------mofdification reason-------------------------------------
 	protected static String update_registrion = "//i[@class='fa fa-edit']";
-	protected static String reason_for_modification_text = "//textarea[@id='_reasonForModifiaction']";
+	protected static String reason_for_modification_text = "//select[@id='_reasonForModificationDDL']";
 	protected static String enter_uhid = "//input[@id='uHid']";
 
 	// ---------------------- kin details ----------------------
@@ -448,9 +448,9 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.clickFunction(add_new_locality_save_btn, Save_Locality);
 	}
 
-	public void enterOnReasonForModification(String reasonText) throws IOException, InterruptedException {
+	public void enterOnReasonForModification(String reason_modification) throws IOException, InterruptedException {
 
-		CommanUtill.textEnter(reason_for_modification_text, reasonText);
+		CommanUtill.dropdownSelectByVisibleText(reason_for_modification_text, reason_modification);
 	}
 
 	public void enterUHID(String uhid) throws IOException, InterruptedException {
@@ -484,7 +484,9 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.textEnter(refer, referralText);
 		WebElement ref = driver.findElement(By.xpath(refer));
 		ref.sendKeys(Keys.ENTER);
-		ref.sendKeys(Keys.ENTER);
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//tbody[@id=\"tblrefdr\"]//tr[1]")).click();
+		//ref.sendKeys(Keys.ENTER); 
 	}
 
 	public void selectByPreferredLanguageDropdown(String languageText) throws IOException, InterruptedException {
@@ -615,7 +617,7 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 		CommanUtill.dropdownSelectByVisibleText(care_giver_relationship, Care_Giver_Relation_drp);
 		CommanUtill.textEnter(care_giver_contact_number, Care_Giver_Contact_Number_text);
 		CommanUtill.textEnter(care_giver_add_save, Care_Giver_Timeing_Remaks_text);
-
+ 
 	}
 
 	// ------------------ Save Registration ------------------

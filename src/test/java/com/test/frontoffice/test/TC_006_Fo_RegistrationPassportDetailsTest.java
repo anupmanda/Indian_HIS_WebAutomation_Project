@@ -105,4 +105,4 @@ public class TC_006_Fo_RegistrationPassportDetailsTest extends FrontOfficePatien
 	//done	
 	}
 
-  }
+  } 

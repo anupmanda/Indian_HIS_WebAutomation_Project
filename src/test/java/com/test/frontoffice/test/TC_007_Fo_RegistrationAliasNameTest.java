@@ -28,7 +28,7 @@ public class TC_007_Fo_RegistrationAliasNameTest extends FrontOfficePatientRegis
 		
 		System.out.println("====TC_007_Fetching data from Excel sheet: " + sheetName +" ====");
 		return ExcelSheetDataProvider.getExcelData(sheetName);
-	}
+	} 
 
 	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1)	
 		

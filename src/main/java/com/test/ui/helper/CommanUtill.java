@@ -1834,9 +1834,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 	        return sb.toString();
 	    }
 	    
-	    
-	    
-/*
+	   // 
 		public static void clickTabSwitchToAnotherWindow(String xpath , String filedName) {
 			
 			// Store the current window handle
@@ -1844,6 +1842,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 
 			// Click on the element that opens a new tab
 			WebElement window = driver.findElement(By.xpath(xpath));
+			highlightElement(window, "yellow");
 			window.click();
 			
 			// Wait for new window or tab to open
@@ -1862,70 +1861,6 @@ public class CommanUtill extends GeneralBrowserSetting {
 			System.out.println("Title of new tab: " + driver.getTitle());
 		
 		}
-		
-		
-		
-		public static void clickTabSwitchToAnotherWindow_1(String xpath, String fieldName) throws IOException, InterruptedException {
-		    // Store original window handle
-		    String originalWindow = driver.getWindowHandle();
-
-		    // Click the element that opens new tab/window
-		    WebElement windowElement = driver.findElement(By.xpath(xpath));
-		    windowElement.click();
-
-		    // Wait until new window/tab opens
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		    wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-
-		    // Switch to the new window
-		    for (String windowHandle : driver.getWindowHandles()) {
-		        if (!windowHandle.equals(originalWindow)) {
-		            driver.switchTo().window(windowHandle);
-		            break;
-		        }
-		    }
-
-		    // Wait for something unique in new window/tab (example: Vitals page title or element)
-		    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Vitals')]")));
-
-		    // Print confirmation
-		    System.out.println("Switched to new tab with title: " + driver.getTitle());
-		}
-
-
-		public static void clickTabSwitchToAnotherWindow_Improved(String xpath, String fieldName) throws IOException, InterruptedException {
-		    String originalWindow = driver.getWindowHandle();
-
-		    // Click element that opens new tab
-		    WebElement windowElement = driver.findElement(By.xpath(xpath));
-		    windowElement.click();
-
-		    // Wait for new tab to open
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		    wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-
-		    // Switch to new window
-		    for (String windowHandle : driver.getWindowHandles()) {
-		        if (!windowHandle.equals(originalWindow)) {
-		            driver.switchTo().window(windowHandle);
-		            break;
-		        }
-		    }
-
-		    // Optional: small wait to ensure DOM fully loads
-		    Thread.sleep(1500);
-
-		    // Wait for unique element in new tab (e.g., vitals heading or any tab-specific element)
-		    try {
-		        wait.until(ExpectedConditions.visibilityOfElementLocated(
-		            By.xpath("//h2[contains(text(),'Vitals')]")  // change to any reliable element unique to your new tab
-		        ));
-		        System.out.println("Switched to new tab with title: " + driver.getTitle());
-		    } catch (TimeoutException e) {
-		        System.out.println("Element not found in new tab: Timeout.");
-		    }
-		}
-*/
 		
 		public static void rightClickOnElement(String xpath ,String fleldName) {
 	        try {

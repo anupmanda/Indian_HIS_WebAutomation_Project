@@ -348,5 +348,5 @@ public class TC_001_FoRegistrationWithoutSchemeBillingTest extends FrontOfficeBi
 		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
 		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
 		//frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
-	}
-}
+	} 
+} 

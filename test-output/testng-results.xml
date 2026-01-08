@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-24T12:40:56 IST" name="Default suite" finished-at="2025-12-24T12:42:31 IST" duration-ms="95088">
+  <suite started-at="2026-01-07T18:58:34 IST" name="Default suite" finished-at="2026-01-07T18:59:30 IST" duration-ms="56123">
     <groups>
     </groups>
-    <test started-at="2025-12-24T12:40:56 IST" name="Default test" finished-at="2025-12-24T12:42:31 IST" duration-ms="95088">
-      <class name="com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest@41fecb8b]" started-at="2025-12-24T12:40:56 IST" name="launch" finished-at="2025-12-24T12:40:56 IST" duration-ms="113" status="PASS">
+    <test started-at="2026-01-07T18:58:34 IST" name="Default test" finished-at="2026-01-07T18:59:30 IST" duration-ms="56123">
+      <class name="com.test.frontoffice.test.InsuranceDocumentTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.frontoffice.test.InsuranceDocumentTest@10959ece]" started-at="2026-01-07T18:58:34 IST" name="launch" finished-at="2026-01-07T18:58:34 IST" duration-ms="108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest@41fecb8b]" started-at="2025-12-24T12:40:56 IST" name="launchBrowser" finished-at="2025-12-24T12:41:05 IST" duration-ms="9783" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.frontoffice.test.InsuranceDocumentTest@10959ece]" started-at="2026-01-07T18:58:34 IST" name="launchBrowser" finished-at="2026-01-07T18:58:44 IST" duration-ms="9917" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="GenenrateSchedulingTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest@41fecb8b]" started-at="2025-12-24T12:41:06 IST" name="GenenrateSchedulingTest" data-provider="ExcelUniversalDataProvider" finished-at="2025-12-24T12:41:19 IST" duration-ms="12589" status="PASS">
+        <test-method signature="FrontOfficeOP_InsuranceDocument(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.frontoffice.test.InsuranceDocumentTest@10959ece]" started-at="2026-01-07T18:58:46 IST" name="FrontOfficeOP_InsuranceDocument" data-provider="insuranceDocumentDataProvider" finished-at="2026-01-07T18:59:17 IST" duration-ms="30826" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,383 +29,53 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Cardiology]]>
+                <![CDATA[SPSL.500]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Dhyanchand]]>
+                <![CDATA[07/01/2026]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[SANITY HOSPITAL]]>
+                <![CDATA[07/01/2026]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[02/01/2026]]>
+                <![CDATA[CPR Card]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[09/01/2026]]>
+                <![CDATA[DeepakT]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[04:00]]>
+                <![CDATA[CPR Card]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[10:00]]>
+                <![CDATA[DeepakT]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[initial]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[General Physician]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Monday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Follow up Consult]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[New Physician]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Tuesday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[General OPD]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[New Physician]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[Wednesday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[initial]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[ENT Services]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[Thursday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[General OPD]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[Cardiac clinic]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[Friday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[doctor visit charge nusring]]>
-              </value>
-            </param>
-            <param index="25">
-              <value>
-                <![CDATA[Tenchnic]]>
-              </value>
-            </param>
-            <param index="26">
-              <value>
-                <![CDATA[Saturday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="27">
-              <value>
-                <![CDATA[home visit]]>
-              </value>
-            </param>
-            <param index="28">
-              <value>
-                <![CDATA[Emergency clinic]]>
-              </value>
-            </param>
-            <param index="29">
-              <value>
-                <![CDATA[Sunday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="30">
-              <value>
-                <![CDATA[10:05]]>
-              </value>
-            </param>
-            <param index="31">
-              <value>
-                <![CDATA[13:00]]>
-              </value>
-            </param>
-            <param index="32">
-              <value>
-                <![CDATA[initial]]>
-              </value>
-            </param>
-            <param index="33">
-              <value>
-                <![CDATA[General Physician]]>
-              </value>
-            </param>
-            <param index="34">
-              <value>
-                <![CDATA[Sitting 2 Monday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="35">
-              <value>
-                <![CDATA[Follow up Consult]]>
-              </value>
-            </param>
-            <param index="36">
-              <value>
-                <![CDATA[New Physician]]>
-              </value>
-            </param>
-            <param index="37">
-              <value>
-                <![CDATA[Tuesday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="38">
-              <value>
-                <![CDATA[General OPD]]>
-              </value>
-            </param>
-            <param index="39">
-              <value>
-                <![CDATA[New Physician]]>
-              </value>
-            </param>
-            <param index="40">
-              <value>
-                <![CDATA[Wednesday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="41">
-              <value>
-                <![CDATA[initial]]>
-              </value>
-            </param>
-            <param index="42">
-              <value>
-                <![CDATA[ENT Services]]>
-              </value>
-            </param>
-            <param index="43">
-              <value>
-                <![CDATA[Thursday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="44">
-              <value>
-                <![CDATA[General OPD]]>
-              </value>
-            </param>
-            <param index="45">
-              <value>
-                <![CDATA[Cardiac clinic]]>
-              </value>
-            </param>
-            <param index="46">
-              <value>
-                <![CDATA[Friday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="47">
-              <value>
-                <![CDATA[doctor visit charge nusring]]>
-              </value>
-            </param>
-            <param index="48">
-              <value>
-                <![CDATA[Tenchnic]]>
-              </value>
-            </param>
-            <param index="49">
-              <value>
-                <![CDATA[Saturday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="50">
-              <value>
-                <![CDATA[home visit]]>
-              </value>
-            </param>
-            <param index="51">
-              <value>
-                <![CDATA[Emergency clinic]]>
-              </value>
-            </param>
-            <param index="52">
-              <value>
-                <![CDATA[Sunday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="53">
-              <value>
-                <![CDATA[14:00]]>
-              </value>
-            </param>
-            <param index="54">
-              <value>
-                <![CDATA[23:00]]>
-              </value>
-            </param>
-            <param index="55">
-              <value>
-                <![CDATA[initial]]>
-              </value>
-            </param>
-            <param index="56">
-              <value>
-                <![CDATA[General Physician]]>
-              </value>
-            </param>
-            <param index="57">
-              <value>
-                <![CDATA[Monday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="58">
-              <value>
-                <![CDATA[Follow up Consult]]>
-              </value>
-            </param>
-            <param index="59">
-              <value>
-                <![CDATA[New Physician]]>
-              </value>
-            </param>
-            <param index="60">
-              <value>
-                <![CDATA[Tuesday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="61">
-              <value>
-                <![CDATA[General OPD]]>
-              </value>
-            </param>
-            <param index="62">
-              <value>
-                <![CDATA[New Physician]]>
-              </value>
-            </param>
-            <param index="63">
-              <value>
-                <![CDATA[Wednesday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="64">
-              <value>
-                <![CDATA[initial]]>
-              </value>
-            </param>
-            <param index="65">
-              <value>
-                <![CDATA[ENT Services]]>
-              </value>
-            </param>
-            <param index="66">
-              <value>
-                <![CDATA[Thursday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="67">
-              <value>
-                <![CDATA[General OPD]]>
-              </value>
-            </param>
-            <param index="68">
-              <value>
-                <![CDATA[Cardiac clinic]]>
-              </value>
-            </param>
-            <param index="69">
-              <value>
-                <![CDATA[Friday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="70">
-              <value>
-                <![CDATA[doctor visit charge nusring]]>
-              </value>
-            </param>
-            <param index="71">
-              <value>
-                <![CDATA[Tenchnic]]>
-              </value>
-            </param>
-            <param index="72">
-              <value>
-                <![CDATA[Saturday Remaks Anup]]>
-              </value>
-            </param>
-            <param index="73">
-              <value>
-                <![CDATA[home visit]]>
-              </value>
-            </param>
-            <param index="74">
-              <value>
-                <![CDATA[Emergency clinic]]>
-              </value>
-            </param>
-            <param index="75">
-              <value>
-                <![CDATA[Sunday Remaks Anup]]>
+                <![CDATA[8545]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GenenrateSchedulingTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest@41fecb8b]" started-at="2025-12-24T12:41:19 IST" name="reportclosewindows" finished-at="2025-12-24T12:41:19 IST" duration-ms="249" status="PASS">
+        </test-method> <!-- FrontOfficeOP_InsuranceDocument -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.frontoffice.test.InsuranceDocumentTest@10959ece]" started-at="2026-01-07T18:59:17 IST" name="reportclosewindows" finished-at="2026-01-07T18:59:18 IST" duration-ms="621" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="Generate_Equipment_Schedule(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest@41fecb8b]" started-at="2025-12-24T12:41:19 IST" name="Generate_Equipment_Schedule" data-provider="EquimentMappingDataProvider" finished-at="2025-12-24T12:42:31 IST" duration-ms="71251" status="PASS">
+        <test-method signature="FrontOfficeIP_InsuranceDocument(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.frontoffice.test.InsuranceDocumentTest@10959ece]" started-at="2026-01-07T18:59:18 IST" name="FrontOfficeIP_InsuranceDocument" data-provider="insuranceDocumentDataProvider" finished-at="2026-01-07T18:59:30 IST" duration-ms="12408" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -419,153 +89,53 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[HIMANSHU]]>
+                <![CDATA[SPSL.500]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Anup Remaks Monday]]>
+                <![CDATA[07/01/2026]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[SANITY HOSPITAL]]>
+                <![CDATA[07/01/2026]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[25/12/2025]]>
+                <![CDATA[CPR Card]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[01/01/2026]]>
+                <![CDATA[DeepakT]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[09:00]]>
+                <![CDATA[CPR Card]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[13:00]]>
+                <![CDATA[DeepakT]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[initial]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[General Physician]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Automation Testing Remaks Mon]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Free Followup]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[General clinic]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Automation Testing Remaks Tuesday]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[home visit]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[ENT Services]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[Automation Testing Remaks]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[Follow up Consult]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[Cardiac clinic]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[Automation Testing  Remaks]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[home visit]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[ENT Services]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[Automation Testing Remaks]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[Follow up Consult]]>
-              </value>
-            </param>
-            <param index="25">
-              <value>
-                <![CDATA[Cardiac clinic]]>
-              </value>
-            </param>
-            <param index="26">
-              <value>
-                <![CDATA[Automation Testing  Remaks]]>
-              </value>
-            </param>
-            <param index="27">
-              <value>
-                <![CDATA[Free Followup]]>
-              </value>
-            </param>
-            <param index="28">
-              <value>
-                <![CDATA[Emergency clinic]]>
-              </value>
-            </param>
-            <param index="29">
-              <value>
-                <![CDATA[Automation Testing Remaks]]>
+                <![CDATA[8545]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Generate_Equipment_Schedule -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest@41fecb8b]" started-at="2025-12-24T12:42:31 IST" name="reportclosewindows" finished-at="2025-12-24T12:42:31 IST" duration-ms="66" status="PASS">
+        </test-method> <!-- FrontOfficeIP_InsuranceDocument -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.frontoffice.test.InsuranceDocumentTest@10959ece]" started-at="2026-01-07T18:59:30 IST" name="reportclosewindows" finished-at="2026-01-07T18:59:30 IST" duration-ms="144" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.frontoffice.test.GenerateScheduleAndEquipmentScheduleTest -->
+      </class> <!-- com.test.frontoffice.test.InsuranceDocumentTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

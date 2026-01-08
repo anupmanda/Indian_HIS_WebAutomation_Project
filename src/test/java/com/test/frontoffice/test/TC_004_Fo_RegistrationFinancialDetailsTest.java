@@ -92,7 +92,7 @@ public class TC_004_Fo_RegistrationFinancialDetailsTest extends FrontOfficePatie
 		//frontofficeregistration.enterOnReferredBy(refered_by_text);
 		frontofficeregistration.selectBySourceOfInformationAndSubSorurceDropdown(Soruce_of_Information_Drp ,Sub_Source_of_Information_Drp);
 		frontofficeregistration.clickOnSchemeCheckboxAndSelectScheme("Scheme Dropdown",Scheme_Drp);
-
+ 
 		// Save registration and handle potential popups
 
 		frontofficeregistration.clickOnSaveRegistrationButton("SaveRegistration");

@@ -180,4 +180,4 @@ public class TC_008_Fo_DoctorAppointmentTest extends FrontOfficeAppointmentSched
 		frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
 	}
 
-}
+} 

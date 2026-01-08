@@ -14,7 +14,7 @@ import com.test.readdata.ExcelSheetDataProvider;
 import com.test.ui.helper.CommanUtill;
 
 /**
- * @author Anup
+ * @author Anup 
  *
  * 26-Nov-2025
  */
@@ -26,12 +26,12 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 
 	@DataProvider(name = "ExcelUniversalDataProvider")
 	public Object[][] getData() throws IOException {
-
+ 
 		System.out.println("====TC_001Fetching data from Excel sheet: " + sheetName + " ====");
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
-	//@Test(dataProvider = "ExcelUniversalDataProvider", priority = 1)
+	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 1)
 
 	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
 			String Middle_Name_text, String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , 
@@ -46,7 +46,9 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 			String Religion_Drp, String socio_Economic_Class_Drp, String Category_Drp, String Soruce_of_Information_Drp,
 			String Sub_Source_of_Information_Drp, String Other_Source_of_Information_text, String Kin_Details_Name_text,
 			String Kin_Details_Relation_drp, String Kin_Details_Contact_Number_text, String Scheme_Drp, String Care_GiverType_Drp,
-			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
+			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text , 
+			String Vaccine_Drp , String Vaccine_Dose_Drp, String Vaccine_Brand_Drp , String Enter_Vaccine_Date , String Vaccine_Remaks 
+			)
 					throws IOException, InterruptedException, ClassNotFoundException {
 
 		logger = extent.createTest("TC_001 Front Office Registration Only Mondotry Filed ", "Front Office Patient Registration");
@@ -91,7 +93,7 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("NoBillingPage");
 
-	
+	  
 	}
 
 }

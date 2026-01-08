@@ -53,7 +53,9 @@ public class TC_010_Fo_DoctorAppointmentTest extends FrontOfficePatientRegistrat
 			String Religion_Drp, String socio_Economic_Class_Drp, String Category_Drp, String Soruce_of_Information_Drp,
 			String Sub_Source_of_Information_Drp, String Other_Source_of_Information_text, String Kin_Details_Name_text,
 			String Kin_Details_Relation_drp, String Kin_Details_Contact_Number_text, String Scheme_Drp, String Care_GiverType_Drp,
-			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
+			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text , 
+			String Vaccine_Drp , String Vaccine_Dose_Drp, String Vaccine_Brand_Drp , String Enter_Vaccine_Date , String Vaccine_Remaks 
+			)
 			throws IOException, InterruptedException, ClassNotFoundException {
 
 		logger = extent.createTest("TC_010 Fo Registration Appointment And Fo Billing ", "Front Office Patient Registration");
@@ -185,5 +187,5 @@ public class TC_010_Fo_DoctorAppointmentTest extends FrontOfficePatientRegistrat
 		
 	}
 	
-	
+	 
 }
