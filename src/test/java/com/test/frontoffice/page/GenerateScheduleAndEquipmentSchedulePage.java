@@ -10,6 +10,7 @@ import java.time.format.DateTimeParseException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -140,6 +141,7 @@ public class GenerateScheduleAndEquipmentSchedulePage extends GeneralBrowserSett
 	protected static String setting_3_remaks_sunday = "//input[@id='Setting3Remarks6']";
 	
 	//----------------------Generate Equipment Schedule-------------------------------
+	
 	protected static String generate_equiment_schedule_btn = "//a[@id='opbilldiagnostic']";
 	
 	protected static String generate_equiment_drp = "//select[@id='drpequipment']";
@@ -183,6 +185,73 @@ public class GenerateScheduleAndEquipmentSchedulePage extends GeneralBrowserSett
 	protected static String generate_equiment_setting_1_remaks_saturday = "//input[@id='Remarks5']";
 	protected static String generate_equiment_setting_1_remaks_sunday = "//input[@id='Remarks6']";
 	
+	//-------------------------------Setting 2 Generate Equiment ----------------------------
+	protected static String Mon_generate_equiment_sitting_2_Appo_type = "//select[@id='AppointmentType20']";
+	protected static String Mon_generate_equiment_sitting_2_clinic_type = "//select[@id='ClinicType20']";
+	protected static String Mon_generate_equiment_sitting_2_remaks = "//input[@id='Setting2Remarks0']";
+	
+	protected static String Tue_generate_equiment_sitting_2_Appo_type = "//select[@id='AppointmentType21']";
+	protected static String Tue_generate_equiment_sitting_2_clinic_type = "//select[@id='ClinicType21']";
+	protected static String Tue_generate_equiment_sitting_2_remaks = "//input[@id='Setting2Remarks1']";
+	
+	protected static String Wed_generate_equiment_sitting_2_Appo_type = "//select[@id='AppointmentType22']";
+	protected static String Wed_generate_equiment_sitting_2_clinic_type = "//select[@id='ClinicType22']";
+	protected static String Wed_generate_equiment_sitting_2_remaks = "//input[@id='Setting2Remarks2']";
+	
+	protected static String Thu_generate_equiment_sitting_2_Appo_type = "//select[@id='AppointmentType23']";
+	protected static String Thu_generate_equiment_sitting_2_clinic_type = "//select[@id='ClinicType23']";
+	protected static String Thu_generate_equiment_sitting_2_remaks = "//input[@id='Setting2Remarks3']";
+	
+	protected static String Fri_generate_equiment_sitting_2_Appo_type = "//select[@id='AppointmentType24']";
+	protected static String Fri_generate_equiment_sitting_2_clinic_type = "//select[@id='ClinicType24']";
+	protected static String Fri_generate_equiment_sitting_2_remaks = "//input[@id='Setting2Remarks4']";
+	
+	protected static String Sat_generate_equiment_sitting_2_Appo_type = "//select[@id='AppointmentType25']";
+	protected static String Sat_generate_equiment_sitting_2_clinic_type = "//select[@id='ClinicType25']";
+	protected static String Sat_generate_equiment_sitting_2_remaks = "//input[@id='Setting2Remarks5']";
+	
+	protected static String Sun_generate_equiment_sitting_2_Appo_type = "//select[@id='AppointmentType26']";
+	protected static String Sun_generate_equiment_sitting_2_clinic_type = "//select[@id='ClinicType26']";
+	protected static String Sun_generate_equiment_sitting_2_remaks = "//input[@id='Setting2Remarks6']";
+	
+	//--------------------------------Siting 3 Generate Equiment -----------------------------
+	
+	protected static String mon_generate_equiment_sitting_3_Appo_type = "//select[@id='AppointmentType30']";
+	protected static String mon_generate_equiment_sitting_3_Clinic_Type = "//select[@id='ClinicType30']";
+	protected static String mon_generate_equiment_sitting_3_Remaks = "//input[@id='Setting3Remarks0']";
+	
+	protected static String tue_generate_equiment_sitting_3_Appo_type = "//select[@id='AppointmentType31']";
+	protected static String tue_generate_equiment_sitting_3_Clinic_Type = "//select[@id='ClinicType31']";
+	protected static String tue_generate_equiment_sitting_3_Remaks = "//input[@id='Setting3Remarks1']";
+	
+	protected static String wed_generate_equiment_sitting_3_Appo_type = "//select[@id='AppointmentType32']";
+	protected static String wed_generate_equiment_sitting_3_Clinic_Type = "//select[@id='ClinicType32']";
+	protected static String wed_generate_equiment_sitting_3_Remaks = "//input[@id='Setting3Remarks2']";
+	
+	protected static String thu_generate_equiment_sitting_3_Appo_type = "//select[@id='AppointmentType33']";
+    protected static String thu_generate_equiment_sitting_3_Clinic_Type = "//select[@id='ClinicType33']";
+    protected static String thu_generate_equiment_sitting_3_Remaks = "//input[@id='Setting3Remarks3']";
+    
+    protected static String fri_generate_equiment_sitting_3_Appo_type = "//select[@id='AppointmentType34']";
+    protected static String fri_generate_equiment_sitting_3_Clinic_Type = "//select[@id='ClinicType34']";
+    protected static String fri_generate_equiment_sitting_3_Remaks = "//input[@id='Setting3Remarks4']";
+    
+    protected static String sat_generate_equiment_sitting_3_Appo_type = "//select[@id='AppointmentType35']";
+    protected static String sat_generate_equiment_sitting_3_Clinic_Type = "//select[@id='ClinicType35']";
+    protected static String sat_generate_equiment_sitting_3_Remaks = "//input[@id='Setting3Remarks5']";
+    
+    protected static String sun_generate_equiment_sitting_3_Appo_type = "//select[@id='AppointmentType36']";
+    protected static String sun_generate_equiment_sitting_3_Clinic_Type = "//select[@id='ClinicType36']";
+    protected static String sun_generate_equiment_sitting_3_Remaks = "//input[@id='Setting3Remarks6']";
+    
+    
+	
+	
+	
+	
+	
+	
+	
 	protected static String generate_equiment_save_icon = "//a[@id='btnSave']//i[@class='fa fa-save']";
 	protected static String generate_equiment_save_yes_popup = "//a[@id='btnyes']";
 	
@@ -204,10 +273,10 @@ public class GenerateScheduleAndEquipmentSchedulePage extends GeneralBrowserSett
 	}
 	//--------------------------------------Generate Schedule meanu ------------------------------
 	
-	public void clickOnGenerateScheduleButton(String schedule_meanu , String mark_patient_passed_aways) throws IOException, InterruptedException {
+	public void clickOnGenerateScheduleButton(String schedule_meanu , String Genrate_Schedule) throws IOException, InterruptedException {
 
 		CommanUtill.clickFunction(doctor_Schedule_meanu, schedule_meanu);
-		CommanUtill.clickFunction(generate_schedule, mark_patient_passed_aways);
+		CommanUtill.clickFunction(generate_schedule, Genrate_Schedule);
 	} 
 	
 	//----------------------Generate Schedule Page ----------------------------
@@ -311,8 +380,19 @@ public class GenerateScheduleAndEquipmentSchedulePage extends GeneralBrowserSett
 	
 	public void enterDateOfGenerateSchedule(String fromDate_1, String toDate_1) throws IOException, InterruptedException {
 		
+		//Frome Date
+		WebElement fromdate = driver.findElement(By.xpath(frome_date));
+		fromdate.sendKeys(Keys.CONTROL + "a");
+		fromdate.sendKeys(Keys.DELETE);
 		CommanUtill.textEnter(frome_date, fromDate_1);
+		fromdate.sendKeys(Keys.TAB);
+	
+		//ToDate
+		WebElement todate = driver.findElement(By.xpath(to_date));
+		todate.sendKeys(Keys.CONTROL + "a");
+		todate.sendKeys(Keys.DELETE);
 		CommanUtill.textEnter(to_date, toDate_1);
+		todate.sendKeys(Keys.TAB);
 	}
 	
 	public void setting_1FromeTimeAndToTime(String from_time , String to_time ) throws IOException , InterruptedException{
@@ -567,12 +647,27 @@ public class GenerateScheduleAndEquipmentSchedulePage extends GeneralBrowserSett
 	  
 	  CommanUtill.dropdownSelectByVisibleText(generate_equiment_facility_drp, faclility_drp);
   }
+
+  public void enterEqiumentMappingFromAndToDate(String From_date, String To_Date)
+	        throws IOException, InterruptedException {
+
+	    // FROM DATE
+	    WebElement fromDate = driver.findElement(By.xpath(generate_equiment_frome_date));
+	    fromDate.sendKeys(Keys.CONTROL + "a");
+	    fromDate.sendKeys(Keys.DELETE);
+	    CommanUtill.textEnter(generate_equiment_frome_date, From_date);
+	    fromDate.sendKeys(Keys.TAB);
+
+	    // TO DATE
+	    WebElement toDate = driver.findElement(By.xpath(generate_equiment_to_date));
+	    toDate.sendKeys(Keys.CONTROL + "a");
+	    toDate.sendKeys(Keys.DELETE);
+	    CommanUtill.textEnter(generate_equiment_to_date, To_Date);
+	    toDate.sendKeys(Keys.TAB);
+	}
+
   
-  public void enterEqiumentMappingFromAndToDate(String From_date , String To_Date) throws IOException, InterruptedException {
-	  
-	  CommanUtill.textEnter(generate_equiment_frome_date, From_date);
-	  CommanUtill.textEnter(generate_equiment_to_date, To_Date);
-  }
+  
   
 public void enterSitting_1_EqiumentMappingFromAndToTime(String From_time , String To_time) throws IOException, InterruptedException {
 	  
@@ -655,5 +750,143 @@ public void enterSitting_1_EqiumentMappingFromAndToTime(String From_time , Strin
     	CommanUtill.clickFunction(generate_equiment_save_icon, Save_btn);
     	CommanUtill.clickFunction(generate_equiment_save_yes_popup, Yes_popup);
     }
-   
+    
+  //***********************************Sitting 2 Generate Equiment ******************************************
+    
+    public void Sitting_2_EqiumentMappingFromAndToTime(String From_time , String To_time , String Sitting_2_ok) 
+    		throws IOException, InterruptedException {
+  	  
+  	  CommanUtill.dropdownSelectByVisibleText(setting_2_frome_time, From_time);
+  	  CommanUtill.dropdownSelectByVisibleText(setting_2_to_time, To_time);
+  	  CommanUtill.clickFunction(setting_2_tick_maks_btn, Sitting_2_ok);
+  	  
+	}
+    
+    public void Sitting_2_EqiumentMon_Mon_AppointmentClinicRemark(String Mon_Sitting_2_Appo_Drp , String Mon_Sitting_2_Clinic_Drp , String Mon_Sitting_2_Remaks ) 
+			throws IOException, InterruptedException {
+    	
+      CommanUtill.dropdownSelectByVisibleText(Mon_generate_equiment_sitting_2_Appo_type, Mon_Sitting_2_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(Mon_generate_equiment_sitting_2_clinic_type, Mon_Sitting_2_Clinic_Drp);
+  	  CommanUtill.textEnter(Mon_generate_equiment_sitting_2_remaks, Mon_Sitting_2_Remaks); 
+    }
+    
+    public void Sitting_2_Eqiument_Tue_AppointmentClinicRemark(String Tue_Sitting_2_Appo_Drp , String Tue_Sitting_2_Clinic_Drp , String Tue_Sitting_2_Remaks )
+    			throws IOException, InterruptedException {
+		
+	  CommanUtill.dropdownSelectByVisibleText(Tue_generate_equiment_sitting_2_Appo_type, Tue_Sitting_2_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(Tue_generate_equiment_sitting_2_clinic_type, Tue_Sitting_2_Clinic_Drp);
+  	  CommanUtill.textEnter(Tue_generate_equiment_sitting_2_remaks, Tue_Sitting_2_Remaks);
+    } 
+    
+    public void Sitting_2_Eqiument_Wed_AppointmentClinicRemark(String Wed_Sitting_2_Appo_Drp , String Wed_Sitting_2_Clinic_Drp , String Wed_Sitting_2_Remaks )
+    			throws IOException, InterruptedException {
+    	
+   	  CommanUtill.dropdownSelectByVisibleText(Wed_generate_equiment_sitting_2_Appo_type, Wed_Sitting_2_Appo_Drp);
+   	  CommanUtill.dropdownSelectByVisibleText(Wed_generate_equiment_sitting_2_clinic_type, Wed_Sitting_2_Clinic_Drp);
+   	  CommanUtill.textEnter(Wed_generate_equiment_sitting_2_remaks, Wed_Sitting_2_Remaks);
+    }
+    
+    public void Sitting_2_Eqiument_Thu_AppointmentClinicRemark(String Thu_Sitting_2_Appo_Drp , String Thu_Sitting_2_Clinic_Drp , String Thu_Sitting_2_Remaks )
+    			throws IOException, InterruptedException {
+    		
+		
+   	  CommanUtill.dropdownSelectByVisibleText(Thu_generate_equiment_sitting_2_Appo_type, Thu_Sitting_2_Appo_Drp);
+   	  CommanUtill.dropdownSelectByVisibleText(Thu_generate_equiment_sitting_2_clinic_type, Thu_Sitting_2_Clinic_Drp);
+   	  CommanUtill.textEnter(Thu_generate_equiment_sitting_2_remaks, Thu_Sitting_2_Remaks);
+	}
+    
+    public void Sitting_2_Eqiument_Fri_AppointmentClinicRemark(String Fri_Sitting_2_Appo_Drp , String Fri_Sitting_2_Clinic_Drp , String Fri_Sitting_2_Remaks )
+			throws IOException, InterruptedException {
+		
+	  CommanUtill.dropdownSelectByVisibleText(Fri_generate_equiment_sitting_2_Appo_type, Fri_Sitting_2_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(Fri_generate_equiment_sitting_2_clinic_type, Fri_Sitting_2_Clinic_Drp);
+  	  CommanUtill.textEnter(Fri_generate_equiment_sitting_2_remaks, Fri_Sitting_2_Remaks);
+	}
+    
+    public void Sitting_2_Eqiument_Sat_AppointmentClinicRemark(String Sat_Sitting_2_Appo_Drp , String Sat_Sitting_2_Clinic_Drp , String Sat_Sitting_2_Remaks )
+			throws IOException, InterruptedException {
+		
+	  CommanUtill.dropdownSelectByVisibleText(Sat_generate_equiment_sitting_2_Appo_type, Sat_Sitting_2_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(Sat_generate_equiment_sitting_2_clinic_type, Sat_Sitting_2_Clinic_Drp);
+  	  CommanUtill.textEnter(Sat_generate_equiment_sitting_2_remaks, Sat_Sitting_2_Remaks);
+	}
+    
+    public void Sitting_2_Eqiument_Sun_AppointmentClinicRemark(String Sun_Sitting_2_Appo_Drp , String Sun_Sitting_2_Clinic_Drp , String Sun_Sitting_2_Remaks )
+			throws IOException, InterruptedException {
+		
+	  CommanUtill.dropdownSelectByVisibleText(Sun_generate_equiment_sitting_2_Appo_type, Sun_Sitting_2_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(Sun_generate_equiment_sitting_2_clinic_type, Sun_Sitting_2_Clinic_Drp);
+  	  CommanUtill.textEnter(Sun_generate_equiment_sitting_2_remaks, Sun_Sitting_2_Remaks);
+  	  
+    }
+    
+//***********************************Sitting 3 Generate Equiment ******************************************
+    
+    public void Sitting_3_EqiumentMappingFromAndToTime(String From_time , String To_time , String Sitting_2_ok) 
+    		throws IOException, InterruptedException {
+  	  
+  	  CommanUtill.dropdownSelectByVisibleText(setting_3_frome_time, From_time);
+  	  CommanUtill.dropdownSelectByVisibleText(setting_3_to_time, To_time);
+  	  CommanUtill.clickFunction(setting_3_tick_maks_btn, Sitting_2_ok);
+  	  
+	}
+    
+    public void Sitting_3_EqiumentMon_Mon_AppointmentClinicRemark(String Mon_Sitting_3_Appo_Drp , String Mon_Sitting_3_Clinic_Drp , String Mon_Sitting_3_Remaks )	
+    			throws IOException, InterruptedException {
+		
+	  CommanUtill.dropdownSelectByVisibleText(mon_generate_equiment_sitting_3_Appo_type, Mon_Sitting_3_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(mon_generate_equiment_sitting_3_Clinic_Type, Mon_Sitting_3_Clinic_Drp);
+  	  CommanUtill.textEnter(mon_generate_equiment_sitting_3_Remaks, Mon_Sitting_3_Remaks);
+  	  
+    }
+    public void Sitting_3_Eqiument_Tue_AppointmentClinicRemark(String Tue_Sitting_3_Appo_Drp , String Tue_Sitting_3_Clinic_Drp , String Tue_Sitting_3_Remaks )
+				throws IOException, InterruptedException {
+    	
+      CommanUtill.dropdownSelectByVisibleText(tue_generate_equiment_sitting_3_Appo_type, Tue_Sitting_3_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(tue_generate_equiment_sitting_3_Clinic_Type, Tue_Sitting_3_Clinic_Drp);
+  	  CommanUtill.textEnter(tue_generate_equiment_sitting_3_Remaks, Tue_Sitting_3_Remaks);
+    }
+    
+    public void Sitting_3_Eqiument_Wed_AppointmentClinicRemark(String Wed_Sitting_3_Appo_Drp , String Wed_Sitting_3_Clinic_Drp , String Wed_Sitting_3_Remaks )
+    				throws IOException, InterruptedException {
+		
+	  CommanUtill.dropdownSelectByVisibleText(wed_generate_equiment_sitting_3_Appo_type, Wed_Sitting_3_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(wed_generate_equiment_sitting_3_Clinic_Type, Wed_Sitting_3_Clinic_Drp);
+  	  CommanUtill.textEnter(wed_generate_equiment_sitting_3_Remaks, Wed_Sitting_3_Remaks);
+  	  
+    }
+    
+    public void Sitting_3_Eqiument_Thu_AppointmentClinicRemark(String Thu_Sitting_3_Appo_Drp , String Thu_Sitting_3_Clinic_Drp , String Thu_Sitting_3_Remaks )
+					throws IOException, InterruptedException {
+    	
+    		  CommanUtill.dropdownSelectByVisibleText(thu_generate_equiment_sitting_3_Appo_type, Thu_Sitting_3_Appo_Drp);
+    	   	  CommanUtill.dropdownSelectByVisibleText(thu_generate_equiment_sitting_3_Clinic_Type, Thu_Sitting_3_Clinic_Drp);
+    	   	  CommanUtill.textEnter(thu_generate_equiment_sitting_3_Remaks, Thu_Sitting_3_Remaks);
+    }
+    
+    public void Sitting_3_Eqiument_Fri_AppointmentClinicRemark(String Fri_Sitting_3_Appo_Drp , String Fri_Sitting_3_Clinic_Drp , String Fri_Sitting_3_Remaks )
+    					throws IOException, InterruptedException {
+    	
+    	  CommanUtill.dropdownSelectByVisibleText(fri_generate_equiment_sitting_3_Appo_type, Fri_Sitting_3_Appo_Drp);
+    	  CommanUtill.dropdownSelectByVisibleText(fri_generate_equiment_sitting_3_Clinic_Type, Fri_Sitting_3_Clinic_Drp);
+	  	  CommanUtill.textEnter(fri_generate_equiment_sitting_3_Remaks, Fri_Sitting_3_Remaks);
+    }
+    
+    public void Sitting_3_Eqiument_Sat_AppointmentClinicRemark(String Sat_Sitting_3_Appo_Drp , String Sat_Sitting_3_Clinic_Drp , String Sat_Sitting_3_Remaks )
+						throws IOException, InterruptedException {
+    		
+		
+		  CommanUtill.dropdownSelectByVisibleText(sat_generate_equiment_sitting_3_Appo_type, Sat_Sitting_3_Appo_Drp);
+		  CommanUtill.dropdownSelectByVisibleText(sat_generate_equiment_sitting_3_Clinic_Type, Sat_Sitting_3_Clinic_Drp);
+	  	  CommanUtill.textEnter(sat_generate_equiment_sitting_3_Remaks, Sat_Sitting_3_Remaks);
+	}
+    
+    public void Sitting_3_Eqiument_Sun_AppointmentClinicRemark(String Sun_Sitting_3_Appo_Drp , String Sun_Sitting_3_Clinic_Drp , String Sun_Sitting_3_Remaks )
+			throws IOException, InterruptedException {
+		
+	  CommanUtill.dropdownSelectByVisibleText(sun_generate_equiment_sitting_3_Appo_type, Sun_Sitting_3_Appo_Drp);
+  	  CommanUtill.dropdownSelectByVisibleText(sun_generate_equiment_sitting_3_Clinic_Type, Sun_Sitting_3_Clinic_Drp);
+  	  CommanUtill.textEnter(sun_generate_equiment_sitting_3_Remaks, Sun_Sitting_3_Remaks);
+    }
+    
 }

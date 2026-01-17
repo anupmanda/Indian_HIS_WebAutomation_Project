@@ -93,7 +93,7 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("NoBillingPage");
 
-	  
+	   
 	}
 
 }

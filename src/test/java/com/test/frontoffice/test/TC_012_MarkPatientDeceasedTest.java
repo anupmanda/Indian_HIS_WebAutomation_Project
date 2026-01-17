@@ -85,6 +85,6 @@ public class TC_012_MarkPatientDeceasedTest extends MarkPatientDeceasedPage{
         markPatientDeceased.clickOnSaveButtonYespopup("Click on Save Button in Mark Patient Deceased Page" ,"Yes Popup after Save Mark Patient Deceased");
         markPatientDeceased.clickOnActiveAppointmentsYespopup("Yes Popup for Active Appointments after Marking Patient Deceased");
 	}
-
+ 
 	
 }

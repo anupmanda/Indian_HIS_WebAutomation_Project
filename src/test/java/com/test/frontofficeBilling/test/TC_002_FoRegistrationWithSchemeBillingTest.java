@@ -50,7 +50,9 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 			String Religion_Drp, String socio_Economic_Class_Drp, String Category_Drp, String Soruce_of_Information_Drp,
 			String Sub_Source_of_Information_Drp, String Other_Source_of_Information_text, String Kin_Details_Name_text,
 			String Kin_Details_Relation_drp, String Kin_Details_Contact_Number_text, String Scheme_Drp, String Care_GiverType_Drp,
-			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
+			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text , 
+			String Vaccine_Drp , String Vaccine_Dose_Drp, String Vaccine_Brand_Drp , String Enter_Vaccine_Date , String Vaccine_Remaks 
+			)
 			throws IOException, InterruptedException, ClassNotFoundException {
 
 		logger = extent.createTest("TC_001 Fo Registration Without Scheme And Biling", "Proces to Payment");
@@ -160,6 +162,7 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 		frontofficebilling.clickOnBillingYesPopup("Yes Popup Bill Genrate");
 		
 		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
+		frontofficebilling.ClosGCDScreeingOPBill("Close GCD Screeing OP Bill Popup");     //09-01-2026
 		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
 		//frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
 		
@@ -215,8 +218,9 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 		
 		frontofficebilling.processToPaymentByCheque(Payment_Mode_Cheque_drp , Cheque_no_Text , Cheque_Bank_Name_Drp ,
 				Cheque_Branch_Name_text);
-		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
 		
+		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
+		frontofficebilling.ClosGCDScreeingOPBill("Close GCD Screeing OP Bill Popup");     //09-01-2026
 		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
 		//frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
 		
@@ -272,9 +276,10 @@ public class TC_002_FoRegistrationWithSchemeBillingTest extends FrontOfficeBilli
 		frontofficebilling.processToPaymentByCreditCard(Payment_Mode_Credit_drp , Credit_Card_type_Drp , Credit_Card_no , Credit_Card_Bank_name_Drp,
 				Credit_Card_Trans_no);
 		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
+		frontofficebilling.ClosGCDScreeingOPBill("Close GCD Screeing OP Bill Popup");     //09-01-2026
 		
 		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
 		//frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
 		
 	}
-}
+} 

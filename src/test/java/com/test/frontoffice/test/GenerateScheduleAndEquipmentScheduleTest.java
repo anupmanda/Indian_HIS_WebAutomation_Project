@@ -62,17 +62,15 @@ public class GenerateScheduleAndEquipmentScheduleTest extends GenerateScheduleAn
 		generateSchedule.clickOnDashboardFrontOfficeBtn("Front Office Dashboard", Station_Drp,
 				"Yes Popup Mark Patient Deceased");
 		generateSchedule.clickOnGenerateScheduleButton("Add Doctor Schedule", "Generate Schedule Page");
-	/*	
+	
 		generateSchedule.selectBySpecializationAndDoctorName(Specialization_Drp , Doctor_Name_Drp);
 	//	generateSchedule.serachAppointmentDoctorButton("Check Appointment Schedule On Serach Icon");
-		
 	//	generateSchedule.updateSlotIcon("Update Icon" , "Save Update Icon");
 		
 		Thread.sleep(5000);
 		//------------2nd cash  ------
 		generateSchedule.clickOnPlushIcon("Click On Plush Icon");
 		generateSchedule.selectByFacilityDrp(Another_Facility_Drp);
-		//generateSchedule.AppointmentScheduleingFromDateAndToDate(Appointment_Frome_Date , Appointment_To_Date);
 		generateSchedule.enterDateOfGenerateSchedule(Appointment_Frome_Date , Appointment_To_Date);
 		
 		generateSchedule.setting_1FromeTimeAndToTime(Seting_1_From_Time , Siting_1_To_Date);
@@ -107,9 +105,8 @@ public class GenerateScheduleAndEquipmentScheduleTest extends GenerateScheduleAn
 	    generateSchedule.Setting3_SundayAppointmentType_ClinicType_Remarks(Sitting_3_Sun_Appointment_Type_Drp,Sitting_3_Sun_Clinic_Type_Drp, Sitting_3_Sun_Remaks);
 	    
 	    generateSchedule.clickOnSaveButton("Click On Save Icon" ,"Save Yes Popup");
-	    
-	    thread.sleep(1000);
-	*/
+	    Thread.sleep(2000);
+	
 	}
      private final String Equiment_sheetName = "Doctor_Equiment_Schedule";
 		
@@ -130,7 +127,23 @@ public class GenerateScheduleAndEquipmentScheduleTest extends GenerateScheduleAn
 				String Equiment_sitting_1_Thur_Clinic_Type , String Equiment_sitting_1_Thur_Remaks , String Equiment_sitting_1_Fri_Appo ,
 				String Equiment_sitting_1_Fri_Clinic_Type , String Equiment_sitting_1_Fri_Remaks , String Equiment_sitting_1_Sat_Appo , 
 				String Equiment_sitting_1_Sat_Clinic_Type , String Equiment_sitting_1_Satr_Remaks , String Equiment_sitting_1_Sun_Appo ,
-				String Equiment_sitting_1_Sun_Clinic_Type , String Equiment_sitting_1_Sun_Remaks) 
+				String Equiment_sitting_1_Sun_Clinic_Type , String Equiment_sitting_1_Sun_Remaks , String Equiment_mapping_Sitting_2_From_Time ,
+				String Equiment_Mapping_Sitting_2_To_Time , String Equiment_sitting_2_Mon_Appo , String Equiment_sitting_2_Mon_Clinic_Type ,
+				String Equiment_sitting_2_Mon_Remaks , String Equiment_sitting_2_Tue_Appo , String Equiment_sitting_2_Tue_Clinic_Type ,
+				String Equiment_sitting_2_Tue_Remaks , String Equiment_sitting_2_Wed_Appo , String Equiment_sitting_2_Wed_Clinic_Type ,
+				String Equiment_sitting_2_Wed_Remaks , String Equiment_sitting_2_Thu_Appo , String Equiment_sitting_2_Thu_Clinic_Type ,
+				String Equiment_sitting_2_Thu_Remaks , String Equiment_sitting_2_Fri_Appo , String Equiment_sitting_2_Fri_Clinic_Type ,
+				String Equiment_sitting_2_Fri_Remaks , String Equiment_sitting_2_Sat_Appo , String Equiment_sitting_2_Sat_Clinic_Type ,
+				String Equiment_sitting_2_Sat_Remaks , String Equiment_sitting_2_Sun_Appo , String Equiment_sitting_2_Sun_Clinic_Type ,
+				String Equiment_sitting_2_Sun_Remaks , String Equiment_mapping_Sitting_3_From_Time , String Equiment_Mapping_Sitting_3_To_Time ,
+				String Equiment_sitting_3_Mon_Appo , String Equiment_sitting_3_Mon_Clinic_Type , String Equiment_sitting_3_Mon_Remaks ,
+				String Equiment_sitting_3_Tue_Appo , String Equiment_sitting_3_Tue_Clinic_Type , String Equiment_sitting_3_Tue_Remaks ,
+				String Equiment_sitting_3_Wed_Appo , String Equiment_sitting_3_Wed_Clinic_Type , String Equiment_sitting_3_Wed_Remaks ,
+				String Equiment_sitting_3_Thu_Appo , String Equiment_sitting_3_Thu_Clinic_Type , String Equiment_sitting_3_Thu_Remaks ,
+				String Equiment_sitting_3_Fri_Appo , String Equiment_sitting_3_Fri_Clinic_Type , String Equiment_sitting_3_Fri_Remaks ,
+				String Equiment_sitting_3_Sat_Appo , String Equiment_sitting_3_Sat_Clinic_Type , String Equiment_sitting_3_Sat_Remaks ,
+				String Equiment_sitting_3_Sun_Appo , String Equiment_sitting_3_Sun_Clinic_Type , String Equiment_sitting_3_Sun_Remaks)
+		
 				throws IOException , InterruptedException {
 			
 			logger= extent.createTest("Generate Equipment Schedule", "Generate Equipment Schedule Test");
@@ -164,7 +177,47 @@ public class GenerateScheduleAndEquipmentScheduleTest extends GenerateScheduleAn
 					Equiment_sitting_1_Satr_Remaks);
 			equipment_Schedule.Equiment_Sitting_1_Sunday_AppointmentType_ClinicType_Remaks(Equiment_sitting_1_Sun_Appo , Equiment_sitting_1_Sun_Clinic_Type , 
 					Equiment_sitting_1_Sun_Remaks);
+		//new  	
+			equipment_Schedule.Sitting_2_EqiumentMappingFromAndToTime(Equiment_mapping_Sitting_2_From_Time , Equiment_Mapping_Sitting_2_To_Time ,
+					"Click On Sitting 2 Ok Button");
+			equipment_Schedule.Sitting_2_EqiumentMon_Mon_AppointmentClinicRemark( Equiment_sitting_2_Mon_Appo , Equiment_sitting_2_Mon_Clinic_Type , 
+					Equiment_sitting_2_Mon_Remaks);
+			equipment_Schedule.Sitting_2_Eqiument_Tue_AppointmentClinicRemark( Equiment_sitting_2_Tue_Appo , Equiment_sitting_2_Tue_Clinic_Type ,
+			   		Equiment_sitting_2_Tue_Remaks);
+			equipment_Schedule.Sitting_2_Eqiument_Wed_AppointmentClinicRemark( Equiment_sitting_2_Wed_Appo , Equiment_sitting_2_Wed_Clinic_Type ,
+					Equiment_sitting_2_Wed_Remaks);
+			equipment_Schedule.Sitting_2_Eqiument_Thu_AppointmentClinicRemark( Equiment_sitting_2_Thu_Appo , Equiment_sitting_2_Thu_Clinic_Type ,
+					Equiment_sitting_2_Thu_Remaks);
+			equipment_Schedule.Sitting_2_Eqiument_Fri_AppointmentClinicRemark( Equiment_sitting_2_Fri_Appo , Equiment_sitting_2_Fri_Clinic_Type ,
+					Equiment_sitting_2_Fri_Remaks);
+			equipment_Schedule.Sitting_2_Eqiument_Sat_AppointmentClinicRemark( Equiment_sitting_2_Sat_Appo , Equiment_sitting_2_Sat_Clinic_Type ,
+					Equiment_sitting_2_Sat_Remaks);
+			
+			equipment_Schedule.Sitting_2_Eqiument_Sun_AppointmentClinicRemark( Equiment_sitting_2_Sun_Appo , Equiment_sitting_2_Sun_Clinic_Type ,
+					Equiment_sitting_2_Sun_Remaks);
+			
+			equipment_Schedule.Sitting_3_EqiumentMappingFromAndToTime(Equiment_mapping_Sitting_3_From_Time , Equiment_Mapping_Sitting_3_To_Time ,
+					"Click On Sitting 3 Ok Button");
+			equipment_Schedule.Sitting_3_EqiumentMon_Mon_AppointmentClinicRemark( Equiment_sitting_3_Mon_Appo , Equiment_sitting_3_Mon_Clinic_Type , 
+					Equiment_sitting_3_Mon_Remaks);
+			equipment_Schedule.Sitting_3_Eqiument_Tue_AppointmentClinicRemark( Equiment_sitting_3_Tue_Appo , Equiment_sitting_3_Tue_Clinic_Type ,
+			   		Equiment_sitting_3_Tue_Remaks);
+			equipment_Schedule.Sitting_3_Eqiument_Wed_AppointmentClinicRemark( Equiment_sitting_3_Wed_Appo , Equiment_sitting_3_Wed_Clinic_Type ,
+					Equiment_sitting_3_Wed_Remaks);
+			equipment_Schedule.Sitting_3_Eqiument_Thu_AppointmentClinicRemark( Equiment_sitting_3_Thu_Appo , Equiment_sitting_3_Thu_Clinic_Type ,
+					Equiment_sitting_3_Thu_Remaks);
+			equipment_Schedule.Sitting_3_Eqiument_Fri_AppointmentClinicRemark( Equiment_sitting_3_Fri_Appo , Equiment_sitting_3_Fri_Clinic_Type ,
+					Equiment_sitting_3_Fri_Remaks);
+			equipment_Schedule.Sitting_3_Eqiument_Sat_AppointmentClinicRemark( Equiment_sitting_3_Sat_Appo , Equiment_sitting_3_Sat_Clinic_Type ,
+					Equiment_sitting_3_Sat_Remaks);
+			equipment_Schedule.Sitting_3_Eqiument_Sun_AppointmentClinicRemark( Equiment_sitting_3_Sun_Appo , Equiment_sitting_3_Sun_Clinic_Type ,
+					Equiment_sitting_3_Sun_Remaks);
+				
+			
+			
+			
+			
 			
 			equipment_Schedule.saveEqiumentMappingBtnAndYesPopup("Click On Equiment Mapping Save Icon " , "Yes Popup");
 		}
-}
+} 

@@ -83,6 +83,6 @@ public class TC_011_MergeAndUnmergeDuplicateTest extends MergeAndUnmergeDuplicat
         unmergePatient.unmergeUHIDFirst("First Check box of UHID");
 		unmergePatient.clickOnUnMergeIcon("Click On UnMerge Icon");
 
-	}
+	} 
  
-}
+} 

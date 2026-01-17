@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.frontoffice.test.InsuranceDocumentTest">
+      <class name="com.test.frontoffice.test.DoctorBlockScheduleAndEquipmentScheduleTest">
         <methods>
-          <include name="FrontOfficeIP_InsuranceDocument" invocation-numbers="0"/>
           <include name="reportclosewindows"/>
           <include name="launchBrowser"/>
+          <include name="BlockEquimentTest" invocation-numbers="0"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.frontoffice.test.InsuranceDocumentTest -->
+      </class> <!-- com.test.frontoffice.test.DoctorBlockScheduleAndEquipmentScheduleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

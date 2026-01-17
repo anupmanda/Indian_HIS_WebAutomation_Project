@@ -50,7 +50,9 @@ public class TC_004_FoRegistrationWithSchemeCompanyBillingTest extends FrontOffi
 			String Religion_Drp, String socio_Economic_Class_Drp, String Category_Drp, String Soruce_of_Information_Drp,
 			String Sub_Source_of_Information_Drp, String Other_Source_of_Information_text, String Kin_Details_Name_text,
 			String Kin_Details_Relation_drp, String Kin_Details_Contact_Number_text, String Scheme_Drp, String Care_GiverType_Drp,
-			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text)
+			String CareGiver_Name_text, String CareGiver_Relation_drp, String CareGiver_Contact_Number_text, String Timing_Remaks_text , 
+			String Vaccine_Drp , String Vaccine_Dose_Drp, String Vaccine_Brand_Drp , String Enter_Vaccine_Date , String Vaccine_Remaks 
+			)
 					throws IOException, InterruptedException, ClassNotFoundException {
 
 		logger = extent.createTest("TC_004 FO Registration With Financial Details ", "Front Office Patient Registration with All Required Fields And Non Required");
@@ -143,6 +145,8 @@ public class TC_004_FoRegistrationWithSchemeCompanyBillingTest extends FrontOffi
 
 		logger = extent.createTest("TC_004 Company Billing Types", "Front Office Patient Billing");
 		
+		
+		frontofficebilling.closeDocumentCheckListPopup("Close Document Check List Popup");
 		frontofficebilling.closeSchemePopup("Scheme Close Popup");
 		frontofficebilling.closeCompanyDetailsPopup("Company Details Popup Close Btn");
 		
@@ -162,7 +166,7 @@ public class TC_004_FoRegistrationWithSchemeCompanyBillingTest extends FrontOffi
 		frontofficebilling.clickOnBillTypeRadioButton("Click On Company And Insurance Radio Btn");
 		
 	    frontofficebilling.selectByCompanyType_CompanyAndRateContract(Bill_Company_types_Drp , Bill_Company_Drp, Bill_Rate_Contract_Drp);
-	    frontofficebilling.PopupDocumentCheckListInCompanyDetails(Company_Document_Id_Type_popup ,"Company_Document_Check List_Popup" ,"Company_Document_Check List_Save_btn");
+	   // frontofficebilling.PopupDocumentCheckListInCompanyDetails(Company_Document_Id_Type_popup ,"Company_Document_Check List_Popup" ,"Company_Document_Check List_Save_btn");
 	    frontofficebilling.plushIconCompanyDetailsPopup("Click On Plush Icon Button");
 	    frontofficebilling.YesPopupleasere_validate("Click on Yes Popup Company Details Popup");
 	    
@@ -178,9 +182,10 @@ public class TC_004_FoRegistrationWithSchemeCompanyBillingTest extends FrontOffi
 		frontofficebilling.clickOnBillingYesPopup("Yes Popup Bill Genrate");
 		
 		frontofficebilling.clickOnProcessPaymentSaveIcon("Save Process Payment Popup");
+		frontofficebilling.ClosGCDScreeingOPBill("Close GCD Screeing OP Bill Popup");     //09-01-2026
 		frontofficebilling.clickOngeneratedsuccessfullyPrintBillPopup("Generate Bill Number");
 		frontofficebilling.YesPopupOPDCArdPrint("Click ON OPD Card Print Button");
 	
-
+ 
 	}
 }

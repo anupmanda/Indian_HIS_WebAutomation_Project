@@ -31,7 +31,7 @@ public class TC_008_Fo_DoctorAppointmentTest extends FrontOfficeAppointmentSched
 
 	private final String SheetName_1 = "FO_Appointment_Scheduling";
 	private final String SheetName_2 = "FO_Registration_Page";
-	private final String SheetName_3 = "FO_Billing_Page";
+	private final String SheetName_3 = "FO_Billing_Page"; 
 
 	@DataProvider(name = "AppointmentDataProvider")
 	public Object[][] getAppointmentData() throws IOException {

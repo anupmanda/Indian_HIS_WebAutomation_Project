@@ -38,6 +38,7 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 
 	// --------------------------------------billing company popup, scheme detatils , scheme patient------------------------------ 
 	protected static String scheme_close_popup = "//a[@id='schemeRemarksPopupClose']//i[@class='fa fa-times']";
+	protected static String document_checklist_popup = "//a[@id='_closelistpop']//i[@class='fa fa-times']";   //09-01-2026
 	protected static String company_details_close_popup = "//a[@id='cancelinsurance']//i[@class='fa fa-times']";
 	protected static String company_details_Plush_Icon_Popup = "//a[@id='addinsurance']//i[@class='fa fa-plus']";
 	protected static String scheme_details_close_popup = "//a[@id='schemeclose']//i[@class='fa fa-times']";
@@ -162,6 +163,7 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String billing_header_No_popup  = "//a[@id='btnnobal2']";	
 
 	protected static String process_payment_save_btn  = "//a[@id='verify_modes']//i[@class='fa fa-save']";
+	protected static String GCD_Screening_op_close  = "//a[@id='closeGcdScreening']//i[@class='fa fa-times']";//09-01-2026
 
 	//--------------------------processPayment Popup----------------------
 	protected static String process_payment_mode_cash_drp  = "//select[starts-with(@id,'paymentMode1')]";
@@ -258,7 +260,9 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	protected static String discount_process_approve_remaks   = "//textarea[@id='ApprovalRemarks']";
 	protected static String discount_process_on_verify_approve_btn   = "//a[@id='ApprovedPassword']//i[@class='fa fa-check']";
 	protected static String discount_process_click_send_approval_req   = "//a[@id='ApprovalRequest']";
-
+	
+	protected static String menu_icon   = "//img[@id='showmenuIcon']";
+	
 
 
 
@@ -362,6 +366,14 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	}
 	//----------------------billing company popup, scheme detatils , scheme patient---------------------
 
+	public void closeDocumentCheckListPopup(String document_checklist) throws IOException, InterruptedException {
+		if (CommanUtill.isElementPresent(document_checklist_popup)) {
+			CommanUtill.clickFunction(document_checklist_popup, document_checklist);
+			System.out.println("close Document Check List Popup appeared and was closed.");
+		} else {
+			System.out.println("Document Check List Popup did not appear.");
+		}
+	}
 
 	public void closeSchemePopup(String Scheme_popup) throws IOException, InterruptedException {
 		if (CommanUtill.isElementPresent(scheme_close_popup)) {
@@ -549,6 +561,18 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 			System.out.println("Process to Payment Save Icon Did Not Appears");
 		}
 	}
+	
+	public void ClosGCDScreeingOPBill(String save_icon) throws IOException, InterruptedException{  
+
+		if(CommanUtill.isElementPresent(GCD_Screening_op_close)){
+			CommanUtill.clickFunction(GCD_Screening_op_close, save_icon);
+			System.out.println("Close GCD Screeing OP Popup");
+		}
+		else {
+			System.out.println("GCD Screeing OP Billing Did Not Appears");
+		}
+	}
+	
 	public void YesPopupConsultationSameDoctorPopup(String Same_doctor) throws IOException, InterruptedException{
 
 		if (CommanUtill.isElementPresent(same_doctor_visite_yes)) {
@@ -565,11 +589,37 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 		WebElement click_bod = driver.findElement(By.xpath("(//body)[1]"));
 		click_bod.click();
 	}
+	public void NoPopupBillPrint(String no_Bill_Print) throws IOException ,InterruptedException{
 
+		if (CommanUtill.isElementPresent(no_popup_bill_genrate)) {
+			CommanUtill.clickFunction(no_popup_bill_genrate, no_Bill_Print);
+			System.out.println("No Bill Print Button");
+		} else {
+			System.out.println("NO Bills Print did not appear.");
+		}	
+	}
+	
 	public void YesPopupOPDCArdPrint(String OPD_Card) throws IOException ,InterruptedException{
 
-		CommanUtill.clickFunction(opd_card_print_Yes_popup, OPD_Card);
+		if (CommanUtill.isElementPresent(opd_card_print_Yes_popup)) {
+			CommanUtill.clickFunction(opd_card_print_Yes_popup, OPD_Card);
+			System.out.println("OPD Card Print Yes Button");
+		} else {
+			System.out.println("OPD Card Print did not appear.");
+		}	
 	}
+	
+	public void NoPopupOPDCArdPrint(String NO_OPD_Card) throws IOException ,InterruptedException{
+
+		if (CommanUtill.isElementPresent(opd_card_print_No_popup)) {
+			CommanUtill.clickFunction(opd_card_print_No_popup, NO_OPD_Card);
+			System.out.println("No OPD Card Print Pop Button");
+		} else {
+			System.out.println("NO OPD Card Print did not appear.");
+		}	
+	}
+	
+	
 
 	public void selectBySourceTypeDropDwon(String source) throws IOException ,InterruptedException{
 
@@ -898,6 +948,12 @@ public void processToPaymentByCheque(String payment_mode , String ChequeNo , Str
 	public void clickOnRebillingSelfApprovesverifysingn(String filedName) throws IOException, InterruptedException{
 
 		CommanUtill.clickFunction(rerify_self_approve_icon, filedName);
+	}
+	
+	public void BillsMeanuIcon(String Meanu_Bar_Icon) throws IOException, InterruptedException{
+		
+		CommanUtill.clickFunction(menu_icon, Meanu_Bar_Icon);
+		
 	}
 
 

@@ -54,7 +54,7 @@ public class TC_013_CreateFamilyTest extends CreateFamilyPage{
 		//create_family.clickOnTablePatient("Pick The Serach Table Create Family");
 		
 		create_family.selectByRateContract(Rate_Contract_drp);
-		create_family.clickOnMappedScheme("Click On Scheme");
+		create_family.clickOnMappedScheme("Click On Scheme"); 
 		
 		//create_family.serachSchemeDrpAndCheckBox("click On Scheme Check Box",  Select_Scheme_Drp);
 		//create_family.enterSchemeValidity(Enter_Validity);
