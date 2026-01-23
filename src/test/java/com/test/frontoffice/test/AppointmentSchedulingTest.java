@@ -18,7 +18,7 @@ import com.test.ui.helper.CommanUtill;
  *
  * 24-Nov-2025
  */
-public class FrontOfficeAppointmentSchedulingTest extends FrontOfficeAppointmentSchedulingPage{
+public class AppointmentSchedulingTest extends FrontOfficeAppointmentSchedulingPage{
 
 	public FrontOfficeAppointmentSchedulingPage appointment = new FrontOfficeAppointmentSchedulingPage();
 	public FrontOfficeBillingPage frontofficebilling = new FrontOfficeBillingPage();
@@ -52,8 +52,9 @@ public class FrontOfficeAppointmentSchedulingTest extends FrontOfficeAppointment
 		appointment.selectByDoctorName(Select_Doctor_name);
 		//appointment.enterAppointmentBookingDate(Appointment_Booking_Date);
 
-		appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
-	
+		//appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time   or
+		appointment.selectFirstAvailableDateAndTimeGreenSlot(); //Select First Available Date And Time Slot
+		
 		appointment.enterAppointmentPopupFirstMIddileAndLastName(Appoint_First_Name + CommanUtill.randomAlphabets(3),
 				Appoint_Middle_Name + CommanUtill.randomAlphabets(3) , Appoint_Last_Name + CommanUtill.randomAlphabets(3));
 		appointment.enterAppointmentPopupMobileNumber(Appont_Mobile_number + CommanUtill.randomDigits(3));
@@ -97,7 +98,7 @@ public class FrontOfficeAppointmentSchedulingTest extends FrontOfficeAppointment
 		appointment.selectByDoctorName(Select_Doctor_name);
 		
 
-		appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
+		appointment.selectFirstAvailableDateAndTimeGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
 		
 		appointment.enterAppointmentPopupFirstMIddileAndLastName(Appoint_First_Name + CommanUtill.randomAlphabets(3),
 				Appoint_Middle_Name + CommanUtill.randomAlphabets(3) , Appoint_Last_Name + CommanUtill.randomAlphabets(3));
@@ -141,7 +142,7 @@ public class FrontOfficeAppointmentSchedulingTest extends FrontOfficeAppointment
 		appointment.selectByDoctorName(Select_Doctor_name);
 		
 
-		appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
+		appointment.selectFirstAvailableDateAndTimeGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
 
 		appointment.enterUHIDNumber(Enter_UHID);
 		appointment.selectByAppointmentPopupVisitTypeDrp(UHID_Appoint_Visit_Type_Drp);
@@ -183,7 +184,7 @@ public class FrontOfficeAppointmentSchedulingTest extends FrontOfficeAppointment
 		appointment.selectBySpecilityDrp(Specility_Drp,"Spceility_Serach_Icon");
 		appointment.selectByDoctorName(Select_Doctor_name);
 		
-		appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
+		appointment.selectFirstAvailableDateAndTimeGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
 
 		appointment.enterAppointmentPopupFirstMIddileAndLastName(Appoint_First_Name + CommanUtill.randomAlphabets(3),
 				Appoint_Middle_Name + CommanUtill.randomAlphabets(3) , Appoint_Last_Name + CommanUtill.randomAlphabets(3));
@@ -222,7 +223,7 @@ public class FrontOfficeAppointmentSchedulingTest extends FrontOfficeAppointment
 		appointment.selectBySpecilityDrp(Specility_Drp,"Spceility_Serach_Icon");
 		appointment.selectByDoctorName(Select_Doctor_name);
 		
-		appointment.selectFirstAvailableGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
+		appointment.selectFirstAvailableDateAndTimeGreenSlot();   //Accouding to Aviable Slot Click in Current Date And Time  
 	
 		appointment.enterAppointmentPopupFirstMIddileAndLastName(Appoint_First_Name + CommanUtill.randomAlphabets(3),
 				Appoint_Middle_Name + CommanUtill.randomAlphabets(3) , Appoint_Last_Name + CommanUtill.randomAlphabets(3));
@@ -241,8 +242,9 @@ public class FrontOfficeAppointmentSchedulingTest extends FrontOfficeAppointment
 		Thread.sleep(1000);
 		appointment.waitForScheduleToBeActive();
 		appointment.reClickAppointmentSlot();   //Same Slot Booking 
-		//appointment.updateModificationDate("02-Dec-2025");
-		appointment.updateModificationSlotBooking("07:00 PM" , "07:05 PM");
+		//appointment.updateModificationDate("19-Jan-2026");
+		//appointment.updateModificationSlotBooking("07:00 PM" , "07:05 PM");
+		appointment.updateModificationSlotBookingAuto("Update Slot Time");   //Auto Select Next Available Slot
 		appointment.updateModificationSaveButton("Click On Update Slot Save Button");
 		
 				

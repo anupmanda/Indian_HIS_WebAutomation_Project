@@ -10,28 +10,69 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.test.frontoffice.page.FrontOfficePatientRegistrationPage;
+import com.test.frontoffice.page.HealthCheckupPackagePlanAppointmentPage;
 import com.test.readdata.ExcelSheetDataProvider;
 import com.test.ui.helper.CommanUtill;
 
 /**
- * @author Anup 
+ * @author Anup
  *
- * 26-Nov-2025
+ * 20-Jan-2026
  */
-public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientRegistrationPage {
-
-	public FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOfficePatientRegistrationPage();
+public class HealthCheckupPackagePlanAppointmentTest extends HealthCheckupPackagePlanAppointmentPage{
+	
+	HealthCheckupPackagePlanAppointmentPage HealthCheckupPackagePlan = new HealthCheckupPackagePlanAppointmentPage();
+	FrontOfficePatientRegistrationPage frontofficeregistration = new FrontOfficePatientRegistrationPage();
 	public String patientRegistrationId;
-	private final String sheetName = "FO_Registration_Page";
+	
+	
+	private final String sheetName_HealthCheckUpPlan = "FO_HealthCheckupPackagePlan";
+	private final String sheetName_Registration = "FO_Registration_Page";
+	
+	@DataProvider(name = "HealthCheckPlaneDataProvider")
+	public Object[][] getHealthCheckUpData() throws IOException {
 
-	@DataProvider(name = "ExcelUniversalDataProvider")
-	public Object[][] getData() throws IOException {
- 
-		System.out.println("====TC_001Fetching data from Excel sheet: " + sheetName + " ====");
-		return ExcelSheetDataProvider.getExcelData(sheetName);
+		System.out.println("====Fetching data from Excel sheet: " + sheetName_HealthCheckUpPlan +" ====");
+		return ExcelSheetDataProvider.getExcelData(sheetName_HealthCheckUpPlan);
 	}
 
-	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 1)
+	@Test(dataProvider = "HealthCheckPlaneDataProvider" , priority = 2, enabled = true)
+
+	public void HealthCheckupAndPackagePlan(String Facility_Drp ,String Station_Drp , String OPd_Package_Enter_UHID , String OPD_Package_Test_Find ,
+			String OPD_Package_Doctor_Equiment_Drp , String Enter_OPD_Package_Date , String OPD_Package_Schedule_Slot_drp) 
+					throws Exception , InterruptedException , ClassNotFoundException , IllegalAccessException {
+
+		logger = extent.createTest("Health Checkup And Package Plan", "OPD Packages Test");
+       /*
+		HealthCheckupPackagePlan.selectByFacilityDropdwon(Facility_Drp);
+		HealthCheckupPackagePlan.clickOnDashboardFrontOfficeBtn("FO_Dashboard",Station_Drp , "Yes Popup");
+		*/
+		HealthCheckupPackagePlan.HealthcheckuppackageplaneAppointment("Doctor Menu Btn", "Appointment Page");
+		//HealthCheckupPackagePlan.enterUHID(OPd_Package_Enter_UHID);
+		
+		HealthCheckupPackagePlan.enterUHID(patientRegistrationId);
+		HealthCheckupPackagePlan.TestInOPDPackage(OPD_Package_Test_Find , "Click On OPD Package Test");
+		HealthCheckupPackagePlan.DoctorAndEquipmentDrp(OPD_Package_Doctor_Equiment_Drp);
+		
+		HealthCheckupPackagePlan.EnterAppointmentDate(Enter_OPD_Package_Date);
+	    Thread.sleep(1000);
+	    HealthCheckupPackagePlan.selectNextAvailableSlot("Appointment date should be greater than current date");
+	    Thread.sleep(5000);
+		HealthCheckupPackagePlan.CheckBoxOPDHealthCheckUpPackage("Check Box Select");
+		
+		HealthCheckupPackagePlan.SaveHealthCheckUpPackagePlane("Click On Save Helath Check Up Package" , "Save Yes Pop");
+		Thread.sleep(5000);
+		HealthCheckupPackagePlan.RefreshHeathCheckUpPackagePlane("Refresh Button");
+	}
+	
+	@DataProvider(name = "FoRegistrationDataProvider")
+	public Object[][] getRegistationData() throws IOException {
+ 
+		System.out.println("====TC_001Fetching data from Excel sheet: " + sheetName_Registration + " ====");
+		return ExcelSheetDataProvider.getExcelData(sheetName_Registration);
+	}
+
+	@Test(dataProvider = "FoRegistrationDataProvider", priority = 1 , enabled = true) 
 
 	public void verifyPatientRegistration(String Facility_Drp, String Station_Drp, String title_drp, String First_name_text, 
 			String Middle_Name_text, String LAst_Name_Text, String Gender_Drp, String DOB,String under_10_years , 
@@ -92,8 +133,9 @@ public class TC_001_Fo_RegistrationMandotryFiledTest extends FrontOfficePatientR
 		Assert.assertTrue(patientRegistrationId.length() > 5, "UHID is too short");
 
 		frontofficeregistration.NoBillingPageInRegistrationPagePopup("No BillingPage");
+		
+		frontofficeregistration.clickOnThreeLineRightSide("Click On Side Meanu Bar");
 
 	   
 	}
-
 }

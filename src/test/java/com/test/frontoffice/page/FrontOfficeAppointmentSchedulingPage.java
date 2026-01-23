@@ -74,13 +74,13 @@ public class FrontOfficeAppointmentSchedulingPage extends GeneralBrowserSetting 
 	protected static String unschedule_slot_physician = "//a[normalize-space()='Unschedule Slot Physician']";
 	protected static String unschedule_slot_physician_close = "//div[@id='popupunschedule']//i[@class='fa fa-times']";
 	protected static String doctors_remarks = "//textarea[@id='DoctorRemark']";
-//-------------------------------Slot Book --------------------------------------------
+	//-------------------------------Slot Book --------------------------------------------
 	private int selectedRowIndex = -1;
 	private int selectedColIndex = -1;
 	protected static String scheduleTableRows = "//table[@id='scheduleTable']//tr[position()>1]";
 
-//------------------------Appointment Scheduling Popup----------------------------------
-	
+	//------------------------Appointment Scheduling Popup----------------------------------
+
 	protected static String uhid_text = "//input[@id='UHID_Schedule']";
 	protected static String ip_no = "//input[@id='IPNO_Schedule']";
 	protected static String mobile_no = "//input[@id='fetch_mobile']";
@@ -102,42 +102,77 @@ public class FrontOfficeAppointmentSchedulingPage extends GeneralBrowserSetting 
 	protected static String refresh_icon_appoint_popup = "//a[@id='modal_refresh']//i[@class='fa fa-refresh']";
 	protected static String cancel_icon_appoint_popup = "//a[@id='modal_refresh']//i[@class='fa fa-refresh']";
 	protected static String close_icon_appoint_popup = "//span[@id='modelclose123']//i[@class='fa fa-times']";
-	
+
 	//--------------------Home Three Line----------------------------
-	
+
 	protected static String three_line_home = "//img[@id='showmenuIcon']";
-	
-//--------------------	Again Schedule Same Doctor Appointment -----------------
-	
+
+	//--------------------	Again Schedule Same Doctor Appointment -----------------
+
 	protected static String yes_popup_reappointment = "//a[@id='btnyes']";
-	
+
 	//-------------------------Existing UHID ---------------------------------------
-	  
-	 String menuXPathExistingUHID = "//ul[contains(@class,'context-menu-list')]//span[normalize-space()='Link to Existing UHID']";
-	 protected static String existing_UHId = "//input[@id='modaldataUHID']";
-	 protected static String existing_card = "//input[@id='modaldataUHID']";
-	 protected static String existing_save = "//a[@id='modalsaveuhid_map']//i[@class='fa fa-floppy-o']";
-	 protected static String existing_bill = "//i[contains(@class,'fa fa-usd')]";
-	 
+
+	String menuXPathExistingUHID = "//ul[contains(@class,'context-menu-list')]//span[normalize-space()='Link to Existing UHID']";
+	protected static String existing_UHId = "//input[@id='modaldataUHID']";
+	protected static String existing_card = "//input[@id='modaldataUHID']";
+	protected static String existing_save = "//a[@id='modalsaveuhid_map']//i[@class='fa fa-floppy-o']";
+	protected static String existing_bill = "//i[contains(@class,'fa fa-usd')]";
+
 	//--------------------- Popup Message --------------------------
-	 
-	 protected static String popup_message = "//p[normalize-space()='Appointment booked successfully!']";
-	 protected static String popup_close = "//div[@class='gritter-close']";
+
+	protected static String popup_message = "//p[normalize-space()='Appointment booked successfully!']";
+	protected static String popup_close = "//div[@class='gritter-close']";
+
+	//-----------------------Cancel Appointment-----------------------------
+
+	protected static String cancel_appoint = "//i[@class='fa fa-times border-icon']";
+	protected static String yes_cancel_appoint = "//a[@id='cancil_yesapp']";
+	protected static String no_cancel_appoint = "//a[@id='cancil_Noapp']";
+
+	//-----------------Modefication Of Date And Time----------------
+
+	protected static String appoint_modi_date = "//input[@id='modelfrmdate']";
+	protected static String appoint_modi_from_time = "//input[@id='apptfrom']";
+	protected static String appoint_modi_to_time = "//input[@id='apptto']";
+	protected static String appoint_modi_Save_btn = "//i[@class='fa fa-edit']";
 	
-	 //-----------------------Cancel Appointment-----------------------------
-	 
-	 protected static String cancel_appoint = "//i[@class='fa fa-times border-icon']";
-	 protected static String yes_cancel_appoint = "//a[@id='cancil_yesapp']";
-	 protected static String no_cancel_appoint = "//a[@id='cancil_Noapp']";
-	 
-	 //-----------------Modefication Of Date And Time----------------
-	 
-	 protected static String appoint_modi_date = "//input[@id='modelfrmdate']";
-	 protected static String appoint_modi_from_time = "//input[@id='apptfrom']";
-	 protected static String appoint_modi_to_time = "//input[@id='apptto']";
-	 protected static String appoint_modi_Save_btn = "//i[@class='fa fa-edit']";
-	 
-	 
+	//-----------------------Doctor Schedule Current Status----------------------------
+	protected static String Doctor_Schedule_Current_Status_btn = "//h4[@class='fa fa-calendar']";
+	protected static String spcility_drp = "//select[@id='drpSpec']";
+	protected static String doctor_name_drp = "//select[@id='drpDoctor']";
+	protected static String date= "//input[@id='frmdatestat']";
+	protected static String search_btn = "//a[@id='showrecords']//i[@class='fa fa-search']";
+	protected static String current_Status_drp = "//select[@id='drpstatus']";
+	protected static String purpose_drp = "//select[@id='msgpurpose']";
+	protected static String blank_box = "//input[@id='txtlatehour']";
+	protected static String all_chkk_box = "//input[@id='chkheader']";
+	protected static String chkk_box_First = "//tbody/tr[1]/td[1]/input[1]";
+	
+	protected static String send_message = "//a[@id='Msgsend']";
+	
+	//-------------------------Equipment Schedule--------------------------
+	
+	protected static String appointment_Equipment_schedule_btn = "//a[@id='eqip_show']";
+	protected static String Equipment_Department_drp = "//select[@id='Department']";
+	protected static String Equipment_Department_Serach = "//a[@id='eqip_dept']//i[@class='fa fa-search']";
+	protected static String Eqipment_drp = "//select[@id='Equipment']";
+	protected static String Serach_Eqipment_icon = "//a[@id='eqip_display_schedules']//i[@class='fa fa-search']";
+	protected static String date_Equipment = "//input[@id='frmdateEquipment']";
+	
+	protected static String equipment_count_Btn = "//a[@id='btnEquipmentCount']";
+	protected static String Close_Equipment_Count_Pop = "//a[@id='btncloseEquipmentCount']//i[@class='fa fa-times']";
+	protected static String equipment_test = "//select[@id='visittype']";
+	//protected static String date_Equipment = "//input[@id='frmdateEquipment']";
+	//protected static String date_Equipment = "//input[@id='frmdateEquipment']";
+	//protected static String date_Equipment = "//input[@id='frmdateEquipment']";
+	
+	
+	
+	
+	
+
+
 
 
 	public void selectByFacilityDropdwon(String facilityText) throws IOException, InterruptedException {
@@ -173,269 +208,269 @@ public class FrontOfficeAppointmentSchedulingPage extends GeneralBrowserSetting 
 
 		CommanUtill.dropdownSelectByVisibleText(doctor_drp, Doctor);
 	}
-	
+
 	public void enterAppointmentBookingDate(String Date) throws IOException , InterruptedException{
-		
+
 		CommanUtill.textEnter(date_appoint, Date);
 		driver.findElement(By.xpath(date_appoint)).sendKeys(Keys.ENTER);
 	}
 
 	//-----------------------1. Slot Booking New ------------------------- 
-	
+
 	public void selectFirstAvailableGreenSlot() throws IOException, InterruptedException {
 
-	    List<WebElement> rows = driver.findElements(By.xpath(scheduleTableRows));
-	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
-	    LocalTime now = LocalTime.now();
+		List<WebElement> rows = driver.findElements(By.xpath(scheduleTableRows));
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
+		LocalTime now = LocalTime.now();
 
-	    for (int i = 0; i < rows.size(); i++) {
-	        WebElement row = rows.get(i);
-	        String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
-	        try {
-	            LocalTime slotTime = LocalTime.parse(timeText, formatter);
-	            if (slotTime.isAfter(now)) {
+		for (int i = 0; i < rows.size(); i++) {
+			WebElement row = rows.get(i);
+			String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
+			try {
+				LocalTime slotTime = LocalTime.parse(timeText, formatter);
+				if (slotTime.isAfter(now)) {
 
-	                List<WebElement> cells = row.findElements(By.xpath("./td[position()>1]"));
-	                for (int j = 0; j < cells.size(); j++) {
-	                    WebElement cell = cells.get(j);
+					List<WebElement> cells = row.findElements(By.xpath("./td[position()>1]"));
+					for (int j = 0; j < cells.size(); j++) {
+						WebElement cell = cells.get(j);
 
-	                    String bgColor = cell.getCssValue("background-color");
-	                    if (bgColor.contains("135, 235, 135")) {
+						String bgColor = cell.getCssValue("background-color");
+						if (bgColor.contains("135, 235, 135")) {
 
-	                        CommanUtill.scrollIntoView(driver, cell);
-	                        Thread.sleep(300);
+							CommanUtill.scrollIntoView(driver, cell);
+							Thread.sleep(300);
 
-	                        ((JavascriptExecutor)driver)
-	                            .executeScript("arguments[0].click();", cell);
+							((JavascriptExecutor)driver)
+							.executeScript("arguments[0].click();", cell);
 
-	                        selectedRowIndex = i + 2;
-	                        selectedColIndex = j + 2;
+							selectedRowIndex = i + 2;
+							selectedColIndex = j + 2;
 
-	                        System.out.println("***************************************");
-	                        System.out.println("Selected Appointment Time: " + timeText);
-	                        System.out.println("Clicked slot at row " + selectedRowIndex + " col " + selectedColIndex);
-	                        System.out.println("***************************************");
-	                        return;
-	                    }
-	                }
-	            }
-	        } catch (DateTimeParseException e) {
-	            System.out.println("Could not parse time: " + timeText);
-	        }
-	    }
-	    throw new RuntimeException("No available green slot found in future time!");
+							System.out.println("***************************************");
+							System.out.println("Selected Appointment Time: " + timeText);
+							System.out.println("Clicked slot at row " + selectedRowIndex + " col " + selectedColIndex);
+							System.out.println("***************************************");
+							return;
+						}
+					}
+				}
+			} catch (DateTimeParseException e) {
+				System.out.println("Could not parse time: " + timeText);
+			}
+		}
+		throw new RuntimeException("No available green slot found in future time!");
 	}
-	
+
 	//----------2. Appointment book In Current Date And Time ----------
-	
-	
+
+
 	public void selectFirstAvailableDateAndTimeGreenSlot() throws IOException, InterruptedException {
 
-	    LocalDate todayDate = LocalDate.now();
-	    String todayStr = todayDate.format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"));
+		LocalDate todayDate = LocalDate.now();
+		String todayStr = todayDate.format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"));
 
-	    // --------- FIND TODAY COLUMN INDEX FROM HEADER ---------
-	    List<WebElement> headers = driver.findElements(By.xpath("//table/thead/tr/th"));
-	    int todayColumnIndex = -1;
+		// --------- FIND TODAY COLUMN INDEX FROM HEADER ---------
+		List<WebElement> headers = driver.findElements(By.xpath("//table/thead/tr/th"));
+		int todayColumnIndex = -1;
 
-	    for (int h = 1; h < headers.size(); h++) {  // h=1 because th[1] = TIME
-	        String headerText = headers.get(h).getText().trim();
-	        if (headerText.contains(todayStr)) {
-	            todayColumnIndex = h - 1;  // because cells start from td[2] → j=0
-	            break;
-	        }
-	    }
+		for (int h = 1; h < headers.size(); h++) {  // h=1 because th[1] = TIME
+			String headerText = headers.get(h).getText().trim();
+			if (headerText.contains(todayStr)) {
+				todayColumnIndex = h - 1;  // because cells start from td[2] → j=0
+				break;
+			}
+		}
 
-	    if (todayColumnIndex == -1) {
-	        throw new RuntimeException("Unable to detect today's date column!");
-	    }
+		if (todayColumnIndex == -1) {
+			throw new RuntimeException("Unable to detect today's date column!");
+		}
 
-	    LocalTime now = LocalTime.now();
-	    List<WebElement> rows = driver.findElements(By.xpath(scheduleTableRows));
+		LocalTime now = LocalTime.now();
+		List<WebElement> rows = driver.findElements(By.xpath(scheduleTableRows));
 
-	    // -------------------------------------------------------------
-	    //  STEP 1: Check ONLY today's column for valid green future slot
-	    // -------------------------------------------------------------
-	    for (int i = 0; i < rows.size(); i++) {
+		// -------------------------------------------------------------
+		//  STEP 1: Check ONLY today's column for valid green future slot
+		// -------------------------------------------------------------
+		for (int i = 0; i < rows.size(); i++) {
 
-	        WebElement row = rows.get(i);
+			WebElement row = rows.get(i);
 
-	        // TIME
-	        String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
-	        timeText = timeText.replace("am", "AM").replace("pm", "PM").trim();
+			// TIME
+			String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
+			timeText = timeText.replace("am", "AM").replace("pm", "PM").trim();
 
-	        LocalTime slotTime;
-	        try {
-	            slotTime = LocalTime.parse(timeText, DateTimeFormatter.ofPattern("h:mm a"));
-	        } catch (Exception e) {
-	            continue;
-	        }
+			LocalTime slotTime;
+			try {
+				slotTime = LocalTime.parse(timeText, DateTimeFormatter.ofPattern("h:mm a"));
+			} catch (Exception e) {
+				continue;
+			}
 
-	        // Get TODAY column cell only
-	        WebElement todayCell = row.findElement(By.xpath("./td[" + (todayColumnIndex + 2) + "]"));
-	        String bgColor = todayCell.getCssValue("background-color");
+			// Get TODAY column cell only
+			WebElement todayCell = row.findElement(By.xpath("./td[" + (todayColumnIndex + 2) + "]"));
+			String bgColor = todayCell.getCssValue("background-color");
 
-	        boolean isGreen = bgColor.contains("135, 235, 135");
+			boolean isGreen = bgColor.contains("135, 235, 135");
 
-	        if (isGreen && !slotTime.isBefore(now)) {
+			if (isGreen && !slotTime.isBefore(now)) {
 
-	            clickCell(todayCell, timeText, i, todayColumnIndex);
-	            return;
-	        }
-	    }
+				clickCell(todayCell, timeText, i, todayColumnIndex);
+				return;
+			}
+		}
 
-	    // -------------------------------------------------------------
-	    //  STEP 2: Today no slot found → scan FUTURE date columns
-	    // -------------------------------------------------------------
-	    for (int i = 0; i < rows.size(); i++) {
+		// -------------------------------------------------------------
+		//  STEP 2: Today no slot found → scan FUTURE date columns
+		// -------------------------------------------------------------
+		for (int i = 0; i < rows.size(); i++) {
 
-	        WebElement row = rows.get(i);
-	        List<WebElement> cells = row.findElements(By.xpath("./td[position()>1]"));
+			WebElement row = rows.get(i);
+			List<WebElement> cells = row.findElements(By.xpath("./td[position()>1]"));
 
-	        for (int j = todayColumnIndex + 1; j < cells.size(); j++) {
+			for (int j = todayColumnIndex + 1; j < cells.size(); j++) {
 
-	            WebElement cell = cells.get(j);
-	            String bgColor = cell.getCssValue("background-color");
+				WebElement cell = cells.get(j);
+				String bgColor = cell.getCssValue("background-color");
 
-	            boolean isGreen = bgColor.contains("135, 235, 135");
+				boolean isGreen = bgColor.contains("135, 235, 135");
 
-	            if (isGreen) {
-	                String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
-	                clickCell(cell, timeText, i, j);
-	                return;
-	            }
-	        }
-	    }
+				if (isGreen) {
+					String timeText = row.findElement(By.xpath("./td[1]")).getText().trim();
+					clickCell(cell, timeText, i, j);
+					return;
+				}
+			}
+		}
 
-	    throw new RuntimeException("No available green slot found!");
+		throw new RuntimeException("No available green slot found!");
 	}
 
 
 	private void clickCell(WebElement cell, String timeText, int i, int j)
-	        throws IOException, InterruptedException {
+			throws IOException, InterruptedException {
 
-	    CommanUtill.scrollIntoView(driver, cell);
-	    Thread.sleep(250);
+		CommanUtill.scrollIntoView(driver, cell);
+		Thread.sleep(250);
 
-	    ((JavascriptExecutor) driver)
-	        .executeScript("arguments[0].click();", cell);
+		((JavascriptExecutor) driver)
+		.executeScript("arguments[0].click();", cell);
 
-	    selectedRowIndex = i + 2;
-	    selectedColIndex = j + 2;
+		selectedRowIndex = i + 2;
+		selectedColIndex = j + 2;
 
-	    System.out.println("***************************************");
-	    System.out.println("Selected Appointment Time: " + timeText);
-	    System.out.println("Clicked slot at row " + selectedRowIndex + " col " + selectedColIndex);
-	    System.out.println("***************************************");
+		System.out.println("***************************************");
+		System.out.println("Selected Appointment Time: " + timeText);
+		System.out.println("Clicked slot at row " + selectedRowIndex + " col " + selectedColIndex);
+		System.out.println("***************************************");
 	}
 
 	//----------------After Slot Booking And ---------------------------
-	
+
 	public void waitForScheduleToBeActive() {
-	    new WebDriverWait(driver, Duration.ofSeconds(5))
-	        .until(ExpectedConditions.visibilityOfElementLocated(By.id("scheduleTable")));
+		new WebDriverWait(driver, Duration.ofSeconds(5))
+		.until(ExpectedConditions.visibilityOfElementLocated(By.id("scheduleTable")));
 	}
 
-	
+
 	public void reClickAppointmentSlot() throws IOException, InterruptedException {
 
-	    if (selectedRowIndex == -1 || selectedColIndex == -1) {
-	        throw new RuntimeException("ERROR: No stored slot indices — You must call selectFirstAvailableGreenSlot() first!");
-	    }
+		if (selectedRowIndex == -1 || selectedColIndex == -1) {
+			throw new RuntimeException("ERROR: No stored slot indices — You must call selectFirstAvailableGreenSlot() first!");
+		}
 
-	    // Dynamic XPath here
-	    String selectedSlotXPath = "//table[@id='scheduleTable']//tr[" + selectedRowIndex + "]/td[" + selectedColIndex + "]";
-	    System.out.println("RECLICK XPATH = " + selectedSlotXPath);
+		// Dynamic XPath here
+		String selectedSlotXPath = "//table[@id='scheduleTable']//tr[" + selectedRowIndex + "]/td[" + selectedColIndex + "]";
+		System.out.println("RECLICK XPATH = " + selectedSlotXPath);
 
-	    WebElement slot = driver.findElement(By.xpath(selectedSlotXPath));
-	    CommanUtill.scrollIntoView(driver, slot);
-	    Thread.sleep(500);
+		WebElement slot = driver.findElement(By.xpath(selectedSlotXPath));
+		CommanUtill.scrollIntoView(driver, slot);
+		Thread.sleep(500);
 
-	    ((JavascriptExecutor)driver).executeScript("arguments[0].click();", slot);
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", slot);
 
-	    System.out.println("SAME SLOT RE-CLICK SUCCESS");
+		System.out.println("SAME SLOT RE-CLICK SUCCESS");
 	}
 
 
- public void enterAppointmentPopupFirstMIddileAndLastName(String firstname , String middleName , String LastName)
-		throws IOException, InterruptedException{
-	
-	CommanUtill.textEnter(First_name_modi, firstname);
-	CommanUtill.textEnter(middle_name_modi, middleName);
-	CommanUtill.textEnter(last_name_modi, LastName);
-	
-}
-  public void enterAppointmentPopupMobileNumber(String Mobile_number )throws IOException, InterruptedException{
-		
-	CommanUtill.textEnter(mobile_no_modi, Mobile_number);
+	public void enterAppointmentPopupFirstMIddileAndLastName(String firstname , String middleName , String LastName)
+			throws IOException, InterruptedException{
 
-}
-  public void enterAppointmentPopupAge(String age )throws IOException, InterruptedException{
-		
+		CommanUtill.textEnter(First_name_modi, firstname);
+		CommanUtill.textEnter(middle_name_modi, middleName);
+		CommanUtill.textEnter(last_name_modi, LastName);
+
+	}
+	public void enterAppointmentPopupMobileNumber(String Mobile_number )throws IOException, InterruptedException{
+
+		CommanUtill.textEnter(mobile_no_modi, Mobile_number);
+
+	}
+	public void enterAppointmentPopupAge(String age )throws IOException, InterruptedException{
+
 		CommanUtill.textEnter(age_modi, age);
 
 	}
 
-  public void selectByAppointmentPopupGenderDrp(String gender )throws IOException, InterruptedException{
-		
+	public void selectByAppointmentPopupGenderDrp(String gender )throws IOException, InterruptedException{
+
 		CommanUtill.dropdownSelectByVisibleText(gender_modi, gender);
 
 	} 
-  
-  public void selectByAppointmentPopupVisitTypeDrp(String visit )throws IOException, InterruptedException{
-		
+
+	public void selectByAppointmentPopupVisitTypeDrp(String visit )throws IOException, InterruptedException{
+
 		CommanUtill.dropdownSelectByVisibleText(visit_type, visit);
 
 	}
-  
-  public void SelectByAppointmentSourceAndSubSourceTypeDrp(String Source , String SubSource) throws IOException, InterruptedException{
-	  
-	  CommanUtill.dropdownSelectByVisibleText(source_appointment, Source);
-	  CommanUtill.dropdownSelectByVisibleText(sub_source_appointment, SubSource);
-	  
-  }
-  
-  public void SelectByAppointmentPatientTypeDrp(String patientType) throws IOException, InterruptedException{
-	  
-	  CommanUtill.dropdownSelectByVisibleText(patient_type, patientType);
-	  
-  }
-  
-  public void enterLocolityAppointmentpopup(String locolity_text) throws IOException, InterruptedException{
-	  
-	  CommanUtill.textEnter(locality_po, locolity_text);
-	  
-  }
-  
-  public void enterRemaksAppointmentPopup(String Remaks_text)  throws IOException, InterruptedException{
-	  
-	  CommanUtill.textEnter(remaks_modi, Remaks_text);
-  }
-  
-  public void SaveIconAppointmentPopup(String SaveBtn)throws IOException, InterruptedException{
-	  
-	  CommanUtill.clickFunction(save_icon_appoint_popup, SaveBtn);
-  }
-  
-  
-  public String printPopupMessagefield() throws IOException, InterruptedException {
 
- 		if (CommanUtill.isElementPresent(popup_message)) {
+	public void SelectByAppointmentSourceAndSubSourceTypeDrp(String Source , String SubSource) throws IOException, InterruptedException{
 
- 			WebElement msgElement = driver.findElement(By.xpath(popup_message));
- 			String message = msgElement.getText();
- 			System.out.println("Popup message displayed: " + message);
+		CommanUtill.dropdownSelectByVisibleText(source_appointment, Source);
+		CommanUtill.dropdownSelectByVisibleText(sub_source_appointment, SubSource);
 
- 			System.out.println("Closing popup...");
- 			CommanUtill.clickFunction(popup_close, "Close Popup");
- 			System.out.println("Popup closed successfully.");
- 		} else {
- 			System.out.println("Popup not displayed, continuing test...");
- 		}
+	}
+
+	public void SelectByAppointmentPatientTypeDrp(String patientType) throws IOException, InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(patient_type, patientType);
+
+	}
+
+	public void enterLocolityAppointmentpopup(String locolity_text) throws IOException, InterruptedException{
+
+		CommanUtill.textEnter(locality_po, locolity_text);
+
+	}
+
+	public void enterRemaksAppointmentPopup(String Remaks_text)  throws IOException, InterruptedException{
+
+		CommanUtill.textEnter(remaks_modi, Remaks_text);
+	}
+
+	public void SaveIconAppointmentPopup(String SaveBtn)throws IOException, InterruptedException{
+
+		CommanUtill.clickFunction(save_icon_appoint_popup, SaveBtn);
+	}
+
+
+	public String printPopupMessagefield() throws IOException, InterruptedException {
+
+		if (CommanUtill.isElementPresent(popup_message)) {
+
+			WebElement msgElement = driver.findElement(By.xpath(popup_message));
+			String message = msgElement.getText();
+			System.out.println("Popup message displayed: " + message);
+
+			System.out.println("Closing popup...");
+			CommanUtill.clickFunction(popup_close, "Close Popup");
+			System.out.println("Popup closed successfully.");
+		} else {
+			System.out.println("Popup not displayed, continuing test...");
+		}
 		return popup_message;     
- 	}
+	}
 
- public void yesPopupAgainSameDoctorAppointment(String Yes_Popup) throws IOException, InterruptedException {
+	public void yesPopupAgainSameDoctorAppointment(String Yes_Popup) throws IOException, InterruptedException {
 		if (CommanUtill.isElementPresent(yes_popup_reappointment)) {
 			CommanUtill.clickFunction(yes_popup_reappointment, Yes_Popup);
 			System.out.println("Re_Appointment popup appeared and was Yes.");
@@ -443,35 +478,35 @@ public class FrontOfficeAppointmentSchedulingPage extends GeneralBrowserSetting 
 			System.out.println("Re_Appointment popup did not appear.");
 		}
 	}
- 
-  // --------------------------Right Click In Yellow Button ------------------------------------
-  
-  public void rightClickOnBookedYellowSlot() throws IOException, InterruptedException {
 
-	    String cellXPath = "//table[@id='scheduleTable']//tr[" + selectedRowIndex + "]/td[" + selectedColIndex + "]//span[contains(@class,'event')]";
+	// --------------------------Right Click In Yellow Button ------------------------------------
 
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    WebElement yellowSlotSpan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cellXPath)));
+	public void rightClickOnBookedYellowSlot() throws IOException, InterruptedException {
 
-	    // Scroll to element properly
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", yellowSlotSpan);
-	    Thread.sleep(400); // system stable wait
+		String cellXPath = "//table[@id='scheduleTable']//tr[" + selectedRowIndex + "]/td[" + selectedColIndex + "]//span[contains(@class,'event')]";
 
-	    String bgColor = yellowSlotSpan.getCssValue("background-color");
-	    System.out.println("Slot color now = " + bgColor);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement yellowSlotSpan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cellXPath)));
 
-	    Actions actions = new Actions(driver);
-	    actions.moveToElement(yellowSlotSpan).contextClick().perform();
+		// Scroll to element properly
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", yellowSlotSpan);
+		Thread.sleep(400); // system stable wait
 
-	    System.out.println("[OK] right click Done.");
+		String bgColor = yellowSlotSpan.getCssValue("background-color");
+		System.out.println("Slot color now = " + bgColor);
+
+		Actions actions = new Actions(driver);
+		actions.moveToElement(yellowSlotSpan).contextClick().perform();
+
+		System.out.println("[OK] right click Done.");
 	}
-  
-  String menuXPath = "//ul[contains(@class,'context-menu-list')]//span[normalize-space()='Add Patient']";
-  
-  public void clickAddPatientFromContextMenu(String Add_patient) throws IOException, InterruptedException {
 
-	    CommanUtill.clickFunction(menuXPath, Add_patient);
-	/*    
+	String menuXPath = "//ul[contains(@class,'context-menu-list')]//span[normalize-space()='Add Patient']";
+
+	public void clickAddPatientFromContextMenu(String Add_patient) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(menuXPath, Add_patient);
+		/*    
 	    WebDriverWait wait = new WebDriverWait(driver, 10);
 	    WebElement addPatientOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(menuXPath)));
 
@@ -480,75 +515,221 @@ public class FrontOfficeAppointmentSchedulingPage extends GeneralBrowserSetting 
 
 	    System.out.println("=== CLICKED Add Patient ===");
 	    Thread.sleep(500);
-	    */
+		 */
 	}
-  
-  //-----------------------three line Side Meanu--------------------
-  
-  public void clickOnThreeLineSideMeanuBar(String ClickMeanuBar) throws IOException, InterruptedException {
-	  
-	  CommanUtill.clickFunction(three_line_home, ClickMeanuBar);
-  }
-  
-  public void enterUHIDNumber(String UHID) throws IOException, InterruptedException {
-	  
-	  CommanUtill.textEnter(uhid_text, UHID);
-	  driver.findElement(By.xpath(uhid_text)).sendKeys(Keys.ENTER);
-  }
-  
- public void enterUHIDNumberRegistrationId(String UHID) throws IOException, InterruptedException {
-	  
-	  CommanUtill.textEnter(uhid_text, UHID);
-	 
-  }
-  
-  String menuXPathBill = "//ul[contains(@class,'context-menu-list')]//span[normalize-space()='Go To Bill']";
-  
-  public void clickAddTOBillPatient(String Add_Bill_patient) throws IOException, InterruptedException {
 
-	    CommanUtill.clickFunction(menuXPathBill, Add_Bill_patient);
-	
+	//-----------------------three line Side Meanu--------------------
+
+	public void clickOnThreeLineSideMeanuBar(String ClickMeanuBar) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(three_line_home, ClickMeanuBar);
 	}
-//-------------------------Existing UHID ---------------------------------------
-  
-  public void clickLinkTOExistingUHID(String existing_UHID) throws IOException, InterruptedException {
 
-	    CommanUtill.clickFunction(menuXPathExistingUHID, existing_UHID);
+	public void enterUHIDNumber(String UHID) throws IOException, InterruptedException {
+
+		CommanUtill.textEnter(uhid_text, UHID);
+		driver.findElement(By.xpath(uhid_text)).sendKeys(Keys.ENTER);
 	}
-  
-  public void enterExistingUHIDAndSaveToBill(String enter_uhid , String save , String Bill_Icon)  throws IOException, InterruptedException {
-	  
-	  CommanUtill.textEnter(existing_UHId, enter_uhid);
-	  CommanUtill.clickFunction(existing_save, save);
-	  Thread.sleep(1000);
-	  CommanUtill.clickFunction(existing_bill, Bill_Icon);
-	  
-  }
-  
-  //------------------------ Cancel Appointment -----------------------
-  
-  public void cancelAppointmentButton(String cancel_Appointment, String Yes_popup) throws IOException , InterruptedException{
-	  
-	  CommanUtill.clickFunction(cancel_appoint, cancel_Appointment);
-	  CommanUtill.clickFunction(yes_cancel_appoint, Yes_popup);
-  }
-  
-public void updateModificationDate(String modi_date) throws IOException , InterruptedException{
-	
-	CommanUtill.textEnter(appoint_modi_date, modi_date);
-	
-}
 
-public void updateModificationSlotBooking(String From_Date , String To_Date) throws IOException , InterruptedException{
+	public void enterUHIDNumberRegistrationId(String UHID) throws IOException, InterruptedException {
+
+		CommanUtill.textEnter(uhid_text, UHID);
+
+	}
+
+	String menuXPathBill = "//ul[contains(@class,'context-menu-list')]//span[normalize-space()='Go To Bill']";
+
+	public void clickAddTOBillPatient(String Add_Bill_patient) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(menuXPathBill, Add_Bill_patient);
+
+	}
+	//-------------------------Existing UHID ---------------------------------------
+
+	public void clickLinkTOExistingUHID(String existing_UHID) throws IOException, InterruptedException {
+
+		CommanUtill.clickFunction(menuXPathExistingUHID, existing_UHID);
+	}
+
+	public void enterExistingUHIDAndSaveToBill(String enter_uhid , String save , String Bill_Icon)  throws IOException, InterruptedException {
+
+		CommanUtill.textEnter(existing_UHId, enter_uhid);
+		CommanUtill.clickFunction(existing_save, save);
+		Thread.sleep(1000);
+		CommanUtill.clickFunction(existing_bill, Bill_Icon);
+
+	}
+
+	//------------------------ Cancel Appointment -----------------------
+
+	public void cancelAppointmentButton(String cancel_Appointment, String Yes_popup) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(cancel_appoint, cancel_Appointment);
+		CommanUtill.clickFunction(yes_cancel_appoint, Yes_popup);
+	}
+
+	public void updateModificationDate(String modi_date) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(appoint_modi_date, modi_date);
+
+	}
+
+	public void updateModificationSlotBooking(String From_Date , String To_Date) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(appoint_modi_from_time, From_Date);
+		CommanUtill.textEnter(appoint_modi_to_time, To_Date);
+	}
 	
-	CommanUtill.textEnter(appoint_modi_from_time, From_Date);
-	CommanUtill.textEnter(appoint_modi_to_time, To_Date);
-}
-
-public void updateModificationSaveButton(String Save_slot_update) throws IOException , InterruptedException{
 	
-	CommanUtill.clickFunction(appoint_modi_Save_btn, Save_slot_update);
-}
+	//------------------------ Update Modification time -------------------
+	
+	protected static String appoint_from_time_options =
+	        "//div[contains(@class,'bootstrap-timepicker-widget')]//span";
+	
+	public void updateModificationSlotBookingAuto(String dummy)
+	        throws IOException, InterruptedException {
 
+	    DateTimeFormatter formatter =
+	            DateTimeFormatter.ofPattern("hh:mm a");
 
+	    // 1️ READ ALREADY BOOKED FROM TIME
+	    String bookedFromText =
+	            driver.findElement(By.xpath(appoint_modi_from_time))
+	                  .getAttribute("value")
+	                  .trim();
+
+	    LocalTime bookedFromTime = LocalTime.parse(bookedFromText, formatter);
+
+	    // 2️ SLOT DURATION (as per UI)
+	    int slotDurationMinutes = 20;
+
+	    // 3️ CALCULATE NEXT SLOT
+	    LocalTime newFromTime = bookedFromTime.plusMinutes(slotDurationMinutes);
+
+	    LocalTime newToTime = newFromTime.plusMinutes(slotDurationMinutes);
+
+	    // 4️ UPDATE UI
+	    CommanUtill.textEnter(appoint_modi_from_time, newFromTime.format(formatter)
+	    );
+
+	    CommanUtill.textEnter(appoint_modi_to_time, newToTime.format(formatter)
+	    );
+
+	    // 5️ PRINT (VERIFICATION)
+	    System.out.println("======= SLOT UPDATED =======");
+	    System.out.println("Previous From Time : " + bookedFromTime);
+	    System.out.println("New From Time      : " + newFromTime);
+	    System.out.println("New To Time        : " + newToTime);
+	    System.out.println("============================");
+
+	}
+
+	public void updateModificationSaveButton(String Save_slot_update) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(appoint_modi_Save_btn, Save_slot_update);
+	}
+
+//-----------------------Doctor Schedule Current Status----------------------------
+
+	public void DoctorScheduleCurrentStatusButton(String Doctor_Schedule_Status) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(Doctor_Schedule_Current_Status_btn, Doctor_Schedule_Status);
+	}
+	
+	public void selectBySpcilityDrpCurrentStatus(String Specility )throws IOException, InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(spcility_drp, Specility);
+
+	}
+	
+	public void selectByDoctorNameDrpCurrentStatus(String Doctor) throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(doctor_name_drp, Doctor);
+	}
+	
+	public void enterCurrentStatusDate(String Current_Date) throws IOException , InterruptedException{
+
+		WebElement dateElement = driver.findElement(By.xpath(date));
+		dateElement.clear();
+		CommanUtill.textEnter(date, Current_Date);
+		dateElement.sendKeys(Keys.ENTER);
+	}
+	
+	public void searchButtonCurrentStatus(String Search_btn) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(search_btn, Search_btn);
+	}
+	public void selectByCurrentStatusDrp(String Current_Status )throws IOException, InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(current_Status_drp, Current_Status);
+
+	}
+	public void selectByPurposeDrp(String Purpose )throws IOException, InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(purpose_drp, Purpose);
+
+	}
+	
+	public void enterBlankBoxHours(String Blank_Hours) throws IOException , InterruptedException{
+
+		CommanUtill.textEnter(blank_box, Blank_Hours);
+	}
+	
+	public void clickAllCheckBoxCurrentStatus(String All_Checkbox) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(all_chkk_box, All_Checkbox);
+	}
+	public void clickFirstCheckBoxCurrentStatus(String First_Checkbox) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(chkk_box_First, First_Checkbox);
+	}
+	
+	public void clickOnSendCurrentSatusDoctor(String Send_Btn) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(send_message, Send_Btn);
+	}
+	
+	//-----------------------------Appointment Equipment Schedule --------------------------
+	
+	public void AppointmentEquipmentScheduleBtn(String Equipment_btn) throws IOException , InterruptedException{
+
+		CommanUtill.clickFunction(appointment_Equipment_schedule_btn, Equipment_btn);
+	}
+	
+	public void EquipmentScheduleDepartmentDrp(String Department_drp , String Department_Serach_Icon) throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(Equipment_Department_drp, Department_drp);
+		CommanUtill.clickFunction(Equipment_Department_Serach, Department_Serach_Icon);
+	}
+	
+	public void EquipmentScheduleEquipmentDrp(String Equipment , String Equipment_serach) throws IOException , InterruptedException{
+
+		CommanUtill.dropdownSelectByVisibleText(Eqipment_drp, Equipment);
+		CommanUtill.clickFunction(Serach_Eqipment_icon, Equipment_serach);
+	}
+	
+	public void EquipmentDate(String date) throws IOException , InterruptedException{
+		
+		WebElement Date = driver.findElement(By.xpath(date_Equipment));
+		Date.sendKeys(Keys.CONTROL + "a");
+		Date.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(date_Equipment, date);
+		Date.sendKeys(Keys.TAB);
+	}
+	public void EquipmentCountBtn(String Equi_count_btn , String Close_Equi_count) throws IOException , InterruptedException{
+		
+		CommanUtill.clickFunction(equipment_count_Btn, Equi_count_btn);
+		Thread.sleep(2000);
+		CommanUtill.clickFunction(Close_Equipment_Count_Pop, Close_Equi_count);
+	}
+	
+	public void EquipmentScheduleTestDrp(String Test_drp) throws IOException , InterruptedException{
+		
+		CommanUtill.dropdownSelectByVisibleText(equipment_test, Test_drp);
+	}
+
+	
+	
+	
+	
 }

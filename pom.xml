@@ -277,5 +277,10 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>Api</groupId>
+			<artifactId>Appium</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

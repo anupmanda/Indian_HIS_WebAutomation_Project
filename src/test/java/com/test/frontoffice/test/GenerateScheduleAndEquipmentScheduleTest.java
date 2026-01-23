@@ -213,11 +213,6 @@ public class GenerateScheduleAndEquipmentScheduleTest extends GenerateScheduleAn
 			equipment_Schedule.Sitting_3_Eqiument_Sun_AppointmentClinicRemark( Equiment_sitting_3_Sun_Appo , Equiment_sitting_3_Sun_Clinic_Type ,
 					Equiment_sitting_3_Sun_Remaks);
 				
-			
-			
-			
-			
-			
 			equipment_Schedule.saveEqiumentMappingBtnAndYesPopup("Click On Equiment Mapping Save Icon " , "Yes Popup");
 		}
 } 

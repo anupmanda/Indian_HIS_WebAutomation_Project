@@ -263,6 +263,11 @@ public class FrontOfficeBillingPage extends GeneralBrowserSetting{
 	
 	protected static String menu_icon   = "//img[@id='showmenuIcon']";
 	
+    //===================== Process Payment In Due Ammont  Popup 19-01-20226 =======================
+	protected static String process_payment_in_due_ammont_popup  = "//input[@id='payment_mode_value1']";
+	protected static String process_payment_in_due_Authorised_drp  = "//select[@id='ddlAuthorised']";
+	protected static String process_payment_in_due_Remarks  = "//input[@id='authorisedremarks']";
+	protected static String process_payment_in_due_Verify_approve_btn  = "//button[@id='authorised_verify']";
 
 
 
@@ -797,8 +802,28 @@ public void processToPaymentByCheque(String payment_mode , String ChequeNo , Str
 		CommanUtill.textEnter(process_payment_mode_credit_card_trans_no, Trans_no);
 	}
 
+	//--------------------- Process Payment Due Amount Popup ----------------------------
 	
-
+	public void processToPaymentInDueAmmontPopup(String payment_in_due_ammont ,String Save_pop_MOP , String authorised_drp , String Due_remaks , 
+			String Due_Amount_verify ) 
+			throws IOException , InterruptedException{
+		
+		CommanUtill.textEnter(process_payment_in_due_ammont_popup, payment_in_due_ammont);
+		CommanUtill.clickFunction(process_payment_save_btn, Save_pop_MOP);
+		CommanUtill.dropdownSelectByVisibleText(process_payment_in_due_Authorised_drp, authorised_drp);
+		CommanUtill.textEnter(process_payment_in_due_Remarks, Due_remaks);
+		CommanUtill.clickFunction(process_payment_in_due_Verify_approve_btn, Due_Amount_verify);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
