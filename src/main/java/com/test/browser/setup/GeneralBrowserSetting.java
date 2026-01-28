@@ -1,4 +1,3 @@
-
 package com.test.browser.setup;
 
 import java.io.FileInputStream;
@@ -135,7 +134,6 @@ public class GeneralBrowserSetting extends Reports {
 		
 	}
     
-	
 	public static void applicationLogin() throws IOException, InterruptedException {
 //
 		CommanUtill.enter("//input[@id='txtLoginName']", readPropertiesFileData("UserName"));
@@ -145,7 +143,7 @@ public class GeneralBrowserSetting extends Reports {
 		
 	}
 
- // @AfterClass
+  //@AfterClass
 	public static void closeBroser() throws InterruptedException {
 		Thread.sleep(5000);
      	driver.quit();	

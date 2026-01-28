@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+       <class name="com.test.frontofficeBilling.test.TC_001_FoRegistrationWithoutSchemeBillingTest"/>
+     <!--  <class name="com.test.frontofficeBilling.test.TC_002_FoRegistrationWithSchemeBillingTest"/> 
+     --> 
+       <class name="com.test.frontofficeBilling.test.TC_003_FoRegistrationWithSchemeOPDPackageBillingTest"/>
+       <class name="com.test.frontofficeBilling.test.TC_004_FoRegistrationWithSchemeCompanyBillingTest"/>
+       <class name="com.test.frontofficeBilling.test.TC_005_FoRegistrationWithBillsUtilityTest"/>
+       <class name="com.test.frontofficeBilling.test.TC_006_BillsUtility_DuesSettlementTest"/>
+       <class name="com.test.frontofficeBilling.test.TC_007_FoDepositsTest"/>
+       <class name="com.test.frontofficeBilling.test.TC_008_ApproveBillsRefundTest"/>
+       <class name="com.test.frontofficeBilling.test.TC_009_ReportDispatchTrackingTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

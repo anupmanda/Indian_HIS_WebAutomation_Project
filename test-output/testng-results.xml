@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-23T14:40:55 IST" name="Default suite" finished-at="2026-01-23T14:41:27 IST" duration-ms="31834">
+  <suite started-at="2026-01-28T10:46:20 IST" name="Default suite" finished-at="2026-01-28T10:47:48 IST" duration-ms="88603">
     <groups>
     </groups>
-    <test started-at="2026-01-23T14:40:55 IST" name="Default test" finished-at="2026-01-23T14:41:27 IST" duration-ms="31834">
-      <class name="com.test.frontoffice.test.FO_ConsultationQueueTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.frontoffice.test.FO_ConsultationQueueTest@3972a855]" started-at="2026-01-23T14:40:55 IST" name="launch" finished-at="2026-01-23T14:40:55 IST" duration-ms="131" status="PASS">
+    <test started-at="2026-01-28T10:46:20 IST" name="Default test" finished-at="2026-01-28T10:47:48 IST" duration-ms="88603">
+      <class name="com.test.IpBilling.test.AuditClearanceDashboardTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.IpBilling.test.AuditClearanceDashboardTest@6731787b]" started-at="2026-01-28T10:46:20 IST" name="launch" finished-at="2026-01-28T10:46:20 IST" duration-ms="140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.frontoffice.test.FO_ConsultationQueueTest@3972a855]" started-at="2026-01-23T14:40:55 IST" name="launchBrowser" finished-at="2026-01-23T14:41:03 IST" duration-ms="7473" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.IpBilling.test.AuditClearanceDashboardTest@6731787b]" started-at="2026-01-28T10:46:20 IST" name="launchBrowser" finished-at="2026-01-28T10:46:30 IST" duration-ms="10404" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="QueueConsultationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.frontoffice.test.FO_ConsultationQueueTest@3972a855]" started-at="2026-01-23T14:41:04 IST" name="QueueConsultationTest" data-provider="ConsultationDataProvider" finished-at="2026-01-23T14:41:27 IST" duration-ms="22790" status="PASS">
+        <test-method signature="AuditClearanceDashboard(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.IpBilling.test.AuditClearanceDashboardTest@6731787b]" started-at="2026-01-28T10:46:35 IST" name="AuditClearanceDashboard" data-provider="AduditClearanceDataProvider" finished-at="2026-01-28T10:47:47 IST" duration-ms="71884" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,33 +24,58 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[1st Floor NS]]>
+                <![CDATA[IP BILLING]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Cardiac Sciences]]>
+                <![CDATA[SANITY HOSPITAL]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[ABHIJEET SAWANT]]>
+                <![CDATA[SPSL.88545]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[SPSL.885551]]>
+                <![CDATA[21706]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[ALL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[New Admission]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Query (Audit)]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Resolved (Billing)]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Approved (Audit)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- QueueConsultationTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.frontoffice.test.FO_ConsultationQueueTest@3972a855]" started-at="2026-01-23T14:41:27 IST" name="reportclosewindows" finished-at="2026-01-23T14:41:27 IST" duration-ms="419" status="PASS">
+        </test-method> <!-- AuditClearanceDashboard -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.AuditClearanceDashboardTest@6731787b]" started-at="2026-01-28T10:47:47 IST" name="reportclosewindows" finished-at="2026-01-28T10:47:48 IST" duration-ms="1196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.frontoffice.test.FO_ConsultationQueueTest -->
+      </class> <!-- com.test.IpBilling.test.AuditClearanceDashboardTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

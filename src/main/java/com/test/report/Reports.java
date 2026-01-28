@@ -10,24 +10,20 @@ import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.test.readdata.ReadPropertiesFileData;
 import com.test.ui.helper.CommanUtill;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
+
 
 
 /**
@@ -120,13 +116,13 @@ public class Reports extends ReadPropertiesFileData {
 	@AfterMethod
 	public void reportclosewindows() throws IOException, InterruptedException{
 		extent.flush();
-		/*if(REPORTS.equalsIgnoreCase("Yes") || REPORTS.equalsIgnoreCase("YES")) {
+		if(REPORTS.equalsIgnoreCase("Yes") || REPORTS.equalsIgnoreCase("YES")) {
 			extent.flush();
 		}
 		else {
 			System.out.println("Please enable the report in properties file for html extent report !!!");
 			log.info("Please enable the report in properties file for html extent report !!!");
-		}*/
+		}
 	}
 
 }

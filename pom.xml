@@ -1,286 +1,174 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<groupId>HIS_WebAutomation_Project</groupId>
-	<artifactId>HIS_WebAutomation_Project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <modelVersion>4.0.0</modelVersion>
 
-	<name>WebAutomationI_UI_Project</name>
-	<url>http://maven.apache.org</url>
+    <groupId>HIS_WebAutomation_Project</groupId>
+    <artifactId>HIS_WebAutomation_Project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<!--  Updated properties for Java 21 -->
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>21</maven.compiler.source>
-		<maven.compiler.target>21</maven.compiler.target>
-		<version.cucumber>3.0.2</version.cucumber>
-	</properties>
+    <name>WebAutomation_UI_Project</name>
 
-	<build>
-		<plugins>
+    <!-- ================= PROPERTIES ================= -->
+    <properties>
+        <java.version>21</java.version>
+        <selenium.version>4.38.0</selenium.version>
+        <testng.version>7.11.0</testng.version>
+        <slf4j.version>2.0.12</slf4j.version>
+        <log4j2.version>2.22.1</log4j2.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-			<!--  Updated compiler plugin for Java 21 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
-				<configuration>
-					<source>21</source>
-					<target>21</target>
-				</configuration>
-			</plugin>
+    <!-- ================= BUILD ================= -->
+    <build>
+        <plugins>
 
-			<!-- Updated surefire plugin to run only testng.xml -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.5</version>
-				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>master.xml</suiteXmlFile>
-					</suiteXmlFiles>
-					<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-			</plugin>
+            <!-- Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.20</version>
-			</plugin>
+            <!-- Surefire (TestNG Suite) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>master.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>net.masterthought</groupId>
-				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>2.8.0</version>
-				<executions>
-					<execution>
-						<id>execution</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<projectName>API_Automation_Cucumber_Project</projectName>
-							<outputDirectory>${project.build.directory}/cucumber-reports-html</outputDirectory>
-							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-							<skippedFails>true</skippedFails>
-							<enableFlashCharts>false</enableFlashCharts>
-							<buildNumber>${project.name}</buildNumber>
-							<systemPropertyVariables>
-								<cucumber.options>${cucumber.options}</cucumber.options>
-							</systemPropertyVariables>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
-	<dependencies>
+    <!-- ================= DEPENDENCIES ================= -->
+    <dependencies>
 
-<!-- selenium update  3.141.59-->
+        <!-- ===== Selenium ===== -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
 
-<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.38.0</version>
-</dependency>
+        <!-- ===== WebDriverManager ===== -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.9.2</version>
+        </dependency>
 
-<!-- 
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
-		</dependency>
--->
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>5.9.2</version>
-		</dependency>
+        <!-- ===== TestNG ===== -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.17.0</version>
-		</dependency>
+        <!-- ===== Logging (SLF4J + Log4j2) ===== -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-core</artifactId>
-			<version>1.2.5</version>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>1.2.5</version>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
-			<scope>test</scope>
-		</dependency>
+        <!-- ===== Extent Reports ===== -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.1.7</version>
+        </dependency>
 
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-jvm-deps</artifactId>
-			<version>1.0.5</version>
-			<scope>provided</scope>
-		</dependency>
+        <!-- ===== Apache POI (Excel) ===== -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.5</version>
+        </dependency>
 
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>gherkin</artifactId>
-			<version>2.12.2</version>
-			<scope>provided</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.5</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.10.19</version>
-			<scope>test</scope>
-		</dependency>
-		
-<!-- 25-11 logger-->
-	<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>1.7.36</version>
-</dependency>
+        <!-- ===== REST Assured ===== -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
+        </dependency>
 
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-log4j12</artifactId>
-    <version>1.7.36</version>
-</dependency>
+        <!-- ===== JSON ===== -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
 
-<!--
-<dependency>
-    <groupId>cobertura</groupId>
-    <artifactId>cobertura</artifactId>
-    <version>1.8</version>
-</dependency>
--->
-		<dependency>
-			<groupId>com.vimalselvam</groupId>
-			<artifactId>cucumber-extentsreport</artifactId>
-			<version>3.0.2</version>
-		</dependency>
+        <!-- ===== Utilities ===== -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
+        </dependency>
 
-		<dependency>
-			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>3.1.1</version>
-		</dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>33.0.0-jre</version>
+        </dependency>
 
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>22.0</version>
-		</dependency>
+        <!-- ===== Lombok ===== -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
+            <scope>provided</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-			<version>3.0.3</version>
-		</dependency>
+        <!-- ===== SQL Server JDBC ===== -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.10.0.jre11</version>
+        </dependency>
 
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>json-path</artifactId>
-			<version>3.0.3</version>
-		</dependency>
+        <dependency>
+        	<groupId>WebAutomationI_UI_Project</groupId>
+        	<artifactId>WebAutomationI_UI_Project</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>com.triotree</groupId>
+        	<artifactId>his</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20090211</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.10.2</version>
-		</dependency>
-		
-		  <!-- Apache POI (Java 21 Compatible) -->
-           <dependency>
-               <groupId>org.apache.poi</groupId>
-               <artifactId>poi</artifactId>
-               <version>5.2.5</version>
-            </dependency>
-
-          <dependency>
-               <groupId>org.apache.poi</groupId>
-               <artifactId>poi-ooxml</artifactId>
-                <version>5.2.5</version>
-           </dependency>
-
-<!-- 
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml-schemas</artifactId>
-			<version>3.17</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.17</version>
-		</dependency>
--->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>2.0.0-alpha0</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.32</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.inject</groupId>
-			<artifactId>guice</artifactId>
-			<version>4.0</version>
-		</dependency>
-<!-- 
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>3.17</version>
-		</dependency>
--->
-		<!--SQL Server JDBC -->
-		<dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>mssql-jdbc</artifactId>
-			<version>12.10.0.jre11</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>Api</groupId>
-			<artifactId>Appium</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
 </project>

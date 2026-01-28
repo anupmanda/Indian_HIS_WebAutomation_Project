@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
@@ -1998,6 +2000,285 @@ public class CommanUtill extends GeneralBrowserSetting {
 			    WebElement element = driver.findElement(By.xpath(xpath));
 			    ((JavascriptExecutor)driver).executeScript("arguments[0].value='';", element);
 			}
+//================================27-01-20226=====================================================
+		 
+		 public static void clickByJSFunction(String xmlPath, String fieldName) throws IOException, InterruptedException
+		 {
+		     try
+		     {
+		         System.out.println("Start Clicking (JS) on (" + fieldName + ")");
+		         logger.log(Status.INFO, "Start Clicking (JS) on (" + fieldName + ")");
+		         passedScreenShotPics(driver); 
+
+		         WebElement element = driver.findElement(By.xpath(xmlPath));
+
+		         ((JavascriptExecutor) driver).executeScript(
+		             "arguments[0].setAttribute('style', 'background: yellow; border: 2px solid blue;');", element);
+		         Thread.sleep(300);
+
+		         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
+		         passedScreenShotPics(driver);   // Capture after click
+		         Thread.sleep(300);
+
+		         System.out.println("XPath-->> (" + xmlPath + ")");
+		         logger.log(Status.INFO, "( " + xmlPath + " )");
+		         System.out.println("Clicked (JS) on (" + fieldName + ")");
+		         logger.log(Status.INFO, "Clicked (JS) on (" + fieldName + ")");
+		         log.info("Clicked (JS) on (" + fieldName + ")");
+		         Thread.sleep(300);
+		     }
+		     catch (Exception E)
+		     {
+		         System.out.println(xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
+		         logger.log(Status.INFO, xmlPath + ": Not able to locate or click (JS) web element...");
+		         failureScreenShotPics(driver);  // Capture failure
+		         logger.log(Status.FAIL, xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
+		         System.out.println("Error while Clicking (JS) on the web element... " + E.getMessage());
+		         Assert.fail("Error while Clicking (JS) on the web element... ");
+		     }
+		 }
+		 
+		 public static String generateRandomName(int length) {
+			    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+			    StringBuilder name = new StringBuilder();
+			    for (int i = 0; i < length; i++) {
+			        int index = (int) (Math.random() * characters.length());
+			        name.append(characters.charAt(index));
+			    }
+			    return name.toString();
+			}
+		 
+		 public static void pressEnter(String xmlPath) throws IOException, InterruptedException {
+			    try {
+			        WebElement element = driver.findElement(By.xpath(xmlPath));
+
+			        // ✅ Highlight the element before pressing Enter (Yellow background + Blue border)
+			        ((JavascriptExecutor) driver).executeScript(
+			                "arguments[0].style.border='3px solid blue'; arguments[0].style.backgroundColor='yellow';",
+			                element);
+			        Thread.sleep(500);
+
+			        try {
+			            System.out.println("Start Pressing Enter on element (" + xmlPath + ")");
+			            if (logger != null) logger.log(Status.INFO, "Start Pressing Enter on element: (" + xmlPath + ")");
+			            passedScreenShotPics(driver); // Screenshot before pressing Enter
+
+			            element.sendKeys(Keys.ENTER);
+			            Thread.sleep(500);
+
+			            // ✅ Keep highlight visible after pressing Enter
+			            ((JavascriptExecutor) driver).executeScript(
+			                    "arguments[0].style.border='3px solid blue'; arguments[0].style.backgroundColor='yellow';",
+			                    element);
+
+			            passedScreenShotPics(driver); // Screenshot after pressing Enter
+
+			            System.out.println("Enter Pressed Successfully on element (" + xmlPath + ")");
+			            if (logger != null) logger.log(Status.PASS, "Enter pressed successfully on element: (" + xmlPath + ")");
+			        } 
+			        catch (Exception e) {
+			            System.out.println(xmlPath + ": Not able to press Enter key...");
+			            System.out.println("Error while pressing Enter... " + e.getMessage());
+			            if (logger != null) logger.log(Status.FAIL, xmlPath + ": Not able to press Enter key...");
+			            failureScreenShotPics(driver); // Screenshot on failure
+			        }
+
+			        // ✅ Optional: Remove highlight after a short delay
+			        Thread.sleep(500);
+			        ((JavascriptExecutor) driver).executeScript(
+			                "arguments[0].style.border=''; arguments[0].style.backgroundColor='';",
+			                element);
+
+			    } 
+			    catch (Exception e) {
+			       
+			        failureScreenShotPics(driver);
+			    }
+			}
+		 
+		 public static String generateRandomMobileNumber() {
+			    String digits = "0123456789";
+			    StringBuilder mobile = new StringBuilder();
+			    
+			    for (int i = 0; i < 10; i++) {
+			        int index = (int) (Math.random() * digits.length());
+			        mobile.append(digits.charAt(index));
+			    }
+			    
+			    return mobile.toString();
+			}
+		 
+		 public static void clearTextField(String xmlPath, String fieldName) throws IOException, InterruptedException {
+			    try {
+			        WebElement element = driver.findElement(By.xpath(xmlPath));
+
+			        // ✅ Highlight the element before clearing (Yellow background + Blue border)
+			        ((JavascriptExecutor) driver).executeScript(
+			                "arguments[0].style.border='3px solid blue'; arguments[0].style.backgroundColor='yellow';",
+			                element);
+			        Thread.sleep(500);
+
+			        try {
+			            System.out.println("Start Clearing Text Field (" + fieldName + ")");
+			            if (logger != null) logger.log(Status.INFO, "Start Clearing Text Field (" + fieldName + ")");
+			            System.out.println("XPath → (" + xmlPath + ")");
+			            if (logger != null) logger.log(Status.INFO, "( " + xmlPath + " )");
+
+			            passedScreenShotPics(driver);  // Screenshot before clearing
+
+			            element.clear(); // Perform clear action
+			            Thread.sleep(500);
+
+			            // ✅ Keep highlight for visibility after clearing
+			            ((JavascriptExecutor) driver).executeScript(
+			                    "arguments[0].style.border='3px solid blue'; arguments[0].style.backgroundColor='yellow';",
+			                    element);
+
+			            passedScreenShotPics(driver);  // Screenshot after clearing
+
+			            System.out.println("Cleared Text Field (" + fieldName + ")");
+			            if (logger != null) logger.log(Status.INFO, "Cleared Text Field (" + fieldName + ")");
+			        } 
+			        catch (Exception e) {
+			            System.out.println(xmlPath + ": Not able to clear web element for field (" + fieldName + ")");
+			            System.out.println("Error while Clearing the web element... " + e.getMessage());
+			            if (logger != null) logger.log(Status.FAIL, xmlPath + ": Not able to clear web element for field (" + fieldName + ")");
+			            failureScreenShotPics(driver);
+			        }
+
+			        // ✅ Optional: Remove highlight after few milliseconds
+			        Thread.sleep(500);
+			        ((JavascriptExecutor) driver).executeScript(
+			                "arguments[0].style.border=''; arguments[0].style.backgroundColor='';",
+			                element);
+
+			    } 
+			    catch (Exception e) {
+			       
+			        failureScreenShotPics(driver);
+			    }
+			}
+		 
+		 public static void clickIfPresent(String locator, String elementName) {
+			    try {
+			        By byLocator = By.xpath(locator); 
+
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+			        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+
+			        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			        js.executeScript(
+			                "arguments[0].setAttribute('style', 'border: 3px solid blue; background: yellow;');",
+			                element);
+
+			        Thread.sleep(300); 
+
+			        js.executeScript(
+			                "arguments[0].setAttribute('style', arguments[1]);",
+			                element, "");
+
+			        Thread.sleep(100);
+
+			        element.click();
+
+			        logger.log(Status.INFO, "Clicked on: " + elementName);
+			        System.out.println("Clicked on: " + elementName);
+
+			    } catch (Exception e) {
+			        logger.log(Status.INFO, elementName + " not present, skipping...");
+			        System.out.println(elementName + " not present, skipping...");
+			    }
+			}
+		 
+		 public static void RefreshScreen() {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+			    js.executeScript("location.reload(true);");
+			}
+		 
+		 public static void switchToNewWindow(WebDriver driver) {
+
+			    String parentWindow = driver.getWindowHandle();
+
+			    Set<String> allWindows = driver.getWindowHandles();
+
+			    for (String window : allWindows) {
+			        if (!window.equals(parentWindow)) {
+			            driver.switchTo().window(window);
+			            return;
+			        }
+			    }
+
+			    throw new RuntimeException("New window/tab not found");
+			}
+		 public static String generateRandomMobileNumber6() {
+			    String digits = "0123456789";
+			    StringBuilder mobile = new StringBuilder();
+			    
+			    for (int i = 0; i < 6; i++) {
+			        int index = (int) (Math.random() * digits.length());
+			        mobile.append(digits.charAt(index));
+			    }
+			    
+			    return mobile.toString();
+			}
+		 public static String getDateTimeMinus15Min() {
+			    DateTimeFormatter formatter =
+			            DateTimeFormatter.ofPattern("dd/MMM/yyyy HH:mm:ss");
+			    return LocalDateTime.now().minusMinutes(15).format(formatter);
+			}
+		 
+		 public static String setNewAdmissionDateMinus15Min() {
+
+			    LocalDateTime currentDateTime = LocalDateTime.now();
+			    LocalDateTime updatedDateTime = currentDateTime.minusMinutes(15);
+
+			    DateTimeFormatter formatter =
+			            DateTimeFormatter.ofPattern("dd/MMM/yyyy HH:mm:ss");
+
+			    return updatedDateTime.format(formatter);
+			    
+			    
+			}
+		 
+		 public static void closeAdmissionPopup(WebDriver driver) {
+			    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			    try {
+			        WebElement closeIcon1 = wait.until(
+			                ExpectedConditions.elementToBeClickable(
+			                        By.xpath("//div[@id='popup1200']//i[contains(@class,'fa-times')]")
+			                )
+			        );
+			        js.executeScript("arguments[0].click();", closeIcon1);
+			        System.out.println("✅ popup1200 closed");
+			        return;
+			    } catch (Exception ignored) {
+			    }
+
+			    try {
+			        WebElement closeIcon2 = wait.until(
+			                ExpectedConditions.elementToBeClickable(
+			                        By.xpath("//div[@id='popup800']//a[@title='Close']")
+			                )
+			        );
+			        js.executeScript("arguments[0].click();", closeIcon2);
+			        System.out.println("✅ popup800 closed");
+			        return;
+			    } catch (Exception ignored) {
+			    }
+
+			    System.out.println("⚠️ No admission popup found");
+			}
+		 
+		 protected static String CLickHomePage  = "//*[@id=\"body_clickable\"]/div[1]/div[1]/a[1]/img";
+		 public static void ClickHomePage() throws IOException, InterruptedException {
+		 	Thread.sleep(3000);
+		   CommanUtill.clickByJSFunction(CLickHomePage, "Clicked on The HomePage");
+		 }
+
 
  
 }
