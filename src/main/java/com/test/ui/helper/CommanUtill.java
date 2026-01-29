@@ -2000,7 +2000,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 			    WebElement element = driver.findElement(By.xpath(xpath));
 			    ((JavascriptExecutor)driver).executeScript("arguments[0].value='';", element);
 			}
-//================================27-01-20226=====================================================
+//================================27-01-20226  Asutosh =====================================================
 		 
 		 public static void clickByJSFunction(String xmlPath, String fieldName) throws IOException, InterruptedException
 		 {
@@ -2113,7 +2113,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 			    try {
 			        WebElement element = driver.findElement(By.xpath(xmlPath));
 
-			        // ✅ Highlight the element before clearing (Yellow background + Blue border)
+			        //  Highlight the element before clearing (Yellow background + Blue border)
 			        ((JavascriptExecutor) driver).executeScript(
 			                "arguments[0].style.border='3px solid blue'; arguments[0].style.backgroundColor='yellow';",
 			                element);
@@ -2130,7 +2130,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 			            element.clear(); // Perform clear action
 			            Thread.sleep(500);
 
-			            // ✅ Keep highlight for visibility after clearing
+			            //  Keep highlight for visibility after clearing
 			            ((JavascriptExecutor) driver).executeScript(
 			                    "arguments[0].style.border='3px solid blue'; arguments[0].style.backgroundColor='yellow';",
 			                    element);
@@ -2147,7 +2147,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 			            failureScreenShotPics(driver);
 			        }
 
-			        // ✅ Optional: Remove highlight after few milliseconds
+			        //  Optional: Remove highlight after few milliseconds
 			        Thread.sleep(500);
 			        ((JavascriptExecutor) driver).executeScript(
 			                "arguments[0].style.border=''; arguments[0].style.backgroundColor='';",

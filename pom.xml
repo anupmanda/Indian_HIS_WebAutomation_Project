@@ -159,14 +159,10 @@
             <version>12.10.0.jre11</version>
         </dependency>
 
+
         <dependency>
         	<groupId>WebAutomationI_UI_Project</groupId>
         	<artifactId>WebAutomationI_UI_Project</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-        	<groupId>com.triotree</groupId>
-        	<artifactId>his</artifactId>
         	<version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

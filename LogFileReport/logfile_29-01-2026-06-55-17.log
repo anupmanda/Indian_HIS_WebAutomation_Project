@@ -1,0 +1,23 @@
+2026-01-29 06:55:21 INFO  :457 - Start Entering...
+2026-01-29 06:55:21 INFO  :459 - //input[@id='txtLoginName']: Input Data : (sakti)
+2026-01-29 06:55:22 INFO  :465 - End Entering...
+2026-01-29 06:55:23 INFO  :457 - Start Entering...
+2026-01-29 06:55:23 INFO  :459 - //input[@id='txtPassword']: Input Data : (Admin@123)
+2026-01-29 06:55:24 INFO  :465 - End Entering...
+2026-01-29 06:55:24 INFO  :421 - Start Clicking on (Login Button)
+2026-01-29 06:55:25 INFO  :426 - ( //input[@id='btnLogin'] )
+2026-01-29 06:55:25 INFO  :428 - Clicked on (Login Button)
+2026-01-29 06:55:25 INFO  :421 - Start Clicking on (Login Yes)
+2026-01-29 06:55:27 INFO  :426 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2026-01-29 06:55:27 INFO  :428 - Clicked on (Login Yes)
+2026-01-29 06:55:33 INFO  :362 - Clicked on (Click On IP Billing DashBorad)
+2026-01-29 06:55:51 INFO  :362 - Clicked on (Station Yes Popup)
+2026-01-29 06:55:52 INFO  :362 - Clicked on (Click On Ip Billing Meanu)
+2026-01-29 06:55:54 INFO  :362 - Clicked on (Click On Ip Billing Drp)
+2026-01-29 06:55:57 INFO  :362 - Clicked on (Audit Clearance Dashboard Page)
+2026-01-29 06:56:03 INFO  :362 - Clicked on (Serach Icon)
+2026-01-29 06:56:11 INFO  :362 - Clicked on (Click On Save Audit Remarks)
+2026-01-29 06:56:22 INFO  :362 - Clicked on (Serach Icon)
+2026-01-29 06:56:24 INFO  :362 - Clicked on (save Clearance Icon)
+2026-01-29 06:56:25 INFO  :362 - Clicked on (Ok Enter Reason Save Clearance )
+2026-01-29 06:56:55 INFO  :362 - Clicked on (Serach Icon)

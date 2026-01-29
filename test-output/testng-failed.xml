@@ -6,7 +6,7 @@
       <class name="com.test.IpBilling.test.AuditClearanceDashboardTest">
         <methods>
           <include name="reportclosewindows"/>
-          <include name="AuditClearanceDashboard" invocation-numbers="0"/>
+          <include name="CheckIPNumberAuditClearanceDashboard" invocation-numbers="0"/>
           <include name="launchBrowser"/>
           <include name="launch"/>
         </methods>

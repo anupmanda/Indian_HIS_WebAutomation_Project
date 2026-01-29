@@ -1,0 +1,20 @@
+2026-01-28 15:20:16 INFO  :457 - Start Entering...
+2026-01-28 15:20:16 INFO  :459 - //input[@id='txtLoginName']: Input Data : (sakti)
+2026-01-28 15:20:17 INFO  :465 - End Entering...
+2026-01-28 15:20:17 INFO  :457 - Start Entering...
+2026-01-28 15:20:17 INFO  :459 - //input[@id='txtPassword']: Input Data : (Admin@123)
+2026-01-28 15:20:18 INFO  :465 - End Entering...
+2026-01-28 15:20:18 INFO  :421 - Start Clicking on (Login Button)
+2026-01-28 15:20:19 INFO  :426 - ( //input[@id='btnLogin'] )
+2026-01-28 15:20:19 INFO  :428 - Clicked on (Login Button)
+2026-01-28 15:20:19 INFO  :421 - Start Clicking on (Login Yes)
+2026-01-28 15:20:21 INFO  :426 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2026-01-28 15:20:21 INFO  :428 - Clicked on (Login Yes)
+2026-01-28 15:20:25 INFO  :362 - Clicked on (Click On IP Billing DashBorad)
+2026-01-28 15:20:33 INFO  :362 - Clicked on (Station Yes Popup)
+2026-01-28 15:20:35 INFO  :362 - Clicked on (Click On Ip Billing Meanu)
+2026-01-28 15:20:36 INFO  :362 - Clicked on (Click On Ip Billing Drp)
+2026-01-28 15:20:39 INFO  :362 - Clicked on (Audit Clearance Dashboard Page)
+2026-01-28 15:20:45 INFO  :362 - Clicked on (Serach Icon)
+2026-01-28 15:20:48 INFO  :362 - Clicked on (Anup Approved Audit)
+2026-01-28 15:20:52 INFO  :362 - Clicked on (Click On Save Audit Remarks)

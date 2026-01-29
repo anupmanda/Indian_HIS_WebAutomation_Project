@@ -48,6 +48,22 @@ public class AuditClearanceDashboardPage extends GeneralBrowserSetting {
 	protected static  String Audit_Clearance_search_icon = "//i[@class='fa fa-search ']";
 	protected static  String Audit_Clearance_Status_Drp = "//select[@id='_ddlStatus']";
 	
+	//======================== Table Clearance ===============================
+	
+	protected static  String remaks_Queries_table = 
+			"//div[@class='table-border pending-investigation-table']//table[@id=\"_tblAuditClearance\"]//tr[1]//td[8]";
+	protected static  String Add_Remarks = "//textarea[@id='_Remarks']";
+	protected static  String Add_Remarks_Status_drp = "//select[@id='_ddlStatus']";
+	protected static  String Save_Add_Remarks = "//i[@class='fa fa-save']";
+	protected static  String Close_Add_Remarks = "//i[@class='fa fa-close']";
+	
+	protected static  String After_Remarks_Save_Clearance = 
+			"//div[@class='table-border pending-investigation-table']//tr[1]//td[10]";
+	
+	protected static  String Save_Clearance_Ok_Enter_Reason = "//a[@id='btnOK']";
+	
+	
+	
 	
 	
 	
@@ -131,6 +147,49 @@ public class AuditClearanceDashboardPage extends GeneralBrowserSetting {
 		
 		CommanUtill.dropdownSelectByVisibleText(Audit_Clearance_Status_Drp, Status);
 	}
+	
+//=========================Table Clearance ==================================
+	String parentWindow;
+
+	
+	public void Table_AuditRemarkandQuery(String AuditRemarkandQuery)
+	        throws IOException, InvalidApplicationException, InterruptedException {
+
+	    parentWindow = driver.getWindowHandle();   //  store parent
+	    CommanUtill.clickTabSwitchToAnotherWindow(remaks_Queries_table, AuditRemarkandQuery);
+	}
+	public void switchBackToParentWindow() {
+	    driver.switchTo().window(parentWindow);
+	}
+
+
+	
+	public void Audit_Remark_AndQuery(String Add_Remarks_Box) 
+			throws IOException , InvalidApplicationException, InterruptedException {
+		
+		CommanUtill.textEnter(Add_Remarks, Add_Remarks_Box);
+	}
+	
+	public void StatusDrpPop(String Add_Remarks_Status_Drp) throws IOException , InvalidApplicationException, InterruptedException {
+		
+		CommanUtill.dropdownSelectByVisibleText(Add_Remarks_Status_drp, Add_Remarks_Status_Drp);	
+	}
+	
+	public void SaveAuditRemarksAndQueriesPop(String Save , String Close_Add_Remarks_pop) throws IOException , InvalidApplicationException, InterruptedException {
+		
+		CommanUtill.clickFunction(Save_Add_Remarks, Save);
+		//CommanUtill.clickFunction(Close_Add_Remarks, Close_Add_Remarks_pop);
+		
+	}
+	
+	public void SaveClearanceicon(String Save_Clearance , String ok_Clearance_pop) throws IOException , InvalidApplicationException, InterruptedException {
+		
+		CommanUtill.clickFunction(After_Remarks_Save_Clearance, Save_Clearance);
+		CommanUtill.clickFunction(Save_Clearance_Ok_Enter_Reason, ok_Clearance_pop);
+	}
+		
+	
+	
 	
 	
 	
