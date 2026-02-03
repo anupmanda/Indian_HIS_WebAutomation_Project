@@ -31,7 +31,7 @@ public class TC_007_FoDepositsTest extends FoDepositsPage {
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
-	//@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1)
+	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1)
 	public void BillsDepositeTest(String Facility_Drp , String Station_Drp , String Enter_Deposite_UHID , String Enter_Deposite_CardNo ,
 			String Enter_Deposit_Amount , String Deposit_Remarks_ext , String Received_From_After_Edit , String Relationship_drp , 
 			String deposit_Type_drp , String Cheque_Number , String Cheque_Issue_Date , String Cheque_Bank_Name_Drp , 
@@ -68,7 +68,7 @@ public class TC_007_FoDepositsTest extends FoDepositsPage {
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(500, 0);");
 
 	}
-	//@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 2)
+	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 2)
 
 	public void DepositPrintTest(String Facility_Drp , String Station_Drp , String Enter_Deposite_UHID , String Enter_Deposite_CardNo ,
 			String Enter_Deposit_Amount , String Deposit_Remarks_ext , String Received_From_After_Edit , String Relationship_drp , 
@@ -91,7 +91,7 @@ public class TC_007_FoDepositsTest extends FoDepositsPage {
 
 	}   
 
-	//@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 3)
+	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 3)
 
 	public void ChangeDepositTypeTest(String Facility_Drp , String Station_Drp , String Enter_Deposite_UHID , String Enter_Deposite_CardNo ,
 			String Enter_Deposit_Amount , String Deposit_Remarks_ext , String Received_From_After_Edit , String Relationship_drp , 
@@ -104,6 +104,7 @@ public class TC_007_FoDepositsTest extends FoDepositsPage {
 
 		DepositePage.clickOnChangeDepositeTypeBtn("Click On Deposit Table" , Change_deposit_Type_drp ,
 				"Save Change Deposit Type Btn" ,"Change To Deposit Yes Confirm Popup");
+		driver.navigate().refresh();
 
 	}
 
@@ -128,10 +129,10 @@ public class TC_007_FoDepositsTest extends FoDepositsPage {
 
 		logger= extent.createTest("Bills Refund Amount", "Cash Refund Functionality Test");
 
-		DepositePage.selectByFacilityDropdwon(Facility_Drp);
-		DepositePage.clickOnDashboardFrontOfficeBtn("Front Office Dashboard", Station_Drp, "Yes Popup Bills Utility");
-		DepositePage.clickOnDepositeButton("Billing", "Deposits Page");
-		
+		//DepositePage.selectByFacilityDropdwon(Facility_Drp);
+		//DepositePage.clickOnDashboardFrontOfficeBtn("Front Office Dashboard", Station_Drp, "Yes Popup Bills Utility");
+		//DepositePage.clickOnDepositeButton("Billing", "Deposits Page");
+	
 		DepositePage.clickOnRefundDetailsBtn("Click On Refund Button");
 		DepositePage.enterUhidInRefundDetailsPage(Enter_Refund_UHID);
 		
@@ -165,10 +166,6 @@ public class TC_007_FoDepositsTest extends FoDepositsPage {
 					throws IOException, InterruptedException, ClassNotFoundException {
 
 		logger= extent.createTest("Receipt Utility Funcility Test", "Print Deposit And Refund Functionality Test");
-
-		DepositePage.selectByFacilityDropdwon(Facility_Drp);
-		DepositePage.clickOnDashboardFrontOfficeBtn("Front Office Dashboard", Station_Drp, "Yes Popup Bills Utility");
-		DepositePage.clickOnDepositeButton("Billing", "Deposits Page");
 
 		DepositePage.clickOnReceiptUtilityBtn("Click On Receipt Utility Button");
 		//DepositePage.enterUHIDDetails(Enter_Receipt_Utility_UHID);

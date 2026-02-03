@@ -5,148 +5,90 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 import com.test.report.Reports;
 import com.test.ui.helper.CommanUtill;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import lombok.extern.slf4j.Slf4j;
 
-
-/**
- * @author anup
- *
- * march 10, 2025
- */
-@Slf4j
 public class GeneralBrowserSetting extends Reports {
 
-	@SuppressWarnings("static-access")
-	@BeforeClass
-	public static void launchBrowser() throws IOException, InterruptedException {
-		//this is for logger file read and config...
-		LOG_STATUS = readPropertiesFileData("LOG_FILE_STATUS");
-		if(LOG_STATUS.equalsIgnoreCase("Yes")){
-			PropertyConfigurator.configure(readPropertiesFileData("LOG_FILE_PATH"));
-		}
-		else {
-			System.out.println("log file not required, Please enable option in properties file ...");
-		}
+    @BeforeClass
+    public static void launchBrowser() throws IOException, InterruptedException {
 
-		try {
-			InputStream input = new FileInputStream(PROPERTIES_FILE_PATH);
-			//load a properties file
-			properties.load(input);
-			BROWSERNAME = readPropertiesFileData("BROWSERNAME");
-		} catch (Exception e) {
-			System.err.println("Error while reading the data from property file!!!" +e.getMessage());
-		}
-		if(BROWSERNAME.equalsIgnoreCase("Chrome") || BROWSERNAME.equalsIgnoreCase("CHROME")){
-			URL = readPropertiesFileData("URL");
-			try {
-				System.setProperty("webdriver.chrome.driver", "ChromeDriver/chromedriver.exe");
-				//WebDriverManager.chromedriver().setup();
-			} catch (Exception E) {
-				System.err.println("Error while loading the data from property file for chrome browser !!!" +E.getMessage());
-			} 
-			try {
+        LOG_STATUS = readPropertiesFileData("LOG_FILE_STATUS");
 
-				HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-				chromePrefs.put("profile.default_content_settings.popups", 0);
-				//Turns off download prompt
-				chromePrefs.put("download.prompt_for_download", false);
+        if (LOG_STATUS.equalsIgnoreCase("Yes")) {
+            PropertyConfigurator.configure(readPropertiesFileData("LOG_FILE_PATH"));
+        } else {
+            System.out.println("Log file disabled in properties...");
+        }
 
-				chromePrefs.put("pdfjs.disabled", true);
-				ChromeOptions options = new ChromeOptions();
-				HashMap<String, Object> chromeOptionsMap = new HashMap<String, Object>();
-				options.setExperimentalOption("prefs", chromePrefs);
-				options.setCapability("acceptInsecureCerts", true);
-				options.addArguments("--test-type");
-				options.addArguments("--disable-extensions"); //to disable browser extension popup
+        try {
+            InputStream input = new FileInputStream(PROPERTIES_FILE_PATH);
+            properties.load(input);
+            BROWSERNAME = readPropertiesFileData("BROWSERNAME");
+        } catch (Exception e) {
+            System.err.println("Property file error: " + e.getMessage());
+        }
 
-				/*DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome();
-				handlSSLErr.setCapability(ChromeOptions.CAPABILITY, chromeOptionsMap);
-				handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
-				handlSSLErr.setCapability(ChromeOptions.CAPABILITY, options);*/
-				driver = new ChromeDriver(options);
-			} catch (Exception e) {
-				System.out.println("Error while reading the data from property file for chrome browser !!!" +e.getMessage());
-			}
+        if (BROWSERNAME.equalsIgnoreCase("Chrome")) {
 
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-			driver.get(URL);
-		}
-		else if(BROWSERNAME.equalsIgnoreCase("InternetExplorer") || BROWSERNAME.equalsIgnoreCase("IE")){
+            URL = readPropertiesFileData("URL");
 
-			try {
-				URL = properties.getProperty("URL");
-				WebDriverManager.iedriver().setup();
+            HashMap<String, Object> chromePrefs = new HashMap<>();
+            chromePrefs.put("profile.default_content_settings.popups", 0);
+            chromePrefs.put("download.prompt_for_download", false);
+            chromePrefs.put("pdfjs.disabled", true);
 
-			} catch (Exception E) {
-				System.err.println("Error while loading the data from property file for chrome browser !!!" +E.getMessage());
-			}
+            ChromeOptions options = new ChromeOptions();
+            options.setExperimentalOption("prefs", chromePrefs);
+            options.addArguments("--disable-extensions");
+            options.setAcceptInsecureCerts(true);
 
-			//it is used to define IE capability 
-			try {
-				//DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(options);
 
-				//capabilities.setCapability(CapabilityType.BROWSER_NAME, "IE");
-				//capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+        } 
+        else if (BROWSERNAME.equalsIgnoreCase("IE")) {
 
-				driver = new InternetExplorerDriver();
-			} catch (Exception e) {
-				System.err.println("Error while reading the data from property file for IE browser !!!" +e.getMessage());
-			}
+            URL = readPropertiesFileData("URL");
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+        } 
+        else if (BROWSERNAME.equalsIgnoreCase("Safari")) {
 
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-			driver.get(URL);
-		}
+            URL = readPropertiesFileData("URL");
+            driver = new SafariDriver();
+        }
 
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.get(URL);
 
-		else if(BROWSERNAME.equalsIgnoreCase("Safari") || BROWSERNAME.equalsIgnoreCase("SAFARI")){
+        applicationLogin();
+    }
 
-			try {
-				driver = new SafariDriver();  
-				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-				driver.get(URL);
-			} catch (Exception e) {
-				System.err.println("Error while launching the safari browser !!!" +e.getMessage());
-			}
-		}
-		applicationLogin();
-		
-	}
-    
-	public static void applicationLogin() throws IOException, InterruptedException {
-//
-		CommanUtill.enter("//input[@id='txtLoginName']", readPropertiesFileData("UserName"));
-		CommanUtill.enter("//input[@id='txtPassword']", readPropertiesFileData("Password"));
-		CommanUtill.click("//input[@id='btnLogin']", "Login Button");
-		CommanUtill.click("//a[@id='btnYesAlreadyLogedinPopup']", "Login Yes");
-		
-	}
+    public static void applicationLogin() throws IOException, InterruptedException {
 
-  //@AfterClass
-	public static void closeBroser() throws InterruptedException {
-		Thread.sleep(5000);
-     	driver.quit();	
-     	}
-    	
+        CommanUtill.enter("//input[@id='txtLoginName']", readPropertiesFileData("UserName"));
+        CommanUtill.enter("//input[@id='txtPassword']", readPropertiesFileData("Password"));
+        CommanUtill.click("//input[@id='btnLogin']", "Login Button");
+        CommanUtill.click("//a[@id='btnYesAlreadyLogedinPopup']", "Login Yes");
+    }
+
+    //@AfterClass
+    public static void closeBrowser() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.quit();
+    }
 }

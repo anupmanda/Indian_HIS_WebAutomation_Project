@@ -1996,48 +1996,45 @@ public class CommanUtill extends GeneralBrowserSetting {
 			}
 //update clear filed 
 		 
-		 public static void clearUsingJS(String xpath) throws IOException {
+		 public static void clearUsingJS(String xpath) throws IOException  , InterruptedException{
 			    WebElement element = driver.findElement(By.xpath(xpath));
 			    ((JavascriptExecutor)driver).executeScript("arguments[0].value='';", element);
 			}
 //================================27-01-20226  Asutosh =====================================================
 		 
-		 public static void clickByJSFunction(String xmlPath, String fieldName) throws IOException, InterruptedException
-		 {
+		 public static void clickByJSFunction(String xmlPath, String fieldName) throws IOException , InterruptedException {
 		     try
 		     {
 		         System.out.println("Start Clicking (JS) on (" + fieldName + ")");
 		         logger.log(Status.INFO, "Start Clicking (JS) on (" + fieldName + ")");
-		         passedScreenShotPics(driver); 
 
 		         WebElement element = driver.findElement(By.xpath(xmlPath));
 
+		         // Optional Highlight (lightweight)
 		         ((JavascriptExecutor) driver).executeScript(
-		             "arguments[0].setAttribute('style', 'background: yellow; border: 2px solid blue;');", element);
-		         Thread.sleep(300);
+		             "arguments[0].style.border='2px solid blue'", element);
 
+		         // JS Click
 		         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 
-		         passedScreenShotPics(driver);   // Capture after click
-		         Thread.sleep(300);
-
-		         System.out.println("XPath-->> (" + xmlPath + ")");
-		         logger.log(Status.INFO, "( " + xmlPath + " )");
 		         System.out.println("Clicked (JS) on (" + fieldName + ")");
-		         logger.log(Status.INFO, "Clicked (JS) on (" + fieldName + ")");
+		         logger.log(Status.PASS, "Clicked (JS) on (" + fieldName + ")");
 		         log.info("Clicked (JS) on (" + fieldName + ")");
-		         Thread.sleep(300);
 		     }
 		     catch (Exception E)
 		     {
 		         System.out.println(xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
-		         logger.log(Status.INFO, xmlPath + ": Not able to locate or click (JS) web element...");
-		         failureScreenShotPics(driver);  // Capture failure
-		         logger.log(Status.FAIL, xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
-		         System.out.println("Error while Clicking (JS) on the web element... " + E.getMessage());
-		         Assert.fail("Error while Clicking (JS) on the web element... ");
+
+		         // Screenshot ONLY on failure
+		         failureScreenShotPics(driver);
+
+		         logger.log(Status.FAIL, "JS Click Failed on (" + fieldName + ")");
+		         log.error("JS Click Failed: " + E.getMessage());
+
+		         Assert.fail("Error while Clicking (JS) on the web element...");
 		     }
 		 }
+
 		 
 		 public static String generateRandomName(int length) {
 			    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";

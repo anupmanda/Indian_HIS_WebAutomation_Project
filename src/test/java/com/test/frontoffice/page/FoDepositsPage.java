@@ -63,7 +63,7 @@ public class FoDepositsPage extends GeneralBrowserSetting{
 	protected static String save_btn = "//a[@id='Deposit_btn']";
 	protected static String save_Yes_Popup = "//a[@id='btnDepConfirmYes']";
     protected static String print_btn = "//a[@id='DepositPrint_btn']";
-    protected static String deposit_table_click = "//div[@id='schedules_Container']//div//table//tr[2]";
+    protected static String deposit_table_click = "//div[@id='schedules_Container']//div//table//tr[1]//td[1]";
     protected static String change_deposite_type = "//a[@id='SecurityDeposit_btn']";
     protected static String change_deposit_yes_popup = "//a[@id='btnsecDepConfirmYes']";
 	
@@ -71,7 +71,7 @@ public class FoDepositsPage extends GeneralBrowserSetting{
     
     protected static String refund_detalis_btn = "//a[@id='opbilldiagnostic']";
     protected static String refund_Enter_UHID = "//input[@id='uHid']";
-	protected static String refund_deposit_table = "//div[@id='secdivsame']//div[@id='tablediv']//tr[2]";
+	protected static String refund_deposit_table = "//div[@id='secdivsame']//div[@id='tablediv']//tr[1]//td[2]";
 	protected static String refund_amount = "//input[@id='RA_Refund']";
 	protected static String Payable_Name_text = "//input[@id='Payble_Refund']";
 	protected static String refound_remarks = "//input[@id='Remarks_Refund']";
@@ -92,7 +92,7 @@ public class FoDepositsPage extends GeneralBrowserSetting{
 	protected static String refund_credit_Branch_name = "//input[@id='refund_B_Number']";
 	protected static String refund_credit_amount = "//input[@id='Credit_Amount_refund_Number']";
 	
-	protected static String refund_save_btn = "//a[@id='Refund_btn']";
+	protected static String refund_save_btn = "//a[@id='Refund_btn']"; //chage 2nd time
 	protected static String refund_save_yes_popup = "//a[@id='btnRefConfirmYes']";
 	//
 	protected static String deposit_refund_Reason_popup = "//select[@id='reasonForApprovalremark']";
@@ -325,7 +325,8 @@ public class FoDepositsPage extends GeneralBrowserSetting{
 	 
 	 public void clickOnRefundSaveBtn(String refund_Save_btn , String refund_Save_Yes_Popup) throws IOException, InterruptedException {
 		 
-		 CommanUtill.clickFunction(refund_save_btn, refund_Save_btn);
+		// CommanUtill.clickFunction(refund_save_btn, refund_Save_btn);
+		 CommanUtill.clickByJSFunction(refund_save_btn, refund_Save_Yes_Popup);
 		 if(CommanUtill.isElementPresent(refund_save_yes_popup)) {
 			 CommanUtill.clickFunction(refund_save_yes_popup, refund_Save_Yes_Popup);
 			 System. out. println("Refund Save Yes Popup is Present");

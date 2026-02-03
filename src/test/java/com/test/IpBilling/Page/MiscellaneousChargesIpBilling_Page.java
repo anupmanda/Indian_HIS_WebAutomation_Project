@@ -1,0 +1,316 @@
+/**
+ * 
+ */
+package com.test.IpBilling.Page;
+
+import java.io.IOException;
+
+import javax.management.InvalidApplicationException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+
+import com.test.browser.setup.GeneralBrowserSetting;
+import com.test.ui.helper.CommanUtill;
+
+/**
+ * @author Anup
+ *
+ * 30-Jan-2026
+ */
+public class MiscellaneousChargesIpBilling_Page extends GeneralBrowserSetting {
+
+	protected static String Facility_Dashbord_Drp = "//select[@id='Facility']";
+	protected static String Ip_Billing_dashboard = "//li[@id='btn_Billing']";
+	protected static  String Billing_Station_Drp = "//select[@id='Department']";
+	protected static  String Billing_Station_Yes_pop = "//a[@id='btn_yes_desh']";
+	protected static  String Billing_Station_No_pop = "//a[@id='btn_no_desh']";
+
+	protected static  String Billing_Meanu = "//a[@id='showmenu']";
+	protected static  String ip_billing = "//span[normalize-space()='IP Billing']";
+
+	//===========================  Miscellaneous_Charges_page ================================
+	protected static  String Miscellaneous_Charges_page = "//a[normalize-space()='Miscellaneous Charges']";
+
+	protected static  String ip_number = "//input[@id='txtipno']";
+	protected static  String Miss_uhid = "//input[@id='txtuhid']";
+	protected static  String Doctor_Drp = "//select[@id='seldoc']";
+	protected static  String Service_Drp = "//select[@id='selsvc']";
+	protected static  String Description_Drp = "//select[@id='selitem']";
+	protected static  String Description_Name = "//input[@id='txtdexcription']";
+	protected static  String Batch_Expiry_Date = "//input[@id='txtBatch']";
+	protected static  String patient_Type = "//select[@id='seltype']";
+
+	protected static  String Amount_text = "//input[@id='txtamount']";
+	protected static  String Quenty = "//input[@id='txtqty']";
+	protected static  String posting_Date = "//input[@id='txtqty']";
+	protected static  String posting_Time = "//input[@id='txtpostingtime']";
+
+	protected static  String Serach_Box = "//input[@id='_Search']";
+	protected static  String plush_icon = "//i[@id='additemsandservices']";
+	protected static  String save_icon = "//a[@id='SaveMiscItem']//i[@class='fa fa-save']";
+	protected static  String save_yes_pop = "//a[@id='btnokCancelModal']";
+
+	//=====================================Find Patient Pop ================================
+	protected static  String search_icon_find_patient = "//a[@id='btnsearchipno']//i[@class='fa fa-search ']";
+	protected static  String current_in_patient_Radio_btn_pop = "//input[@id='rbCurrentPatents']";
+
+	protected static  String In_patient_All_Ward_Check_Box_pop = "//input[@id='cbAllWards']";
+	protected static  String In_patient_Discharge_Admision_chkk_box_pop = "//input[@id='cbAdmission']";
+	protected static  String In_patient_From_Date_pop = "//input[@id='txtadmitDate']";
+	protected static  String In_patient_To_Date_pop = "//input[@id='txtadmittodate']";
+	protected static  String Vip_check_box = "//input[@id='cbVip']";
+	protected static  String remaks_check_Box = "//input[@id='cbRemark']";
+	protected static  String Mobile_no_Serach = "//input[@id='modal_mobileNo']";
+	protected static  String Name_Serach = "//input[@id='modal_Name']";
+	protected static  String first_Name_Serach = "//input[@id='modal_firstName']";
+	protected static  String Vip_Remark_text = "//input[@id='txtVIPRemark']";
+	protected static  String National_ID  = "//input[@id='modal_nationalID']";
+	protected static  String Gender_drp = "//select[@id='modal_gender']";
+	protected static  String UHID = "//input[@id='txt_UHID_DC']";
+	protected static  String Find_Patient_Serach_Icon = "//a[@id='search_billing']//i[@class='fa fa-search']";
+	protected static  String Clear_Find_Patient_pop = "//i[@title='Clear']";
+	protected static  String refresh_Mis_Charges_page = "//a[@id='ClearMiscItem']//i[@class='fa fa-refresh']";
+	
+	//========================Discharge Patient =================================================
+	protected static  String Rdio_Btn_Discharged_Patients = "//input[@id='rbDisPatents']";
+	protected static  String Discharged_Patien_IP_no = "//input[@id='txt_IPNo_DC']";
+	protected static  String Discharged_Patients_Bed_No = "//input[@id='txt_BedNo']";
+	protected static  String Discharged_Patients_Bill_No = "//input[@id='txt_BillNo_DC']";
+	protected static  String Discharged_Patients_Singn_Marks = "//a[@id='btn_search_DC']//i[@class='fa fa-check']";
+	
+	protected static  String Discharged_Patients_Table = "//input[@id='rbDisPatents']";    // adding
+	protected static  String Discharged_Patients_Table_yes_pop = "//a[@id='btnYesDisModal']";
+	
+	
+
+	//========================find Patient Table ==============================
+	protected static  String find_patient_last_table = "//table[@id='searchBillingTable']//tbody//tr[@onclick][last()]";
+
+
+
+
+
+	public void SelectByFacilityDrp (String facility_Drp) throws IOException ,InvalidApplicationException, InterruptedException {
+
+		CommanUtill.dropdownSelectByVisibleText(Facility_Dashbord_Drp, facility_Drp);
+	}
+
+	public void ClickOnIPBillingDashboard(String Ip_Billing , String Station_drp ,String Station_Yes_Pop)
+			throws IOException , InvalidApplicationException, InterruptedException {
+
+		//WebElement ip_billing_dasghboard = driver.findElement(By.xpath(Ip_Billing_dashboard));
+		//ip_billing_dasghboard.click();
+
+		CommanUtill.clickFunction(Ip_Billing_dashboard, Ip_Billing);
+		CommanUtill.dropdownSelectByVisibleText(Billing_Station_Drp, Station_drp);
+		CommanUtill.clickFunction(Billing_Station_Yes_pop, Station_Yes_Pop);
+		logger.info("Sussfully Pass IP Billing Dashboard Button");
+	}
+
+	public void ClickOnIpBillingMeanu(String Ip_billing_Meanu) 
+			throws IOException , InvalidApplicationException, InterruptedException {
+
+		CommanUtill.clickFunction(Billing_Meanu, Ip_billing_Meanu);
+	}
+
+	public void MiscellaneousCharges_page(String Ip_Billing_Tab , String MiscellaneousCharges) 	
+			throws IOException , InvalidApplicationException, InterruptedException {
+
+		CommanUtill.clickFunction(ip_billing, Ip_Billing_Tab);
+		CommanUtill.clickFunction(Miscellaneous_Charges_page, MiscellaneousCharges);
+	}
+
+	//==============================Serach Patient Find Patient =============================
+
+	public void FindPatient_SeachIcon(String Search) throws IOException ,InterruptedException {
+
+		CommanUtill.clickFunction(search_icon_find_patient, Search);
+	}
+
+	public void RadioBtnCurrentInPatients_AllWardsCheckBox(String Current_In_Patent , String All_Ward_Check_Box)
+			throws IOException ,InterruptedException {
+		CommanUtill.clickFunction(current_in_patient_Radio_btn_pop, Current_In_Patent);
+		CommanUtill.clickFunction(In_patient_All_Ward_Check_Box_pop, All_Ward_Check_Box);
+	}
+
+	public void Current_In_Patient_Admission_Discharge_ChkkBox(String Admission_DisCharge) throws IOException ,InterruptedException {
+
+		CommanUtill.clickFunction(In_patient_Discharge_Admision_chkk_box_pop, Admission_DisCharge);	
+	}
+	public void AdmissionDischarge_FromDateSerach(String From_Date) throws IOException ,InterruptedException {
+
+		WebElement from_Date = driver.findElement(By.xpath(In_patient_From_Date_pop));
+		from_Date.sendKeys(Keys.CONTROL +"a");
+		from_Date.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(In_patient_From_Date_pop, From_Date);
+		from_Date.sendKeys(Keys.TAB);
+	}
+	public void AdmissionDischarge_ToDateSerach(String to_Date) throws IOException ,InterruptedException {
+
+		WebElement To_Date = driver.findElement(By.xpath(In_patient_To_Date_pop));
+		To_Date.sendKeys(Keys.CONTROL +"a");
+		To_Date.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(In_patient_To_Date_pop, to_Date);
+		To_Date.sendKeys(Keys.TAB);
+	}
+
+	public void CheckBoxVIP_Remarks(String Vip , String Remarks) throws IOException ,InterruptedException {
+
+		CommanUtill.clickFunction(Vip_check_box, Vip);
+		CommanUtill.clickFunction(remaks_check_Box, Remarks);
+	}
+
+	public void SerachMobileNumber(String Mobile_no , String Find_In_Patient) throws IOException ,InterruptedException {
+
+		CommanUtill.textEnter(Mobile_no_Serach, Mobile_no);
+		CommanUtill.clickFunction(Find_Patient_Serach_Icon, Find_In_Patient);	
+	}
+
+	public void EnterNameAndSerchicon(String Name , String Find_Patient_By_Name) throws IOException ,InterruptedException{
+
+		CommanUtill.textEnter(Name_Serach, Name);
+		CommanUtill.clickFunction(Find_Patient_Serach_Icon, Find_Patient_By_Name);
+	}
+
+	public void SerachAndselectPatientInTable(String Patient) throws IOException ,InterruptedException {
+
+		CommanUtill.clickFunction(find_patient_last_table, Patient);
+	}
+	//=======================Miscellaneous Charges Page================================
+
+	public void EnterUHIDInMiscellanceCherges(String uhid) throws IOException ,InterruptedException {
+
+		WebElement uhid_enter = driver.findElement(By.xpath(Miss_uhid));
+		CommanUtill.textEnter(Miss_uhid, uhid);
+		uhid_enter.sendKeys(Keys.ENTER);
+	}
+	public void EnterIpNumberInMiscellanceCherges(String Ip_Number) throws IOException ,InterruptedException {
+
+		WebElement ip_no_enter = driver.findElement(By.xpath(ip_number));
+		CommanUtill.textEnter(ip_number, Ip_Number);
+		ip_no_enter.sendKeys(Keys.ENTER);
+	}
+	
+
+	public void SelectByDoctorNameDrp(String Doctor_Name) throws IOException ,InterruptedException {
+
+		CommanUtill.dropdownSelectByVisibleText(Doctor_Drp, Doctor_Name);
+
+	}
+	public void SelectByService_DescriptionDrp(String Service_drp_ , String Description) throws IOException ,InterruptedException {
+
+		CommanUtill.dropdownSelectByVisibleText(Service_Drp, Service_drp_);
+		CommanUtill.dropdownSelectByVisibleText(Description_Drp, Description);
+	}
+
+	public void AutoTextDescriptionName(String DescriptionName) throws IOException ,InterruptedException {
+
+		WebElement descriptionname = driver.findElement(By.xpath(Description_Name));
+		descriptionname.sendKeys(Keys.CONTROL +"a");
+		descriptionname.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(Description_Name, DescriptionName);
+
+	}
+	//Hinden Batch
+	public void enterBatchAndExpiryDate(String Expiry_date) throws IOException ,InterruptedException {
+
+		CommanUtill.textEnter(Batch_Expiry_Date, Expiry_date);	
+	}
+//Type Hinden
+	public void SelectByPatientTypeDrp(String type) throws IOException ,InterruptedException {
+
+		CommanUtill.dropdownSelectByVisibleText(patient_Type, type);
+	}
+	public void enterAmountAndQuantity(String Amount , String Qty) throws IOException ,InterruptedException {
+
+		WebElement Amount_Value = driver.findElement(By.xpath(Amount_text));
+		Amount_Value.sendKeys(Keys.CONTROL +"a");
+		Amount_Value.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(Amount_text, Amount);	
+		Amount_Value.sendKeys(Keys.TAB);
+		CommanUtill.textEnter(Quenty, Qty);	
+
+	}
+	public void EnterPostingDate(String Posting_date) throws IOException ,InterruptedException { 
+
+		CommanUtill.textEnter(posting_Date, Posting_date);
+	}
+	public void EnterPostingTime(String Posting_Time) throws IOException ,InterruptedException { 
+
+		CommanUtill.textEnter(posting_Time, Posting_Time);
+	}
+
+	public void SerachBox_ServiceName(String Serach) throws IOException ,InterruptedException { 
+
+		CommanUtill.textEnter(Serach_Box, Serach);
+	}
+	
+	public void clickOnPlushIcon(String Plush) throws IOException ,InterruptedException { 
+		
+		CommanUtill.clickFunction(plush_icon, Plush);
+	}
+   public void ClickOnsavebtnIcon_YesPop(String save , String yes_pop) throws IOException ,InterruptedException { 
+	
+	CommanUtill.clickFunction(save_icon, save);
+	CommanUtill.clickFunction(save_yes_pop, yes_pop);
+	
+}
+   //=================================Discharged Patients============================================
+   
+   public void RefreshMiscellaneousCharges(String Refresh ) throws IOException ,InterruptedException { 
+	   
+	   CommanUtill.clickFunction(refresh_Mis_Charges_page, Refresh);
+   }
+   
+   public void RadioBtnDischargedPatients(String Discharged_Patients) throws IOException ,InterruptedException { 
+	   
+	   CommanUtill.clickFunction(Rdio_Btn_Discharged_Patients, Discharged_Patients);  
+   }
+    public void SerachIpNumber_DischargedPatients(String Ip_no , String Rignt_Singn_Marks) throws IOException ,InterruptedException { 
+	   
+	   CommanUtill.clickFunction(Discharged_Patien_IP_no, Ip_no);  
+	   CommanUtill.clickFunction(Discharged_Patients_Singn_Marks, Rignt_Singn_Marks);   
+   }
+    
+    public void SerachBedNo_DischargedPatients(String Bed_no , String Rignt_Singn_Marks) throws IOException ,InterruptedException { 
+ 	   
+ 	   CommanUtill.clickFunction(Discharged_Patients_Bed_No, Bed_no);  
+ 	   CommanUtill.clickFunction(Discharged_Patients_Singn_Marks, Rignt_Singn_Marks);   
+    }
+    
+    public void SerachBillNo_DischargedPatients(String Bill_No , String Rignt_Singn_Marks) throws IOException ,InterruptedException { 
+  	   
+  	   CommanUtill.clickFunction(Discharged_Patients_Bill_No, Bill_No);  
+  	   CommanUtill.clickFunction(Discharged_Patients_Singn_Marks, Rignt_Singn_Marks);  
+  	   
+     }
+   public void SerachDischargedPatient(String Serch_Icon) throws IOException ,InterruptedException { 
+	   
+	   CommanUtill.clickFunction(Find_Patient_Serach_Icon, Serch_Icon);
+	   
+   }
+   
+   public void PickDischargePatientTable(String Dis_patient_table , String discharged_make_transactions_Yes_Pop) 
+		   throws IOException ,InterruptedException { 
+	   
+	   CommanUtill.clickFunction(find_patient_last_table, Dis_patient_table);
+	   Thread.sleep(8000);
+	   CommanUtill.clickFunction(Discharged_Patients_Table_yes_pop, discharged_make_transactions_Yes_Pop);
+   }
+    
+   public void DischargePatientmakeTransactions(String make_transactions)  throws IOException ,InterruptedException { 
+	   
+	   if(CommanUtill.isElementPresent(Discharged_Patients_Table_yes_pop)) {
+			CommanUtill.clickFunction(Discharged_Patients_Table_yes_pop, make_transactions);
+			System.out.println("Discharge Patient Make Transtion Yes Pop");
+		}
+		else {
+			System.out.println("Discharge Patient Make Transtion Yes Pop did not appear");
+		}  
+   }
+   
+
+
+}
