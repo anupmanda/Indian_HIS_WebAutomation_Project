@@ -16,7 +16,7 @@ import com.test.ui.helper.CommanUtill;
 /**
  * @author Anup
  *
- * 05-Aug-2025
+ * 05-Aug-2025  Old
  */
 public class NursingActivityPage extends GeneralBrowserSetting {
 	
@@ -30,7 +30,6 @@ public class NursingActivityPage extends GeneralBrowserSetting {
 	
 	protected static String search_patient = "//input[@placeholder='Search..']";
 	protected static String select_top_one_yellow_click = "(//div[contains(@class,'patient-card') and contains(@class,'admittednotoccupied')])[1]";
-	//(//div[contains(@class,'patient-card') and contains(@class,'admittednotoccupied')])
 	
 	protected static String select_all_patient_click = "//div[contains(@class,'patient-card p5p')]";
 	//protected static String select_top_one_green_click = "//div[contains(@class,'patient-card p5p')]";

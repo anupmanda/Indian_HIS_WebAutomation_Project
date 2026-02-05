@@ -203,6 +203,14 @@ public class ADT_Admit_Patient extends GeneralBrowserSetting{
     
     protected static String ClickModify = "//*[@id=\"modify\"]";
     
+    //========================Anup 04-02-2026=============================
+     protected static String gcd_Screen_Close = "//a[@id='closeGcdScreening']";
+     protected static String Radio_Btn_Face_Sheet = "//input[@id='facesheet']";
+     protected static String face_Sheet_Print_Btn = "//a[@id='btnprint']//i[@class='fa fa-print']";
+     protected static String Click_HIS_Log = "//div[@class='logoHis']";
+    
+    
+    
   // *************************************************************************************************************// 
     
     public void ClickHomePage() throws IOException, InterruptedException {
@@ -227,7 +235,7 @@ public class ADT_Admit_Patient extends GeneralBrowserSetting{
     	Thread.sleep(500);
     	CommanUtill.dropdownSelectByVisibleText(SelectTitle, Title);
     	Thread.sleep(500);
-    	CommanUtill.textEnter(TextFirstName,  CommanUtill.generateRandomName(10));
+    	CommanUtill.textEnter(TextFirstName,  CommanUtill.generateRandomName(5));
     	Thread.sleep(500);
     	CommanUtill.dropdownSelectByVisibleText(SelectGender, Gender);
     	Thread.sleep(500);
@@ -579,5 +587,66 @@ public void AdmitPatientByBedBookingStatus(String DOB, String ABCPin, String Ref
 	verifyPopUpSuccess(driver);
 	
 }
+
+    //==============================Anup 04-02-2026============================
+     
+      public void ClosekOnGCDScreen(String Close_GCD) throws IOException , InterruptedException {
+	      
+    	  if(CommanUtill.isElementPresent(gcd_Screen_Close)) {
+  			CommanUtill.clickFunction(gcd_Screen_Close, Close_GCD);
+  			System.out.println("Close GCD Screen Pop");
+  		}
+  		else {
+  			System.out.println("GCD Screen did not appear");
+  		}
+     }
+      
+      public String getUHIDOfPatient() {
+  		try {
+  			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+  			WebElement popup = wait.until(ExpectedConditions.visibilityOfElementLocated(
+  					By.xpath("//div[contains(@class,'gritter-item')]//p")));
+
+  			String text = popup.getText();
+  			System.out.println("Popup Text: " + text);
+
+  			if (text.contains("UHID:")) {
+  				return text.split("UHID:")[1].split("\\s")[0];
+  			}
+  		} catch (Exception e) {
+  			e.printStackTrace();
+  		}
+  		return "UHID Not Found";
+  	}
+
+
+  	public String getIPNoOfPatient() {
+  		try {
+  			WebElement popup = driver.findElement(
+  					By.xpath("//div[contains(@class,'gritter-item')]//p"));
+
+  			String text = popup.getText();
+
+  			if (text.contains("IPno.:")) {
+  				return text.split("IPno.:")[1].trim();
+  			}
+  		} catch (Exception e) {
+  			e.printStackTrace();
+  		}
+  		return "IP No Not Found";
+  	}
+  	
+  	public void printFaceSheetRadioBtn_PrintBtn(String Face_Sheet , String print_Icon) throws IOException , InterruptedException {
+  		
+  		CommanUtill.clickFunction(Radio_Btn_Face_Sheet, Face_Sheet);
+  		CommanUtill.clickFunction(face_Sheet_Print_Btn, print_Icon);
+  	}
+  	
+  	public void ClickOnHISLog(String Retain_Dashbord) throws IOException , InterruptedException {
+  		
+  		CommanUtill.clickFunction(Click_HIS_Log, Retain_Dashbord);
+  	}
+//================================Anup 04-02-2026 End ===============================
 
 }

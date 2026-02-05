@@ -180,19 +180,20 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		
 		//========================= Click On Table In White ==============================
 		
-		public String clickFirstWhiteRowAndPrintDetails(String White_Row)
-		        throws IOException, InterruptedException {
+		public String clickFirstWhiteRowAndPrintDetails(String White_Row) throws IOException, InterruptedException {
 
-		    String whiteRowXpath =
-		        "//table[@id='tbl1']/tbody/tr[contains(@style,'background:white')][1]";
+		    String whiteRowXpath = "//table[@id='tbl1']/tbody/tr[contains(@style,'background:white')][1]";
 
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		    WebElement whiteRow =
-		            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(whiteRowXpath)));
+		    WebElement whiteRow = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(whiteRowXpath)));
 
-		    ((JavascriptExecutor) driver)
-		            .executeScript("arguments[0].scrollIntoView({block:'center'});", whiteRow);
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", whiteRow);
 		    Thread.sleep(800);
+
+		    // YELLOW HIGHLIGHT (ONLY ADDITION)
+            ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='2px solid red';" + "arguments[0].style.backgroundColor="
+            		+ "'yellow';",whiteRow);
+		    Thread.sleep(500);
 
 		    String sNo = whiteRow.findElement(By.xpath("./td[1]")).getText();
 		    String ipNo = whiteRow.findElement(By.xpath("./td[3]")).getText();
@@ -209,6 +210,7 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 
 		    return sNo;   // VERY IMPORTANT
 		}
+
       public void YesAcknowledgedPop(String Discharge_notification_acknowledged_Yes )throws IOException , InterruptedException {
 			
 			CommanUtill.clickFunction(whiteRowXpath_Yes_pop, Discharge_notification_acknowledged_Yes);
@@ -261,7 +263,7 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		public void clickTopVioletRowAndPrintDetails(String violetRowName) throws IOException, InterruptedException {
 
 		    String violetRowXpath = "(//table[@id='tbl1']/tbody/tr[contains(@style,'#ffc6ff')])[1]";
-
+		    
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		    WebElement violetRow = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(violetRowXpath)));
 
@@ -270,6 +272,10 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		    js.executeScript("arguments[0].scrollIntoView({block:'center'});", violetRow);
 		    Thread.sleep(800);
 
+		    //  YELLOW HIGHLIGHT (ONLY ADDITION)
+		    js.executeScript("arguments[0].style.border='2px solid red';" + "arguments[0].style.backgroundColor='yellow';", violetRow);
+		    Thread.sleep(500);
+		    
 		    // Fetch values
 		    String sNo = violetRow.findElement(By.xpath("./td[1]")).getText();
 		    String ipNo = violetRow.findElement(By.xpath("./td[3]")).getText();
@@ -287,8 +293,40 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		    System.out.println("Top violet row clicked successfully");
 		}
 
+//=============================Navy Blue Row======================================
+		public void clickTopNavyBlueRowAndPrintDetails(String navyBlueRowName) throws IOException, InterruptedException {
 
-		
+		    String navyBlueRowXpath = "(//table[@id='tbl1']/tbody/tr[contains(@style,'#c0f6ff')])[1]";
+
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		    WebElement navyBlueRow = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(navyBlueRowXpath)));
+
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		    // Scroll row to center
+		    js.executeScript("arguments[0].scrollIntoView({block:'center'});", navyBlueRow);
+		    Thread.sleep(500);
+
+		    // YELLOW HIGHLIGHT (before click)
+		    js.executeScript("arguments[0].style.border='2px solid red';" + "arguments[0].style.backgroundColor='yellow';", navyBlueRow);
+		    Thread.sleep(500);
+
+		    // Fetch values
+		    String sNo = navyBlueRow.findElement(By.xpath("./td[1]")).getText().trim();
+		    String ipNo = navyBlueRow.findElement(By.xpath("./td[3]")).getText().trim();
+		    String patientName = navyBlueRow.findElement(By.xpath("./td[4]")).getText().trim();
+		    String bed = navyBlueRow.findElement(By.xpath("./td[7]")).getText().trim();
+
+		    System.out.println("S.No : " + sNo);
+		    System.out.println("IP No : " + ipNo);
+		    System.out.println("Patient Name : " + patientName);
+		    System.out.println("Bed : " + bed);
+
+		    // JS CLICK (sticky header safe)
+		    js.executeScript("arguments[0].click();", navyBlueRow);
+
+		    System.out.println("Top navy blue row clicked successfully");
+		}
 		
 }
 		

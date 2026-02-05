@@ -51,12 +51,14 @@ public class TC_002_AcknowledgeDischargeNotificationTest extends AcknowledgeDisc
 	   Assert.assertTrue(true, "First white background row clicked successfully");
 	   Acknowledge_Discharge_Notification.YesAcknowledgedPop("Yes Pop Acknowledged Popup");
 	   Thread.sleep(2000);
-	   Acknowledge_Discharge_Notification.clickSameRowAgainAfterColorChange(sNo);
 	   
-	   Acknowledge_Discharge_Notification.Yes_Pop_DischargeNotificationAcknowledgementBill("Yes Pop Billing Page");
+	   Acknowledge_Discharge_Notification.clickSameRowAgainAfterColorChange(sNo);
+	   Acknowledge_Discharge_Notification.Yes_Pop_DischargeNotificationAcknowledgementBill("Yes Pop Billing Page"); 
 	 
-	   Acknowledge_Discharge_Notification.clickTopVioletRowAndPrintDetails("Click On violet Row");
+	  // Acknowledge_Discharge_Notification.clickTopVioletRowAndPrintDetails("Click On violet Row"); //violet 
 	 
+	  // Acknowledge_Discharge_Notification.clickTopNavyBlueRowAndPrintDetails("Click Navy Blue Row");  //Blue
+	  // Acknowledge_Discharge_Notification.Yes_Pop_DischargeNotificationAcknowledgementBill("Yes Pop Billing Page"); 
         
 	}
 

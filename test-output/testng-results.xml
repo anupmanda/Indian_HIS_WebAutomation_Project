@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-03T22:34:36 IST" name="Default suite" finished-at="2026-02-03T22:35:13 IST" duration-ms="36838">
+  <suite started-at="2026-02-05T00:16:55 IST" name="Default suite" finished-at="2026-02-05T00:17:36 IST" duration-ms="40396">
     <groups>
     </groups>
-    <test started-at="2026-02-03T22:34:36 IST" name="Default test" finished-at="2026-02-03T22:35:13 IST" duration-ms="36838">
-      <class name="com.test.IpBilling.test.TC_002_AcknowledgeDischargeNotificationTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.IpBilling.test.TC_002_AcknowledgeDischargeNotificationTest@278bb07e]" started-at="2026-02-03T22:34:36 IST" name="launch" finished-at="2026-02-03T22:34:36 IST" duration-ms="218" status="PASS">
+    <test started-at="2026-02-05T00:16:55 IST" name="Default test" finished-at="2026-02-05T00:17:36 IST" duration-ms="40396">
+      <class name="com.test.Nursing.test.TC_002_NursingActivityTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.Nursing.test.TC_002_NursingActivityTest@13f17eb4]" started-at="2026-02-05T00:16:55 IST" name="launch" finished-at="2026-02-05T00:16:55 IST" duration-ms="95" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.IpBilling.test.TC_002_AcknowledgeDischargeNotificationTest@278bb07e]" started-at="2026-02-03T22:34:36 IST" name="launchBrowser" finished-at="2026-02-03T22:34:47 IST" duration-ms="10961" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.Nursing.test.TC_002_NursingActivityTest@13f17eb4]" started-at="2026-02-05T00:16:55 IST" name="launchBrowser" finished-at="2026-02-05T00:17:03 IST" duration-ms="7517" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="AcknowledgeDischargeNotification(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.IpBilling.test.TC_002_AcknowledgeDischargeNotificationTest@278bb07e]" started-at="2026-02-03T22:34:52 IST" name="AcknowledgeDischargeNotification" data-provider="DischargeNotificationDataProvider" finished-at="2026-02-03T22:35:12 IST" duration-ms="19894" status="PASS">
+        <test-method signature="NursingClearanceTest(java.lang.String,java.lang.String)[pri:1, instance:com.test.Nursing.test.TC_002_NursingActivityTest@13f17eb4]" started-at="2026-02-05T00:17:04 IST" name="NursingClearanceTest" data-provider="NursingActivityDataProvider" finished-at="2026-02-05T00:17:35 IST" duration-ms="31207" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,63 +24,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[IP BILLING]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[GYNAE RECOVERY(FIRST FLOOR)]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Unacknowledged]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[10/01/2026]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[IPNO]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[24137]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Patient Name]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Dr. HUIDRTY DRTYJ]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[All]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[12/10/2025]]>
+                <![CDATA[GYNAE WARD I (FIRST FLOOR)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AcknowledgeDischargeNotification -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_002_AcknowledgeDischargeNotificationTest@278bb07e]" started-at="2026-02-03T22:35:12 IST" name="reportclosewindows" finished-at="2026-02-03T22:35:13 IST" duration-ms="1110" status="PASS">
+        </test-method> <!-- NursingClearanceTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.Nursing.test.TC_002_NursingActivityTest@13f17eb4]" started-at="2026-02-05T00:17:35 IST" name="reportclosewindows" finished-at="2026-02-05T00:17:36 IST" duration-ms="432" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.IpBilling.test.TC_002_AcknowledgeDischargeNotificationTest -->
+      </class> <!-- com.test.Nursing.test.TC_002_NursingActivityTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

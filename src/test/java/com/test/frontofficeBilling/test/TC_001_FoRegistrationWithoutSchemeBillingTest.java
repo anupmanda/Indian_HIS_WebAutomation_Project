@@ -67,7 +67,7 @@ public class TC_001_FoRegistrationWithoutSchemeBillingTest extends FrontOfficeBi
 		frontofficeregistration.clickOnAddPatientMenu("AddPatient", "PatientRegistration");
 
 		frontofficeregistration.selectByTitleDropdown(title_drp);
-		frontofficeregistration.enterOnFirstName(First_name_text);
+		frontofficeregistration.enterOnFirstName(First_name_text + CommanUtill.randomAlphabets(3));
 		frontofficeregistration.selectByGenderDropdown(Gender_Drp);
 
 		frontofficeregistration.enterOnDOB("Click On Radio Button ",DOB);
