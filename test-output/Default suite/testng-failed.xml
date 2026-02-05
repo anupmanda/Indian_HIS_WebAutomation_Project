@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.Nursing.test.TC_002_NursingActivityTest">
+      <class name="com.test.IpBilling.test.TC_008_DoctorVisit_BillingTest">
         <methods>
           <include name="reportclosewindows"/>
-          <include name="NursingClearanceTest" invocation-numbers="0"/>
+          <include name="SearchDateWisePatientsDoctorVisitTest" invocation-numbers="0"/>
           <include name="launchBrowser"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.Nursing.test.TC_002_NursingActivityTest -->
+      </class> <!-- com.test.IpBilling.test.TC_008_DoctorVisit_BillingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,28 @@
+2026-02-05 12:36:10 INFO  :457 - Start Entering...
+2026-02-05 12:36:10 INFO  :459 - //input[@id='txtLoginName']: Input Data : (sakti)
+2026-02-05 12:36:11 INFO  :465 - End Entering...
+2026-02-05 12:36:11 INFO  :457 - Start Entering...
+2026-02-05 12:36:11 INFO  :459 - //input[@id='txtPassword']: Input Data : (Admin@123)
+2026-02-05 12:36:12 INFO  :465 - End Entering...
+2026-02-05 12:36:12 INFO  :421 - Start Clicking on (Login Button)
+2026-02-05 12:36:14 INFO  :426 - ( //input[@id='btnLogin'] )
+2026-02-05 12:36:14 INFO  :428 - Clicked on (Login Button)
+2026-02-05 12:36:14 INFO  :421 - Start Clicking on (Login Yes)
+2026-02-05 12:36:16 INFO  :426 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2026-02-05 12:36:16 INFO  :428 - Clicked on (Login Yes)
+2026-02-05 12:36:23 INFO  :362 - Clicked on (Click On IP Billing DashBorad)
+2026-02-05 12:36:31 INFO  :362 - Clicked on (Station Yes Popup)
+2026-02-05 12:36:32 INFO  :362 - Clicked on (Click On Ip Billing Meanu)
+2026-02-05 12:36:34 INFO  :362 - Clicked on (Click On Ip Billing Drp)
+2026-02-05 12:36:37 INFO  :362 - Clicked on (Doctor Visit Ip Billing)
+2026-02-05 12:36:39 INFO  :362 - Clicked on (Search patient Icon)
+2026-02-05 12:36:40 INFO  :362 - Clicked on (Radio Btn Current In Patient )
+2026-02-05 12:36:41 INFO  :362 - Clicked on (All Wards Check Box Click)
+2026-02-05 12:36:43 INFO  :362 - Clicked on (Click On Search Icon in Find Patient)
+2026-02-05 12:36:47 INFO  :362 - Clicked on (Click On Table In Serchig Patint)
+2026-02-05 12:36:55 INFO  :362 - Clicked on (Click On Refresh Page)
+2026-02-05 12:37:00 INFO  :362 - Clicked on (Search patient Icon)
+2026-02-05 12:37:01 INFO  :362 - Clicked on (Click On Discharged Patient Radio Button)
+2026-02-05 12:37:02 INFO  :362 - Clicked on (Click Admission Discharge Check box)
+2026-02-05 12:37:09 INFO  :362 - Clicked on (Click On Search Icon in Find Patient)
+2026-02-05 12:37:11 INFO  :362 - Clicked on (Click On Discharged Patint In First Table)
