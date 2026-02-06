@@ -38,7 +38,7 @@ public class TC_007_GeneralOrderEntry_IpbillinTest extends GeneralOrderEntry_Ipb
 			String Mobile_no_Current_In_Patient , String Name_Current_In_Patient) 
 					throws IOException, InterruptedException, InvalidApplicationException {
 
-		logger = extent.createTest("General Order Entry", "General Order Entry Funcility Test");
+		logger = extent.createTest("General Order Entry Ip Number ", "General Order Entry Funcility Test");
 
 
 		General_OrderEntry.SelectByFacilityDrp(Dashborad_Facility_Drp);
@@ -67,7 +67,7 @@ public class TC_007_GeneralOrderEntry_IpbillinTest extends GeneralOrderEntry_Ipb
 			String Mobile_no_Current_In_Patient , String Name_Current_In_Patient) 
 					throws IOException, InterruptedException, InvalidApplicationException {
 
-		logger = extent.createTest("Previous Order General Order Entry Check", "Date Enter Check Order");
+		logger = extent.createTest("Previous Order General Order Entry Check", "Date Enter Search Order ");
 
 		General_OrderEntry.EnterIPNumber(Enter_IP_Number_Excel);
 		Thread.sleep(1000);

@@ -83,7 +83,7 @@ public class TC_00A1_IpBillingTest extends ADT_Admit_Patient{
 		
 		logger = extent.createTest("Acknowledge Discharge Notification Test", "Acknowledge Discharge");
 		
-		Nursing_Activity.SelectByFacilityDrp("SANITY HOSPITAL");
+		Nursing_Activity.SelectByFacilityDrp(Dashborad_Facility_Drp);
 		Nursing_Activity.ClickOnNursingDashboard("Click On Nursing DashBorad" ,Nursing_Station_Drp , "Station Yes Popup");
 		
 		Nursing_Activity.ClickOnNursingActivityTab_Clearance("Nursing Activity Tab","Nursing activity Page");
