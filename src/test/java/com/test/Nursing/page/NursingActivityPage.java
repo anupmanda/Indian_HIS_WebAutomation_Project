@@ -11,6 +11,7 @@ import javax.management.InvalidApplicationException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,7 +42,23 @@ public class NursingActivityPage extends GeneralBrowserSetting {
 	protected static  String Admitted_Not_Occupid_chage_bed_Status_pop = "//a[@id='savechangebedstatus']//i[@class='fa fa-save']";
 	protected static  String Admitted_Not_Occupid_chage_bed_Status_Yes_pop = "//a[@id='btn_svbedch_ok']";
 	
+	protected static  String Click_On_Acknowledge_btn = "//button[@id='acknowledgeBtn']";
 	
+	//======================== Discharge Tab ===================================
+	protected static  String Click_Discharge_Tab = "//a[@id='NursingDischargeRequest']";
+	protected static  String Discharge_Type_Drp  = "//select[@id='dishchargetype']";
+	protected static  String Discharge_Sub_Type_Drp = "//select[@id='dishchargesubtype']";
+	protected static  String Discharge_Remarks = "//textarea[@id='dis_Remarks']";
+	protected static  String save_Discharge_Btn = "//a[@id='SaveDischargeIntimation']//i[@class='fa fa-save']";
+	protected static  String Discharge_Yes_pop = "//a[@id='Dbtnyes']";
+	
+	protected static  String  Check_Box_Expected_Date_Discharge = "//input[@id='ExpectedDatechk']";
+	protected static  String  Enter_Expected_Date_Discharge_Box = "//input[@id='DateDischarge']";
+	protected static  String  Save_Expected_Date_Discharge_Icon = "//a[@id='DateDischargeSave']//i[@class='fa fa-save']";
+	
+	protected static  String   Check_Box_Mark_For_Discharge  = "//input[@id='ChkMarkforDischarge']";
+	protected static  String   Enter_Date_Mark_For_Discharge  = "//input[@id='DateMarkforDischarge']";
+	protected static  String   Save_Mark_For_Discharge_Icon  = "//a[@id='Save_MarkforDischarge']//i[@class='fa fa-save']";
 			
 	
 	
@@ -127,10 +144,62 @@ public class NursingActivityPage extends GeneralBrowserSetting {
 	public void SaveChangeBedStatus_YesPop(String Change_Bed_Status , String Yes_Pop) throws IOException, InterruptedException {
 		
 		CommanUtill.clickFunction(Admitted_Not_Occupid_chage_bed_Status_pop, Change_Bed_Status);
-	    Thread.sleep(1000);
+	    Thread.sleep(5000);
 		CommanUtill.clickFunction(Admitted_Not_Occupid_chage_bed_Status_Yes_pop, Yes_Pop);
 		
 	}
+	
+	public void ClickOnAcknowledgeSimilarWard(String Acknowledges_Btn) throws IOException, InterruptedException {
+		
+		if (CommanUtill.isElementPresent(Click_On_Acknowledge_btn)) {
+			CommanUtill.clickFunction(Click_On_Acknowledge_btn, Acknowledges_Btn);
+			System.out.println("Click On Apperar Acknowled Btnis click");
+		} else {
+			System.out.println(" Did not appear Acknowled Btn .");
+		}
+	}
+	
+   public void ClickOnDischargeBtn(String Discharge_Btn) throws IOException, InterruptedException {
+	   
+	   CommanUtill.clickFunction(Click_Discharge_Tab, Discharge_Btn);
+   }
+	public void SelectDischargeType_DischargeSubType_Remarks_SaveIcon(String Discharge_Drp , String DischargeSubDrp , 
+			String Remarks_Text , String Save_Icon)  throws IOException, InterruptedException {
+		
+		CommanUtill.dropdownSelectByVisibleText(Discharge_Type_Drp, Discharge_Drp);
+		CommanUtill.dropdownSelectByVisibleText(Discharge_Sub_Type_Drp, DischargeSubDrp);
+		CommanUtill.textEnter(Discharge_Remarks, Remarks_Text);
+		CommanUtill.clickFunction(save_Discharge_Btn, Save_Icon);
+	}
+	public void DischargeYesPop(String Discharge_Yes_popup) throws IOException, InterruptedException {
+		
+		CommanUtill.clickFunction(Discharge_Yes_pop, Discharge_Yes_popup);
+	}
+	
+	public void CheckBoxExpectedDateDischarge_Date_Save(String ExpectedDateDischarge_Check_Box ,String Enter_Date , 
+			String Save_Icon) throws IOException, InterruptedException {
+		
+		CommanUtill.clickFunction(Check_Box_Expected_Date_Discharge, ExpectedDateDischarge_Check_Box);
+		WebElement Date_Enter = driver.findElement(By.xpath(Enter_Expected_Date_Discharge_Box));
+		Date_Enter.sendKeys(Keys.CONTROL +"a");
+		Date_Enter.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(Enter_Expected_Date_Discharge_Box, Enter_Date);
+		Date_Enter.sendKeys(Keys.TAB);
+		CommanUtill.clickFunction(Save_Expected_Date_Discharge_Icon, Save_Icon);
+	}
+	
+	public void CheckBoxMarkDischarge_EnterDate_SaveIcon(String Check_Box_MarkDischarge ,String  Enter_Date , String Save_Icon)
+			throws IOException, InterruptedException {
+		
+		CommanUtill.clickFunction(Check_Box_Mark_For_Discharge, Check_Box_MarkDischarge);
+		WebElement Date_Enter = driver.findElement(By.xpath(Enter_Date_Mark_For_Discharge));
+		Date_Enter.sendKeys(Keys.CONTROL +"a");
+		Date_Enter.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(Enter_Date_Mark_For_Discharge, Enter_Date);
+		Date_Enter.sendKeys(Keys.TAB);
+		CommanUtill.clickFunction(Save_Mark_For_Discharge_Icon, Save_Icon);
+	}
+		
 
 
 

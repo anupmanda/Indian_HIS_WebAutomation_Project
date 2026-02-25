@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.management.InvalidApplicationException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
@@ -55,9 +56,9 @@ public class DischargeNotification_PharmacyPage extends GeneralBrowserSetting {
 	protected static  String Enter_Date_Discharge_Marked = "//input[@id='Dischargedatecalendar']";
 	protected static  String Search_Icon_Date_Discharge_Marked = "//a[@id='Dischargesearchdata']//i[@class='fa fa-search']";
 
-
-
-
+	//=======================Table Pharmacy Clearance ===================================
+	protected static String Pharmacy_Clearance_Ok = "//tbody/tr[td[contains(text(),'%s')]]//i[contains(@class,'fa-check')]";
+	protected static String Ok_Pop_Pharmacy_Btn = "//a[@id='btnPhOk']";
 
 
 
@@ -139,6 +140,51 @@ public class DischargeNotification_PharmacyPage extends GeneralBrowserSetting {
 		CommanUtill.clickFunction(Search_Icon_Date_Discharge_Marked, Search_Icon);
 
 	}
+	public void SelectPatientRow(String ipNo) throws IOException, InterruptedException {
+
+		String rowXpath = String.format("//tbody/tr[td[contains(text(),'%s')]]", ipNo);
+		CommanUtill.clickFunction(rowXpath, "Select Patient Row");
+		Thread.sleep(500);
+
+		// Validation – ensure row really contains IP
+		boolean isCorrectRow = driver.findElements(By.xpath(rowXpath)).size() > 0;
+
+		if (!isCorrectRow) {
+			throw new RuntimeException("Row selection failed for IP : " + ipNo);
+		}
+	}
+
+	public void ClickOnPharmacyOkBtn(String ipNo) throws IOException, InterruptedException {
+
+		String finalXpath = String.format(Pharmacy_Clearance_Ok, ipNo);
+
+		WebElement okBtn = driver.findElement(By.xpath(finalXpath));
+
+		if (!okBtn.isDisplayed()) {
+			throw new RuntimeException("OK button not visible");
+		}
+
+		if (!okBtn.isEnabled()) {
+
+			throw new RuntimeException("OK button disabled");
+		}
+
+		CommanUtill.clickFunction(finalXpath, "Click Pharmacy OK");
+	}
+
+	public void PharmacyClearanceOkPopup(String Click_Ok_pop) throws IOException , InterruptedException {
+		
+		if (CommanUtill.isElementPresent(Ok_Pop_Pharmacy_Btn)) {
+			CommanUtill.clickFunction(Ok_Pop_Pharmacy_Btn, Click_Ok_pop);
+			System.out.println("Clearance Yes Pop.");
+		} else {
+			System.out.println("Clearance Yes Pop did not appear.");
+		}
+		
+		
+	}
+
+
 
 
 }

@@ -34,7 +34,7 @@ public class TC0004_ADT_Update_Admission_Date extends ADT_Update_Admission_Date{
 	@Test(dataProvider = "Admit_Patient_Details" , priority = 1)
 	
 	public void AdmitPatient(String Facility, String Station, String Title, String Gender, String DOB, String FatherName, String M_Status,
-			String Address, String City, String Nationality, String ABCPin, String Speciality, String Referred, String Stay, String Source, String BedType, String Ward,
+			String Address, String City, String Nationality, String ABCPin, String Speciality, String Referred, String Stay, String Source, String BedType, String Alloted_bed_type_drp , String Ward,
 			String Package_Speciality, String KinName, String Relation, String Name, String BillingCo, String ClinicalCo) throws IOException, InterruptedException {
 		logger = extent.createTest("Admit_Patient" , "Fill All The Mandatory Details at all Admit PatientScreen and Click on Ths Save Buton");
 		 
@@ -42,7 +42,7 @@ public class TC0004_ADT_Update_Admission_Date extends ADT_Update_Admission_Date{
 		
         adt.Consultant(Speciality, Referred, Stay, Source);		
     	
-    	adt.BedandPaymentDetails(BedType, Ward);
+    	adt.BedandPaymentDetails(BedType, Alloted_bed_type_drp,  Ward);  //Anup 11-02-20225
     	
     	adt.PackageDetails(Package_Speciality);
     	

@@ -116,16 +116,11 @@ public class FoDepositsPage extends GeneralBrowserSetting{
 	protected static String receipt_utility_deposit_print =
 			"(//table[@id='dgbilldetails']//tbody//tr[not(contains(@class,'bg-pink'))][1]//td[last()]//*[contains(@class,'fa-print')])";
 
-
-
 	protected static String receipt_utility_refund_print =
 			"//table[@id='dgbilldetails']//tbody//tr[contains(@class,'bg-pink')]//td[last()]//i[contains(@class,'fa-print')]";
 
-
-
-
-	//--------------------------------------Receipt Utility------------------------------
-	
+	//--------------------------------------His Logo 	------------------------------
+	protected static String His_Logo = "//a[@id='lftHISLogo']";
 	
 	
 	
@@ -210,7 +205,12 @@ public class FoDepositsPage extends GeneralBrowserSetting{
 	 
 	 public void ClickPaymentModeCash(String Cash_Deposit ) throws IOException, InterruptedException {
 		 
-		 CommanUtill.clickFunction(payment_Mode_cash_radio_btn, Cash_Deposit);
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(payment_Mode_cash_radio_btn)));
+		 WebElement cashRadioBtn = driver.findElement(By.xpath(payment_Mode_cash_radio_btn));
+		 if(! cashRadioBtn.isSelected()) {
+			CommanUtill.clickFunction(payment_Mode_cash_radio_btn, Cash_Deposit);
+			}
 	 }
 	 
 	 public void selectPaymentModeCheque(String Cheque_Deposit , String chequeNoText , String issueDateText , String bankNameText , String branchNameText) throws IOException, InterruptedException {
@@ -431,6 +431,14 @@ public class FoDepositsPage extends GeneralBrowserSetting{
      System.out.println("======================================");
 	 System.out.println("Refund Receipt");
 	 System.out.println("======================================");
+	}
+	
+	public void clickOnHisLogo(String hisLogo) throws IOException, InterruptedException {
+		 
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(His_Logo)));
+		 CommanUtill.clickFunction(His_Logo, hisLogo);
+		 
 	}
 
 	}

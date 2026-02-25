@@ -41,21 +41,25 @@ public class TC_001_NursingClearanceTest extends NursingClearancePage {
 		Nursing_Clearance.ClickOnNursingDashboard("Click On Nursing DashBorad" ,Nursing_Station_Drp , "Station Yes Popup");
 		
 		Nursing_Clearance.ClickOnNursingActivityTab_Clearance("Nursing Activity Tab","Nursing Clearance Page");
-		Nursing_Clearance.RadioBtnDischargeNotification("Radio Btn Discharge Notification");
+		/*	Nursing_Clearance.RadioBtnDischargeNotification("Radio Btn Discharge Notification");
 		Nursing_Clearance.SelectByStausDrp(Status_Drp);   
 		
 		Nursing_Clearance.RadioBtnExpectedDateDischarge_CheckBox_Date("Radio Btn Expected Date Of Discharge" , 
 				"Check Box Expected Date Of Discharge" , Enter_Date_Expected_Discharge ,"Serch Date");
-		
-		Nursing_Clearance.SelectByPatientTypeAndEnterBox_Serach(Type_Patient_Drp , Enter_IP_Number , "Serch Patient");
-		Nursing_Clearance.BillTypeDrp(Billing_Type_Drp);
+		*/
+		//Nursing_Clearance.SelectByPatientTypeAndEnterBox_Serach(Type_Patient_Drp , Enter_IP_Number , "Serch Patient");   //Search Icon Not Working
+		Nursing_Clearance.TypePatientDrpEnterIPNumber(Type_Patient_Drp , "21690");
+	/*	Nursing_Clearance.BillTypeDrp(Billing_Type_Drp);
 		
 		
 		Nursing_Clearance.CheckBoxDaycare("Click Check Box Daycare");
 		Nursing_Clearance.RadioBtnDischargeMarked_CheckBox_DateEnter("Click On Radio Btn Discharge Marked" , 
 				"Check Box  Discharge Marked" , Enter_Date_Discharge_Marked , "Serch Icon Discharge Marked");
-		
-		
+		*/
+		Nursing_Clearance.ClickOnClearanceOkBtn("21690");
+		Nursing_Clearance.ClearanceConfirmYesPop("Click On Confirm Yes Pop");
+
+		Nursing_Clearance.ClickOnMenuIcon("Click On Menu Icon Btn");
 		
 		
 		

@@ -208,7 +208,7 @@ public class ADT_Admit_Patient extends GeneralBrowserSetting{
      protected static String Radio_Btn_Face_Sheet = "//input[@id='facesheet']";
      protected static String face_Sheet_Print_Btn = "//a[@id='btnprint']//i[@class='fa fa-print']";
      protected static String Click_HIS_Log = "//div[@class='logoHis']";
-    
+     protected static String Alloted_Bed_Type = "//select[@id='All_type']";
     
     
   // *************************************************************************************************************// 
@@ -312,11 +312,12 @@ public class ADT_Admit_Patient extends GeneralBrowserSetting{
     
     
 
-    public void BedandPaymentDetails(String BedType, String Ward) throws IOException, InterruptedException {
+    public void BedandPaymentDetails(String BedType,String Alloted_bed_type_drp , String Ward) throws IOException, InterruptedException {
     	CommanUtill.clickFunction(ClickBedPaymentDetails, "Clicked on The Bed and Payments Details");
     	Thread.sleep(500);
     	CommanUtill.dropdownSelectByVisibleText(SelectBedType, BedType);
     	Thread.sleep(500);
+    	CommanUtill.dropdownSelectByVisibleText(Alloted_Bed_Type, Alloted_bed_type_drp);   //Anup 11-02-20225
     	CommanUtill.dropdownSelectByVisibleText(SelectWard, Ward);
     }
     

@@ -56,7 +56,7 @@ public class TC0016_ADT_Pre_Authorization_Approval_Admit_Patient extends ADT_Pre
 @Test(dataProvider = "ExcelUniversalDataProvider1", priority = 2)
 	
 	public void AdmitPatient(String Facility, String Station, String Title, String Gender, String DOB, String FatherName, String M_Status,
-			String Address, String City, String Nationality, String ABCPin, String Speciality, String Referred, String Stay, String Source, String BedType, String Ward,
+			String Address, String City, String Nationality, String ABCPin, String Speciality, String Referred, String Stay, String Source, String BedType, String Alloted_bed_type_drp , String Ward,
 			String Package_Speciality, String KinName, String Relation, String Name, String BillingCo, String ClinicalCo) throws IOException, InterruptedException {
 		logger = extent.createTest("Admit_Patient" , "Fill All The Mandatory Details at all Admit PatientScreen and Click on Ths Save Buton");
 		 
@@ -64,7 +64,7 @@ public class TC0016_ADT_Pre_Authorization_Approval_Admit_Patient extends ADT_Pre
 		Thread.sleep(1000);
         adt.Consultant(Speciality, Referred, Stay, Source);		
     	Thread.sleep(1000);
-    	adt.BedandPaymentDetails(BedType, Ward);
+    	 adt.BedandPaymentDetails(BedType, Alloted_bed_type_drp,  Ward);  //Anup 11-02-20225
     	Thread.sleep(1000);
     	adt.PackageDetails(Package_Speciality);
     	Thread.sleep(1000);

@@ -48,6 +48,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 
 	public static String capturedUHID;
 	public static String capturedIP;
+	public static String parentWindow;
 	    
 	static {
         try {
@@ -1863,6 +1864,40 @@ public class CommanUtill extends GeneralBrowserSetting {
 			System.out.println("Title of new tab: " + driver.getTitle());
 		
 		}
+		
+		//=====================24-02-2026=============================
+		public static void clickTabSwitchToAnotherWindowNew(String xpath , String fieldName) {
+
+		    parentWindow = driver.getWindowHandle();  // store globally
+
+		    int windowCountBeforeClick = driver.getWindowHandles().size();
+
+		    WebElement element = driver.findElement(By.xpath(xpath));
+		    highlightElement(element, "yellow");
+		    element.click();
+
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		    wait.until(driver -> driver.getWindowHandles().size() > windowCountBeforeClick);
+
+		    for (String windowHandle : driver.getWindowHandles()) {
+		        if (!windowHandle.equals(parentWindow)) {
+		            driver.switchTo().window(windowHandle);
+		        }
+		    }
+
+		    System.out.println("Title of new tab: " + driver.getTitle());
+		}
+		
+		public static void closeChildAndSwitchToParent() {
+
+		    driver.close(); // close current tab
+
+		    driver.switchTo().window(parentWindow);
+
+		    System.out.println("Switched back to Parent Window: " + driver.getTitle());
+		}
+		
+		//=====================24-02-2026=============================
 		
 		public static void rightClickOnElement(String xpath ,String fleldName) {
 	        try {

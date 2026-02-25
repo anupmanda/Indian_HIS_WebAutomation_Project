@@ -4,12 +4,15 @@
 package com.test.LabMedicine.Page;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import javax.management.InvalidApplicationException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.test.browser.setup.GeneralBrowserSetting;
 import com.test.ui.helper.CommanUtill;
@@ -51,7 +54,11 @@ public class Labclearance_LabMedicinePage extends GeneralBrowserSetting {
 	protected static  String Enter_Date_Discharge_Marked = "//input[@id='advDischargeDateSearch']";
 	protected static  String Search_Icon_Date_Discharge_Marked = "//a[@id='btnSearchByAdviseDate']//i[@class='fa fa-search']";
 	
+	//======================== Lab Clearance ===================================
+	protected static String Lab_Clearance_Ok = "//tbody/tr[td[contains(text(),'%s')]]//i[contains(@class,'fa-check')]";
+	protected static String Ok_Pop_Lab_Btn = "//a[@id='btnPhOk']";
 	
+	protected static String Lab_His_Log = "//div[@class='logoHis']";
 	
 	
 	
@@ -75,6 +82,8 @@ public class Labclearance_LabMedicinePage extends GeneralBrowserSetting {
 	}
 	public void LabClearancePage(String Lab_Clearance)  throws IOException, InterruptedException {
 
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Lab_clearance_Page)));
 		CommanUtill.clickFunction(Lab_clearance_Page, Lab_Clearance);
 	}
 	
@@ -133,6 +142,52 @@ public class Labclearance_LabMedicinePage extends GeneralBrowserSetting {
 		Thread.sleep(600);
 		CommanUtill.clickFunction(Search_Icon_Date_Discharge_Marked, Search_Icon);
 
+	}
+	
+	public void SelectPatientRow(String ipNo) throws IOException, InterruptedException {
+
+		String rowXpath = String.format("//tbody/tr[td[contains(text(),'%s')]]", ipNo);
+		CommanUtill.clickFunction(rowXpath, "Select Patient Row");
+		Thread.sleep(500);
+
+		// Validation – ensure row really contains IP
+		boolean isCorrectRow = driver.findElements(By.xpath(rowXpath)).size() > 0;
+
+		if (!isCorrectRow) {
+			throw new RuntimeException("Row selection failed for IP : " + ipNo);
+		}
+	}
+
+	public void ClickOnLabClearanceOkBtn(String ipNo) throws IOException, InterruptedException {
+
+		String finalXpath = String.format(Lab_Clearance_Ok, ipNo);
+
+		WebElement okBtn = driver.findElement(By.xpath(finalXpath));
+
+		if (!okBtn.isDisplayed()) {
+			throw new RuntimeException("OK button not visible");
+		}
+
+		if (!okBtn.isEnabled()) {
+
+			throw new RuntimeException("OK button disabled");
+		}
+
+		CommanUtill.clickFunction(finalXpath, "Click Lab OK");
+	}
+
+	public void LabClearanceOkPopup(String Click_Ok_pop) throws IOException , InterruptedException {
+		
+		if (CommanUtill.isElementPresent(Ok_Pop_Lab_Btn)) {
+			CommanUtill.clickFunction(Ok_Pop_Lab_Btn, Click_Ok_pop);
+			System.out.println("Clearance Yes Pop.");
+		} else {
+			System.out.println("Clearance Yes Pop did not appear.");
+		}
+	}
+	public void HisLogoIcon(String Dashbord) throws IOException , InterruptedException {
+		
+		CommanUtill.clickFunction(Lab_His_Log, Dashbord);
 	}
 	
 

@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.management.InvalidApplicationException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
@@ -53,8 +54,10 @@ public class NursingClearancePage extends GeneralBrowserSetting {
 	protected static  String Enter_Date_Discharge_Marked = "//input[@id='advDischargeDateSearch']";
 	protected static  String Search_Icon_Date_Discharge_Marked = "//i[@id='_btnSearchByAdviseDate']";
 	
-	
-	
+	//================================ Menu Icon ==============================
+	protected static String menu_icon = "//body/div[@class='header']/div[@class='logoHis']/a[@id='showmenu']/img[1]";
+	protected static String Clearance_Ok = "//tbody/tr[td[normalize-space()='%s']]/td[21]/i[contains(@class,'fa-check')]";
+    protected static String Confirm_Clearance_pop = "//a[@id='yesCancelEquipment']";
 	
 	
 	
@@ -103,6 +106,14 @@ public class NursingClearancePage extends GeneralBrowserSetting {
     	CommanUtill.clickFunction(Serach_Date, Search_Icon);
     }
     
+    public void TypePatientDrpEnterIPNumber(String Patient_Drp , String Enter_Ip_No) throws IOException, InterruptedException {
+    	
+    	CommanUtill.dropdownSelectByVisibleText(Drp_IP_Patiet_Name, Patient_Drp);
+    	WebElement enter_ip_no = driver.findElement(By.xpath(Enter_IP));
+    	CommanUtill.textEnter(Enter_IP, Enter_Ip_No);
+    	enter_ip_no.sendKeys(Keys.ENTER);		
+    }
+    //Ip Number Enter And Serach Not Woriking
     public void SelectByPatientTypeAndEnterBox_Serach(String patint_Type , String Enter_IP_No , String Search_Icon) 
     		throws IOException, InterruptedException {
     	
@@ -136,6 +147,42 @@ public class NursingClearancePage extends GeneralBrowserSetting {
    	  CommanUtill.clickFunction(Search_Icon_Date_Discharge_Marked, Search_Icon);
 	   
    }
+   
+   public void ClickOnMenuIcon(String Menu_Icon_) throws IOException, InterruptedException {
+	   
+	   CommanUtill.clickFunction(menu_icon, Menu_Icon_);
+	   
+   }
+  
+   public void ClickOnClearanceOkBtn(String ipNo) throws IOException, InterruptedException {
+
+	    String finalXpath = String.format(Clearance_Ok, ipNo);
+
+	    Thread.sleep(1500); // wait after search
+
+	    WebElement okBtn = driver.findElement(By.xpath(finalXpath));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", okBtn);
+
+	    Thread.sleep(500);
+
+	    CommanUtill.clickFunction(finalXpath, "Click On Ok Btn");
+	}
+   
+   public void ClearanceConfirmYesPop(String Yes_pop) throws IOException, InterruptedException {
+	   
+	   if (CommanUtill.isElementPresent(Confirm_Clearance_pop)) {
+			CommanUtill.clickFunction(Confirm_Clearance_pop, Yes_pop);
+			System.out.println("Clearance Yes Pop.");
+		} else {
+			System.out.println("Clearance Yes Pop did not appear.");
+		}
+   }
+
+   
+   
+   
+
+
 	
 	
 	

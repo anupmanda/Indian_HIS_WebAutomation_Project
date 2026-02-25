@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-05T23:05:09 IST" name="Default suite" finished-at="2026-02-05T23:07:17 IST" duration-ms="128596">
+  <suite started-at="2026-02-25T15:28:21 IST" name="Default suite" finished-at="2026-02-25T15:29:32 IST" duration-ms="70999">
     <groups>
     </groups>
-    <test started-at="2026-02-05T23:05:09 IST" name="Default test" finished-at="2026-02-05T23:07:17 IST" duration-ms="128596">
-      <class name="com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:05:09 IST" name="launch" finished-at="2026-02-05T23:05:09 IST" duration-ms="107" status="PASS">
+    <test started-at="2026-02-25T15:28:21 IST" name="Default test" finished-at="2026-02-25T15:29:32 IST" duration-ms="70999">
+      <class name="com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:28:20 IST" name="launch" finished-at="2026-02-25T15:28:21 IST" duration-ms="129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:05:09 IST" name="launchBrowser" finished-at="2026-02-05T23:05:17 IST" duration-ms="8007" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:28:21 IST" name="launchBrowser" finished-at="2026-02-25T15:28:29 IST" duration-ms="8351" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="GeneralOrderEntryIpBilling(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:05:18 IST" name="GeneralOrderEntryIpBilling" data-provider="GeneralOrderEntryDataProvider" finished-at="2026-02-05T23:06:11 IST" duration-ms="52650" status="PASS">
+        <test-method signature="PackageDurationModifiction_ChangeBillableTypeTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:28:34 IST" name="PackageDurationModifiction_ChangeBillableTypeTest" data-provider="PackageDurationModifictionDataProvider" finished-at="2026-02-25T15:29:09 IST" duration-ms="34560" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,78 +29,48 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[28870]]>
+                <![CDATA[SPSL.885851]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Dental Procedures]]>
+                <![CDATA[29459]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[ABHIJEET SAWANT]]>
+                <![CDATA[EMERGENCY1]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[All Ceramic (3M) crown (pvt)]]>
+                <![CDATA[50]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[K.C. Mukherjee]]>
+                <![CDATA[Cardiology]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[1000]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Anup General Order Entry]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[02/01/2026]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[10/12/2025]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[20:31]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Testing]]>
+                <![CDATA[Himanshu Sharma Cardiologist]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GeneralOrderEntryIpBilling -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:11 IST" name="reportclosewindows" finished-at="2026-02-05T23:06:11 IST" duration-ms="432" status="PASS">
+        </test-method> <!-- PackageDurationModifiction_ChangeBillableTypeTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:09 IST" name="reportclosewindows" finished-at="2026-02-25T15:29:10 IST" duration-ms="1181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="PreviousOrderGeneralOrderEntryCheck(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:11 IST" name="PreviousOrderGeneralOrderEntryCheck" data-provider="GeneralOrderEntryDataProvider" finished-at="2026-02-05T23:06:24 IST" duration-ms="12702" status="PASS">
+        <test-method signature="PackageDurationModifictionTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:12 IST" name="PackageDurationModifictionTest" data-provider="PackageDurationModifictionDataProvider" finished-at="2026-02-25T15:29:24 IST" duration-ms="12203" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -114,78 +84,48 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[28870]]>
+                <![CDATA[SPSL.885851]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Dental Procedures]]>
+                <![CDATA[29459]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[ABHIJEET SAWANT]]>
+                <![CDATA[EMERGENCY1]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[All Ceramic (3M) crown (pvt)]]>
+                <![CDATA[50]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[K.C. Mukherjee]]>
+                <![CDATA[Cardiology]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[1000]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Anup General Order Entry]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[02/01/2026]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[10/12/2025]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[20:31]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Testing]]>
+                <![CDATA[Himanshu Sharma Cardiologist]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PreviousOrderGeneralOrderEntryCheck -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:24 IST" name="reportclosewindows" finished-at="2026-02-05T23:06:24 IST" duration-ms="57" status="PASS">
+        </test-method> <!-- PackageDurationModifictionTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:24 IST" name="reportclosewindows" finished-at="2026-02-25T15:29:24 IST" duration-ms="85" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="DeleteProceduresTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:24 IST" name="DeleteProceduresTest" data-provider="GeneralOrderEntryDataProvider" finished-at="2026-02-05T23:06:41 IST" duration-ms="17118" status="PASS">
+        <test-method signature="PackageDurationModifictionDeleteTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:25 IST" name="PackageDurationModifictionDeleteTest" data-provider="PackageDurationModifictionDataProvider" finished-at="2026-02-25T15:29:31 IST" duration-ms="6323" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -199,248 +139,48 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[28870]]>
+                <![CDATA[SPSL.885851]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Dental Procedures]]>
+                <![CDATA[29459]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[ABHIJEET SAWANT]]>
+                <![CDATA[EMERGENCY1]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[All Ceramic (3M) crown (pvt)]]>
+                <![CDATA[50]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[K.C. Mukherjee]]>
+                <![CDATA[Cardiology]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[1000]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Anup General Order Entry]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[02/01/2026]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[10/12/2025]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[20:31]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Testing]]>
+                <![CDATA[Himanshu Sharma Cardiologist]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DeleteProceduresTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:41 IST" name="reportclosewindows" finished-at="2026-02-05T23:06:41 IST" duration-ms="40" status="PASS">
+        </test-method> <!-- PackageDurationModifictionDeleteTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:31 IST" name="reportclosewindows" finished-at="2026-02-25T15:29:32 IST" duration-ms="137" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="SearchCurrint_In_Paient(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:42 IST" name="SearchCurrint_In_Paient" data-provider="GeneralOrderEntryDataProvider" finished-at="2026-02-05T23:06:58 IST" duration-ms="16399" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[SANITY HOSPITAL]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[IP BILLING]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[28870]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Dental Procedures]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[ABHIJEET SAWANT]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[All Ceramic (3M) crown (pvt)]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[K.C. Mukherjee]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Anup General Order Entry]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[02/01/2026]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[10/12/2025]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[20:31]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Testing]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchCurrint_In_Paient -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:58 IST" name="reportclosewindows" finished-at="2026-02-05T23:06:58 IST" duration-ms="46" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reportclosewindows -->
-        <test-method signature="DischargedPatientsGeneralOrderEntry(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:5, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:06:58 IST" name="DischargedPatientsGeneralOrderEntry" data-provider="GeneralOrderEntryDataProvider" finished-at="2026-02-05T23:07:17 IST" duration-ms="18783" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[SANITY HOSPITAL]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[IP BILLING]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[28870]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Dental Procedures]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[ABHIJEET SAWANT]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[All Ceramic (3M) crown (pvt)]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[K.C. Mukherjee]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Anup General Order Entry]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[02/01/2026]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[10/12/2025]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[03/02/2026]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[20:31]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Testing]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DischargedPatientsGeneralOrderEntry -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest@b6b1987]" started-at="2026-02-05T23:07:17 IST" name="reportclosewindows" finished-at="2026-02-05T23:07:17 IST" duration-ms="34" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.IpBilling.test.TC_007_GeneralOrderEntry_IpbillinTest -->
+      </class> <!-- com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

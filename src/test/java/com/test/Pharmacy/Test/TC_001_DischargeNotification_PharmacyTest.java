@@ -40,10 +40,10 @@ public class TC_001_DischargeNotification_PharmacyTest extends DischargeNotifica
 		logger = extent.createTest("Pharmacy Discharge Notification", "Pharmacy Discharge Notification Test");
 		
 		Discharge_Notification.SelectByFacilityDrp("SANITY HOSPITAL");
-		Discharge_Notification.ClickOnPharmacyDashboard("Click On Nursing DashBorad" ,Pharmacy_Station_Drp , "Station Yes Popup");
+		Discharge_Notification.ClickOnPharmacyDashboard("Click On Pharmacy DashBorad" ,Pharmacy_Station_Drp , "Station Yes Popup");
 		
 		Discharge_Notification.ClickPharmacyDischarge_Notification("Click On Pharmacy Discharge Notification Page");
-		Discharge_Notification.RadioBtnDischargeNotification("Radio Btn Discharge Notification");
+	/*	Discharge_Notification.RadioBtnDischargeNotification("Radio Btn Discharge Notification");
 		Thread.sleep(500);
 		Discharge_Notification.SelectByWardsDrp(Wards_Drp); 
 		
@@ -51,15 +51,20 @@ public class TC_001_DischargeNotification_PharmacyTest extends DischargeNotifica
 		
 		Discharge_Notification.RadioBtnExpectedDateDischarge_CheckBox_Date("Radio Btn Expected Date Of Discharge" , 
 				"Check Box Expected Date Of Discharge" , Enter_Date_Expected_Discharge ,"Serch Date");
+	*/	
+		Discharge_Notification.SelectByPatientTypeAndEnterBox_Serach(Type_Patient_Drp , "21782" , "Serch Patient");
+	//	Discharge_Notification.BillTypeDrp(Billing_Type_Drp);
 		
-		Discharge_Notification.SelectByPatientTypeAndEnterBox_Serach(Type_Patient_Drp , Enter_IP_Number , "Serch Patient");
-		Discharge_Notification.BillTypeDrp(Billing_Type_Drp);
+	//	Discharge_Notification.CheckBoxDaycare("Click Check Box Daycare");
+	//	Discharge_Notification.RadioBtnDischargeMarked_CheckBox_DateEnter("Click On Radio Btn Discharge Marked" , 
+		//		"Check Box  Discharge Marked" , Enter_Date_Discharge_Marked , "Serch Icon Discharge Marked");
 		
-		Discharge_Notification.CheckBoxDaycare("Click Check Box Daycare");
-		Discharge_Notification.RadioBtnDischargeMarked_CheckBox_DateEnter("Click On Radio Btn Discharge Marked" , 
-				"Check Box  Discharge Marked" , Enter_Date_Discharge_Marked , "Serch Icon Discharge Marked");
-		
+		Discharge_Notification.SelectPatientRow("21782");
+		Discharge_Notification.ClickOnPharmacyOkBtn("21782");
+		Discharge_Notification.PharmacyClearanceOkPopup("Click On Pharmacy Ok Btn");
 		
 	}
+	
+	//InComplete
 
 }
