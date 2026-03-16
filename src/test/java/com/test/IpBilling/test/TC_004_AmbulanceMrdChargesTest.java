@@ -6,8 +6,6 @@ package com.test.IpBilling.test;
 import java.io.IOException;
 
 import javax.management.InvalidApplicationException;
-
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

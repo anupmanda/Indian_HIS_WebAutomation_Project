@@ -1,0 +1,27 @@
+2026-03-01 13:06:03 INFO  :458 - Start Entering...
+2026-03-01 13:06:03 INFO  :460 - //input[@id='txtLoginName']: Input Data : (sakti)
+2026-03-01 13:06:04 INFO  :466 - End Entering...
+2026-03-01 13:06:04 INFO  :458 - Start Entering...
+2026-03-01 13:06:04 INFO  :460 - //input[@id='txtPassword']: Input Data : (Admin@123)
+2026-03-01 13:06:05 INFO  :466 - End Entering...
+2026-03-01 13:06:05 INFO  :422 - Start Clicking on (Login Button)
+2026-03-01 13:06:06 INFO  :427 - ( //input[@id='btnLogin'] )
+2026-03-01 13:06:06 INFO  :429 - Clicked on (Login Button)
+2026-03-01 13:06:06 INFO  :422 - Start Clicking on (Login Yes)
+2026-03-01 13:06:07 INFO  :427 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2026-03-01 13:06:07 INFO  :429 - Clicked on (Login Yes)
+2026-03-01 13:06:11 INFO  :363 - Clicked on (Click On IP Billing DashBorad)
+2026-03-01 13:06:17 INFO  :363 - Clicked on (Station Yes Popup)
+2026-03-01 13:06:18 INFO  :363 - Clicked on (Click On Ip Billing Meanu)
+2026-03-01 13:06:20 INFO  :363 - Clicked on (Click On Ip Billing Drp)
+2026-03-01 13:06:23 INFO  :363 - Clicked on (Ip Billing Page)
+2026-03-01 13:06:29 INFO  :363 - Clicked on (Ok Deposit pop)
+2026-03-01 13:06:31 INFO  :363 - Clicked on (Click On Discount Btn)
+2026-03-01 13:06:32 INFO  :363 - Clicked on (Scheme Check Box Un_Select)
+2026-03-01 13:06:33 INFO  :363 - Clicked on (Click Radio Btn Total Bill Discount)
+2026-03-01 13:06:46 INFO  :363 - Clicked on (Click On Calculate Discount Btn)
+2026-03-01 13:06:52 INFO  :363 - Clicked on (Save Discount On Total Bill Amount)
+2026-03-01 13:07:08 INFO  :363 - Clicked on (Ok Deposit pop)
+2026-03-01 13:07:10 INFO  :363 - Clicked on (Click On Discount Btn)
+2026-03-01 13:07:11 INFO  :363 - Clicked on (Scheme Un Seleck Check Box)
+2026-03-01 13:07:12 INFO  :363 - Clicked on (Select Service Wise Radio Btn)

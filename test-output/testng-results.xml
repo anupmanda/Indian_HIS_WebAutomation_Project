@@ -1,21 +1,335 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="1" total="11" passed="9" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-25T15:28:21 IST" name="Default suite" finished-at="2026-02-25T15:29:32 IST" duration-ms="70999">
+  <suite started-at="2026-03-15T23:13:57 IST" name="Default suite" finished-at="2026-03-15T23:19:58 IST" duration-ms="361224">
     <groups>
     </groups>
-    <test started-at="2026-02-25T15:28:21 IST" name="Default test" finished-at="2026-02-25T15:29:32 IST" duration-ms="70999">
-      <class name="com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:28:20 IST" name="launch" finished-at="2026-02-25T15:28:21 IST" duration-ms="129" status="PASS">
+    <test started-at="2026-03-15T23:13:57 IST" name="Default test" finished-at="2026-03-15T23:19:58 IST" duration-ms="361224">
+      <class name="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:13:57 IST" name="launch" finished-at="2026-03-15T23:13:57 IST" duration-ms="116" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:28:21 IST" name="launchBrowser" finished-at="2026-02-25T15:28:29 IST" duration-ms="8351" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:13:57 IST" name="launchBrowser" finished-at="2026-03-15T23:14:05 IST" duration-ms="7666" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="PackageDurationModifiction_ChangeBillableTypeTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:28:34 IST" name="PackageDurationModifiction_ChangeBillableTypeTest" data-provider="PackageDurationModifictionDataProvider" finished-at="2026-02-25T15:29:09 IST" duration-ms="34560" status="PASS">
+        <test-method signature="AdmitPatient(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:14:07 IST" name="AdmitPatient" data-provider="ExcelUniversalDataProvider" finished-at="2026-03-15T23:15:52 IST" duration-ms="104391" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1st floor Nursing]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mr.]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Sagar]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Male]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[01/05/1992]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Hari]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Married]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[H-60]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Ghaziabad]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[456894]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Cardiac Surgery]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Self]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[OPD]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[HIMANSHU GENERAL WARD]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[HIMANSHU GENERAL WARD]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[HIMANSHU WARD (AUTOMATION)]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Cardiac Surgery]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Asutosh]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Brother]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Asutosh]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Patient himself]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Patient himself]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdmitPatient -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:15:52 IST" name="reportclosewindows" finished-at="2026-03-15T23:15:52 IST" duration-ms="695" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportclosewindows -->
+        <test-method signature="NursingDischargeTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:15:53 IST" name="NursingDischargeTest" data-provider="NursingActivityDataProvider" finished-at="2026-03-15T23:16:56 IST" duration-ms="62434" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[HIMANSHU WARD (AUTOMATION)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Discharge on Request]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Anup Discharge Remarks]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NursingDischargeTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:16:56 IST" name="reportclosewindows" finished-at="2026-03-15T23:16:56 IST" duration-ms="111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportclosewindows -->
+        <test-method signature="NursingClearanceTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:16:56 IST" name="NursingClearanceTest" data-provider="NursingClearanceDataProvider" finished-at="2026-03-15T23:17:12 IST" duration-ms="15731" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[HIMANSHU WARD (AUTOMATION)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[02/02/2026]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[IPNO]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[29344]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[03/01/2026]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NursingClearanceTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:17:12 IST" name="reportclosewindows" finished-at="2026-03-15T23:17:12 IST" duration-ms="126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportclosewindows -->
+        <test-method signature="PharmacyDischargeNotificationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:17:13 IST" name="PharmacyDischargeNotificationTest" data-provider="PharmacyDischargeNotificationDataProvider" finished-at="2026-03-15T23:18:05 IST" duration-ms="52511" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MATERIAL CENTRAL STORE]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[01/02/2026]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[IPNO]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[29344]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[ALL]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[04/02/2026]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Error while Clicking on the web element... ]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Error while Clicking on the web element... 
+at org.testng.Assert.fail(Assert.java:111)
+at com.test.ui.helper.CommanUtill.clickFunction(CommanUtill.java:373)
+at com.test.Pharmacy.Page.DischargeNotification_PharmacyPage.SelectPatientRow(DischargeNotification_PharmacyPage.java:146)
+at com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.PharmacyDischargeNotificationTest(TC_0A3_DueAmount_DocumentUploadTest.java:200)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PharmacyDischargeNotificationTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:18:05 IST" name="reportclosewindows" finished-at="2026-03-15T23:18:05 IST" duration-ms="67" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportclosewindows -->
+        <test-method signature="AcknowledgeDischargeNotification(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:6, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:18:06 IST" name="AcknowledgeDischargeNotification" data-provider="DischargeNotificationDataProvider" finished-at="2026-03-15T23:19:04 IST" duration-ms="58836" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,48 +343,58 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[SPSL.885851]]>
+                <![CDATA[GYNAE RECOVERY(FIRST FLOOR)]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[29459]]>
+                <![CDATA[Unacknowledged]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[EMERGENCY1]]>
+                <![CDATA[10/01/2026]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[50]]>
+                <![CDATA[IPNO]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Cardiology]]>
+                <![CDATA[24137]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[1000]]>
+                <![CDATA[Patient Name]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Himanshu Sharma Cardiologist]]>
+                <![CDATA[Dr. HUIDRTY DRTYJ]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[12/10/2025]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PackageDurationModifiction_ChangeBillableTypeTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:09 IST" name="reportclosewindows" finished-at="2026-02-25T15:29:10 IST" duration-ms="1181" status="PASS">
+        </test-method> <!-- AcknowledgeDischargeNotification -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:04 IST" name="reportclosewindows" finished-at="2026-03-15T23:19:05 IST" duration-ms="49" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="PackageDurationModifictionTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:12 IST" name="PackageDurationModifictionTest" data-provider="PackageDurationModifictionDataProvider" finished-at="2026-02-25T15:29:24 IST" duration-ms="12203" status="PASS">
+        <test-method signature="IpBillDischargeIcon(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:7, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:05 IST" name="IpBillDischargeIcon" data-provider="IpBilingDataProvider" finished-at="2026-03-15T23:19:21 IST" duration-ms="16677" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -84,48 +408,278 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[SPSL.885851]]>
+                <![CDATA[01/02/2026]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[29459]]>
+                <![CDATA[09/02/2026]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[EMERGENCY1]]>
+                <![CDATA[9876543210]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[50]]>
+                <![CDATA[Sagar]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Cardiology]]>
+                <![CDATA[SPSL..885723]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[1000]]>
+                <![CDATA[SPSL.85457]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Himanshu Sharma Cardiologist]]>
+                <![CDATA[29387]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Taylor Swift's Eras Tour]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Anup Discharge Icon]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Divyansh company]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Divyansh Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Healthindia Allied Services Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[111]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[222]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Amount]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[333]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Anup001]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[kumar002]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[PUNB0854]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[1232963]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Adhoc]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[BADR ALL SHEMA]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[NO Data]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[6000]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Anup99]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Brother]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[09/02/2026]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Anup Bill Genrate Reason]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Bill Settlement Reason Anup]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Bill Settlement Remarks]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Anup]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[Airtel payment Bank]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[Balihar Singh]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[Jai Singh]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Due Remarks Anup]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[MOU Discount]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[Cancel Bill Settle Remaks]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PackageDurationModifictionTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:24 IST" name="reportclosewindows" finished-at="2026-02-25T15:29:24 IST" duration-ms="85" status="PASS">
+        </test-method> <!-- IpBillDischargeIcon -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:21 IST" name="reportclosewindows" finished-at="2026-03-15T23:19:22 IST" duration-ms="64" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="PackageDurationModifictionDeleteTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:25 IST" name="PackageDurationModifictionDeleteTest" data-provider="PackageDurationModifictionDataProvider" finished-at="2026-02-25T15:29:31 IST" duration-ms="6323" status="PASS">
+        <test-method signature="IpBillReadyTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:8, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:22 IST" name="IpBillReadyTest" data-provider="IpBilingDataProvider" finished-at="2026-03-15T23:19:28 IST" duration-ms="5811" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -139,48 +693,856 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[SPSL.885851]]>
+                <![CDATA[01/02/2026]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[29459]]>
+                <![CDATA[09/02/2026]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[EMERGENCY1]]>
+                <![CDATA[9876543210]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[50]]>
+                <![CDATA[Sagar]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Cardiology]]>
+                <![CDATA[SPSL..885723]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[1000]]>
+                <![CDATA[SPSL.85457]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Himanshu Sharma Cardiologist]]>
+                <![CDATA[29387]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Taylor Swift's Eras Tour]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Anup Discharge Icon]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Divyansh company]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Divyansh Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Healthindia Allied Services Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[111]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[222]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Amount]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[333]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Anup001]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[kumar002]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[PUNB0854]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[1232963]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Adhoc]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[BADR ALL SHEMA]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[NO Data]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[6000]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Anup99]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Brother]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[09/02/2026]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Anup Bill Genrate Reason]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Bill Settlement Reason Anup]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Bill Settlement Remarks]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Anup]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[Airtel payment Bank]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[Balihar Singh]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[Jai Singh]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Due Remarks Anup]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[MOU Discount]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[Cancel Bill Settle Remaks]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PackageDurationModifictionDeleteTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest@246f8b8b]" started-at="2026-02-25T15:29:31 IST" name="reportclosewindows" finished-at="2026-02-25T15:29:32 IST" duration-ms="137" status="PASS">
+        </test-method> <!-- IpBillReadyTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:28 IST" name="reportclosewindows" finished-at="2026-03-15T23:19:28 IST" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest -->
+        <test-method signature="BillGenrateTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:9, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:28 IST" name="BillGenrateTest" data-provider="IpBilingDataProvider" finished-at="2026-03-15T23:19:33 IST" duration-ms="4950" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[IP BILLING]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[01/02/2026]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[09/02/2026]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[9876543210]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Sagar]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[SPSL..885723]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[SPSL.85457]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[29387]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Taylor Swift's Eras Tour]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Anup Discharge Icon]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Divyansh company]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Divyansh Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Healthindia Allied Services Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[111]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[222]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Amount]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[333]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Anup001]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[kumar002]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[PUNB0854]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[1232963]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Adhoc]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[BADR ALL SHEMA]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[NO Data]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[6000]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Anup99]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Brother]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[09/02/2026]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Anup Bill Genrate Reason]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Bill Settlement Reason Anup]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Bill Settlement Remarks]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Anup]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[Airtel payment Bank]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[Balihar Singh]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[Jai Singh]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Due Remarks Anup]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[MOU Discount]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[Cancel Bill Settle Remaks]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BillGenrateTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:33 IST" name="reportclosewindows" finished-at="2026-03-15T23:19:33 IST" duration-ms="80" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportclosewindows -->
+        <test-method signature="DueSettlementBillTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:10, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:33 IST" name="DueSettlementBillTest" data-provider="IpBilingDataProvider" finished-at="2026-03-15T23:19:58 IST" duration-ms="24709" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[IP BILLING]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[01/02/2026]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[09/02/2026]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[9876543210]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Sagar]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[SPSL..885723]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[SPSL.85457]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[29387]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Taylor Swift's Eras Tour]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Anup Discharge Icon]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Divyansh company]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Divyansh Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Healthindia Allied Services Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[111]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[222]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Amount]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[333]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Anup001]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[kumar002]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[PUNB0854]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[1232963]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Adhoc]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[BADR ALL SHEMA]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[NO Data]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[6000]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Anup99]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Brother]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[09/02/2026]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Anup Bill Genrate Reason]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Bill Settlement Reason Anup]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Bill Settlement Remarks]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Anup]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[963852741]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[10/02/2026]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[Airtel payment Bank]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[Balihar Singh]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[Jai Singh]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Due Remarks Anup]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[MOU Discount]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[Cancel Bill Settle Remaks]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DueSettlementBillTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:58 IST" name="reportclosewindows" finished-at="2026-03-15T23:19:58 IST" duration-ms="50" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportclosewindows -->
+        <test-method signature="BillingFuncility()[pri:11, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:58 IST" name="BillingFuncility" finished-at="2026-03-15T23:19:58 IST" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BillingFuncility -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a]" started-at="2026-03-15T23:19:58 IST" name="reportclosewindows" finished-at="2026-03-15T23:19:58 IST" duration-ms="75" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportclosewindows -->
+      </class> <!-- com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

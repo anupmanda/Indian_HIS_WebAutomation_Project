@@ -30,12 +30,12 @@ public class TC0001_1ADT_Update_Patient_Details  extends ADT_Admit_Patient{
 		
 	@Test(dataProvider = "ExcelUniversalDataProvider")
 	
-	public void AdmitPatient(String Facility, String Station, String Title, String Gender, String DOB, String FatherName, String M_Status,
+	public void AdmitPatient(String Facility, String Station, String Title, String Enter_First_Name , String Gender, String DOB, String FatherName, String M_Status,
 			String Address, String City, String Nationality, String ABCPin, String Speciality, String Referred, String Stay, String Source, String BedType, String Alloted_bed_type_drp , String Ward,
 			String Package_Speciality, String KinName, String Relation, String Name, String BillingCo, String ClinicalCo) throws IOException, InterruptedException {
 		logger = extent.createTest("Admit_Patient" , "Fill All The Mandatory Details at all Admit PatientScreen and Click on Ths Save Buton");
 		 
-		adt.AdmitPatient(Facility,Station,Title,Gender,DOB,FatherName,M_Status, Address, City,Nationality, ABCPin);
+		adt.AdmitPatient(Facility,Station, Title, Enter_First_Name , Gender,DOB,FatherName,M_Status, Address, City,Nationality, ABCPin);
 		
         adt.Consultant(Speciality, Referred, Stay, Source);		
     	

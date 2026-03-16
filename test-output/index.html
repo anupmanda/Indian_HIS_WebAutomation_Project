@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse--1530681508\testng-customsuite.xml</span>
+                    <span>C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse-1794517849\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="PharmacyDischargeNotificationTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE, All, All, 01/02/2026, IPNO, 29344, ALL, 04/02/2026)">PharmacyDischargeNotificationTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE, All, All, 01/02/2026, IPNO, 29344, ALL, 04/02/2026)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,17 +117,47 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest" class="method navigator-link" hash-for-method="PackageDurationModifictionDeleteTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)">PackageDurationModifictionDeleteTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="AcknowledgeDischargeNotification(SANITY HOSPITAL, IP BILLING, GYNAE RECOVERY(FIRST FLOOR), Unacknowledged, 10/01/2026, IPNO, 24137, P...)">AcknowledgeDischargeNotification(SANITY HOSPITAL, IP BILLING, GYNAE RECOVERY(FIRST FLOOR), Unacknowledged, 10/01/2026, IPNO, 24137, P...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest" class="method navigator-link" hash-for-method="PackageDurationModifictionTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)">PackageDurationModifictionTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="AdmitPatient(SANITY HOSPITAL, 1st floor Nursing, Mr., Sagar, Male, 01/05/1992, Hari, Married, H-60, Ghaziabad, In...)">AdmitPatient(SANITY HOSPITAL, 1st floor Nursing, Mr., Sagar, Male, 01/05/1992, Hari, Married, H-60, Ghaziabad, In...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest" class="method navigator-link" hash-for-method="PackageDurationModifiction_ChangeBillableTypeTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)">PackageDurationModifiction_ChangeBillableTypeTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="BillGenrateTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">BillGenrateTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="BillingFuncility">BillingFuncility</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="DueSettlementBillTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">DueSettlementBillTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="IpBillDischargeIcon(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">IpBillDischargeIcon(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="IpBillReadyTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">IpBillReadyTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="NursingClearanceTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), All, 02/02/2026, IPNO, 29344, All, 03/01/2026)">NursingClearanceTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), All, 02/02/2026, IPNO, 29344, All, 03/01/2026)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest" class="method navigator-link" hash-for-method="NursingDischargeTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), Normal, Discharge on Request, Anup Discharge Remarks)">NursingDischargeTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), Normal, Discharge on Request, Anup Discharge Remarks)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -128,34 +172,130 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="PackageDurationModifictionDeleteTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)">
-                  </a> <!-- PackageDurationModifictionDeleteTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...) -->
-                  <span class="method-name">PackageDurationModifictionDeleteTest</span>
-                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,SPSL.885851,29459,EMERGENCY1,50,Cardiology,1000,Himanshu Sharma Cardiologist)</span>
+                  <a name="PharmacyDischargeNotificationTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE, All, All, 01/02/2026, IPNO, 29344, ALL, 04/02/2026)">
+                  </a> <!-- PharmacyDischargeNotificationTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE, All, All, 01/02/2026, IPNO, 29344, ALL, 04/02/2026) -->
+                  <span class="method-name">PharmacyDischargeNotificationTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,MATERIAL CENTRAL STORE,All,All,01/02/2026,IPNO,29344,ALL,04/02/2026)</span>
+                  <div class="stack-trace">java.lang.AssertionError: Error while Clicking on the web element... 
+	at org.testng.Assert.fail(Assert.java:111)
+	at com.test.ui.helper.CommanUtill.clickFunction(CommanUtill.java:373)
+	at com.test.Pharmacy.Page.DischargeNotification_PharmacyPage.SelectPatientRow(DischargeNotification_PharmacyPage.java:146)
+	at com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.PharmacyDischargeNotificationTest(TC_0A3_DueAmount_DocumentUploadTest.java:200)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AcknowledgeDischargeNotification(SANITY HOSPITAL, IP BILLING, GYNAE RECOVERY(FIRST FLOOR), Unacknowledged, 10/01/2026, IPNO, 24137, P...)">
+                  </a> <!-- AcknowledgeDischargeNotification(SANITY HOSPITAL, IP BILLING, GYNAE RECOVERY(FIRST FLOOR), Unacknowledged, 10/01/2026, IPNO, 24137, P...) -->
+                  <span class="method-name">AcknowledgeDischargeNotification</span>
+                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,GYNAE RECOVERY(FIRST FLOOR),Unacknowledged,10/01/2026,IPNO,24137,Patient Name,Dr. HUIDRTY DRTYJ,All,12/10/2025)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="PackageDurationModifictionTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)">
-                  </a> <!-- PackageDurationModifictionTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...) -->
-                  <span class="method-name">PackageDurationModifictionTest</span>
-                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,SPSL.885851,29459,EMERGENCY1,50,Cardiology,1000,Himanshu Sharma Cardiologist)</span>
+                  <a name="AdmitPatient(SANITY HOSPITAL, 1st floor Nursing, Mr., Sagar, Male, 01/05/1992, Hari, Married, H-60, Ghaziabad, In...)">
+                  </a> <!-- AdmitPatient(SANITY HOSPITAL, 1st floor Nursing, Mr., Sagar, Male, 01/05/1992, Hari, Married, H-60, Ghaziabad, In...) -->
+                  <span class="method-name">AdmitPatient</span>
+                  <span class="parameters">(SANITY HOSPITAL,1st floor Nursing,Mr.,Sagar,Male,01/05/1992,Hari,Married,H-60,Ghaziabad,India,456894,Cardiac Surgery,Self,1,OPD,HIMANSHU GENERAL WARD,HIMANSHU GENERAL WARD,HIMANSHU WARD (AUTOMATION),Cardiac Surgery,Asutosh,Brother,Asutosh,Patient himself,Patient himself)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="PackageDurationModifiction_ChangeBillableTypeTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)">
-                  </a> <!-- PackageDurationModifiction_ChangeBillableTypeTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...) -->
-                  <span class="method-name">PackageDurationModifiction_ChangeBillableTypeTest</span>
-                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,SPSL.885851,29459,EMERGENCY1,50,Cardiology,1000,Himanshu Sharma Cardiologist)</span>
+                  <a name="BillGenrateTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">
+                  </a> <!-- BillGenrateTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...) -->
+                  <span class="method-name">BillGenrateTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,01/02/2026,09/02/2026,9876543210,Sagar,SPSL..885723,SPSL.85457,29387,Normal,Taylor Swift's Eras Tour,Anup Discharge Icon,Divyansh company,Divyansh Pvt Ltd,Healthindia Allied Services Pvt Ltd,111,222,0,Amount,500,333,10/02/2026,Anup001,kumar002,2000,100,963852741,PUNB0854,Noida,1232963,Adhoc,BADR ALL SHEMA,NO Data,6000,5,Anup99,Brother,10/02/2026,09/02/2026,10/02/2026,Anup Bill Genrate Reason,Bill Settlement Reason Anup,Bill Settlement Remarks,Anup,963852741,10/02/2026,Airtel payment Bank,Noida,1000,Balihar Singh,500,Jai Singh,Due Remarks Anup,MOU Discount,Cancel Bill Settle Remaks)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="BillingFuncility">
+                  </a> <!-- BillingFuncility -->
+                  <span class="method-name">BillingFuncility</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="DueSettlementBillTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">
+                  </a> <!-- DueSettlementBillTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...) -->
+                  <span class="method-name">DueSettlementBillTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,01/02/2026,09/02/2026,9876543210,Sagar,SPSL..885723,SPSL.85457,29387,Normal,Taylor Swift's Eras Tour,Anup Discharge Icon,Divyansh company,Divyansh Pvt Ltd,Healthindia Allied Services Pvt Ltd,111,222,0,Amount,500,333,10/02/2026,Anup001,kumar002,2000,100,963852741,PUNB0854,Noida,1232963,Adhoc,BADR ALL SHEMA,NO Data,6000,5,Anup99,Brother,10/02/2026,09/02/2026,10/02/2026,Anup Bill Genrate Reason,Bill Settlement Reason Anup,Bill Settlement Remarks,Anup,963852741,10/02/2026,Airtel payment Bank,Noida,1000,Balihar Singh,500,Jai Singh,Due Remarks Anup,MOU Discount,Cancel Bill Settle Remaks)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="IpBillDischargeIcon(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">
+                  </a> <!-- IpBillDischargeIcon(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...) -->
+                  <span class="method-name">IpBillDischargeIcon</span>
+                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,01/02/2026,09/02/2026,9876543210,Sagar,SPSL..885723,SPSL.85457,29387,Normal,Taylor Swift's Eras Tour,Anup Discharge Icon,Divyansh company,Divyansh Pvt Ltd,Healthindia Allied Services Pvt Ltd,111,222,0,Amount,500,333,10/02/2026,Anup001,kumar002,2000,100,963852741,PUNB0854,Noida,1232963,Adhoc,BADR ALL SHEMA,NO Data,6000,5,Anup99,Brother,10/02/2026,09/02/2026,10/02/2026,Anup Bill Genrate Reason,Bill Settlement Reason Anup,Bill Settlement Remarks,Anup,963852741,10/02/2026,Airtel payment Bank,Noida,1000,Balihar Singh,500,Jai Singh,Due Remarks Anup,MOU Discount,Cancel Bill Settle Remaks)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="IpBillReadyTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)">
+                  </a> <!-- IpBillReadyTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...) -->
+                  <span class="method-name">IpBillReadyTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,IP BILLING,01/02/2026,09/02/2026,9876543210,Sagar,SPSL..885723,SPSL.85457,29387,Normal,Taylor Swift's Eras Tour,Anup Discharge Icon,Divyansh company,Divyansh Pvt Ltd,Healthindia Allied Services Pvt Ltd,111,222,0,Amount,500,333,10/02/2026,Anup001,kumar002,2000,100,963852741,PUNB0854,Noida,1232963,Adhoc,BADR ALL SHEMA,NO Data,6000,5,Anup99,Brother,10/02/2026,09/02/2026,10/02/2026,Anup Bill Genrate Reason,Bill Settlement Reason Anup,Bill Settlement Remarks,Anup,963852741,10/02/2026,Airtel payment Bank,Noida,1000,Balihar Singh,500,Jai Singh,Due Remarks Anup,MOU Discount,Cancel Bill Settle Remaks)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="NursingClearanceTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), All, 02/02/2026, IPNO, 29344, All, 03/01/2026)">
+                  </a> <!-- NursingClearanceTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), All, 02/02/2026, IPNO, 29344, All, 03/01/2026) -->
+                  <span class="method-name">NursingClearanceTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,HIMANSHU WARD (AUTOMATION),All,02/02/2026,IPNO,29344,All,03/01/2026)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="NursingDischargeTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), Normal, Discharge on Request, Anup Discharge Remarks)">
+                  </a> <!-- NursingDischargeTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), Normal, Discharge on Request, Anup Discharge Remarks) -->
+                  <span class="method-name">NursingDischargeTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,HIMANSHU WARD (AUTOMATION),Normal,Discharge on Request,Anup Discharge Remarks)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -163,7 +303,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse--1530681508\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse-1794517849\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -172,7 +312,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest&quot;/&gt;
+      &lt;class name=&quot;com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -212,24 +352,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(10);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'PackageDurationModifiction_ChangeBillableTypeTest')
-data.setCell(0, 2, 'com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest')
-data.setCell(0, 3, 34560);
+data.setCell(0, 1, 'AdmitPatient')
+data.setCell(0, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(0, 3, 104391);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'PackageDurationModifictionTest')
-data.setCell(1, 2, 'com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest')
-data.setCell(1, 3, 12203);
+data.setCell(1, 1, 'NursingDischargeTest')
+data.setCell(1, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(1, 3, 62434);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'PackageDurationModifictionDeleteTest')
-data.setCell(2, 2, 'com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest')
-data.setCell(2, 3, 6323);
+data.setCell(2, 1, 'AcknowledgeDischargeNotification')
+data.setCell(2, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(2, 3, 58836);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'PharmacyDischargeNotificationTest')
+data.setCell(3, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(3, 3, 52511);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'DueSettlementBillTest')
+data.setCell(4, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(4, 3, 24709);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'IpBillDischargeIcon')
+data.setCell(5, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(5, 3, 16677);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'NursingClearanceTest')
+data.setCell(6, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(6, 3, 15731);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'IpBillReadyTest')
+data.setCell(7, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(7, 3, 5811);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'BillGenrateTest')
+data.setCell(8, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(8, 3, 4950);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'BillingFuncility')
+data.setCell(9, 2, 'com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest')
+data.setCell(9, 3, 11);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 53 seconds</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -244,9 +412,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">LabclearanceDataProviderTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -255,38 +430,96 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.test.IpBilling.test.Tc_013_PackageDurationModifictionTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">launch</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">launchBrowser</span>
-                <span class="method-start">149 ms</span>
+                <span class="method-start">137 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">PackageDurationModifiction_ChangeBillableTypeTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)</span>
-                <span class="method-start">13771 ms</span>
+                <span class="method-name">AdmitPatient(SANITY HOSPITAL, 1st floor Nursing, Mr., Sagar, Male, 01/05/1992, Hari, Married, H-60, Ghaziabad, In...)</span>
+                <span class="method-start">10561 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">48347 ms</span>
+                <span class="method-start">114956 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">PackageDurationModifictionTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)</span>
-                <span class="method-start">51312 ms</span>
+                <span class="method-name">NursingDischargeTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), Normal, Discharge on Request, Anup Discharge Remarks)</span>
+                <span class="method-start">116423 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">63515 ms</span>
+                <span class="method-start">178857 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">PackageDurationModifictionDeleteTest(SANITY HOSPITAL, IP BILLING, SPSL.885851, 29459, EMERGENCY1, 50, Cardiology, 1000, Himanshu Sharma C...)</span>
-                <span class="method-start">64663 ms</span>
+                <span class="method-name">NursingClearanceTest(SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), All, 02/02/2026, IPNO, 29344, All, 03/01/2026)</span>
+                <span class="method-start">179430 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">70992 ms</span>
+                <span class="method-start">195161 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">PharmacyDischargeNotificationTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE, All, All, 01/02/2026, IPNO, 29344, ALL, 04/02/2026)</span>
+                <span class="method-start">195801 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">248312 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">AcknowledgeDischargeNotification(SANITY HOSPITAL, IP BILLING, GYNAE RECOVERY(FIRST FLOOR), Unacknowledged, 10/01/2026, IPNO, 24137, P...)</span>
+                <span class="method-start">248934 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">307770 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">IpBillDischargeIcon(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</span>
+                <span class="method-start">308088 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">324765 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">IpBillReadyTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</span>
+                <span class="method-start">325050 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">330864 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">BillGenrateTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</span>
+                <span class="method-start">331181 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">336131 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">DueSettlementBillTest(SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29...)</span>
+                <span class="method-start">336483 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">361195 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">BillingFuncility</span>
+                <span class="method-start">361246 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">361265 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

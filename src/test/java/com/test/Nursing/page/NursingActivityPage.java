@@ -72,6 +72,7 @@ public class NursingActivityPage extends GeneralBrowserSetting {
 	public void SelectByFacilityDrp (String facility_Drp) throws IOException ,InvalidApplicationException, InterruptedException {
 
 		CommanUtill.dropdownSelectByVisibleText(Facility_Dashbord_Drp, facility_Drp);
+		logger.info(Facility_Dashbord_Drp);
 	}
 
 	public void ClickOnNursingDashboard(String Nursing_dashbord , String Station_drp ,String Station_Yes_Pop)
@@ -96,6 +97,33 @@ public class NursingActivityPage extends GeneralBrowserSetting {
 		
 		
 	}
+	
+	public String getSearchBoxValue() {
+
+	    return driver.findElement(By.xpath("//input[@placeholder='Search..']")).getAttribute("value");
+
+	}
+	public boolean verifyPatientPresentInTable(String ipNo) {
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table//tbody")));
+
+	    List<WebElement> rows = driver.findElements(By.xpath("//table//tbody//tr"));
+
+	    for(WebElement row : rows) {
+
+	        if(row.getText().contains(ipNo)) {
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
+	
+	
+	
+	
 	public void clickFirstAfterSearch_AdmittedNotOccupied() throws IOException, InterruptedException {
 
 	    JavascriptExecutor js = (JavascriptExecutor) driver;

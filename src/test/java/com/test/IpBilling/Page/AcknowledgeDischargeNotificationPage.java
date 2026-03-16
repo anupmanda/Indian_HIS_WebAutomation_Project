@@ -25,6 +25,7 @@ import com.test.ui.helper.CommanUtill;
  */
 public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting {
 	
+	public static String Ip_No;
 	public AcknowledgeDischargeNotificationPage() {
 		// TODO Auto-generated constructor stub
 	
@@ -66,7 +67,8 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		protected String whiteRowXpath_Yes_pop = "//a[@id='btnok']";
 		protected String Bill_Ready_Yes_pop = "//a[@id='btnok2']";
 		
-		
+		//===================================His Logo =========================================
+		protected String His_Logo_Icon = "//div[@class='logoHis']";
 		
 		
 		
@@ -182,8 +184,11 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		
 		public String clickFirstWhiteRowAndPrintDetails(String White_Row) throws IOException, InterruptedException {
 
-		    String whiteRowXpath = "//table[@id='tbl1']/tbody/tr[contains(@style,'background:white')][1]";
-
+		    String whiteRowXpath = "//table[@id='tbl1']/tbody/tr[contains(@style,'background:white')][last()]";
+		  //table[@id='tbl1']/tbody/tr[contains(@style,'background:white')]  All White Row
+		  //table[@id='tbl1']/tbody/tr[contains(@style,'background:white')][last()] 
+		  //table[@id='tbl1']/tbody/tr[contains(@style,'background:white')][1]
+		    
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		    WebElement whiteRow = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(whiteRowXpath)));
 
@@ -196,13 +201,14 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		    Thread.sleep(500);
 
 		    String sNo = whiteRow.findElement(By.xpath("./td[1]")).getText();
-		    String ipNo = whiteRow.findElement(By.xpath("./td[3]")).getText();
-		    String patientName = whiteRow.findElement(By.xpath("./td[4]")).getText();
+		    String Patient_Name = whiteRow.findElement(By.xpath("./td[4]")).getText();
+		    String Ip_No = whiteRow.findElement(By.xpath("./td[3]")).getText();
 		    String bed = whiteRow.findElement(By.xpath("./td[7]")).getText();
+		   
 
 		    System.out.println("S.No : " + sNo);
-		    System.out.println("IP No : " + ipNo);
-		    System.out.println("Patient Name : " + patientName);
+		    System.out.println("Patient Name : " + Patient_Name);
+		    System.out.println("Ip Number : " + Ip_No);
 		    System.out.println("Bed : " + bed);
 
 		    // click first time
@@ -326,6 +332,12 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		    js.executeScript("arguments[0].click();", navyBlueRow);
 
 		    System.out.println("Top navy blue row clicked successfully");
+		}
+		public void ClickOnHISLogoIcon(String His_Logo)  throws IOException, InterruptedException {
+			
+			WebDriverWait his = new WebDriverWait(driver, Duration.ofSeconds(10));
+			his.until(ExpectedConditions.presenceOfElementLocated(By.xpath(His_Logo_Icon)));
+			CommanUtill.clickFunction(His_Logo_Icon, His_Logo);
 		}
 		
 }

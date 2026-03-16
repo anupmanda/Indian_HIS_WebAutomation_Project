@@ -1,0 +1,3178 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>automation extent report</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Triotree Health Care Report </span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Mar 15, 2026 11:13:57 pm</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='90%'><span class='strong'>9</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='10%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Admit_Patient</span>
+						<span class='test-time'>Mar 15, 2026 11:14:07 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:14:07 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:15:51 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 44s+51ms</span>
+</div>
+<div class='test-desc'>Fill All The Mandatory Details at all Admit PatientScreen and Click on The Save Buton </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:08 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:08 pm</td>
+				<td class='step-details'>
+						//*[@id="Facility"]: Dropdown Value : (SANITY HOSPITAL)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:10 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:10 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Clicked on The ADT Module Button)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:11 pm</td>
+				<td class='step-details'>
+						( //*[@id="btn_adt"] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:11 pm</td>
+				<td class='step-details'>
+						Clicked on (Clicked on The ADT Module Button)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:13 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:13 pm</td>
+				<td class='step-details'>
+						//*[@id="Department"]: Dropdown Value : (1st floor Nursing)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:14 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:15 pm</td>
+				<td class='step-details'>
+						Start Clicking (JS) on (Clicked on The Select Station Yes Button)
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:17 pm</td>
+				<td class='step-details'>
+						Clicked (JS) on (Clicked on The Select Station Yes Button)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:18 pm</td>
+				<td class='step-details'>
+						Start Clicking (JS) on (Clicked On The Admit Patient Link)
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:18 pm</td>
+				<td class='step-details'>
+						Clicked (JS) on (Clicked On The Admit Patient Link)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:18 pm</td>
+				<td class='step-details'>
+						Start Clicking (JS) on (Clicked on The Admit Patient)
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:24 pm</td>
+				<td class='step-details'>
+						Clicked (JS) on (Clicked on The Admit Patient)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:25 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:25 pm</td>
+				<td class='step-details'>
+						//*[@id="_title"]: Dropdown Value : (Mr.)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:26 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:27 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:27 pm</td>
+				<td class='step-details'>
+						//*[@id="f_name"]: Input Data : (SagarDHC)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:29 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:30 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:30 pm</td>
+				<td class='step-details'>
+						//*[@id="_sex"]: Dropdown Value : (Male)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:32 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:33 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:33 pm</td>
+				<td class='step-details'>
+						//*[@id="_dob"]: Input Data : (01/05/1992)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:35 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:36 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:36 pm</td>
+				<td class='step-details'>
+						//*[@id="fs_name"]: Input Data : (Hari)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:37 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:38 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:38 pm</td>
+				<td class='step-details'>
+						//*[@id="M_status"]: Dropdown Value : (Married)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:40 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:41 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:41 pm</td>
+				<td class='step-details'>
+						//*[@id="_address"]: Input Data : (H-60)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:43 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:44 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:44 pm</td>
+				<td class='step-details'>
+						//*[@id="_city"]: Dropdown Value : (Ghaziabad)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:45 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:47 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:47 pm</td>
+				<td class='step-details'>
+						//*[@id="txtDig"]: Input Data : (456894)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:48 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:48 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click on The Consultant)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:49 pm</td>
+				<td class='step-details'>
+						( //*[@id="_admitPatientform"]/div[4]/ul/li[2]/a )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:49 pm</td>
+				<td class='step-details'>
+						Clicked on (Click on The Consultant)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:51 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:51 pm</td>
+				<td class='step-details'>
+						//*[@id="AD_specility"]: Dropdown Value : (Cardiac Surgery)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:52 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:53 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:53 pm</td>
+				<td class='step-details'>
+						//*[@id="_refBY"]: Input Data : (Self)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:55 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:56 pm</td>
+				<td class='step-details'>
+						Start Pressing Enter on element: (//*[@id="_refBY"])
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:57 pm</td>
+				<td class='step-details'>
+						Enter pressed successfully on element: (//*[@id="_refBY"])
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:14:59 pm</td>
+				<td class='step-details'>
+						Start Pressing Enter on element: (//*[@id="_refBY"])
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:14:59 pm</td>
+				<td class='step-details'>
+						Enter pressed successfully on element: (//*[@id="_refBY"])
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:01 pm</td>
+				<td class='step-details'>
+						Start Clearing Text Field (TextField Will Be Cleared)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:01 pm</td>
+				<td class='step-details'>
+						( //*[@id="Expected_stay"] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:02 pm</td>
+				<td class='step-details'>
+						Cleared Text Field (TextField Will Be Cleared)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:03 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:03 pm</td>
+				<td class='step-details'>
+						//*[@id="Expected_stay"]: Input Data : (1)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:05 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:06 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:06 pm</td>
+				<td class='step-details'>
+						//*[@id="_Admission"]: Dropdown Value : (OPD)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:08 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:08 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click on The Vulnerable CheckBox)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:09 pm</td>
+				<td class='step-details'>
+						( //*[@id="chk_Vulnerable"] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:09 pm</td>
+				<td class='step-details'>
+						Clicked on (Click on The Vulnerable CheckBox)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:09 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Clicked on The Bed and Payments Details)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:10 pm</td>
+				<td class='step-details'>
+						( //*[@id="_admitPatientform"]/div[4]/ul/li[3]/a )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:10 pm</td>
+				<td class='step-details'>
+						Clicked on (Clicked on The Bed and Payments Details)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:12 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:12 pm</td>
+				<td class='step-details'>
+						//*[@id="Req_bedtype"]: Dropdown Value : (HIMANSHU GENERAL WARD)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:14 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:15 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:15 pm</td>
+				<td class='step-details'>
+						//select[@id='All_type']: Dropdown Value : (HIMANSHU GENERAL WARD)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:16 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:17 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:17 pm</td>
+				<td class='step-details'>
+						//*[@id="ward_type"]: Dropdown Value : (HIMANSHU WARD (AUTOMATION))
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:19 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:19 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Clicked on The NextofKinDetails)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:20 pm</td>
+				<td class='step-details'>
+						( //*[@id="_admitPatientform"]/div[4]/ul/li[5]/a )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:20 pm</td>
+				<td class='step-details'>
+						Clicked on (Clicked on The NextofKinDetails)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:21 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:21 pm</td>
+				<td class='step-details'>
+						/html/body/div[6]/div[1]/form/div[4]/div/div[5]/div/div[1]/fieldset/div[1]/span[1]/input: Input Data : (Asutosh)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:23 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:24 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:24 pm</td>
+				<td class='step-details'>
+						/html/body/div[6]/div[1]/form/div[4]/div/div[5]/div/div[1]/fieldset/div[1]/span[2]/select: Dropdown Value : (Brother)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:25 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:26 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:26 pm</td>
+				<td class='step-details'>
+						/html/body/div[6]/div[1]/form/div[4]/div/div[5]/div/div[2]/fieldset[1]/div/span[1]/input: Input Data : (Asutosh)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:28 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:29 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:29 pm</td>
+				<td class='step-details'>
+						/html/body/div[6]/div[1]/form/div[4]/div/div[5]/div/div[2]/fieldset[1]/div/span[2]/input: Input Data : (6906211978)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:31 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:32 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:32 pm</td>
+				<td class='step-details'>
+						/html/body/div[6]/div[1]/form/div[4]/div/div[5]/div/div[2]/fieldset[2]/div/span[1]/input: Input Data : (Patient himself)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:33 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:34 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:34 pm</td>
+				<td class='step-details'>
+						/html/body/div[6]/div[1]/form/div[4]/div/div[5]/div/div[2]/fieldset[2]/div/span[2]/input: Input Data : (Patient himself)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:36 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:36 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click on The Save Button)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:37 pm</td>
+				<td class='step-details'>
+						( //*[@id="saveitem"] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:37 pm</td>
+				<td class='step-details'>
+						Clicked on (Click on The Save Button)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:38 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click on The Save Button1)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:41 pm</td>
+				<td class='step-details'>
+						( //*[@id="btnAcceptYes"] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:41 pm</td>
+				<td class='step-details'>
+						Clicked on (Click on The Save Button1)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:41 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Close GCD Screen Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:42 pm</td>
+				<td class='step-details'>
+						( //a[@id='closeGcdScreening'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:42 pm</td>
+				<td class='step-details'>
+						Clicked on (Close GCD Screen Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:43 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Close Admossion Consent Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:44 pm</td>
+				<td class='step-details'>
+						( //a[@id='closeid']//i[@class='fa fa-times'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:44 pm</td>
+				<td class='step-details'>
+						Clicked on (Close Admossion Consent Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:45 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Radio Button Face Sheet)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:46 pm</td>
+				<td class='step-details'>
+						( //input[@id='facesheet'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:46 pm</td>
+				<td class='step-details'>
+						Clicked on (Radio Button Face Sheet)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:46 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Print Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:49 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnprint']//i[@class='fa fa-print'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:49 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Print Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:49 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On HIS Log Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:51 pm</td>
+				<td class='step-details'>
+						( //div[@class='logoHis'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:51 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On HIS Log Icon)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Nursing Discharge Test</span>
+						<span class='test-time'>Mar 15, 2026 11:15:53 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:15:53 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:16:55 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 2s+109ms</span>
+</div>
+<div class='test-desc'>Nursing Discharge Test Funcility </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:54 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:54 pm</td>
+				<td class='step-details'>
+						//select[@id='Facility']: Dropdown Value : (SANITY HOSPITAL)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:55 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:55 pm</td>
+				<td class='step-details'>
+						//select[@id='Facility']
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:55 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Nursing DashBorad)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:56 pm</td>
+				<td class='step-details'>
+						( //li[@id='btn_Nursing'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:56 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Nursing DashBorad)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:57 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:57 pm</td>
+				<td class='step-details'>
+						//select[@id='Department']: Dropdown Value : (HIMANSHU WARD (AUTOMATION))
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:59 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:15:59 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Station Yes Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:02 pm</td>
+				<td class='step-details'>
+						( //a[@id='btn_yes_desh'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:02 pm</td>
+				<td class='step-details'>
+						Clicked on (Station Yes Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:02 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Nursing Activity Tab)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:03 pm</td>
+				<td class='step-details'>
+						( //span[normalize-space()='Nursing Activity'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:03 pm</td>
+				<td class='step-details'>
+						Clicked on (Nursing Activity Tab)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:04 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Nursing activity Page)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:13 pm</td>
+				<td class='step-details'>
+						( //li[@id='liNursingActivity']//li[1] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:13 pm</td>
+				<td class='step-details'>
+						Clicked on (Nursing activity Page)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:14 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:14 pm</td>
+				<td class='step-details'>
+						//input[@placeholder='Search..']: Input Data : (29639)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:16 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:19 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Save Change Bed Status Pop )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:20 pm</td>
+				<td class='step-details'>
+						( //a[@id='savechangebedstatus']//i[@class='fa fa-save'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:20 pm</td>
+				<td class='step-details'>
+						Clicked on (Save Change Bed Status Pop )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:25 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Yes Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:33 pm</td>
+				<td class='step-details'>
+						( //a[@id='btn_svbedch_ok'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:33 pm</td>
+				<td class='step-details'>
+						Clicked on (Yes Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:42 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Acknowleded Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:43 pm</td>
+				<td class='step-details'>
+						( //button[@id='acknowledgeBtn'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:43 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Acknowleded Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:43 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Discharge Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:45 pm</td>
+				<td class='step-details'>
+						( //a[@id='NursingDischargeRequest'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:45 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Discharge Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:46 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:46 pm</td>
+				<td class='step-details'>
+						//select[@id='dishchargetype']: Dropdown Value : (Normal)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:48 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:48 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:48 pm</td>
+				<td class='step-details'>
+						//select[@id='dishchargesubtype']: Dropdown Value : (Discharge on Request)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:50 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:50 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:50 pm</td>
+				<td class='step-details'>
+						//textarea[@id='dis_Remarks']: Input Data : (Anup Discharge Remarks)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:52 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:52 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Save Discharge Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:53 pm</td>
+				<td class='step-details'>
+						( //a[@id='SaveDischargeIntimation']//i[@class='fa fa-save'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:53 pm</td>
+				<td class='step-details'>
+						Clicked on (Save Discharge Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:54 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Discharge Yes Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:55 pm</td>
+				<td class='step-details'>
+						( //a[@id='Dbtnyes'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:55 pm</td>
+				<td class='step-details'>
+						Clicked on (Discharge Yes Pop)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Nursing Clearance In UHID</span>
+						<span class='test-time'>Mar 15, 2026 11:16:56 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:16:56 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:17:12 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+396ms</span>
+</div>
+<div class='test-desc'>Nursing Clearance Test </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:56 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Menu Icon Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:57 pm</td>
+				<td class='step-details'>
+						( //body/div[@class='header']/div[@class='logoHis']/a[@id='showmenu']/img[1] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:57 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Menu Icon Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:58 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Nursing Activity Tab)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:59 pm</td>
+				<td class='step-details'>
+						( //span[normalize-space()='Nursing Activity'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:59 pm</td>
+				<td class='step-details'>
+						Clicked on (Nursing Activity Tab)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:16:59 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Nursing Clearance Page)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:01 pm</td>
+				<td class='step-details'>
+						( //a[normalize-space()='Nursing Clearance'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:01 pm</td>
+				<td class='step-details'>
+						Clicked on (Nursing Clearance Page)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:02 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:02 pm</td>
+				<td class='step-details'>
+						//select[@id='_ddlSearchType']: Dropdown Value : (IPNO)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:03 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:04 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:04 pm</td>
+				<td class='step-details'>
+						//input[@id='_txtSearchType']: Input Data : (29639)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:06 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:08 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Ok Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:09 pm</td>
+				<td class='step-details'>
+						( //tbody/tr[td[normalize-space()='29639']]/td[21]/i[contains(@class,'fa-check')] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:09 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Ok Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:09 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On HIS Log Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:12 pm</td>
+				<td class='step-details'>
+						( //div[@class='logoHis'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:12 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On HIS Log Icon)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Pharmacy Discharge Notification</span>
+						<span class='test-time'>Mar 15, 2026 11:17:13 pm</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:17:13 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:18:05 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 52s+495ms</span>
+</div>
+<div class='test-desc'>Pharmacy Discharge Notification Test </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:13 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:13 pm</td>
+				<td class='step-details'>
+						//select[@id='Facility']: Dropdown Value : (SANITY HOSPITAL)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:15 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:15 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Paharmacy DashBorad)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:16 pm</td>
+				<td class='step-details'>
+						( //li[@id='btn_Pharmacy'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:16 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Paharmacy DashBorad)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:17 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:17 pm</td>
+				<td class='step-details'>
+						//select[@id='Department']: Dropdown Value : (MATERIAL CENTRAL STORE)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:18 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:18 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Station Yes Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:20 pm</td>
+				<td class='step-details'>
+						( //a[@id='btn_yes_desh'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:20 pm</td>
+				<td class='step-details'>
+						Clicked on (Station Yes Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:20 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Pharmacy Discharge Notification Page)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:28 pm</td>
+				<td class='step-details'>
+						( //span[normalize-space()='Discharge Notification'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:28 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Pharmacy Discharge Notification Page)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:29 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:29 pm</td>
+				<td class='step-details'>
+						//select[@id='_ddlSearchType']: Dropdown Value : (IPNO)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:31 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:32 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:32 pm</td>
+				<td class='step-details'>
+						//input[@id='_txtSearchType']: Input Data : (29639)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:33 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:33 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Serch Patient)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:34 pm</td>
+				<td class='step-details'>
+						( //i[@id='_btnSearchType'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:34 pm</td>
+				<td class='step-details'>
+						Clicked on (Serch Patient)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:17:34 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Select Patient Row)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:05 pm</td>
+				<td class='step-details'>
+						//tbody/tr[td[contains(text(),'29639')]]: Not able to locate web element...
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:18:05 pm</td>
+				<td class='step-details'>
+						//tbody/tr[td[contains(text(),'29639')]]: Not able to locate web element for field (Select Patient Row)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Acknowledge Discharge Notification Test</span>
+						<span class='test-time'>Mar 15, 2026 11:18:06 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:18:06 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:19:04 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 58s+502ms</span>
+</div>
+<div class='test-desc'>Acknowledge Discharge </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:06 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:06 pm</td>
+				<td class='step-details'>
+						//select[@id='Facility']: Dropdown Value : (SANITY HOSPITAL)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:31 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:31 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On IP Billing DashBorad)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:32 pm</td>
+				<td class='step-details'>
+						( //li[@id='btn_Billing'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:32 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On IP Billing DashBorad)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:32 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:32 pm</td>
+				<td class='step-details'>
+						//select[@id='Department']: Dropdown Value : (IP BILLING)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:34 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:34 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Station Yes Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:39 pm</td>
+				<td class='step-details'>
+						( //a[@id='btn_yes_desh'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:39 pm</td>
+				<td class='step-details'>
+						Clicked on (Station Yes Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:39 pm</td>
+				<td class='step-details'>
+						Sussfully Pass IP Billing Dashboard Button
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:39 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Ip Billing Meanu)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:40 pm</td>
+				<td class='step-details'>
+						( //a[@id='showmenu'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:40 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Ip Billing Meanu)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:40 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Ip Billing Drp)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:41 pm</td>
+				<td class='step-details'>
+						( //span[normalize-space()='IP Billing'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:41 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Ip Billing Drp)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:42 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Acknowledge Discharge Notification)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:46 pm</td>
+				<td class='step-details'>
+						( //a[normalize-space()='Acknowledge Discharge Notification'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:46 pm</td>
+				<td class='step-details'>
+						Clicked on (Acknowledge Discharge Notification)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:47 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:47 pm</td>
+				<td class='step-details'>
+						//select[@id='_ddlSearchType']: Dropdown Value : (IPNO)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:48 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:49 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:49 pm</td>
+				<td class='step-details'>
+						//input[@id='_txtSearchType']: Input Data : (29639)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:50 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:50 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Serach Ip Number)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:52 pm</td>
+				<td class='step-details'>
+						( //i[@id='_btnSearchType'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:52 pm</td>
+				<td class='step-details'>
+						Clicked on (Serach Ip Number)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:53 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Yes Pop Acknowledged Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:55 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnok'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:55 pm</td>
+				<td class='step-details'>
+						Clicked on (Yes Pop Acknowledged Popup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:58 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Row 792 After Color Change)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:59 pm</td>
+				<td class='step-details'>
+						( //table[@id='tbl1']//tr[td[normalize-space()='792']] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:59 pm</td>
+				<td class='step-details'>
+						Clicked on (Row 792 After Color Change)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:18:59 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Yes Pop Billing Page)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:04 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnok2'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:04 pm</td>
+				<td class='step-details'>
+						Clicked on (Yes Pop Billing Page)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Ip Bill Discharge Icon</span>
+						<span class='test-time'>Mar 15, 2026 11:19:05 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:19:05 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:19:21 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+356ms</span>
+</div>
+<div class='test-desc'>All Clearnace After Discharge Icon Click </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:05 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Ok Deposit pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:06 pm</td>
+				<td class='step-details'>
+						( //a[@id='PopupOK_discharge'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:06 pm</td>
+				<td class='step-details'>
+						Clicked on (Ok Deposit pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:06 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Discharge Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:07 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnDischarge']//i[@class='fa fa-universal-access'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:07 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Discharge Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:08 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:08 pm</td>
+				<td class='step-details'>
+						//select[@id='selDischargeType']: Dropdown Value : (Normal)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:10 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:10 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:10 pm</td>
+				<td class='step-details'>
+						//select[@id='selDischargeSubType']: Dropdown Value : (Taylor Swift's Eras Tour)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:12 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:13 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:13 pm</td>
+				<td class='step-details'>
+						//input[@id='txtDischargePatientDateTime']: Input Data : (15/Mar/2026 11:19 pm)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:14 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:15 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:15 pm</td>
+				<td class='step-details'>
+						//textarea[@id='txtDischargeRemarks']: Input Data : (Anup Discharge Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:17 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:17 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Yes Discharge Reason Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:18 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnYesDischargeMSGModal']//i[@class='fa fa-check'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:18 pm</td>
+				<td class='step-details'>
+						Clicked on (Yes Discharge Reason Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:18 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Yes Discharge the patient Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:20 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnYesClinicalDischargeFinalMSGModal'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:20 pm</td>
+				<td class='step-details'>
+						Clicked on (Yes Discharge the patient Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:20 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Patient Discharged Successfully Ok Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:21 pm</td>
+				<td class='step-details'>
+						( //a[@id='PopupOK'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:21 pm</td>
+				<td class='step-details'>
+						Clicked on (Patient Discharged Successfully Ok Pop)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>Bill Ready Icon</span>
+						<span class='test-time'>Mar 15, 2026 11:19:22 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:19:22 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:19:25 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+475ms</span>
+</div>
+<div class='test-desc'>Ip Bill Ready Icons </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:22 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Bill Ready Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:23 pm</td>
+				<td class='step-details'>
+						( //i[@class='fa fa-check-square'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:23 pm</td>
+				<td class='step-details'>
+						Clicked on (Bill Ready Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:23 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Yes Pop Patient’s total stay is less than 24 Hrs)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:25 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnYesBillReadyMSGModal'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:25 pm</td>
+				<td class='step-details'>
+						Clicked on (Yes Pop Patient’s total stay is less than 24 Hrs)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>Bill Genrate Bill Icon</span>
+						<span class='test-time'>Mar 15, 2026 11:19:28 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:19:28 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:19:33 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+646ms</span>
+</div>
+<div class='test-desc'>Bill Genrate Test Funcility </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:28 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Bill Genrate Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:30 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnBillGenerate'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:30 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Bill Genrate Icon)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:30 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Sure Patient Bill Genrate)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:31 pm</td>
+				<td class='step-details'>
+						( //a[@id='PopupYesBillGenerate']//i[@class='fa fa-check'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:31 pm</td>
+				<td class='step-details'>
+						Clicked on (Sure Patient Bill Genrate)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:32 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Discharge Yes Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:33 pm</td>
+				<td class='step-details'>
+						( //a[@id='PopupOKDischargeFinal'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:33 pm</td>
+				<td class='step-details'>
+						Clicked on (Discharge Yes Pop)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Due Bill Settlement</span>
+						<span class='test-time'>Mar 15, 2026 11:19:33 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:19:33 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:19:58 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+406ms</span>
+</div>
+<div class='test-desc'>Due Settlement Test </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:43 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Bill Settlement Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:45 pm</td>
+				<td class='step-details'>
+						( //i[@class='fa fa-balance-scale'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:45 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Bill Settlement Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:46 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:46 pm</td>
+				<td class='step-details'>
+						//input[@id='txtCSAmount']: Input Data : (500)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:47 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:47 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click On Due Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:48 pm</td>
+				<td class='step-details'>
+						( //a[@name='Due'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:48 pm</td>
+				<td class='step-details'>
+						Clicked on (Click On Due Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:49 pm</td>
+				<td class='step-details'>
+						Start Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:49 pm</td>
+				<td class='step-details'>
+						//select[@id='cmbdue']: Dropdown Value : (Jai Singh)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:51 pm</td>
+				<td class='step-details'>
+						End Selecting...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:51 pm</td>
+				<td class='step-details'>
+						Start Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:51 pm</td>
+				<td class='step-details'>
+						//textarea[@id='txtDueRemarks']: Input Data : (Due Remarks Anup)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:53 pm</td>
+				<td class='step-details'>
+						End Entering...
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:53 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Click on Bill Settlement Save Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:54 pm</td>
+				<td class='step-details'>
+						( //a[@id='btnReceiptIPBillingBillSettlementMSG_Modal']//i[@class='fa fa-inr'] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:54 pm</td>
+				<td class='step-details'>
+						Clicked on (Click on Bill Settlement Save Btn)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:54 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Do you want to settle Yes Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:56 pm</td>
+				<td class='step-details'>
+						( //a[@id="IPBillingFinalSettlementPopupforMessageOK"] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:56 pm</td>
+				<td class='step-details'>
+						Clicked on (Do you want to settle Yes Pop)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:57 pm</td>
+				<td class='step-details'>
+						Start Clicking on (Ok Bill Settled Receipt)
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:58 pm</td>
+				<td class='step-details'>
+						( //a[@id="PopupOK"] )
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:58 pm</td>
+				<td class='step-details'>
+						Clicked on (Ok Bill Settled Receipt)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>HTML Test Flow</span>
+						<span class='test-time'>Mar 15, 2026 11:19:58 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2026 11:19:58 pm</span>
+	<span class='label end-time'>Mar 15, 2026 11:19:58 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
+</div>
+<div class='test-desc'>Ip Billing Funcility </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:58 pm</td>
+				<td class='step-details'>
+						<b>Test Flow</b>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:58 pm</td>
+				<td class='step-details'>
+						1. Bill Discharge
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:58 pm</td>
+				<td class='step-details'>
+						2. Bill Ready
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:58 pm</td>
+				<td class='step-details'>
+						3. Bill Generate
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>11:19:58 pm</td>
+				<td class='step-details'>
+						4. Full Bill Settlement
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>10</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 15, 2026 11:13:57 pm</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 15, 2026 11:19:58 pm</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 6m 1s+265ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Host Name</td>
+								<td>SoftwareTestingMaterial</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>Production</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>AK</td>
+							</tr>
+							<tr>
+								<td>Anup</td>
+								<td>Triotree Report</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 10,
+				passParent: 9,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				childCount: 0,
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Admit_Patient":104.051,"Nursing Discharge Test":62.109,"Nursing Clearance In UHID":15.396,"Pharmacy Discharge Notification":52.495,"Acknowledge Discharge Notification Test":58.502,"Ip Bill Discharge Icon":16.356,"Bill Ready Icon":3.475,"Bill Genrate Bill Icon":4.646,"Due Bill Settlement":24.406,"HTML Test Flow":0.001
+			};
+		</script>
+	
+		  <script src='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>

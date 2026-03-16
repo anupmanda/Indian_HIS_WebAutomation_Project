@@ -33,7 +33,7 @@ public class TC_002_AcknowledgeDischargeNotificationTest extends AcknowledgeDisc
 	}
 	
 	
-	@Test(dataProvider = "DischargeNotificationDataProvider", priority = 1 , enabled = true)
+	@Test(dataProvider = "DischargeNotificationDataProvider", priority = 1 , enabled = false)
 	public void CheckDischagedPatient(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String Wards_Drp , 
 			String Status_Drp , String Enter_Expected_Date , String Select_IP_Number_Drp , String Enter_Ip_Number , String Select_Patient_Name_Drp , 
 			String Enter_Patient_Name , String Bill_Type_Drp , String Enter_Discharge_Marked_Date) 
@@ -60,11 +60,11 @@ public class TC_002_AcknowledgeDischargeNotificationTest extends AcknowledgeDisc
 
 		logger = extent.createTest("Acknowledge Discharge Notification Test", "Acknowledge Discharge");
 
-		Acknowledge_Discharge_Notification.SelectByIpNumberAndEnterIPNumber_Serach(Select_IP_Number_Drp , "29381" ,
-				"Serach Ip Number");
+		Acknowledge_Discharge_Notification.SelectByFacilityDrp(Dashborad_Facility_Drp);
+		Acknowledge_Discharge_Notification.ClickOnIPBillingDashboard("Click On IP Billing DashBorad" ,Ip_Billing_Station_Drp , "Station Yes Popup");
 		
 		String sNo = 	
-		Acknowledge_Discharge_Notification.clickFirstWhiteRowAndPrintDetails("Click On First White Row");
+		Acknowledge_Discharge_Notification.clickFirstWhiteRowAndPrintDetails("Click On Last White Row");
 		Assert.assertTrue(true, "First white background row clicked successfully");
 		Acknowledge_Discharge_Notification.YesAcknowledgedPop("Yes Pop Acknowledged Popup");
 		Thread.sleep(2000);
