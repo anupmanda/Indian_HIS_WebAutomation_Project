@@ -49,7 +49,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 	public static String capturedUHID;
 	public static String capturedIP;
 	public static String parentWindow;
-	    
+	public static String capturedERNO;
 	static {
         try {
             // Generate timestamp for unique log file name
