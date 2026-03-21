@@ -233,7 +233,11 @@ public class IpBillingPage extends GeneralBrowserSetting {
 	protected static String Delete_total_Bill_Discount_Remarks = "//textarea[@id='txtDiscountDeleteReason']";
 	protected static String Delete_total_Bill_Discount_Remarks_Yes = "//a[@id='IPBillingDeleteDiscountPopupforMessageOK']//i[@class='fa fa-check']";
 	protected static String Save_total_Bill_Discount = "//a[@id='btnSaveIPBillingBillDiscountMSG_Modal']//i[contains(@class,'fa fa-save')]";
-
+   //======================================Delete Scheme =============================================
+	protected static String Delete_Discount_btn = "//a[@id='btnDeleteIPBillingBillDiscountMSG_Modal' and @title='Delete']";
+	protected static String Delete_Discount_Reason_pop = "//textarea[@id='txtDiscountDeleteReason']";
+	protected static String Delete_Discount_Reason_Yes_pop = "//a[@id='IPBillingDeleteDiscountPopupforMessageOK']//i[@class='fa fa-check']";
+	
 	//====================Service Wise Discount ================================
 
 	protected static String service_Wise_Discount_Radio_Btn = "//input[@id='rbtServiceDiscount']";
@@ -535,6 +539,12 @@ public class IpBillingPage extends GeneralBrowserSetting {
 		WebElement enter_uhid = driver.findElement(By.xpath(Enter_Ip_Number));
 		CommanUtill.textEnter(Enter_Ip_Number, ip_no);
 		enter_uhid.sendKeys(Keys.ENTER);
+	}
+	public void EnterIpNumberInBillingPage(String ip_no) throws IOException ,InterruptedException { 
+		
+		WebDriverWait ip = new WebDriverWait(driver, Duration.ofSeconds(10));
+		ip.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Enter_Ip_Number)));
+		CommanUtill.textEnter(Enter_Ip_Number, ip_no);
 	}
 
 	public void DischargeOkPop(String Dis_pop) throws IOException ,InterruptedException { 
@@ -1129,6 +1139,15 @@ public class IpBillingPage extends GeneralBrowserSetting {
 		discount.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Discount_Reason_Drp)));
 		CommanUtill.dropdownSelectByVisibleText(Discount_Reason_Drp, Discount_Reason);
 	}
+	
+	public void SelectByDiscountHeadAndReasonValue(int Discount_Head , int Discount_Reason) throws IOException, InterruptedException { 
+
+		WebDriverWait discount = new WebDriverWait(driver, Duration.ofSeconds(10));
+		discount.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Discount_Head_Drp)));
+		CommanUtill.dropdownSelectByIndex(Discount_Head_Drp, Discount_Head);
+		discount.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Discount_Reason_Drp)));
+		CommanUtill.dropdownSelectByIndex(Discount_Reason_Drp, Discount_Reason);
+	}
 	public void EnterDiscountRemarks(String Remaks) throws IOException, InterruptedException {
 
 		CommanUtill.textEnter(Discount_Remarks, Remaks);
@@ -1175,7 +1194,23 @@ public class IpBillingPage extends GeneralBrowserSetting {
 		Save.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Save_total_Bill_Discount)));
 		CommanUtill.clickFunction(Save_total_Bill_Discount, Save_Btn);
 	}
-
+   //============================Delete Discount ============================
+	
+	public void DeleteDiscountBtn(String Delete_icon) throws IOException, InterruptedException {
+		
+		WebDriverWait delete = new WebDriverWait(driver, Duration.ofSeconds(10));
+		delete.until(ExpectedConditions.elementToBeClickable(By.xpath(Delete_Discount_btn)));
+		CommanUtill.clickFunction(Delete_Discount_btn, Delete_icon);
+	}
+	
+	public void ReasonAndYesDeleteDiscountPop(String Reason_Text , String Yes_click) throws IOException, InterruptedException {
+		
+		WebDriverWait reason_pop = new WebDriverWait(driver, Duration.ofSeconds(10));
+		reason_pop.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Delete_Discount_Reason_pop)));
+		CommanUtill.textEnter(Delete_Discount_Reason_pop, Reason_Text);
+		reason_pop.until(ExpectedConditions.elementToBeClickable(By.xpath(Delete_Discount_Reason_Yes_pop)));
+		CommanUtill.clickFunction(Delete_Discount_Reason_Yes_pop, Yes_click);
+	}
 
 	//====================Service Wise Discount ================================
 
@@ -1400,7 +1435,7 @@ public class IpBillingPage extends GeneralBrowserSetting {
 		logger.info("--------- Validation Completed ---------");
 	}
 
-	//===============Service Amount And Perctage Both 
+	//===============Service Amount And Perctage Both =============================
 	public void serviceWiseDiscountValidation(String mode, String value)
 			throws IOException, InterruptedException {
 

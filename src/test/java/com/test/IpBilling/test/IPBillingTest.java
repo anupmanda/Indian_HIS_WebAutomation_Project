@@ -2,17 +2,11 @@
  * 
  */
 package com.test.IpBilling.test;
-
 import java.io.IOException;
-
 import javax.management.InvalidApplicationException;
-import javax.swing.text.Document;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.test.IpBilling.Page.AcknowledgeDischargeNotificationPage;
 import com.test.IpBilling.Page.IpBillingPage;
 import com.test.IpBilling.Page.PackageModifictionPatientPage;
 import com.test.readdata.ExcelSheetDataProvider;
@@ -420,23 +414,22 @@ public class IPBillingTest extends IpBillingPage {
 	}
 
 	//=========New Excel Sheeet ================================ 
-	@Test(priority = 13 , enabled = false)
+	@Test(priority = 13 , enabled = true)
 	public void DiscountType_OnTotalBillDiscountTest () 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
 		logger = extent.createTest("Discount Type On Bill Withot Scheme", "On Total Bill Discount");
 
-		//On Total Bill Discount
+		//1. On Total Bill Discount
 		Ip_Billing.SelectByFacilityDrp("SANITY HOSPITAL");
 		Ip_Billing.ClickOnIPBillingDashboard("Click On IP Billing DashBorad" ,"IP BILLING" , "Station Yes Popup");
 
 		Ip_Billing.ClickOnIpBillingMeanu("Click On Ip Billing Meanu");
 		Ip_Billing.IpBillingPage1("Click On Ip Billing Drp","Ip Billing Page");
-		Ip_Billing.EnterIpNumberInAllClearancePatient("29463");
-
+		
+		Ip_Billing.EnterIpNumberInAllClearancePatient("29648");
 		Ip_Billing.DischargeOkPop("Ok Deposit pop");
-		//
-
+		
 		Ip_Billing.ClickOnDiscountIcon("Click On Discount Btn");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.body.style.zoom='90%'");
@@ -454,25 +447,29 @@ public class IPBillingTest extends IpBillingPage {
 
 		//Ip_Billing.DeleteTotalBillDiscountInformaion("Click On Bill Discount Delet Btn","Delete Reason Text" ,"Delete Yes Pop");
 		Ip_Billing.SaveDiscountOnBill("Save Discount On Total Bill Amount");
-		Thread.sleep(2000);
-		driver.navigate().refresh();
+		
+	}
+	@Test(priority = 14 , enabled = true)
+	public void CancelDiscountTest() throws IOException, InterruptedException, InvalidApplicationException {
+		
+		logger = extent.createTest("Delete Previous Discount After New Discount", "Delete Funcility Test");
+		
+		Ip_Billing.ClickOnDiscountIcon("Click On Discount Btn");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.body.style.zoom='90%'");
+		
+		Ip_Billing.DeleteDiscountBtn("Click On Delete Discount Btn");
+		Ip_Billing.ReasonAndYesDeleteDiscountPop("Delete After Save " , "Delate Discount Yes Pop");
+			
 	}
 
-	@Test(priority = 14 , enabled = false)
+	@Test(priority = 15 , enabled = true)
 	public void DiscountType_ServiceWiseDiscountTest () 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
 		logger = extent.createTest("Discount Type On Service Wise Withot Scheme", "Discount On Service Wise");
 
-		Ip_Billing.SelectByFacilityDrp("SANITY HOSPITAL");
-		Ip_Billing.ClickOnIPBillingDashboard("Click On IP Billing DashBorad" ,"IP BILLING" , "Station Yes Popup");
-
-		Ip_Billing.ClickOnIpBillingMeanu("Click On Ip Billing Meanu");
-		Ip_Billing.IpBillingPage1("Click On Ip Billing Drp","Ip Billing Page");
-
-		Ip_Billing.EnterIpNumberInAllClearancePatient("29463");
-		Ip_Billing.DischargeOkPop("Ok Deposit pop");
-
+		//2. Service Wise Discount
 		Ip_Billing.ClickOnDiscountIcon("Click On Discount Btn");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.body.style.zoom='90%'");
@@ -480,8 +477,8 @@ public class IPBillingTest extends IpBillingPage {
 
 		//Ip_Billing.serviceWiseDiscountValidation_1("10"); 
 		//Ip_Billing.serviceWiseDiscountValidation_ByAmount("1000");
-		Ip_Billing.serviceWiseDiscountValidation("PERCENT", "10");
-		Ip_Billing.serviceWiseDiscountValidation("AMOUNT", "500");
+		Ip_Billing.serviceWiseDiscountValidation("PERCENT", "50");
+		//Ip_Billing.serviceWiseDiscountValidation("AMOUNT", "500");
 
 		Ip_Billing.SelectByDiscountHeadDrp("Staff Discount" ,"Staff Discount"); //Same Web Element 
 		Ip_Billing.EnterDiscountRemarks("Anup Discount On Service Remarks");               //Same Web Element 
@@ -490,22 +487,35 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.SelectByAuthorisedByDrp("MOU Discount");            //Same Web Element 
 		//Delete May Be same 
 		Ip_Billing.SaveDiscountOnBill("Save Discount On Service Wise");  //Same Web Element 
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		
+	}
+	
+	@Test(priority = 16 , enabled = true)
+	public void CancelDiscountTest2() throws IOException, InterruptedException, InvalidApplicationException {
+		
+		logger = extent.createTest("Delete Previous Discount After New Discount", "Delete Funcility Test");
+		
+		Ip_Billing.EnterIpNumberInAllClearancePatient("29648");
+		Ip_Billing.DischargeOkPop("Ok Deposit pop");
+		
+		Ip_Billing.ClickOnDiscountIcon("Click On Discount Btn");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.body.style.zoom='90%'");
+		
+		Ip_Billing.DeleteDiscountBtn("Click On Delete Discount Btn");
+		Ip_Billing.ReasonAndYesDeleteDiscountPop("Delete After Save " , "Delate Discount Yes Pop");
+			
 	}
 
-	@Test(priority = 15 , enabled = false)
+	@Test(priority = 17 , enabled = true)
 	public void DiscountType_ItemWiseDiscountTest () 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
 		logger = extent.createTest("Discount Type On Item Wise Withot Scheme", "Discount On Item Wise");
 
-		Ip_Billing.SelectByFacilityDrp("Sanity Hospital");
-		Ip_Billing.ClickOnIPBillingDashboard("Click On IP Billing DashBorad" ,"IP BILLING" , "Station Yes Popup");
-
-		Ip_Billing.ClickOnIpBillingMeanu("Click On Ip Billing Meanu");
-		Ip_Billing.IpBillingPage1("Click On Ip Billing Drp","Ip Billing Page");
-
-		Ip_Billing.EnterIpNumberInAllClearancePatient("29551");
-		Ip_Billing.DischargeOkPop("Ok Deposit pop");
+		//3. Item Wise Discount
 
 		Ip_Billing.ClickOnDiscountIcon("Click On Discount Btn");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -527,7 +537,7 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.SaveDiscountOnBill("Save Discount On Service Wise");  //Same Web Element 
 	}
 
-	@Test(priority = 16 , enabled = false)
+	@Test(priority = 18 , enabled = false)
 	public void IpPackageDetailsTest () 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
@@ -554,7 +564,7 @@ public class IPBillingTest extends IpBillingPage {
 		return ExcelSheetDataProvider.getExcelData(sheetName_Adt);
 	}
 
-	@Test(dataProvider = "ADTPackageDataProvider", priority = 17 , enabled = false)
+	@Test(dataProvider = "ADTPackageDataProvider", priority = 19 , enabled = false)
 
 	public void AdtMultiplePackage(String ADT_Station_Drp ,String ADT_Speciality_Drp , String ADT_Doctor_Drp , String Department_Drp , 
 			String Search_Package_Name , String Enter_Package_Alias_Name) 
@@ -580,7 +590,7 @@ public class IPBillingTest extends IpBillingPage {
 
 	}
 
-	@Test(dataProvider = "IpBilingDataProvider", priority = 18 , enabled = false)
+	@Test(dataProvider = "IpBilingDataProvider", priority = 20 , enabled = false)
 	public void IpBillReadyTest(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String From_Date , String To_Date ,
 			String Mobile_no_Current_In_Patient , String Search_First_Name , String Enter_UHID , String Enter_UHID_All_Clearance ,
 			String Enter_IP_Number_All_Clearance , String Discharge_Reason_Drp , String Discharge_Sub_Type_Drp , String Discharge_Remarks ,
@@ -612,7 +622,7 @@ public class IPBillingTest extends IpBillingPage {
 		Thread.sleep(2000);
 
 	}
-	@Test(priority = 19 , enabled = false)
+	@Test(priority = 21 , enabled = false)
 	public void CancelBillReadyTest () 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
@@ -661,7 +671,7 @@ public class IPBillingTest extends IpBillingPage {
 
 	}
 
-	@Test(priority = 21 , enabled = false)
+	@Test(priority = 22 , enabled = false)
 	public void CancelDischargeTest () 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
@@ -689,7 +699,7 @@ public class IPBillingTest extends IpBillingPage {
 	}
 
 
-	@Test(dataProvider = "IpBilingDataProvider", priority = 22 , enabled = false)
+	@Test(dataProvider = "IpBilingDataProvider", priority = 23 , enabled = false)
 	public void IpBillSettlement(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String From_Date , String To_Date ,
 			String Mobile_no_Current_In_Patient , String Search_First_Name , String Enter_UHID , String Enter_UHID_All_Clearance ,
 			String Enter_IP_Number_All_Clearance , String Discharge_Reason_Drp , String Discharge_Sub_Type_Drp , String Discharge_Remarks ,
@@ -733,7 +743,7 @@ public class IPBillingTest extends IpBillingPage {
 
 	}
 
-	@Test(dataProvider = "IpBilingDataProvider", priority = 23 , enabled = false)
+	@Test(dataProvider = "IpBilingDataProvider", priority = 24 , enabled = false)
 	public void CamcelBillSettlement(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String From_Date , String To_Date ,
 			String Mobile_no_Current_In_Patient , String Search_First_Name , String Enter_UHID , String Enter_UHID_All_Clearance ,
 			String Enter_IP_Number_All_Clearance , String Discharge_Reason_Drp , String Discharge_Sub_Type_Drp , String Discharge_Remarks ,
@@ -770,7 +780,7 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.CloseBillSettlementPop("Close Bill Settlement Pop");
 	}
 
-	@Test(dataProvider = "IpBilingDataProvider", priority = 24 , enabled = false)
+	@Test(dataProvider = "IpBilingDataProvider", priority = 25 , enabled = false)
 	public void DueSettlementBillTest(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String From_Date , String To_Date ,
 			String Mobile_no_Current_In_Patient , String Search_First_Name , String Enter_UHID , String Enter_UHID_All_Clearance ,
 			String Enter_IP_Number_All_Clearance , String Discharge_Reason_Drp , String Discharge_Sub_Type_Drp , String Discharge_Remarks ,
@@ -811,7 +821,7 @@ public class IPBillingTest extends IpBillingPage {
 	}
 
 
-	@Test(dataProvider = "IpBilingDataProvider", priority = 25 , enabled = false)
+	@Test(dataProvider = "IpBilingDataProvider", priority = 26 , enabled = false)
 	public void BillGenrateTest(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String From_Date , String To_Date ,
 			String Mobile_no_Current_In_Patient , String Search_First_Name , String Enter_UHID , String Enter_UHID_All_Clearance ,
 			String Enter_IP_Number_All_Clearance , String Discharge_Reason_Drp , String Discharge_Sub_Type_Drp , String Discharge_Remarks ,
@@ -843,7 +853,7 @@ public class IPBillingTest extends IpBillingPage {
 
 	}
 
-	@Test(priority = 26 , enabled = true)
+	@Test(priority = 27 , enabled = false)
 	public void AddOnBilingTest() 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
@@ -882,7 +892,7 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.PrintradioBtnAddOnBill("Print Add-On Bill Radio Btn" , "Print Yes Pop");
 
 	}
-	@Test(priority = 27 , enabled = false)
+	@Test(priority = 28 , enabled = false)
 
 	public void IpBillingAddRemarksIcon()
 			throws IOException, InterruptedException, InvalidApplicationException {
@@ -903,7 +913,7 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.ClickOnAddOnRemarksPlushIconAndSavePop("Click On Ip Bill Add On Remarks Plush Icon" , "Enter Remaks Add On Plush O=Icon" ,
 				"Save Add On Remaks Plush Icon");
 	}
-	@Test(priority = 28 , enabled = false)
+	@Test(priority = 29 , enabled = false)
 	public void uplaodPatientDocuments()
 			throws IOException, InterruptedException, InvalidApplicationException {
 
@@ -925,7 +935,7 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.CloseUploadPatientDocumentPop("Close Patient Document Pop");
 
 	}
-	@Test(priority = 29 , enabled = false)
+	@Test(priority = 30 , enabled = false)
 	public void SelectNonPayableServiceName() 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
@@ -949,7 +959,7 @@ public class IPBillingTest extends IpBillingPage {
 
 	}
 
-	@Test(priority = 30 , enabled = false)
+	@Test(priority = 31 , enabled = false)
 	public void PrintIpBilling() 
 			throws IOException, InterruptedException, InvalidApplicationException {
 
