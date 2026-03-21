@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>9/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Mar 15 23:13:57 IST 2026</td>
+<td>Started on:</td><td>Fri Mar 20 17:19:15 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>361 seconds (361224 ms)</td>
+<tr><td>Total time:</td><td>34 seconds (34293 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,12 +76,33 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.PharmacyDischargeNotificationTest()'><b>PharmacyDischargeNotificationTest</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, MATERIAL CENTRAL STORE, All, All, 01/02/2026, IPNO, 29344, ALL, 04/02/2026</td>
-<td><div><pre>java.lang.AssertionError: Error while Clicking on the web element... 
-	at org.testng.Assert.fail(Assert.java:111)
-	at com.test.ui.helper.CommanUtill.clickFunction(CommanUtill.java:373)
-	at com.test.Pharmacy.Page.DischargeNotification_PharmacyPage.SelectPatientRow(DischargeNotification_PharmacyPage.java:146)
-	at com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.PharmacyDischargeNotificationTest(TC_0A3_DueAmount_DocumentUploadTest.java:200)
+<td title='com.test.emergency.test.TC_007_Er_CreditLimitTest.ErNewCreditLimitTest()'><b>ErNewCreditLimitTest</b><br>Test class: com.test.emergency.test.TC_007_Er_CreditLimitTest<br>Parameters: SANITY HOSPITAL, Emergency, SPSL.886289, 1508824, 200</td>
+<td><div><pre>org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression Existing Credit Limit because of the following error:
+SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;Existing Credit Limit&apos; is not a valid XPath expression.
+  (Session info: chrome=145.0.7632.160)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1e3770bbc1ea38d2e9629be50804e9db, findElement {value=Existing Credit Limit, using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\ANUP~1.DES\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63906}, goog:processID: 33136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63906/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1e3770bbc1ea38d2e9629be50804e9db
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at com.test.emergency.page.ErCreditLimitPage.ExistingCreditLimit(ErCreditLimitPage.java:80)
+	at com.test.emergency.test.TC_007_Er_CreditLimitTest.ErNewCreditLimitTest(TC_007_Er_CreditLimitTest.java:49)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -108,12 +129,33 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1190892929", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1190892929'><pre>java.lang.AssertionError: Error while Clicking on the web element... 
-	at org.testng.Assert.fail(Assert.java:111)
-	at com.test.ui.helper.CommanUtill.clickFunction(CommanUtill.java:373)
-	at com.test.Pharmacy.Page.DischargeNotification_PharmacyPage.SelectPatientRow(DischargeNotification_PharmacyPage.java:146)
-	at com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.PharmacyDischargeNotificationTest(TC_0A3_DueAmount_DocumentUploadTest.java:200)
+</pre></div><a href='#' onClick='toggleBox("stack-trace604257989", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace604257989'><pre>org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression Existing Credit Limit because of the following error:
+SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;Existing Credit Limit&apos; is not a valid XPath expression.
+  (Session info: chrome=145.0.7632.160)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1e3770bbc1ea38d2e9629be50804e9db, findElement {value=Existing Credit Limit, using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\ANUP~1.DES\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63906}, goog:processID: 33136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63906/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1e3770bbc1ea38d2e9629be50804e9db
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at com.test.emergency.page.ErCreditLimitPage.ExistingCreditLimit(ErCreditLimitPage.java:80)
+	at com.test.emergency.test.TC_007_Er_CreditLimitTest.ErNewCreditLimitTest(TC_007_Er_CreditLimitTest.java:49)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -141,8 +183,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>52</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
+<td>16</td>
+<td>com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -153,50 +195,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.NursingClearanceTest()'><b>NursingClearanceTest</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), All, 02/02/2026, IPNO, 29344, All, 03/01/2026</td>
-<td></td>
-<td>15</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.AdmitPatient()'><b>AdmitPatient</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, 1st floor Nursing, Mr., Sagar, Male, 01/05/1992, Hari, Married, H-60, Ghaziabad, India, 456894, Cardiac Surgery, Self, 1, OPD, HIMANSHU GENERAL WARD, HIMANSHU GENERAL WARD, HIMANSHU WARD (AUTOMATION), Cardiac Surgery, Asutosh, Brother, Asutosh, Patient himself, Patient himself</td>
-<td></td>
-<td>104</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.IpBillDischargeIcon()'><b>IpBillDischargeIcon</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29387, Normal, Taylor Swift's Eras Tour, Anup Discharge Icon, Divyansh company, Divyansh Pvt Ltd, Healthindia Allied Services Pvt Ltd, 111, 222, 0, Amount, 500, 333, 10/02/2026, Anup001, kumar002, 2000, 100, 963852741, PUNB0854, Noida, 1232963, Adhoc, BADR ALL SHEMA, NO Data, 6000, 5, Anup99, Brother, 10/02/2026, 09/02/2026, 10/02/2026, Anup Bill Genrate Reason, Bill Settlement Reason Anup, Bill Settlement Remarks, Anup, 963852741, 10/02/2026, Airtel payment Bank, Noida, 1000, Balihar Singh, 500, Jai Singh, Due Remarks Anup, MOU Discount, Cancel Bill Settle Remaks</td>
-<td></td>
-<td>16</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.AcknowledgeDischargeNotification()'><b>AcknowledgeDischargeNotification</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, IP BILLING, GYNAE RECOVERY(FIRST FLOOR), Unacknowledged, 10/01/2026, IPNO, 24137, Patient Name, Dr. HUIDRTY DRTYJ, All, 12/10/2025</td>
-<td></td>
-<td>58</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.IpBillReadyTest()'><b>IpBillReadyTest</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29387, Normal, Taylor Swift's Eras Tour, Anup Discharge Icon, Divyansh company, Divyansh Pvt Ltd, Healthindia Allied Services Pvt Ltd, 111, 222, 0, Amount, 500, 333, 10/02/2026, Anup001, kumar002, 2000, 100, 963852741, PUNB0854, Noida, 1232963, Adhoc, BADR ALL SHEMA, NO Data, 6000, 5, Anup99, Brother, 10/02/2026, 09/02/2026, 10/02/2026, Anup Bill Genrate Reason, Bill Settlement Reason Anup, Bill Settlement Remarks, Anup, 963852741, 10/02/2026, Airtel payment Bank, Noida, 1000, Balihar Singh, 500, Jai Singh, Due Remarks Anup, MOU Discount, Cancel Bill Settle Remaks</td>
-<td></td>
-<td>5</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.BillingFuncility()'><b>BillingFuncility</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest</td>
-<td></td>
-<td>0</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.NursingDischargeTest()'><b>NursingDischargeTest</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, HIMANSHU WARD (AUTOMATION), Normal, Discharge on Request, Anup Discharge Remarks</td>
-<td></td>
-<td>62</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.BillGenrateTest()'><b>BillGenrateTest</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29387, Normal, Taylor Swift's Eras Tour, Anup Discharge Icon, Divyansh company, Divyansh Pvt Ltd, Healthindia Allied Services Pvt Ltd, 111, 222, 0, Amount, 500, 333, 10/02/2026, Anup001, kumar002, 2000, 100, 963852741, PUNB0854, Noida, 1232963, Adhoc, BADR ALL SHEMA, NO Data, 6000, 5, Anup99, Brother, 10/02/2026, 09/02/2026, 10/02/2026, Anup Bill Genrate Reason, Bill Settlement Reason Anup, Bill Settlement Remarks, Anup, 963852741, 10/02/2026, Airtel payment Bank, Noida, 1000, Balihar Singh, 500, Jai Singh, Due Remarks Anup, MOU Discount, Cancel Bill Settle Remaks</td>
+<td title='com.test.emergency.test.TC_007_Er_CreditLimitTest.CheckCreditLimitChaneYaNot()'><b>CheckCreditLimitChaneYaNot</b><br>Test class: com.test.emergency.test.TC_007_Er_CreditLimitTest</td>
 <td></td>
 <td>4</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
-<tr>
-<td title='com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest.DueSettlementBillTest()'><b>DueSettlementBillTest</b><br>Test class: com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest<br>Parameters: SANITY HOSPITAL, IP BILLING, 01/02/2026, 09/02/2026, 9876543210, Sagar, SPSL..885723, SPSL.85457, 29387, Normal, Taylor Swift's Eras Tour, Anup Discharge Icon, Divyansh company, Divyansh Pvt Ltd, Healthindia Allied Services Pvt Ltd, 111, 222, 0, Amount, 500, 333, 10/02/2026, Anup001, kumar002, 2000, 100, 963852741, PUNB0854, Noida, 1232963, Adhoc, BADR ALL SHEMA, NO Data, 6000, 5, Anup99, Brother, 10/02/2026, 09/02/2026, 10/02/2026, Anup Bill Genrate Reason, Bill Settlement Reason Anup, Bill Settlement Remarks, Anup, 963852741, 10/02/2026, Airtel payment Bank, Noida, 1000, Balihar Singh, 500, Jai Singh, Due Remarks Anup, MOU Discount, Cancel Bill Settle Remaks</td>
-<td></td>
-<td>24</td>
-<td>com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest@3542162a</td></tr>
+<td>com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc</td></tr>
 </table><p>
 </body>
 </html>

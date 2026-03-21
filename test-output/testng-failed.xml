@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest">
+      <class name="com.test.emergency.test.TC_007_Er_CreditLimitTest">
         <methods>
-          <include name="PharmacyDischargeNotificationTest" invocation-numbers="0"/>
           <include name="reportclosewindows"/>
+          <include name="ErNewCreditLimitTest" invocation-numbers="0"/>
           <include name="launchBrowser"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.IpBilling.test.TC_0A3_DueAmount_DocumentUploadTest -->
+      </class> <!-- com.test.emergency.test.TC_007_Er_CreditLimitTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

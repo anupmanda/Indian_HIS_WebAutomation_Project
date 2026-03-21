@@ -50,13 +50,6 @@ public class TC_0A1_FullBillSettlementTest extends ADT_Admit_Patient{
 	private final String sheetName_Discharge = "Acknowledge_Discharge_Page";
 	private final String sheetName_IpBill = "Ip_Billing_Page";
 
-	@DataProvider(name = "ExcelUniversalDataProvider")
-	public Object[][] getdata() throws IOException{
-		System.out.println("====Fetching data from Excel sheet_01 : " + SheetName + " ====");
-		return  ExcelSheetDataProvider.getExcelData(SheetName);
-	}
-	
-
 	@Test(priority = 11 , enabled = true)
 	public void BillingFuncility() 
 					throws IOException, InterruptedException, InvalidApplicationException {
@@ -70,7 +63,12 @@ public class TC_0A1_FullBillSettlementTest extends ADT_Admit_Patient{
 		logger.info("4. Full Bill Settlement");
 		
 	}
-
+	@DataProvider(name = "ExcelUniversalDataProvider")
+	public Object[][] getdata() throws IOException{
+		System.out.println("====Fetching data from Excel sheet_01 : " + SheetName + " ====");
+		return  ExcelSheetDataProvider.getExcelData(SheetName);
+	}
+	
 	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1 )
 
 	public void AdmitPatient(String Facility, String Station, String Title, String Enter_First_Name , String Gender, String DOB, String FatherName, String M_Status,
