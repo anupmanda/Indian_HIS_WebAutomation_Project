@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="5" passed="1" failed="1" skipped="0">
+<testng-results ignored="15" total="17" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-20T17:19:15 IST" name="Default suite" finished-at="2026-03-20T17:19:49 IST" duration-ms="34293">
+  <suite started-at="2026-03-24T14:21:28 IST" name="Default suite" finished-at="2026-03-24T14:22:20 IST" duration-ms="51860">
     <groups>
     </groups>
-    <test started-at="2026-03-20T17:19:15 IST" name="Default test" finished-at="2026-03-20T17:19:49 IST" duration-ms="34293">
-      <class name="com.test.emergency.test.TC_007_Er_CreditLimitTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc]" started-at="2026-03-20T17:19:15 IST" name="launch" finished-at="2026-03-20T17:19:15 IST" duration-ms="115" status="PASS">
+    <test started-at="2026-03-24T14:21:28 IST" name="Default test" finished-at="2026-03-24T14:22:20 IST" duration-ms="51860">
+      <class name="com.test.emergency.test.ErBillingTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:28 IST" name="launch" finished-at="2026-03-24T14:21:28 IST" duration-ms="117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc]" started-at="2026-03-20T17:19:15 IST" name="launchBrowser" finished-at="2026-03-20T17:19:23 IST" duration-ms="8171" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:28 IST" name="launchBrowser" finished-at="2026-03-24T14:21:37 IST" duration-ms="8421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="ErNewCreditLimitTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc]" started-at="2026-03-20T17:19:28 IST" name="ErNewCreditLimitTest" data-provider="ErCreditLimitDataProvider" finished-at="2026-03-20T17:19:44 IST" duration-ms="16831" status="FAIL">
+        <test-method signature="EnterErNumberAndUHID(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:41 IST" name="EnterErNumberAndUHID" data-provider="BillingDataProvider" finished-at="2026-03-24T14:21:58 IST" duration-ms="16334" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,105 +29,171 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[SPSL.886289]]>
+                <![CDATA[19/03/2026]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[1508824]]>
+                <![CDATA[23/03/2026]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[200]]>
+                <![CDATA[1508826]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Divyansh company]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Divyansh Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Healthindia Allied Services Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[5241]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Amount]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[26/03/2026]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[9876542]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[524163]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[50]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[52416352]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Punb47521]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[fhg]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[No Data]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[50]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[12456]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[Brother]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Anup]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Discharge on Request]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[Anup]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.InvalidSelectorException">
-            <message>
-              <![CDATA[invalid selector: Unable to locate an element with the xpath expression Existing Credit Limit because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string 'Existing Credit Limit' is not a valid XPath expression.
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1e3770bbc1ea38d2e9629be50804e9db, findElement {value=Existing Credit Limit, using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\ANUP~1.DES\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63906}, goog:processID: 33136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63906/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1e3770bbc1ea38d2e9629be50804e9db]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression Existing Credit Limit because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string 'Existing Credit Limit' is not a valid XPath expression.
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Build info: version: '4.38.0', revision: '6b412e825c*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1e3770bbc1ea38d2e9629be50804e9db, findElement {value=Existing Credit Limit, using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\ANUP~1.DES\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63906}, goog:processID: 33136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63906/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1e3770bbc1ea38d2e9629be50804e9db
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-at com.test.emergency.page.ErCreditLimitPage.ExistingCreditLimit(ErCreditLimitPage.java:80)
-at com.test.emergency.test.TC_007_Er_CreditLimitTest.ErNewCreditLimitTest(TC_007_Er_CreditLimitTest.java:49)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ErNewCreditLimitTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc]" started-at="2026-03-20T17:19:44 IST" name="reportclosewindows" finished-at="2026-03-20T17:19:45 IST" duration-ms="748" status="PASS">
+        </test-method> <!-- EnterErNumberAndUHID -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:58 IST" name="reportclosewindows" finished-at="2026-03-24T14:21:58 IST" duration-ms="918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="CheckCreditLimitChaneYaNot()[pri:5, instance:com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc]" started-at="2026-03-20T17:19:45 IST" name="CheckCreditLimitChaneYaNot" finished-at="2026-03-20T17:19:49 IST" duration-ms="4204" status="PASS">
+        <test-method signature="DiscountInItemWiseTest()[pri:17, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:58 IST" name="DiscountInItemWiseTest" finished-at="2026-03-24T14:22:20 IST" duration-ms="21745" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckCreditLimitChaneYaNot -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_007_Er_CreditLimitTest@3381b4fc]" started-at="2026-03-20T17:19:49 IST" name="reportclosewindows" finished-at="2026-03-20T17:19:49 IST" duration-ms="63" status="PASS">
+        </test-method> <!-- DiscountInItemWiseTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:22:20 IST" name="reportclosewindows" finished-at="2026-03-24T14:22:20 IST" duration-ms="88" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.emergency.test.TC_007_Er_CreditLimitTest -->
+      </class> <!-- com.test.emergency.test.ErBillingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.emergency.test.TC_007_Er_CreditLimitTest">
+      <class name="com.test.emergency.test.ErBillingTest">
         <methods>
+          <include name="DiscountInItemWiseTest"/>
           <include name="reportclosewindows"/>
-          <include name="ErNewCreditLimitTest" invocation-numbers="0"/>
           <include name="launchBrowser"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.emergency.test.TC_007_Er_CreditLimitTest -->
+      </class> <!-- com.test.emergency.test.ErBillingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

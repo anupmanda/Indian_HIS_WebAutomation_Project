@@ -433,6 +433,7 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.ClickOnDiscountIcon("Click On Discount Btn");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.body.style.zoom='90%'");
+		
 		Ip_Billing.CheckBoxScheme("Scheme Check Box Un_Select");  // if Select Chane To unSelect CheckBox
 		Ip_Billing.RadioBtnDiscountInTotalBill_Amout("Click Radio Btn Total Bill Discount" , "5000" );
 		IpBillingPage.getScreenShot(driver, "Total_Bill_Amount_discount");
@@ -473,6 +474,7 @@ public class IPBillingTest extends IpBillingPage {
 		Ip_Billing.ClickOnDiscountIcon("Click On Discount Btn");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.body.style.zoom='90%'");
+		
 		Ip_Billing.CheckBoxUnSelectScheme_ServiceWiseDiscount_RadioBtn("Scheme Un Seleck Check Box" ,"Select Service Wise Radio Btn");
 
 		//Ip_Billing.serviceWiseDiscountValidation_1("10"); 

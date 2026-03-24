@@ -201,8 +201,6 @@ public class IpBillingPage extends GeneralBrowserSetting {
 	protected static String Package_Bill_Details = "//a[@id='btnPkgBilldet']";
 	protected static String Close_Package_Bill_Details = "//a[@id='BillDetailsModelClose']//i[@class='fa fa-times']";
 
-
-
 	//============================= Surgery Breakup Details ============================
 
 	protected static String Surgery_Breakup_Detail_Icon = "//i[@class='fa fa-sign-language']";
@@ -1229,7 +1227,7 @@ public class IpBillingPage extends GeneralBrowserSetting {
 		CommanUtill.clickFunction(service_Wise_Discount_Radio_Btn, Service_Wise_Radio_btn);
 
 	}
-	//========Service Perctage Value
+	//========Service Perctage Value =============
 	public void serviceWiseDiscountValidation(String percentage) throws IOException, InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -1364,7 +1362,7 @@ public class IpBillingPage extends GeneralBrowserSetting {
 
 		softAssert.assertAll();   
 	}
-	//----------------Service Amount Discount
+	//====================== Service Amount Discount ===================
 	public void serviceWiseDiscountValidation_ByAmount(String discountAmountValue)
 			throws IOException, InterruptedException {
 
