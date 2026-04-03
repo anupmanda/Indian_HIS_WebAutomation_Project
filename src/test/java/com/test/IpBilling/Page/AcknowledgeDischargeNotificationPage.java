@@ -229,7 +229,8 @@ public class AcknowledgeDischargeNotificationPage extends GeneralBrowserSetting 
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		    wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(By.xpath(sameRowXpath),"style", "background:white")));
 
-		    CommanUtill.clickFunction(sameRowXpath,"Row " + sNo + " After Color Change");}
+		    CommanUtill.clickFunction(sameRowXpath,"Row " + sNo + " After Color Change");
+		    }
 		
 		public void Yes_Pop_DischargeNotificationAcknowledgementBill(String Yes_pop_Billing) throws IOException, InterruptedException {
 			

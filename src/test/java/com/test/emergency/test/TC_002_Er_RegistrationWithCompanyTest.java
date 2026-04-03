@@ -112,6 +112,7 @@ public class TC_002_Er_RegistrationWithCompanyTest extends  Er_RegistrationPage{
 		logger = extent.createTest("Emergency Compamy Insurence Details", "Emergency Payment Mode Test Funcility");
 
 		Registration.ClickOnPaymentDetailsBtn("Click On Payment Mode Btn");
+		Registration.CompanyInsurnceRadioBtn("Click On Company Radio Btn");
 		Registration.SchemeCheckBoxAndSelectScheme("Scheme Check Box" , Scheme_Drp);
 		
 		Registration.CompanyType_Company_RatecontractDrp(Company_Type_Drp , Company_Drp , Rate_Contract_Drp);

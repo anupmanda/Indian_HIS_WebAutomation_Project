@@ -326,7 +326,7 @@ public class ErBillingTest extends ErBillingPage {
 		Er_Billing.DiscountDeleteYesPop("Click On Discount Yes Popup");
 		
 	}
-	@Test(priority = 17 ,enabled = true)
+	@Test(priority = 17 ,enabled = false)
 	public void DiscountInItemWiseTest() throws IOException, InvalidFormatException, InterruptedException{
 		
 		logger = extent.createTest("Discount In Item Wise ", "Discount In Item Wise  Test Funcility");
@@ -351,17 +351,94 @@ public class ErBillingTest extends ErBillingPage {
 		Er_Billing.SaveServiceWiseDiscountOkPop("Ok Save Service Discount Ok Pop");
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Test(priority = 17 ,enabled = false)
+	public void FullBillSettlementReceiptCashTest() throws IOException, InvalidFormatException, InterruptedException{
 		
+		logger = extent.createTest("Full Bill Settlement", "Bill Settlement");
 	
+		Er_Billing.ClickOnSettlementBtn("Click On Bill Settlement Btn");
+		Er_Billing.ClickOnCashFullBillSettlement("Click On Cash Btn");
+		
+		Er_Billing.EnterRemarksBillSettlement("Er Bill Settlement");
+		
+		Er_Billing.ClickOnReceiptBtn("Click On Bill Receipt Btn");
+		Er_Billing.YesBillSettlePop("Yes Bill Settle Pop");
+	    Thread.sleep(1500);
+	    Er_Billing.OkBillSettledReceiptNo("Settled Bill Receipt No");
+		
+	}
+	
+	@Test(priority = 18 ,enabled = false)
+	public void DueBillSettlementReceiptTest() throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("Due Bill Settlement", " Due Bill Settlement");
+	
+		Er_Billing.ClickOnSettlementBtn("Click On Bill Settlement Btn");
+		Er_Billing.ClickOnCashFullBillSettlement("Click On Cash Btn");
+		
+		Er_Billing.EnterLessThansettledAmount("1000");
+		Er_Billing.CounterFacilityCashReceived_Returned("2000" ,"Cash to be Returned");
+		
+		Er_Billing.EnterRemarksBillSettlement("Er Bill Settlement");
+		Er_Billing.ClickOnDueBtn("Click On Due Btn" ,"Jai Singh" ,"Due Remarks");
+		
+		Er_Billing.ClickOnReceiptBtn("Click On Bill Receipt Btn");
+	    Er_Billing.YesBillSettlePop("Yes Bill Settle Pop");
+	    Thread.sleep(1500);
+	    Er_Billing.OkBillSettledReceiptNo("Settled Bill Receipt No");
+	}
+	
+	@Test(priority = 19 ,enabled = false)
+	public void BillSettlementReceiptInChequeTest() throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("Full Bill Settlement Cheque ", "Bill Settlement Cheque");
+		
+		Er_Billing.ClickOnSettlementBtn("Click On Bill Settlement Btn");
+		
+		Er_Billing.ClickOnChequeAndChequeNo_IssueDateBankName_BranchName("Click On Cheque Btn" ,"123456","26-03-2026" ,
+				"ANDHRA BANK" ,"Noida");
+		Er_Billing.SelectByAuthorisedInCheque("Gurdarshan Singh");
+		Er_Billing.PrintBillSettledAmountInCheque("Bill Settled Cheque Amount");
+	
+		Er_Billing.ClickOnReceiptBtn("Click On Bill Receipt Btn");
+		Er_Billing.YesBillSettlePop("Yes Bill Settle Pop");
+	    Thread.sleep(1500);
+	    Er_Billing.OkBillSettledReceiptNo("Settled Bill Receipt No");
+	}
+	
+	@Test(priority = 20 ,enabled = false)
+	public void BillSettledPrintReceiptNumberTest() throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("Print In Bill Settled ", "Print Bill Settled Test Funcility");
+		
+		Er_Billing.ClickOnSettlementBtn("Click On Bill Settlement Btn");
+		Er_Billing.ClickOnSettleBillPrintBtn("Click On Bill Settled Print Btn");
+	
+		Er_Billing.SettledReceiptNumberprintAndOkBtn(0,"Bill Settled Print Ok Btn");
+		Thread.sleep(2500);
+		Er_Billing.SettledReceiptNumberprintAndOkBtn(1,"Bill Settled Print Ok Btn");
+		Er_Billing.CloseHISTreeBillSettledPrintPop("Click On Close Bill Settled Receipt Pop");
+
+	}
+
+	@Test(priority = 21 ,enabled = false)
+	public void PrintInHeaderBtn()throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("Print In Heder Icon ", "Summary Bill Print Test Funcility");
+		
+		Thread.sleep(2000);
+		Er_Billing.ClickOnHeaderPrintBtn("Click on Header Print Btn");
+		Er_Billing.SummaryBillYesPop("Click On Radio Btn In Summary Bill" ,"Print Yes Pop");	
+	}
+
+	@Test(priority = 22 ,enabled = true)
+	public void FRRODetailsTest()throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("FRRO Details  ", "Save FRRO Application Number Test Funcility");
+		
+		Er_Billing.ClickOnFRRODetailsBtn("Click On FRRO Details Btn");
+		Er_Billing.EnterFRROApplicationNoAndSave("123456" ,"Save FRRO Details Pop");
+		Er_Billing.CloseFRRODetailsPop("Close FRRO Details Pop");
+	}
 	
     }

@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import com.mongodb.event.CommandEventMulticaster;
 import com.test.browser.setup.GeneralBrowserSetting;
 import com.test.ui.helper.CommanUtill;
 
@@ -202,6 +203,61 @@ public class ErBillingPage extends GeneralBrowserSetting {
 	
 	//========================= Bill Settlement ===============================
 	protected static String Click_Bill_Settlement = "//a[@id='BillSettlement']";
+	protected static String Click_Cash_Btn = "//a[@id='tabcash']";
+	protected static String Bill_Settlement_Remarks = "//textarea[@id='txtReceiptRemarks']";
+	protected static String Click_Recipt_Settlement_Btn = "//i[@class='fa fa-usd']";
+	protected static String Click_Recipt_Settlement_Yes_Pop = "//a[@id ='ERBillingFinalSettlementPopupforMessageOK']";
+/*	protected static String Settled_Recipt_No_Ok_Pop = "//a[@id='PopupOK']";
+  
+	protected static String Settled_Recipt_No_Ok_Pop = 
+			"//div[contains(@class,'popup') and contains(@style,'display: block')]//a[@id='PopupOK']";
+			
+	protected static String Settled_Recipt_No_Ok_Pop =
+"//div[contains(@class,'popup') and contains(@style,'display: block')]//a[@id='PopupOK']";		
+			
+*/
+	protected static String Settled_Recipt_No_Ok_Pop =
+			"(//a[@id='PopupOK' and not(contains(@style,'display: none'))])[last()]";
+	
+	protected static String Enet_Amount = "//input[@id='txtCSAmount']";  //Less Than Total Bill Amount
+	protected static String Cash_Received = "//input[@id='payable_amount']";
+	protected static String Cash_Returned_Print = "//input[@id='payable_amountret']";
+	//============================== Due ==================================
+	protected static String Click_Due_Btn = "//a[@id='tabDue']";
+	protected static String Due_Authorised_By_Drp = "//select[@id='cmbdue']";
+	protected static String Due_Remaks_Text = "//textarea[@id='txtDueRemarks']";
+	
+  //==================Settlement In Cheque =======================
+	
+	protected static String Click_Cheque_Btn = "//a[@id='tabCheque']";
+	protected static String Cheque_No = "//input[@id='TXTChequeNo']";
+	protected static String Cheque_Issue_Date_Check_Box = "//input[@id='Isuecheckbox']";
+	protected static String ChequeIssue_Date = "//input[@id='cqIssDt']";
+	protected static String Cheque_Bank_Name_Drp = "//select[@id='cmbchequeBank']";
+	protected static String Cheque_Branch_Name = "//input[@id='txtCqBranchName']";
+	protected static String Cheque_Settle_Amount_Print = "//input[@id='txtSettled']";
+	protected static String Cheque_Authorised_Drp = "//select[@id='cmbcheque']";
+	
+  //=======================Bill Settle Print =============================
+	protected static String settle_Print_Btn = "//a[@id='btnPrintERBillingBillSettlementMSG_Modal']//i[@class='fa fa-print']";
+	protected static String settle_Print_Receipt_No_Drp = "//select[@id='selSettlementReceiptNo']";
+	protected static String settle_Print_Receipt_Ok_Pop = "//a[@id='ERBillingSettlementReceiptPopupforMessageOK']//i[@title='popup-title']";
+	protected static String Close_HIS_Trre_Settled_Pop = "//a[@id='ERBillingSettlementReceiptPopupforMessageClose']//i[@title='popup-title']";
+	//============================ Print ====================================
+	
+	protected static String Click_Print_Btn = "//a[@id='btnPrint']//i[@class='fa fa-print']";
+	protected static String Summary_Bill_Radio_Btn = "//input[@id='rb_SummaryBill']";
+	protected static String Detailed_Bill_Radio_Btn = "//input[@id='rb_DetailedBill']";
+	protected static String Discharge_Bill_Radio_Btn = "//input[@id='rb_DischargeSlip']";
+	protected static String Discharge_Authorization_Slip_Bill_Radio_Btn = "//input[@id='rb_DischargeAuthoriZationSlip']";
+	protected static String View_Discount_Breakup_Bill_Radio_Btn = "//input[@id='_chkDiscountBackup']";
+	protected static String Yes_Print_Bill_Pop = "//a[@id='btnPrintBill_Ok']";
+	
+	 //========================== FRRO Details ============================	
+	protected static String FRRO_Dettails_Btn = "//a[@id='FRRODetails']";
+	protected static String FRRO_Application_No = "//input[@id='txtFRRO_Application_No']";
+	protected static String FRRO_Details_Save_Btn = "//a[@id='btnsave_FRROApplicationNo']//i[@class='fa fa-save']";
+	protected static String FRRO_Details_Close_Pop = "//a[@id='FRRODetails_Close']//i[@class='fa fa-times']";
 	
 	
 	
@@ -1072,9 +1128,7 @@ public void DeleteDiscountBtn(String Delete_icon) throws IOException, Interrupte
 		SoftAssert softAssert = new SoftAssert();
 		Random random = new Random();
 
-		List<WebElement> rows = driver.findElements(
-				By.xpath("//table[@id='tblServiceWishDiscount']//tbody//tr"));
-
+		List<WebElement> rows = driver.findElements(By.xpath("//table[@id='tblServiceWishDiscount']//tbody//tr"));
 		if (rows.size() == 0) {
 			logger.info("No services available for discount");
 			return;
@@ -1114,21 +1168,11 @@ public void DeleteDiscountBtn(String Delete_icon) throws IOException, Interrupte
 				CommanUtill.textEnter(discountAmtXpath, String.valueOf(enteredValue));
 				driver.findElement(By.xpath(discountAmtXpath)).sendKeys(Keys.TAB);
 			}
+			wait.until(ExpectedConditions.attributeToBeNotEmpty(driver.findElement(By.xpath(discountAmtXpath)), "value"));
 
-			wait.until(ExpectedConditions.attributeToBeNotEmpty(
-					driver.findElement(By.xpath(discountAmtXpath)), "value"));
-
-			double discountAmt = Double.parseDouble(
-					driver.findElement(By.xpath(discountAmtXpath))
-					.getAttribute("value").trim());
-
-			double discountPercent = Double.parseDouble(
-					driver.findElement(By.xpath(discountPercentXpath))
-					.getAttribute("value").trim());
-
-			double netAmt = Double.parseDouble(
-					driver.findElement(By.xpath(netAmtXpath))
-					.getText().trim());
+			double discountAmt = Double.parseDouble(driver.findElement(By.xpath(discountAmtXpath)).getAttribute("value").trim());
+			double discountPercent = Double.parseDouble(driver.findElement(By.xpath(discountPercentXpath)).getAttribute("value").trim());
+			double netAmt = Double.parseDouble(driver.findElement(By.xpath(netAmtXpath)).getText().trim());
 
 			double expectedDiscount;
 			double expectedNet;
@@ -1139,29 +1183,22 @@ public void DeleteDiscountBtn(String Delete_icon) throws IOException, Interrupte
 				expectedNet = amount - expectedDiscount;
 
 			} else {
-
 				expectedDiscount = enteredValue;
 				expectedNet = amount - enteredValue;
 			}
 
 			boolean rowStatus = true;
-
 			try {
 
-				softAssert.assertEquals(discountAmt, expectedDiscount, 0.5,
-						"Discount mismatch row " + i);
-
-				softAssert.assertEquals(netAmt, expectedNet, 0.5,
-						"Net mismatch row " + i);
+				softAssert.assertEquals(discountAmt, expectedDiscount, 0.5,"Discount mismatch row " + i);
+				softAssert.assertEquals(netAmt, expectedNet, 0.5,"Net mismatch row " + i);
 
 			} catch (Exception e) {
 				rowStatus = false;
 			}
 
 			String status = rowStatus ? "PASS" : "FAIL";
-
-			logger.info(String.format("%-5s %-12s %-10s %-12s %-12s %-8s",
-					i, amount, mode, discountAmt, netAmt, status));
+			logger.info(String.format("%-5s %-12s %-10s %-12s %-12s %-8s",i, amount, mode, discountAmt, netAmt, status));
 		}
 
 		logger.info("--------------------------------------------------------------------------");
@@ -1281,5 +1318,200 @@ public void DeleteDiscountBtn(String Delete_icon) throws IOException, Interrupte
 	    softAssert.assertAll();
 	}
 	//========================= Bill Settlement ===============================
+	public void ClickOnSettlementBtn(String Settlement_Icon) throws IOException , InterruptedException{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Bill_Settlement)));
+		CommanUtill.clickFunction(Click_Bill_Settlement, Settlement_Icon);
+	}
+	public void ClickOnCashFullBillSettlement(String cash_Btn) throws IOException , InterruptedException{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Cash_Btn)));
+		CommanUtill.clickFunction(Click_Cash_Btn, cash_Btn);
+	}
+	public void EnterRemarksBillSettlement(String Remarks_Btn) throws IOException , InterruptedException{
+		
+		CommanUtill.textEnter(Bill_Settlement_Remarks, Remarks_Btn);
+	}
+	public void ClickOnReceiptBtn(String Receipt_Btn) throws IOException , InterruptedException{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Recipt_Settlement_Btn)));
+		CommanUtill.clickFunction(Click_Recipt_Settlement_Btn, Receipt_Btn);
+	}
+	
+	public void YesBillSettlePop(String Yes_Pop) throws IOException, InterruptedException {
+
+	    if (CommanUtill.isElementPresent(Click_Recipt_Settlement_Yes_Pop)) {
+	        CommanUtill.clickFunction(Click_Recipt_Settlement_Yes_Pop, Yes_Pop);
+	        System.out.println("After Receipt Save Yes Pop");
+	    }
+	    else {
+	    	 System.out.println("Did Not  Appered After Receipt Save Yes Pop");
+	    }
+	} 
+	    public void OkBillSettledReceiptNo(String Settled_Receipt_Pop)throws IOException, InterruptedException {
+	    	
+	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    	wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Settled_Recipt_No_Ok_Pop)));
+	    	
+	    	if (CommanUtill.isElementPresent(Settled_Recipt_No_Ok_Pop)) {
+		        CommanUtill.clickFunction(Settled_Recipt_No_Ok_Pop, Settled_Receipt_Pop);
+		        System.out.println("Settled Receipt OK Pop Appered");
+		    } else {
+		        System.out.println("Settled Receipt OK Pop popup not appeared");
+		    }
+	    }
+	    
+	public void EnterLessThansettledAmount(String Amount) throws IOException, InterruptedException { 
+		
+		WebDriverWait amount = new WebDriverWait(driver, Duration.ofSeconds(5));
+		amount.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Enet_Amount)));
+		CommanUtill.textEnter(Enet_Amount, Amount);
+	}
+	public void CounterFacilityCashReceived_Returned(String Received , String Returned_Cash) 
+	        throws IOException, InterruptedException { 
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Cash_Received)));
+		CommanUtill.textEnter(Cash_Received, Received);
+		System.out.println("Entered Cash Received: " + Received);
+		logger.info("Entered Cash Received: " + Received);
+
+		String Returned = driver.findElement(By.xpath(Cash_Returned_Print)).getAttribute("value");
+
+		logger.info("=============== Returned Cash =================");
+		logger.info("Returned Cash : " + Returned);
+		System.out.println("Returned Cash : " + Returned);
+	}
+   public void ClickOnDueBtn(String Due_Icon ,String  Authorised_Drp , String Remarks) throws IOException , InterruptedException{
+		
+		WebDriverWait Due = new WebDriverWait(driver, Duration.ofSeconds(5));
+		Due.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Due_Btn)));
+		CommanUtill.clickFunction(Click_Due_Btn, Due_Icon);
+		
+		CommanUtill.dropdownSelectByVisibleText(Due_Authorised_By_Drp, Authorised_Drp);
+		CommanUtill.textEnter(Due_Remaks_Text, Remarks);
+	}
+   //==================Settlement In Cheque =======================
+	
+   public void ClickOnChequeAndChequeNo_IssueDateBankName_BranchName(String Cheque_Btn , String Cheque_Number ,String Issue_Date , String Banks_Name_Drp ,
+		   String Branch_Name ) throws IOException , InterruptedException{
+	   
+	   CommanUtill.clickFunction(Click_Cheque_Btn, Cheque_Btn);
+	   CommanUtill.textEnter(Cheque_No, Cheque_Number);
+	   
+	   WebElement issue_Date_ckk_Box = driver.findElement(By.xpath(Cheque_Issue_Date_Check_Box));
+	   if(! issue_Date_ckk_Box.isSelected());
+		 
+	   WebElement Date = driver.findElement(By.xpath(ChequeIssue_Date));
+	   Date.sendKeys(Keys.CONTROL + "a");
+	   Date.sendKeys(Keys.DELETE);
+	   CommanUtill.textEnter(ChequeIssue_Date, Issue_Date);
+	   Date.sendKeys(Keys.TAB);
+	   
+	   CommanUtill.dropdownSelectByVisibleText(Cheque_Bank_Name_Drp, Banks_Name_Drp);
+	   CommanUtill.textEnter(Cheque_Branch_Name, Branch_Name); 
+   }
+   public void PrintBillSettledAmountInCheque(String Settled_Amount) throws IOException , InterruptedException{
+	   
+	  String  Amount = driver.findElement(By.xpath(Cheque_Settle_Amount_Print)).getAttribute("value");
+	   logger.info("============= Cheque Amount Settled Value ===================");
+	   logger.info("Settled Amount :" + Amount);
+	   System.out.println("Settled Amount In Cheque :" + Amount);
+   }
+   
+   
+   public String PrintBillSettledAmountInCheque() throws IOException, InterruptedException {
+
+	    String amount = "";
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+	        WebElement settledAmountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Cheque_Settle_Amount_Print)));
+	        amount = settledAmountElement.getAttribute("value");
+
+	        // If still null or empty, use DOM property
+	        if (amount == null || amount.isEmpty()) {
+	            amount = settledAmountElement.getDomProperty("value");
+	        }
+
+	        logger.info("============= Cheque Amount Settled Value ===================");
+	        logger.info("Settled Amount : " + amount);
+	        System.out.println("Settled Amount In Cheque : " + amount);
+
+	    } catch (Exception e) {
+	        logger.info("Unable to fetch Settled Amount");
+	        System.out.println("Error while fetching Settled Amount: " + e.getMessage());
+	    }
+
+	    return amount;
+	}
+   public void SelectByAuthorisedInCheque(String Authorised_Drp) throws IOException , InterruptedException{
+	   
+	   CommanUtill.dropdownSelectByVisibleText(Cheque_Authorised_Drp, Authorised_Drp);
+   }
+   
+   //=======================Bill Settle Print =============================
+   
+	public void ClickOnSettleBillPrintBtn(String Print_Icon) throws IOException , InterruptedException{
+		
+		WebDriverWait print = new WebDriverWait(driver, Duration.ofSeconds(10));
+		print.until(ExpectedConditions.elementToBeClickable(By.xpath(settle_Print_Btn)));
+		CommanUtill.clickFunction(settle_Print_Btn, Print_Icon);
+	}
+	public void SettledReceiptNumberprintAndOkBtn(int value , String ok_Btn) throws IOException , InterruptedException{
+		
+		WebDriverWait print = new WebDriverWait(driver, Duration.ofSeconds(10));
+		print.until(ExpectedConditions.presenceOfElementLocated(By.xpath(settle_Print_Receipt_No_Drp)));
+		CommanUtill.dropdownSelectByIndex(settle_Print_Receipt_No_Drp, value);
+		
+		WebDriverWait ok = new WebDriverWait(driver, Duration.ofSeconds(10));
+		ok.until(ExpectedConditions.elementToBeClickable(By.xpath(settle_Print_Receipt_Ok_Pop)));
+		CommanUtill.clickFunction(settle_Print_Receipt_Ok_Pop, ok_Btn);	
+	}
+	public void CloseHISTreeBillSettledPrintPop(String Close_Pop) throws IOException, InterruptedException{
+		
+		if(CommanUtill.isElementPresent(Close_HIS_Trre_Settled_Pop)) {
+			CommanUtill.clickFunction(Close_HIS_Trre_Settled_Pop, Close_Pop);
+			System.out.println("Close Bill Settled Bill Receipt Pop");
+		}
+		else {
+			System.out.println("Did not Appered Bill Settled Recipt Pop");
+		}
+	}
+	//============================Print Btn ==============================
+	public void ClickOnHeaderPrintBtn(String Print_Icon) throws IOException , InterruptedException{
+		
+		WebDriverWait print = new WebDriverWait(driver, Duration.ofSeconds(10));
+		print.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Print_Btn)));
+		CommanUtill.clickFunction(Click_Print_Btn, Print_Icon);
+	}
+	public void SummaryBillYesPop(String Summary , String Yes_pop) throws IOException , InterruptedException{
+		
+		WebDriverWait Radio_Btn = new WebDriverWait(driver, Duration.ofSeconds(10));
+		Radio_Btn.until(ExpectedConditions.elementToBeClickable(By.xpath(Summary_Bill_Radio_Btn)));
+		CommanUtill.clickFunction(Summary_Bill_Radio_Btn, Summary);
+		CommanUtill.clickFunction(Yes_Print_Bill_Pop, Yes_pop);
+	}
+ //========================== FRRO Details ============================	
+	
+	public void ClickOnFRRODetailsBtn(String Frro) throws IOException , InterruptedException{
+		
+		WebDriverWait print = new WebDriverWait(driver, Duration.ofSeconds(5));
+		print.until(ExpectedConditions.presenceOfElementLocated(By.xpath(FRRO_Dettails_Btn)));
+		CommanUtill.clickFunction(FRRO_Dettails_Btn, Frro);	
+	}
+   public void EnterFRROApplicationNoAndSave(String Application_No , String Save_Btn) throws IOException , InterruptedException{
+		
+		CommanUtill.textEnter(FRRO_Application_No, Application_No);
+		CommanUtill.clickFunction(FRRO_Details_Save_Btn, Save_Btn);
+	}
+  public void CloseFRRODetailsPop(String Close_FRRO)  throws IOException , InterruptedException{
+	  
+		CommanUtill.clickFunction(FRRO_Details_Close_Pop, Close_FRRO);
+  }
+	
 	
 }

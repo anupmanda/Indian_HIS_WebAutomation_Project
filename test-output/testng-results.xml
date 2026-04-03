@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="15" total="17" passed="2" failed="0" skipped="0">
+<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-24T14:21:28 IST" name="Default suite" finished-at="2026-03-24T14:22:20 IST" duration-ms="51860">
+  <suite started-at="2026-04-03T16:46:01 IST" name="Default suite" finished-at="2026-04-03T16:46:58 IST" duration-ms="57491">
     <groups>
     </groups>
-    <test started-at="2026-03-24T14:21:28 IST" name="Default test" finished-at="2026-03-24T14:22:20 IST" duration-ms="51860">
-      <class name="com.test.emergency.test.ErBillingTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:28 IST" name="launch" finished-at="2026-03-24T14:21:28 IST" duration-ms="117" status="PASS">
+    <test started-at="2026-04-03T16:46:01 IST" name="Default test" finished-at="2026-04-03T16:46:58 IST" duration-ms="57491">
+      <class name="com.test.emergency.test.TC_016_Er_DepositRefundTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.emergency.test.TC_016_Er_DepositRefundTest@5b1f29fa]" started-at="2026-04-03T16:46:01 IST" name="launch" finished-at="2026-04-03T16:46:01 IST" duration-ms="106" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:28 IST" name="launchBrowser" finished-at="2026-03-24T14:21:37 IST" duration-ms="8421" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.emergency.test.TC_016_Er_DepositRefundTest@5b1f29fa]" started-at="2026-04-03T16:46:01 IST" name="launchBrowser" finished-at="2026-04-03T16:46:09 IST" duration-ms="8161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="EnterErNumberAndUHID(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:41 IST" name="EnterErNumberAndUHID" data-provider="BillingDataProvider" finished-at="2026-03-24T14:21:58 IST" duration-ms="16334" status="PASS">
+        <test-method signature="SearchCurrentInPatientTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.emergency.test.TC_016_Er_DepositRefundTest@5b1f29fa]" started-at="2026-04-03T16:46:14 IST" name="SearchCurrentInPatientTest" data-provider="DepositRefundDataProvider" finished-at="2026-04-03T16:46:44 IST" duration-ms="30003" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,171 +29,183 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[19/03/2026]]>
+                <![CDATA[30/03/2026]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[23/03/2026]]>
+                <![CDATA[02/04/2026]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[1508826]]>
+                <![CDATA[SPSL.886318]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Divyansh company]]>
+                <![CDATA[1508844]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Divyansh Pvt Ltd]]>
+                <![CDATA[700]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[Healthindia Allied Services Pvt Ltd]]>
+                <![CDATA[Anup]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[123]]>
+                <![CDATA[Brother]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[5241]]>
+                <![CDATA[800]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[123456]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[Amount]]>
+                <![CDATA[02/04/2026]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[ALLAHABAD BANK]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[123456]]>
+                <![CDATA[Noida]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[26/03/2026]]>
+                <![CDATA[1508832]]>
               </value>
             </param>
             <param index="15">
               <value>
-                <![CDATA[9876542]]>
+                <![CDATA[02/04/2026]]>
               </value>
             </param>
             <param index="16">
               <value>
-                <![CDATA[524163]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[50]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[52416352]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[Punb47521]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[Noida]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[fhg]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[No Data]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="25">
-              <value>
-                <![CDATA[50]]>
-              </value>
-            </param>
-            <param index="26">
-              <value>
-                <![CDATA[12456]]>
-              </value>
-            </param>
-            <param index="27">
-              <value>
-                <![CDATA[Brother]]>
-              </value>
-            </param>
-            <param index="28">
-              <value>
-                <![CDATA[Anup]]>
-              </value>
-            </param>
-            <param index="29">
-              <value>
-                <![CDATA[Normal]]>
-              </value>
-            </param>
-            <param index="30">
-              <value>
-                <![CDATA[Discharge on Request]]>
-              </value>
-            </param>
-            <param index="31">
-              <value>
-                <![CDATA[Anup]]>
+                <![CDATA[03/04/2026]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EnterErNumberAndUHID -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:58 IST" name="reportclosewindows" finished-at="2026-03-24T14:21:58 IST" duration-ms="918" status="PASS">
+        </test-method> <!-- SearchCurrentInPatientTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_016_Er_DepositRefundTest@5b1f29fa]" started-at="2026-04-03T16:46:44 IST" name="reportclosewindows" finished-at="2026-04-03T16:46:45 IST" duration-ms="935" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="DiscountInItemWiseTest()[pri:17, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:21:58 IST" name="DiscountInItemWiseTest" finished-at="2026-03-24T14:22:20 IST" duration-ms="21745" status="PASS">
+        <test-method signature="DepositReceiptUtilityTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:4, instance:com.test.emergency.test.TC_016_Er_DepositRefundTest@5b1f29fa]" started-at="2026-04-03T16:46:47 IST" name="DepositReceiptUtilityTest" data-provider="DepositRefundDataProvider" finished-at="2026-04-03T16:46:58 IST" duration-ms="10961" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Emergency]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[30/03/2026]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[02/04/2026]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[SPSL.886318]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1508844]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[700]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Anup]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Brother]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[800]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[02/04/2026]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[ALLAHABAD BANK]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Noida]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[1508832]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[02/04/2026]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[03/04/2026]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DiscountInItemWiseTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.ErBillingTest@7b8233cd]" started-at="2026-03-24T14:22:20 IST" name="reportclosewindows" finished-at="2026-03-24T14:22:20 IST" duration-ms="88" status="PASS">
+        </test-method> <!-- DepositReceiptUtilityTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_016_Er_DepositRefundTest@5b1f29fa]" started-at="2026-04-03T16:46:58 IST" name="reportclosewindows" finished-at="2026-04-03T16:46:58 IST" duration-ms="69" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.emergency.test.ErBillingTest -->
+      </class> <!-- com.test.emergency.test.TC_016_Er_DepositRefundTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

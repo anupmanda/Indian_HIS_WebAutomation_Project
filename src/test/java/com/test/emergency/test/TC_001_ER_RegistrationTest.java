@@ -8,7 +8,6 @@ import java.io.IOException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.test.emergency.page.Er_RegistrationPage;
 import com.test.readdata.ExcelSheetDataProvider;
 import com.test.ui.helper.CommanUtill;
@@ -21,12 +20,12 @@ import com.test.ui.helper.CommanUtill;
 public class TC_001_ER_RegistrationTest extends  Er_RegistrationPage{
 
 	Er_RegistrationPage Registration = new Er_RegistrationPage();
-
 	private final String sheetName = "ER_Registration_Page"; 
-
+	
+	
 	@DataProvider(name = "ExcelUniversalDataProvider")
 	public Object[][] getData() throws IOException {
-		System.out.println("====Sheet Name: " + sheetName + "======");
+		System.out.println("=========Sheet Name_01: " + sheetName + "==========");
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
@@ -104,5 +103,7 @@ public class TC_001_ER_RegistrationTest extends  Er_RegistrationPage{
 			
 			Registration.ClickOnOkAfterSaveBtn("Click After Save Ok Pop");
 			Registration.YesprintWristBandPop("Yes Print print Wrist Band");	
+			
 		}
+			
 }
