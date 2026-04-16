@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.emergency.test.TC_016_Er_DepositRefundTest">
+      <class name="com.test.emergency.test.TC_021_Er_Blood_Bank_RaiseNewRequestTest">
         <methods>
-          <include name="DepositInCashTest" invocation-numbers="0"/>
           <include name="reportclosewindows"/>
           <include name="launchBrowser"/>
+          <include name="BloodBankRaiseNewRequestTest" invocation-numbers="0"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.emergency.test.TC_016_Er_DepositRefundTest -->
+      </class> <!-- com.test.emergency.test.TC_021_Er_Blood_Bank_RaiseNewRequestTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

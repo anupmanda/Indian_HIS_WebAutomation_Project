@@ -12,8 +12,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.github.dockerjava.api.model.Driver;
 import com.test.browser.setup.GeneralBrowserSetting;
 import com.test.ui.helper.CommanUtill;
 
@@ -280,14 +278,12 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 
 		CommanUtill.dropdownSelectByVisibleText(facility, fieldName);
 	}
-
 	public void clickOnEmergencyDashbord_StationDrpYesPop(String emergency_Dashbord, String Station_drp, String satrion_yes_popup) throws IOException, InterruptedException {
 
 		CommanUtill.clickFunction(emergency_dashbord, emergency_Dashbord);
 		CommanUtill.dropdownSelectByVisibleText(department_drp, Station_drp);
 		CommanUtill.clickFunction(yes_popup, Station_drp); 
 	}
-
 	public void clickOnEmercencyPage(String emergency_btn, String Register_emergency_page ) throws IOException, InterruptedException { 
 
 		CommanUtill.clickFunction(emergency_side_button, emergency_btn);

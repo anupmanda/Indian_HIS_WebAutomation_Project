@@ -290,7 +290,7 @@ public class Er_DueSettlementPage extends GeneralBrowserSetting {
 	    System.out.println("Current Due Amount (Individual): " + dueAmount);
 	    logger.info("Current Due Amount (Individual): " + dueAmount);
 
-	    // Step 3: Convert Excel Value (String → int)
+	    // Step 3: Convert Excel Value (String  int)
 	    int lessVal = Integer.parseInt(lessValue);
 
 	    // Step 4: Calculate Less Amount

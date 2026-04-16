@@ -30,7 +30,7 @@ public class TC_001_ER_RegistrationTest extends  Er_RegistrationPage{
 	}
 
 	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1 ,enabled = true)	
-	public void erDemogrphicDetailsTest(String facility_drp, String Station_drp, String title_drp, String First_Name, String 
+	public void ErDemogrphicDetailsTest(String facility_drp, String Station_drp, String title_drp, String First_Name, String 
 			Middle_Name, String Last_Name,	String gender_drp, String Enter_DOB, String enter_Age, String age_type, String Father_Name ,
 			String Spouse_Name ,  String MaritalStatus_drp, String Address, String City_Town_Drp, String Locality_po_Drp,String Other_Locality,
 			String Enter_Pin_Number , String Preferred_Language_Drp , String PrimarySpeciality_Drp ,String Primary_ConsultantDrp , 

@@ -121,9 +121,6 @@ public class NursingActivityPage extends GeneralBrowserSetting {
 	    return false;
 	}
 	
-	
-	
-	
 	public void clickFirstAfterSearch_AdmittedNotOccupied() throws IOException, InterruptedException {
 
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
