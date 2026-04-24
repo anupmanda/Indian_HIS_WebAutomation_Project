@@ -40,9 +40,10 @@ public class Pharmacy_IpIssueTest extends Pharmacy_IpIssuePage{
 			IpIssue.ClickOnPharmacyDashboard("Click On Pharmacy DashBorad" , Pharmacy_Station_Drp , " Station Yes Popup");
 			
 			IpIssue.ClickOnIpIsueMenuAndPage("Click On Ip Issue Menu Table" , "Ip Issue Page");
-			IpIssue.EnterErNumber("1508856");
+			//IpIssue.EnterErNumber("1508856");
+			//IpIssue.ClickOnPendingOrderInTable("Click On Pending Drug In Pharmacy");
 			
-			IpIssue.ClickOnPendingOrderInTable("Click On Pending Drug In Pharmacy");
+			IpIssue.ClickOnEmergencyOPDRow("EMERGENCY OPD(GROUND FLOOR)");  // Dynamic Drug issue
 			IpIssue.ThisOrderIsCurrentlylockedYesPop("Click On Currently Locked Order Yes Pop");
 			
 		// Second Window 	
@@ -54,6 +55,8 @@ public class Pharmacy_IpIssueTest extends Pharmacy_IpIssuePage{
 			IpIssue.IpIssueDetailsPrintYesPop("Click On Print Yes Pop");
 			IpIssue.CloseGenerateBarcodPop("Close Bar Code Pop");
 			
+			Thread.sleep(1500);
+			IpIssue.HomePage("Click On HIS Log");
 		}
 
 } 

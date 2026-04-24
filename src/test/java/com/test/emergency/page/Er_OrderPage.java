@@ -263,7 +263,62 @@ public class Er_OrderPage extends GeneralBrowserSetting {
 		js.executeScript("arguments[0].click();", targetCard);
 		logger.info("Clicked on TOP GREEN Patient Successfully");
 	}
-	public void ClickOnInvestigationsBtnAndNewOrders(String Invg_Btn , String NewOrder_Radio_Btn) throws IOException, InterruptedException {
+	public static String ER_NO_GLOBAL = "";
+
+	public String ClickTopGreenPatient() throws IOException, InterruptedException {
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+	    List<WebElement> cards = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+	        By.xpath("//div[contains(@class,'patient-card') and contains(@class,'occupied') and not(contains(@class,'admittednotoccupied'))]")
+	    ));
+
+	    if (cards.size() == 0) {
+	        System.out.println("No GREEN Patient Found");
+	        return "";
+	    }
+
+	    System.out.println("Total GREEN Patients: " + cards.size());
+
+	    WebElement targetCard = cards.get(0);
+
+	    // Patient Name
+	    String patientName = "";
+	    try {
+	        patientName = targetCard
+	            .findElement(By.xpath(".//span[contains(@class,'patient-name')]"))
+	            .getText().trim();
+	    } catch (Exception e) {}
+
+	    // ER NO (IMPORTANT FIX)
+	    String erNo = "";
+	    try {
+	        erNo = targetCard
+	            .findElement(By.xpath(".//span[contains(@class,'fwb')]"))
+	            .getText().trim();
+	    } catch (Exception e) {
+	        System.out.println("ER No not found!");
+	    }
+
+	    // GLOBAL STORE (optional)
+	    ER_NO_GLOBAL = erNo;
+
+	    System.out.println("===== TOP GREEN PATIENT =====");
+	    System.out.println("Patient Name : " + patientName);
+	    System.out.println("ER No        : " + erNo);
+
+	    // CLICK
+	    try {
+	        wait.until(ExpectedConditions.elementToBeClickable(targetCard)).click();
+	    } catch (Exception e) {
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("arguments[0].click();", targetCard);
+	    }
+
+	    return erNo;   // RETURN VALUE
+	}
+	    
+		public void ClickOnInvestigationsBtnAndNewOrders(String Invg_Btn , String NewOrder_Radio_Btn) throws IOException, InterruptedException {
 
 		CommanUtill.clickFunction(Investigations_Btn, Invg_Btn);
 		CommanUtill.clickFunction(Invg_New_Orders_Radio_Btn, NewOrder_Radio_Btn);

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.emergency.test.TC_021_Er_Blood_Bank_RaiseNewRequestTest">
+      <class name="com.test.emergency.test.TC_032_ER_IOChartTest">
         <methods>
           <include name="reportclosewindows"/>
+          <include name="DeleteErrorMarkedErrorTest"/>
           <include name="launchBrowser"/>
-          <include name="BloodBankRaiseNewRequestTest" invocation-numbers="0"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.emergency.test.TC_021_Er_Blood_Bank_RaiseNewRequestTest -->
+      </class> <!-- com.test.emergency.test.TC_032_ER_IOChartTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

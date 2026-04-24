@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -53,10 +54,10 @@ public class Pharmacy_IpIssuePage extends GeneralBrowserSetting {
 
 	protected static  String Print_Yes_pop  = "//a[@id = 'btn_ok_printDrugOrderPopUp']";
 	protected static  String Close_Generate_Barcode  = "//i[@id ='generateBarcodePopupClose']";
-	
-	
-	
-	
+	protected static  String Home_page  = "//div[@class='logoHis']";
+
+
+
 
 	public void SelectByFacilityDrp (String facility_Drp) throws IOException ,InvalidApplicationException, InterruptedException {
 
@@ -95,73 +96,134 @@ public class Pharmacy_IpIssuePage extends GeneralBrowserSetting {
 		System.out.println("Show Pending Drug Order In Pharmacy : " + Drug_Row);
 		CommanUtill.clickFunction(Pending_Order_In_Table, Table);
 	}
-	
-	public void ThisOrderIsCurrentlylockedYesPop(String Yes_Pop) throws IOException, InterruptedException {
+//Dynamic row Select 
+	public void ClickOnEmergencyOPDRow(String value) throws IOException, InterruptedException {
 
-	    logger.info("================= Handle Currently Locked Popup ====================");
+	    logger.info("==== Click Latest Emergency OPD Row ====");
+	    System.out.println("==== Click Latest Emergency OPD Row ====");
 
-	    List<WebElement> elements = driver.findElements(By.xpath(Currently_locked_Yes_Pop));
-	    if (elements.size() > 0) {
-	        WebElement yesBtn = elements.get(0);
-	        if (yesBtn.isDisplayed()) {
-	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", yesBtn);
-	            System.out.println("Pop Appeared - Clicked YES");
-	            logger.info("Pop Appeared - Clicked YES");
+	    List<WebElement> headers = driver.findElements(
+	            By.xpath("//table[@id='tblIpIssueDetail']//th"));
+
+	    int columnIndex = -1;
+
+	    for (int i = 0; i < headers.size(); i++) {
+	        if (headers.get(i).getText().trim()
+	                .equalsIgnoreCase("Ordering Ward(Bed no.)")) {
+	            columnIndex = i + 1;
+	            break;
 	        }
+	    }
+ 
+	    List<WebElement> rows = driver.findElements(
+	            By.xpath("//table[@id='tblIpIssueDetail']//tbody//tr"));
+
+	    WebElement lastMatchedRow = null;
+
+	    // Loop all rows (NO break)
+	    for (WebElement row : rows) {
+
+	        String orderingWard = row.findElement(By.xpath("td[" + columnIndex + "]"))
+	                .getText()
+	                .replace("\n", " ")
+	                .replaceAll("\\s+", " ")
+	                .trim();
+
+	        if (orderingWard.equalsIgnoreCase(value)) {
+	            lastMatchedRow = row; // ✅ keep updating (last मिलेगा)
+	        }
+	    }
+
+	    // After loop ==> click last match
+	    if (lastMatchedRow != null) {
+
+	        String sNo = lastMatchedRow.findElement(By.xpath("td[1]")).getText();
+	        String fullRowText = lastMatchedRow.getText();
+
+	        System.out.println(" Latest Row Selected");
+	        logger.info("Latest Row Selected");
+
+	        System.out.println("S.No: " + sNo);
+	        logger.info("S.No: " + sNo);
+
+	        System.out.println("Full Row: " + fullRowText);
+	        logger.info("Full Row: " + fullRowText);
+
+	        // DOUBLE CLICK
+	        Actions actions = new Actions(driver);
+	        actions.moveToElement(lastMatchedRow).doubleClick().perform();
 
 	    } else {
-	        System.out.println("Popup NOT Appeared - Continue Execution");
-	        logger.info("Popup NOT Appeared - Continue Execution");
+	        System.out.println(" No matching row found");
+	        logger.info("No matching row found");
 	    }
+	}
+	public void ThisOrderIsCurrentlylockedYesPop(String Yes_Pop) throws IOException, InterruptedException {
+
+		logger.info("================= Handle Currently Locked Popup ====================");
+
+		List<WebElement> elements = driver.findElements(By.xpath(Currently_locked_Yes_Pop));
+		if (elements.size() > 0) {
+			WebElement yesBtn = elements.get(0);
+			if (yesBtn.isDisplayed()) {
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", yesBtn);
+				System.out.println("Pop Appeared - Clicked YES");
+				logger.info("Pop Appeared - Clicked YES");
+			}
+
+		} else {
+			System.out.println("Popup NOT Appeared - Continue Execution");
+			logger.info("Popup NOT Appeared - Continue Execution");
+		}
 	}
 	public void ClickOnIpIssueDetailsFirstRowTable1(String Table) throws IOException, InterruptedException {
 
-	    logger.info("================= Select First Row Ip Issue Details Drug Table ====================");
+		logger.info("================= Select First Row Ip Issue Details Drug Table ====================");
 
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    By rowLocator = By.xpath(Click_Ip_Issue_Details_Table);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		By rowLocator = By.xpath(Click_Ip_Issue_Details_Table);
 
-	    // Wait for fresh element (VERY IMPORTANT for dynamic table)
-	    WebElement row = wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(rowLocator)));
+		// Wait for fresh element (VERY IMPORTANT for dynamic table)
+		WebElement row = wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(rowLocator)));
 
-	    wait.until(ExpectedConditions.visibilityOf(row));
-	    // Scroll (IMPORTANT)
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", row);
-	    Thread.sleep(500);
-	    // Get Text
-	    String drugRow = row.getText();
-	    System.out.println("========== Select First Row Ip Issue Details Drug Table ==========");
-	    System.out.println("Drugs Name In Ip Issue Details Table : " + drugRow);
-	    logger.info(drugRow);
+		wait.until(ExpectedConditions.visibilityOf(row));
+		// Scroll (IMPORTANT)
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", row);
+		Thread.sleep(500);
+		// Get Text
+		String drugRow = row.getText();
+		System.out.println("========== Select First Row Ip Issue Details Drug Table ==========");
+		System.out.println("Drugs Name In Ip Issue Details Table : " + drugRow);
+		logger.info(drugRow);
 
-	    // Click using your framework
-	    try {
-	        CommanUtill.clickFunction(Click_Ip_Issue_Details_Table, Table);
-	    } catch (Exception e) {
-	        // Fallback JS click (IMPORTANT for your UI)
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", row);
-	    }
+		// Click using your framework
+		try {
+			CommanUtill.clickFunction(Click_Ip_Issue_Details_Table, Table);
+		} catch (Exception e) {
+			// Fallback JS click (IMPORTANT for your UI)
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", row);
+		}
 	}
-	
+
 	public void ClickOnIpIssueDetailsFirstRowTable(String Table) throws IOException, InterruptedException {
 
-	    logger.info("================= Select First Row Ip Issue Details Drug Table ====================");
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    By cellLocator = By.xpath(Click_Ip_Issue_Details_Table);
-	    WebElement cell = wait.until(ExpectedConditions.presenceOfElementLocated(cellLocator));
-	    wait.until(ExpectedConditions.visibilityOf(cell));
+		logger.info("================= Select First Row Ip Issue Details Drug Table ====================");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		By cellLocator = By.xpath(Click_Ip_Issue_Details_Table);
+		WebElement cell = wait.until(ExpectedConditions.presenceOfElementLocated(cellLocator));
+		wait.until(ExpectedConditions.visibilityOf(cell));
 
-	    // Scroll center
-	    ((JavascriptExecutor) driver).executeScript(
-	        "arguments[0].scrollIntoView({block:'center'});", cell);
+		// Scroll center
+		((JavascriptExecutor) driver).executeScript(
+				"arguments[0].scrollIntoView({block:'center'});", cell);
 
-	    Thread.sleep(500);
+		Thread.sleep(500);
 
-	    // DIRECT JS CLICK (BEST for this UI)
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", cell);
-	    System.out.println("Clicked on TD (actual event trigger)");
+		// DIRECT JS CLICK (BEST for this UI)
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", cell);
+		System.out.println("Clicked on TD (actual event trigger)");
 	}
-	
+
 	public void EnterRemarksIpIssueDetals(String Remarks , String Save_Btn) throws IOException , InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -178,7 +240,7 @@ public class Pharmacy_IpIssuePage extends GeneralBrowserSetting {
 		Thread.sleep(500);
 		CommanUtill.clickFunction(Save_Ip_Issue_Details_Yes_Pop, Yes_pop);
 	}
-	
+
 	public void IpIssueDetailsPrintYesPop(String Print_Yes_Pop) throws IOException , InterruptedException {
 
 		if(CommanUtill.isElementPresent(Print_Yes_pop)) {
@@ -199,6 +261,16 @@ public class Pharmacy_IpIssuePage extends GeneralBrowserSetting {
 			System.out.println("Did Not Appered Bar Code Pop");
 		}
 	}
+	//============================ Home Page =============================
+	public void HomePage(String Home) throws IOException , InterruptedException {
 
+		if(CommanUtill.isElementPresent(Home_page)) {
+			CommanUtill.clickFunction(Home_page, Home);
+			System.out.println("Click on Home His Log Btn");
+		}
+		else {
+			System.out.println("Did Not Click on Home His Log Btn");
+		}
+	}
 
 }

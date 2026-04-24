@@ -1951,15 +1951,16 @@ public class CommanUtill extends GeneralBrowserSetting {
 			}
 		 
 	//update code 
-		 public static boolean isElementPresent_1(String xpath) {
-			    try {
-			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
-			        return driver.findElement(By.xpath(xpath)).isDisplayed();
-			    } catch (TimeoutException | NoSuchElementException e) {
-			        return false;
-			    }
-			}
+		    public static boolean isElementPresentWait(String xpath) {
+		        try {
+		            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		            WebElement element = wait.until(
+		                    ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+		            return element.isDisplayed();
+		        } catch (Exception e) {
+		            return false;
+		        }
+		    }
 		 
 		 public static boolean isElementEnabled(String xpath) {
 			    WebElement element = driver.findElement(By.xpath(xpath));

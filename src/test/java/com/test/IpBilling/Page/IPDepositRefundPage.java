@@ -47,7 +47,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 	protected static  String To_Date = "//input[@id='txtadmittodate']";
 	protected static  String Search_Btn = "//a[@id='search_billing']//i[@class='fa fa-search']";
 	protected static  String Click_Table_last = "//table[@id='searchBillingTable']//tbody//tr[last()]";
-	
+
 	//==================================================================
 	protected static  String Uhid = "//input[@id='uHid']";
 	protected static  String ip_no = "//input[@id='ErNo']";
@@ -59,6 +59,10 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 	protected static  String Save_Btn = "//a[@id='Deposit']//i[@class='fa fa-usd']";
 	protected static  String Save_Yes_pop = "//a[@id='btnDepositeYes']";
 	protected static  String Save_Duplicate_Deposit_Yes_pop = "//a[@id='btnDepositYes']";
+	//============================= pop =========================================
+	protected String popupMessage = "//div[@id='gritter-notice-wrapper']//p";
+	protected String popupCloseBtn = "//div[@id='gritter-notice-wrapper']//div[@class='gritter-close']";
+
 
 	protected static  String Deposit_Cash_Radio_Btn = "//input[@id='Cash_']";
 
@@ -125,7 +129,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 	protected static  String Refund_Cheque_Bank_Name_Drp = "//select[@id='refund_Bank_Name_cheque']";
 	protected static  String Refund_Cheque_Branch_Name = "//input[@id='refund_Brach_Number']";
 	protected static  String Refund_Cheque_Amount = "//input[@id='Cheque_Amount_refund_Number']";
-	
+
 	//===========================Ip D Refund Credit Card ============================
 	protected static  String Refund_Credit_Card_Radio_Btn = "//input[@id='Credit_refund']";
 	protected static  String Refund_Credit_Card_Number = "//input[@id='refund_Card_no']";
@@ -133,61 +137,61 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 	protected static  String Refund_Credit_Card_Bank_Name_Drp = "//select[@id='refund_Bank_Name']";
 	protected static  String Refund_Credit_Batch_Number = "//input[@id='refund_B_Number']";
 	protected static  String Refund_Credit_Card_Amount = "//input[@id='Credit_Amount_refund_Number']";
-	
-   protected static  String Refund_NEFT_Radio_Btn = "//input[@id='Neft_refund']";
-   
-   protected static  String Processing_Finance_NEFT_Radio_Btn = "//input[@id='_Pfince']";
-   protected static  String Processing_Finance_Account_No = "//input[@id='neftPfince_acn']";
-   protected static  String Processing_Finance_Account_Holder_Name = "//input[@id='neftPfince_achn']";
-   protected static  String Processing_Finance_Account_Type = "//input[@id='neftPfince_act']";
-   protected static  String Processing_Finance_Bank_Name_Drp = "//select[@id='neftPfince_bnk']";
-   protected static  String Processing_Finance_Branch_Name = "//input[@id='neftPfince_bnch']";
-   protected static  String Processing_Finance_IFSC_Code = "//input[@id='neftPfince_ifsc']";
-   protected static  String Processing_Finance_Amount = "//input[@id='neftPfince_Amount']";
-   
-   protected static  String NEFT_Already_Processed_Radio_Btn = "//input[@id='_alpro']";
-   protected static  String Already_Processed_Trans_No = "//input[@id='refund_neftTrans_no']";
-   protected static  String Already_Processed_Tans_Date_Check_Box = "//input[@id='CheckDeposit2']";
-   protected static  String Already_Processed_Trans_Date = "//input[@id='refund_NeftTrans_date']";
-   protected static  String Already_Processed_Bank_Name_Drp = "//select[@id='refund_Bank_Name_neft']";
-   protected static  String Already_Processed_Branch_Name = "//input[@id='refund_Brach_Number_neft']";
-   protected static  String Already_Processed_Amount = "//input[@id='Neft_Amount_refund_Number']";
-   
-   protected static  String Refund_Other_Radio_Btn = "//input[@id='Other_refund']";
-   protected static  String Refund_Other_Payment_Mode_Drp = "//select[@id='refund_paymentmode_other']";
-   protected static  String Refund_Other_Payment_Transaction_Id = "//input[@id='refund_transactionid_other']";
-   protected static  String Refund_Other_Payment_RRN_Number = "//input[@id='refund_remark_other']";
-   protected static  String Refund_Other_Payment_Amount = "//input[@id='Other_Amount_refund_Number']";
 
- //==========================Receipt Utility ============================
-   protected static  String Click_Recepit_Btn = "//button[@id='btnReceiptUti']";
-   protected static  String Recepit_Ip_No = "//input[@id='txtIpId']";   //Enter Use
-   protected static  String Recepit_No = "//input[@id='txtReceipt']";
-   protected static  String Enter_Recepit_No_Table_Print = "//table[@id='dgbilldetails']//tbody//tr[position()=1]//i[@class='fa fa-print print']";
-   protected static  String Recepit_Pop_Refresh_Icon = "//i[@class='fa fa-repeat']";
-   
-   protected static  String Recepit_Date_Check_Box = "//input[@id='chkDateRange']";
-   protected static  String Recepit_From_Date = "//input[@id='dtpfromdate']";
-   protected static  String Recepit_To_Date = "//input[@id='dtptodate']";
-   protected static  String Recepit_Search_Btn = "//a[@id='btnDateSearch']//i[@class='fa fa-search']";
-   protected static  String First_Pink_Row = "(//table[@id='dgbilldetails']//tbody/tr[contains(@class,'bg-pink')])[1]";
-   protected static  String Print_Icon_Table = First_Pink_Row + "//a[@title='Print']";
-   
-   //========================HIS Logo ===========================
-   protected static  String Click_HIS_Logo = "//div[@class='logoHis']";
+	protected static  String Refund_NEFT_Radio_Btn = "//input[@id='Neft_refund']";
+
+	protected static  String Processing_Finance_NEFT_Radio_Btn = "//input[@id='_Pfince']";
+	protected static  String Processing_Finance_Account_No = "//input[@id='neftPfince_acn']";
+	protected static  String Processing_Finance_Account_Holder_Name = "//input[@id='neftPfince_achn']";
+	protected static  String Processing_Finance_Account_Type = "//input[@id='neftPfince_act']";
+	protected static  String Processing_Finance_Bank_Name_Drp = "//select[@id='neftPfince_bnk']";
+	protected static  String Processing_Finance_Branch_Name = "//input[@id='neftPfince_bnch']";
+	protected static  String Processing_Finance_IFSC_Code = "//input[@id='neftPfince_ifsc']";
+	protected static  String Processing_Finance_Amount = "//input[@id='neftPfince_Amount']";
+
+	protected static  String NEFT_Already_Processed_Radio_Btn = "//input[@id='_alpro']";
+	protected static  String Already_Processed_Trans_No = "//input[@id='refund_neftTrans_no']";
+	protected static  String Already_Processed_Tans_Date_Check_Box = "//input[@id='CheckDeposit2']";
+	protected static  String Already_Processed_Trans_Date = "//input[@id='refund_NeftTrans_date']";
+	protected static  String Already_Processed_Bank_Name_Drp = "//select[@id='refund_Bank_Name_neft']";
+	protected static  String Already_Processed_Branch_Name = "//input[@id='refund_Brach_Number_neft']";
+	protected static  String Already_Processed_Amount = "//input[@id='Neft_Amount_refund_Number']";
+
+	protected static  String Refund_Other_Radio_Btn = "//input[@id='Other_refund']";
+	protected static  String Refund_Other_Payment_Mode_Drp = "//select[@id='refund_paymentmode_other']";
+	protected static  String Refund_Other_Payment_Transaction_Id = "//input[@id='refund_transactionid_other']";
+	protected static  String Refund_Other_Payment_RRN_Number = "//input[@id='refund_remark_other']";
+	protected static  String Refund_Other_Payment_Amount = "//input[@id='Other_Amount_refund_Number']";
+
+	//==========================Receipt Utility ============================
+	protected static  String Click_Recepit_Btn = "//button[@id='btnReceiptUti']";
+	protected static  String Recepit_Ip_No = "//input[@id='txtIpId']";   //Enter Use
+	protected static  String Recepit_No = "//input[@id='txtReceipt']";
+	protected static  String Enter_Recepit_No_Table_Print = "//table[@id='dgbilldetails']//tbody//tr[position()=1]//i[@class='fa fa-print print']";
+	protected static  String Recepit_Pop_Refresh_Icon = "//i[@class='fa fa-repeat']";
+
+	protected static  String Recepit_Date_Check_Box = "//input[@id='chkDateRange']";
+	protected static  String Recepit_From_Date = "//input[@id='dtpfromdate']";
+	protected static  String Recepit_To_Date = "//input[@id='dtptodate']";
+	protected static  String Recepit_Search_Btn = "//a[@id='btnDateSearch']//i[@class='fa fa-search']";
+	protected static  String First_Pink_Row = "(//table[@id='dgbilldetails']//tbody/tr[contains(@class,'bg-pink')])[1]";
+	protected static  String Print_Icon_Table = First_Pink_Row + "//a[@title='Print']";
+
+	//========================HIS Logo ===========================
+	protected static  String Click_HIS_Logo = "//div[@class='logoHis']";
 	//======================Op Deposit============================
-   protected static  String Op_Deposit_Btn = "//h4[@class='fa fa-indent']";
-   protected static  String Op_Deposit_Transfer_Check_Box = "//input[@id='cbdeposite']";
-   protected static String allCheckBoxes = "//table[@id='optbldeposit']//input[@type='checkbox']";
-   protected static String lastCheckBox ="//table[@id='optbldeposit']//tr[last()]//input[@type='checkbox']";
-   protected static  String Transferring_Amountr = "//table[@id='optbldeposit']//tbody/tr[last()]//td[@ctype='TAmt']//input";
- 
-   protected static  String Save_op_Deposit = "//a[@id='OpDeposit']//i[@class='fa fa-usd']";
-   protected static  String Op_Deposit_Yes_Pop = "//a[@id='btnOPDepositeYes']";
-   
-   
+	protected static  String Op_Deposit_Btn = "//h4[@class='fa fa-indent']";
+	protected static  String Op_Deposit_Transfer_Check_Box = "//input[@id='cbdeposite']";
+	protected static String allCheckBoxes = "//table[@id='optbldeposit']//input[@type='checkbox']";
+	protected static String lastCheckBox ="//table[@id='optbldeposit']//tr[last()]//input[@type='checkbox']";
+	protected static  String Transferring_Amountr = "//table[@id='optbldeposit']//tbody/tr[last()]//td[@ctype='TAmt']//input";
 
-	
+	protected static  String Save_op_Deposit = "//a[@id='OpDeposit']//i[@class='fa fa-usd']";
+	protected static  String Op_Deposit_Yes_Pop = "//a[@id='btnOPDepositeYes']";
+
+
+
+
 
 
 
@@ -274,7 +278,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath( Search_Btn)));
 		CommanUtill.clickFunction(Search_Btn, Search_Btn_Text);
 	}
-	
+
 	public void ClickOnLastRowInSearchPatientTable (String Table_Last) throws IOException ,InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10));
@@ -284,7 +288,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		System.out.println("Last Row Text: " + Last_Row_Text);
 		CommanUtill.clickFunction(Click_Table_last, Table_Last);
 	}
-	
+
 	public void EnterUhid (String Uhid_Number) throws IOException ,InterruptedException {
 
 		WebElement Enter_Uhid = driver.findElement(By.xpath(Uhid));
@@ -351,32 +355,59 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 	//=======================UpDated Method For Save Button To Handle Both Normal Save And Duplicate Deposit Pop Up========================
 	public void ClickOnSaveBtnAndYesDuplicatePop(String Save_Icon, String Yes_pop, String Yes_Duplicate_pop) throws IOException, InterruptedException {
 
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Save_Btn)));
-	    CommanUtill.clickFunction(Save_Btn, Save_Icon);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Save_Btn)));
+		CommanUtill.clickFunction(Save_Btn, Save_Icon);
 
-	    Thread.sleep(2000); // short wait for popup load
+		Thread.sleep(2000); // short wait for popup load
 
-	    // First Normal Save Popup
-	    if (CommanUtill.isElementPresent(Save_Yes_pop)) {
+		// First Normal Save Popup
+		if (CommanUtill.isElementPresent(Save_Yes_pop)) {
 
-	        CommanUtill.clickFunction(Save_Yes_pop, Yes_pop);
-	        System.out.println("Clicked on Save confirmation popup.");
+			CommanUtill.clickFunction(Save_Yes_pop, Yes_pop);
+			System.out.println("Clicked on Save confirmation popup.");
 
-	    } 
-	    // Duplicate Popup
-	    else if (CommanUtill.isElementPresent(Save_Duplicate_Deposit_Yes_pop)) {
+		} 
+		// Duplicate Popup
+		else if (CommanUtill.isElementPresent(Save_Duplicate_Deposit_Yes_pop)) {
 
-	        CommanUtill.clickFunction(Save_Duplicate_Deposit_Yes_pop, Yes_Duplicate_pop);
-	        System.out.println("Clicked on Duplicate Deposit popup.");
+			CommanUtill.clickFunction(Save_Duplicate_Deposit_Yes_pop, Yes_Duplicate_pop);
+			System.out.println("Clicked on Duplicate Deposit popup.");
 
-	    } 
-	    else {
+		} 
+		else {
 
-	        System.out.println("No popup appeared after Save.");
-	    }
+			System.out.println("No popup appeared after Save.");
+		}
 	}
-	
+	//============================== Pop Message ==================================
+	public void handleDynamicPopup(String Pop) throws IOException, InterruptedException {
+
+		logger.info("===== Handle Dynamic Popup =====");
+
+		try {
+			Thread.sleep(500);
+			if (CommanUtill.isElementPresent(popupMessage)) {
+				String message = driver.findElement(By.xpath(popupMessage)).getText().trim();
+				System.out.println("Popup Message: " + message);
+				logger.info("Popup Message: " + message);
+
+				// Close popup
+				if (CommanUtill.isElementPresent(popupCloseBtn)) {
+					CommanUtill.clickFunction(popupCloseBtn ,"");
+					logger.info("Popup closed successfully");
+				}
+
+			} else {
+				logger.info("Popup not displayed");
+				System.out.println("Popup not displayed");
+			}
+
+		} catch (Exception e) {
+			logger.info("Error while handling popup: " + e.getMessage());
+		}
+	}
+
 	public void DepositPopupPrintBtn (String Print_Btn) throws IOException ,InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(15));
@@ -544,7 +575,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Refund_Edit)));
 		CommanUtill.clickFunction(Refund_Edit, Refund_Edit_Icon);
-		
+
 		WebElement Re_Text = driver.findElement(By.xpath(Refund_Received_From));
 		Re_Text.sendKeys(Keys.CONTROL + "a");
 		Re_Text.sendKeys(Keys.DELETE);
@@ -565,7 +596,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 			System.out.println("Refund Save confirmation popup did not appear.");
 		}	
 	}
-	
+
 	//===========================Ip Refund Cheque Information ============================
 	public void ClickOnRefundChequeRadionInformation (String Refund_Cheque_Radio_Icon , String Cheque_No , String Cheque_Issue_Date_Check_Box , String Cheque_Issue_Date ,
 			String Bank_Name_Drp , String Branch_Name , String Amount) throws IOException ,InterruptedException {
@@ -585,9 +616,9 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		CommanUtill.dropdownSelectByVisibleText(Refund_Cheque_Bank_Name_Drp, Bank_Name_Drp);
 		CommanUtill.textEnter(Refund_Cheque_Branch_Name, Branch_Name);
 		CommanUtill.textEnter(Refund_Cheque_Amount, Amount);	
-		
+
 	}
-	
+
 	public void ClickOnRefundCreditCardRadionInformation (String Refund_Credit_Card_Radio_Icon , String Card_Number , String Card_Type_Drp , String Bank_Name_Drp ,
 			String Batch_Number , String Amount) throws IOException ,InterruptedException {
 
@@ -604,49 +635,49 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		Batch_No.sendKeys(Keys.DELETE);
 		CommanUtill.textEnter(Refund_Credit_Batch_Number, Batch_Number);
 		CommanUtill.textEnter(Refund_Credit_Card_Amount, Amount);
-		
+
 	}
-	
+
 	public void ClickOnRefundNEFTAndProcessing_FinanceRadionInformation (String Refund_NEFT_Radio_Icon , String  Processing_Finance_Radio_Btn , 
 			String Account_No , String Account_Holder_Name , String Account_Type ,String Bank_Name_Drp ,
 			String Branch_Name , String IFSC_Code , String Amount) throws IOException ,InterruptedException {
-		
+
 		CommanUtill.clickFunction(Refund_NEFT_Radio_Btn, Refund_NEFT_Radio_Icon);
 		CommanUtill.clickFunction(Processing_Finance_NEFT_Radio_Btn, Processing_Finance_Radio_Btn);
 		CommanUtill.textEnter(Processing_Finance_Account_No, Account_No);
-        CommanUtill.textEnter(Processing_Finance_Account_Holder_Name, Account_Holder_Name);
-        CommanUtill.textEnter(Processing_Finance_Account_Type, Account_Type);
-        CommanUtill.dropdownSelectByVisibleText(Processing_Finance_Bank_Name_Drp, Bank_Name_Drp);
-        CommanUtill.textEnter(Processing_Finance_Branch_Name, Branch_Name);
-        CommanUtill.textEnter(Processing_Finance_IFSC_Code, IFSC_Code);
-        CommanUtill.textEnter(Processing_Finance_Amount, Amount);
-        		
-   }
-	
+		CommanUtill.textEnter(Processing_Finance_Account_Holder_Name, Account_Holder_Name);
+		CommanUtill.textEnter(Processing_Finance_Account_Type, Account_Type);
+		CommanUtill.dropdownSelectByVisibleText(Processing_Finance_Bank_Name_Drp, Bank_Name_Drp);
+		CommanUtill.textEnter(Processing_Finance_Branch_Name, Branch_Name);
+		CommanUtill.textEnter(Processing_Finance_IFSC_Code, IFSC_Code);
+		CommanUtill.textEnter(Processing_Finance_Amount, Amount);
+
+	}
+
 	public void ClickOnRefundNEFTAlreadyProcessedRadionInformation (String NEFT_Radio_Icon , String Already_Processe , String Trans_No , String Tans_Date_Check_Box ,
 			String Trans_Date , String Bank_Name_Drp ,String Branch_Name , String Amount)
 					throws IOException ,InterruptedException {	
-		
+
 		CommanUtill.clickFunction(Refund_NEFT_Radio_Btn, NEFT_Radio_Icon);
 		CommanUtill.clickFunction(NEFT_Already_Processed_Radio_Btn, Already_Processe);
 		CommanUtill.textEnter(Already_Processed_Trans_No, Trans_No);
-		
+
 		WebElement Date_Check_Box = driver.findElement(By.xpath(Already_Processed_Tans_Date_Check_Box));
 		if(! Date_Check_Box.isSelected()) {
 			CommanUtill.clickFunction(Already_Processed_Tans_Date_Check_Box, Tans_Date_Check_Box);
 		}
-		
+
 		WebElement NEFT_Trans_Date = driver.findElement(By.xpath(Already_Processed_Trans_Date));
 		NEFT_Trans_Date.sendKeys(Keys.CONTROL + "a");
 		NEFT_Trans_Date.sendKeys(Keys.DELETE);
 		CommanUtill.textEnter(Already_Processed_Trans_Date, Trans_Date);
 		NEFT_Trans_Date.sendKeys(Keys.TAB);
-		
+
 		CommanUtill.dropdownSelectByVisibleText(Already_Processed_Bank_Name_Drp, Bank_Name_Drp);
 		CommanUtill.textEnter(Already_Processed_Branch_Name, Branch_Name);
 		CommanUtill.textEnter(Already_Processed_Amount, Amount);		
 	}
-	
+
 	public void ClickOnRefundOtherPaymentRadionInformation (String Refund_Other_Radio_Icon , String Payment_Mode_Drp , String Transaction_Id ,
 			String RRN_Number , String Amount) throws IOException ,InterruptedException {
 
@@ -657,7 +688,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		CommanUtill.textEnter(Refund_Other_Payment_Amount, Amount);		
 
 	}
-	
+
 	//==========================Receipt Utility ============================
 	public void ClickOnReceiptUtility (String Receipt_Utility) throws IOException ,InterruptedException {
 
@@ -671,7 +702,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		CommanUtill.textEnter(Recepit_Ip_No, Recept_Ip_No);
 		Ip_Number.sendKeys(Keys.ENTER);
 	}
-	
+
 	public void EnterReceptNumberAndPrint (String Recept_No , String Print_Icon_Table) throws IOException ,InterruptedException {
 
 		WebElement Recept_Number = driver.findElement(By.xpath(Recepit_No));
@@ -685,7 +716,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		System.out.println("First Row Print: " + Print_Icon_Element);
 		Thread.sleep(800);
 		CommanUtill.clickFunction(Enter_Recepit_No_Table_Print, Print_Icon_Table);
-		
+
 	}
 	public void ClickOnReceptPopRefreshIcon (String Refresh_Icon) throws IOException ,InterruptedException {
 
@@ -693,7 +724,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Recepit_Pop_Refresh_Icon)));
 		CommanUtill.clickFunction(Recepit_Pop_Refresh_Icon, Refresh_Icon);
 	}
-	
+
 	public void CheckBoxRangeDateReceptFromAndToDate (String Chkk_Box_Range ,String Recept_From_Date , String Recept_To_Date) throws IOException ,InterruptedException {
 
 		WebElement Range_Date_Check_Box = driver.findElement(By.xpath(Recepit_Date_Check_Box));
@@ -718,25 +749,25 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Recepit_Search_Btn)));
 		CommanUtill.clickFunction(Recepit_Search_Btn, Search_Btn);
 	}
-	
+
 	public void clickFirstPinkRowPrint(String Firs_Pink_Row_Print_Icon) throws IOException, InterruptedException {
 
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Print_Icon_Table)));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Print_Icon_Table)));
 
-	    // Get Full Row Text
-	    String rowData = driver.findElement(By.xpath(First_Pink_Row)).getText();
+		// Get Full Row Text
+		String rowData = driver.findElement(By.xpath(First_Pink_Row)).getText();
 
-	    logger.info("========== First Pink Row Data ==========");
-	    logger.info(rowData);
-	    System.out.println("First Pink Row Data: " + rowData);
+		logger.info("========== First Pink Row Data ==========");
+		logger.info(rowData);
+		System.out.println("First Pink Row Data: " + rowData);
 
-	    Thread.sleep(500);
+		Thread.sleep(500);
 
-	    // Direct Click On Print Icon
-	    CommanUtill.clickFunction(Print_Icon_Table, Firs_Pink_Row_Print_Icon);
+		// Direct Click On Print Icon
+		CommanUtill.clickFunction(Print_Icon_Table, Firs_Pink_Row_Print_Icon);
 
-	    logger.info("Clicked Print Icon Of First Pink Row Successfully");
+		logger.info("Clicked Print Icon Of First Pink Row Successfully");
 	}
 	//========================HIS Logo ===========================
 	public void ClickOnHISLogo (String HIS_Logo) throws IOException ,InterruptedException {
@@ -744,11 +775,11 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_HIS_Logo)));
 		CommanUtill.clickFunction(Click_HIS_Logo, HIS_Logo);
-		
+
 	}
-	
+
 	//======================Op Deposit============================
-	
+
 	public void ClickOnOpDeposit (String Op_Deposit) throws IOException ,InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10));
@@ -759,42 +790,42 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Op_Deposit_Transfer_Check_Box)));
-		
+
 		if(! driver.findElement(By.xpath(Op_Deposit_Transfer_Check_Box)).isSelected()) {
 			CommanUtill.clickFunction(Op_Deposit_Transfer_Check_Box, Op_DepositTransfer_Check_Box);
 		}
 	}
-	
+
 
 	public void SelectOnOpDepositTransferCheckBox(String Transfer_Check_Box) throws IOException, InterruptedException {
 
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(allCheckBoxes)));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(allCheckBoxes)));
 
-	    List<WebElement> checkBoxes = driver.findElements(By.xpath(allCheckBoxes));
+		List<WebElement> checkBoxes = driver.findElements(By.xpath(allCheckBoxes));
 
-	    // Unselect all first
-	    for (WebElement cb : checkBoxes) {
-	        if (cb.isSelected()) {
-	            cb.click();
-	        }
-	    }
+		// Unselect all first
+		for (WebElement cb : checkBoxes) {
+			if (cb.isSelected()) {
+				cb.click();
+			}
+		}
 
-	    //  Now select last row checkbox
-	    WebElement last = driver.findElement(By.xpath(lastCheckBox));
+		//  Now select last row checkbox
+		WebElement last = driver.findElement(By.xpath(lastCheckBox));
 
-	    if (!last.isSelected()) {
-	        last.click();
-	    }
+		if (!last.isSelected()) {
+			last.click();
+		}
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	public void EnterOpDepositTransferringAmount (String Transferring_Amount) throws IOException ,InterruptedException{
-		
+
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Transferring_Amountr)));
 		CommanUtill.textEnter(Transferring_Amountr, Transferring_Amount);
@@ -814,7 +845,7 @@ public class IPDepositRefundPage extends GeneralBrowserSetting {
 			System.out.println("OP Deposit confirmation popup did not appear.");
 		}
 	}
-	
-	
+
+
 
 }
