@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package com.test.INDIAN_HIS.Nursing.Test_Page;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.test.INDIAN_HIS.Nursing.Main_Page.NURSING_Nursing_Cancel_Sales_Consumption;
+import com.test.INDIAN_HIS.Nursing.Main_Page.NURSING_Nursing_Sales_Consumption;
+import com.test.readdata.ExcelSheetDataProvider;
+
+/**
+ * @author Ashutosh
+ *
+ * 25 Feb 2026
+ */
+public class TC0038_NURSING_Nursing_Cancel_Sales_Consumption extends NURSING_Nursing_Cancel_Sales_Consumption{
+	
+private final NURSING_Nursing_Cancel_Sales_Consumption csc = new NURSING_Nursing_Cancel_Sales_Consumption();
+private final String SheetName = "Cancel_Sales_Consumption" ;
+
+@DataProvider(name = "ExcelUniversalDataProvider")
+public Object [][]getData() throws IOException{
+	return ExcelSheetDataProvider.getExcelData(SheetName);
+}
+
+@Test(dataProvider = "ExcelUniversalDataProvider")
+public void CancelSalesAndConsumption(String Facility, String Station,String IPNO, String Quantity) throws IOException, InterruptedException {
+	logger = extent.createTest("Nursing_Cancel_Sales_Consumption","Nursing_Cancel_Sales_Consumption........................");
+	csc.CancelSalesConsumption(Facility, Station, IPNO, Quantity);
+}
+}

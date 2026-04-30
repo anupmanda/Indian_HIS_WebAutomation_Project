@@ -182,6 +182,10 @@ public class Er_OrderPage extends GeneralBrowserSetting {
 	protected static String Reasion_Discharged_Text  = "//textarea[@id='txtAreaReason']";
 	protected static String Reasion_Discharged_Yes_Pop  = "//a[@id='popCancelReason_yes']";
 	
+	//==================== Pop Meassage =============================
+	protected String popupMessage = "//div[@id='gritter-notice-wrapper']//p";
+	protected String popupCloseBtn = "//div[@id='gritter-notice-wrapper']//div[@class='gritter-close']";
+	
 	
 
 	public void selectByFacilityDropdown(String fieldName) throws IOException, InterruptedException {
@@ -215,54 +219,56 @@ public class Er_OrderPage extends GeneralBrowserSetting {
 
 	public void SearchAndClickTopGreenPatient() throws IOException, InterruptedException {
 
-		logger.info("===== Search and Click Top GREEN Patient =====");
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    logger.info("===== Search and Click TOP GREEN Patient =====");
 
-		// Only GREEN (occupied) + visible
-		List<WebElement> cards = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-				By.xpath("//div[contains(@class,'patient-card') and contains(@class,'occupied') and not(contains(@style,'display: none'))]")));
-		if (cards.size() == 0) {
-			logger.info("No GREEN (Occupied) Patient Found");
-			System.out.println("No GREEN (Occupied) Patient Found");
-			return;
-		}
-		//TOP patient (UI top = DOM last)
-		WebElement targetCard = cards.get(cards.size() - 1);
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		// ============================
-		// PRINT DETAILS (SAFE WAY)
-		// ============================
+	    List<WebElement> cards = wait.until(
+	        ExpectedConditions.visibilityOfAllElementsLocatedBy(
+	            By.xpath("//div[contains(@class,'patient-card') " +
+	                     "and contains(concat(' ',normalize-space(@class),' '),' occupied ') " +
+	                     "and not(contains(@style,'display: none'))]")
+	        )
+	    );
 
-		String fullText = targetCard.getText();
-		String[] lines = fullText.split("\n");
+	    if (cards.isEmpty()) {
+	        logger.info("No GREEN (Occupied) Patient Found");
+	        return;
+	    }
 
-		String patientName = lines.length > 0 ? lines[0] : "";
-		String bedName     = lines.length > 1 ? lines[1] : "";
-		String erNo        = lines.length > 2 ? lines[2] : "";
+	    //  Always TOP (UI first)
+	    WebElement targetCard = cards.get(0);
 
-		System.out.println("===== GREEN TOP PATIENT =====");
-		System.out.println("Patient Name : " + patientName);
-		System.out.println("Bed Name     : " + bedName);
-		System.out.println("ER No        : " + erNo);
+	    // ===== PRINT DETAILS =====
+	    String fullText = targetCard.getText();
+	    String[] lines = fullText.split("\n");
 
-		logger.info("Patient Name : " + patientName);
-		logger.info("Bed Name     : " + bedName);
-		logger.info("ER No        : " + erNo);
+	    String patientName = lines.length > 0 ? lines[0] : "";
+	    String bedName     = lines.length > 1 ? lines[1] : "";
+	    String erNo        = lines.length > 2 ? lines[2] : "";
 
-		// ============================
-		// CLICK FULL CARD
-		// ============================
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView({block:'center'});", targetCard);
-		Thread.sleep(500);
+	    System.out.println("===== GREEN TOP PATIENT =====");
+	    System.out.println("Patient Name : " + patientName);
+	    System.out.println("Bed Name     : " + bedName);
+	    System.out.println("ER No        : " + erNo);
 
-		// Highlight (Green)
-		js.executeScript("arguments[0].style.border='3px solid green';", targetCard);
-		Thread.sleep(500);
-		// CLICK ENTIRE CARD (IMPORTANT)
-		js.executeScript("arguments[0].click();", targetCard);
-		logger.info("Clicked on TOP GREEN Patient Successfully");
+	    logger.info("Patient Name : " + patientName);
+	    logger.info("Bed Name     : " + bedName);
+	    logger.info("ER No        : " + erNo);
+
+	    // ===== CLICK =====
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView({block:'center'});", targetCard);
+	    Thread.sleep(500);
+
+	    js.executeScript("arguments[0].style.border='3px solid green';", targetCard);
+	    Thread.sleep(300);
+
+	    js.executeScript("arguments[0].click();", targetCard);
+
+	    logger.info("Clicked on TOP GREEN Patient Successfully");
 	}
+	
 	public static String ER_NO_GLOBAL = "";
 
 	public String ClickTopGreenPatient() throws IOException, InterruptedException {
@@ -949,9 +955,38 @@ public class Er_OrderPage extends GeneralBrowserSetting {
 	public void ReasionOfDischaredText(String Reason , String Yes)throws IOException, InterruptedException {
 		
 		CommanUtill.textEnter(Reasion_Discharged_Text, Yes);
-		CommanUtill.clickFunction(Reasion_Discharged_Yes_Pop, Yes);
-		
+		CommanUtill.clickFunction(Reasion_Discharged_Yes_Pop, Yes);	
 	}
+	//============================= Pop Meassage ==================================
+	public void handleDynamicPopup(String Pop) throws IOException, InterruptedException {
+
+		logger.info("===== Handle Dynamic Popup =====");
+
+		try {
+			Thread.sleep(500);
+			if (CommanUtill.isElementPresent(popupMessage)) {
+				String message = driver.findElement(By.xpath(popupMessage)).getText().trim();
+				System.out.println("Popup Message: " + message);
+				logger.info("Popup Message: " + message);
+
+				// Close popup
+				if (CommanUtill.isElementPresent(popupCloseBtn)) {
+					CommanUtill.clickFunction(popupCloseBtn ,"");
+					logger.info("Popup closed successfully");
+				}
+
+			} else {
+				logger.info("Popup not displayed");
+				System.out.println("Popup not displayed");
+			}
+
+		} catch (Exception e) {
+			logger.info("Error while handling popup: " + e.getMessage());
+		}
+	}
+	
+	
+	
 	}
 
 

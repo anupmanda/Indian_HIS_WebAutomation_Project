@@ -347,7 +347,7 @@ public class TC_009_IPDepositRefundTest extends IPDepositRefundPage{
 	}
 
 
-	//============================Deposit Refund Recept Excel Sheet 3===============================
+	//============================Deposit Refund Recept Excel Sheet 3 ===============================
 
 	@DataProvider(name = "IpReceiptUtilityDataProvider")
 	
@@ -374,7 +374,7 @@ public class TC_009_IPDepositRefundTest extends IPDepositRefundPage{
 		IP_Deposit_Refund.EnterReceptNumberAndPrint(Receipt_Recept_Number_Excel_Sheet ,"Click On Print Icon In Recept Number Table");
 		Thread.sleep(800);
 	}
-	@Test(dataProvider = "IpReceiptUtilityDataProvider", priority = 15 , enabled = true)
+	@Test(dataProvider = "IpReceiptUtilityDataProvider", priority = 15 , alwaysRun = true)
 	public void IpDepositRefundReceptDateWiseTest(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String Receipt_Ip_Number_Excel_Sheet , 
 			String Receipt_Recept_Number_Excel_Sheet , String Receipt_Frome_Date , String Receipt_To_Date) 
 					throws IOException, InterruptedException, InvalidApplicationException {
@@ -401,7 +401,7 @@ public class TC_009_IPDepositRefundTest extends IPDepositRefundPage{
 		return ExcelSheetDataProvider.getExcelData(sheetName_OP_IpTransfer);
 	}
 	
-	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 16 , enabled = true)
+	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 16 , alwaysRun = true)
 	public void FrontOfficeOPDepositTest(String Facility_Drp , String Station_Drp , String Enter_Deposite_UHID , String Enter_Deposit_Amount , 
 			String Deposit_Remarks_ext , String Relationship_drp , String deposit_Type_drp, String Ip_Billing_Station_Drp , String Op_Deposit_Amount ) 
 					throws IOException, InterruptedException, InvalidApplicationException {
@@ -422,7 +422,7 @@ public class TC_009_IPDepositRefundTest extends IPDepositRefundPage{
 		Fo_Deposits.clickOnHisLogo("Click On HIS Logo To Navigate On Dashboard");
 		
 	}
-	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 17 , enabled = true)
+	@Test(dataProvider = "ExcelUniversalDataProvider", priority = 17 , alwaysRun = true)
 	public void IpDepositRefundToOpDDepositsTest(String Facility_Drp , String Station_Drp , String Enter_Deposite_UHID , String Enter_Deposit_Amount , 
 			String Deposit_Remarks_ext , String Relationship_drp , String deposit_Type_drp, String Ip_Billing_Station_Drp , String Op_Deposit_Amount ) 
 					throws IOException, InterruptedException, InvalidApplicationException {

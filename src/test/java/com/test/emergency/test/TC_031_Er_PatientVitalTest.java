@@ -20,16 +20,15 @@ import com.test.readdata.ExcelSheetDataProvider;
 public class TC_031_Er_PatientVitalTest extends Er_PatientVitalPage {
 	
 	Er_PatientVitalPage Patient_Vital = new Er_PatientVitalPage();
-	
 	private final String sheetName = "Er_Patient_Vitals"; 
 	
-	@DataProvider(name = "ExcelUniversalDataProvider")
-	public Object[][] getData() throws IOException {
+	@DataProvider(name = "PatientVitalsDataProvider")
+	public Object[][] getVitalsData() throws IOException {
 		System.out.println("=========Sheet Name_01: " + sheetName + "==========");
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
-	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1 ,enabled = true)	
+	@Test(dataProvider = "PatientVitalsDataProvider" , priority = 1 ,enabled = true)	
 	public void FindInPatientPatientVitailsTest(String facility_drp, String Station_drp , String Search_In_Mobile_Number , String Search_In_Name ,
 			String Add_Favorite_Vitals_Name , String Enter_ER_Number )
 					throws IOException, InvalidFormatException, InterruptedException{
@@ -56,7 +55,7 @@ public class TC_031_Er_PatientVitalTest extends Er_PatientVitalPage {
 		driver.navigate().refresh();
 	}
 	
-	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 2 ,enabled = true)	
+	@Test(dataProvider = "PatientVitalsDataProvider" , priority = 2 ,enabled = true)	
 	public void AddVitalMappingTest(String facility_drp, String Station_drp , String Search_In_Mobile_Number , String Search_In_Name ,
 			String Add_Favorite_Vitals_Name , String Enter_ER_Number )
 					throws IOException, InvalidFormatException, InterruptedException{
@@ -73,7 +72,7 @@ public class TC_031_Er_PatientVitalTest extends Er_PatientVitalPage {
 		
 	}
 	
-	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 3 ,enabled = true)	
+	@Test(dataProvider = "PatientVitalsDataProvider" , priority = 3 ,enabled = true)	
 	public void DeleteVitalMappingTest(String facility_drp, String Station_drp , String Search_In_Mobile_Number , String Search_In_Name ,
 			String Add_Favorite_Vitals_Name , String Enter_ER_Number )
 					throws IOException, InvalidFormatException, InterruptedException{
@@ -89,7 +88,7 @@ public class TC_031_Er_PatientVitalTest extends Er_PatientVitalPage {
 	
 	}
 	
-	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 4 ,enabled = true)	
+	@Test(dataProvider = "PatientVitalsDataProvider" , priority = 4 ,enabled = true)	
 	public void EnterERNoVitalMappingTest(String facility_drp, String Station_drp , String Search_In_Mobile_Number , String Search_In_Name ,
 			String Add_Favorite_Vitals_Name , String Enter_ER_Number )
 					throws IOException, InvalidFormatException, InterruptedException{

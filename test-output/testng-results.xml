@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="5" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-24T16:20:07 IST" name="Default suite" finished-at="2026-04-24T16:22:09 IST" duration-ms="122548">
+  <suite started-at="2026-04-30T14:22:26 IST" name="Default suite" finished-at="2026-04-30T14:23:29 IST" duration-ms="63298">
     <groups>
     </groups>
-    <test started-at="2026-04-24T16:20:07 IST" name="Default test" finished-at="2026-04-24T16:22:09 IST" duration-ms="122548">
-      <class name="com.test.emergency.test.TC_032_ER_IOChartTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:20:07 IST" name="launch" finished-at="2026-04-24T16:20:07 IST" duration-ms="118" status="PASS">
+    <test started-at="2026-04-30T14:22:26 IST" name="Default test" finished-at="2026-04-30T14:23:29 IST" duration-ms="63298">
+      <class name="com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:22:26 IST" name="launch" finished-at="2026-04-30T14:22:26 IST" duration-ms="85" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:20:07 IST" name="launchBrowser" finished-at="2026-04-24T16:20:15 IST" duration-ms="8718" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:22:26 IST" name="launchBrowser" finished-at="2026-04-30T14:22:33 IST" duration-ms="7025" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="SearchPatientIOChartTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:20:20 IST" name="SearchPatientIOChartTest" data-provider="ExcelUniversalDataProvider" finished-at="2026-04-24T16:20:45 IST" duration-ms="25063" status="PASS">
+        <test-method signature="SelectOccupiedPatientInRightTab(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:22:37 IST" name="SelectOccupiedPatientInRightTab" data-provider="NurseCarePlanDataProvider" finished-at="2026-04-30T14:22:53 IST" duration-ms="16627" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,83 +29,48 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[10/03/2026]]>
+                <![CDATA[Antenatal care plan]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[24/04/2026]]>
+                <![CDATA[hemlata]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[1508858]]>
+                <![CDATA[Goal_2]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[ASHLYTE-M 500ML AISHWARYA]]>
+                <![CDATA[Antenatal care plan]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[20]]>
+                <![CDATA[Implement]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[DEMO]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[RT]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[Others]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[15]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Anup Remarks Input]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Drainage]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[Right]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[OutPut Remarks Anup]]>
+                <![CDATA[Antenatal care plan]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchPatientIOChartTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:20:45 IST" name="reportclosewindows" finished-at="2026-04-24T16:20:47 IST" duration-ms="1134" status="PASS">
+        </test-method> <!-- SelectOccupiedPatientInRightTab -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:22:53 IST" name="reportclosewindows" finished-at="2026-04-30T14:22:54 IST" duration-ms="581" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="ERNumberPatientIOChartTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:20:49 IST" name="ERNumberPatientIOChartTest" data-provider="ExcelUniversalDataProvider" finished-at="2026-04-24T16:21:52 IST" duration-ms="63393" status="PASS">
+        <test-method signature="ErMarkedAsErrorTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:22:55 IST" name="ErMarkedAsErrorTest" data-provider="NurseCarePlanDataProvider" finished-at="2026-04-30T14:23:11 IST" duration-ms="16076" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -119,99 +84,103 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[10/03/2026]]>
+                <![CDATA[Antenatal care plan]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[24/04/2026]]>
+                <![CDATA[hemlata]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[1508858]]>
+                <![CDATA[Goal_2]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[ASHLYTE-M 500ML AISHWARYA]]>
+                <![CDATA[Antenatal care plan]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[20]]>
+                <![CDATA[Implement]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[10]]>
+                <![CDATA[DEMO]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[RT]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[Others]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[15]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Anup Remarks Input]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Drainage]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[Right]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[OutPut Remarks Anup]]>
+                <![CDATA[Antenatal care plan]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ERNumberPatientIOChartTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:21:52 IST" name="reportclosewindows" finished-at="2026-04-24T16:21:52 IST" duration-ms="83" status="PASS">
+        </test-method> <!-- ErMarkedAsErrorTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:23:11 IST" name="reportclosewindows" finished-at="2026-04-30T14:23:11 IST" duration-ms="48" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="IOChartChildWindToParentWindowPrintTest()[pri:4, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:21:52 IST" name="IOChartChildWindToParentWindowPrintTest" finished-at="2026-04-24T16:22:05 IST" duration-ms="13024" status="PASS">
+        <test-method signature="ErSaveNurseCarePlanTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:23:11 IST" name="ErSaveNurseCarePlanTest" data-provider="NurseCarePlanDataProvider" finished-at="2026-04-30T14:23:29 IST" duration-ms="18162" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SANITY HOSPITAL]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[EMERGENCY OPD(GROUND FLOOR)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Antenatal care plan]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[hemlata]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Goal_2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Antenatal care plan]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Implement]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[DEMO]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Antenatal care plan]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- IOChartChildWindToParentWindowPrintTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:22:05 IST" name="reportclosewindows" finished-at="2026-04-24T16:22:05 IST" duration-ms="122" status="PASS">
+        </test-method> <!-- ErSaveNurseCarePlanTest -->
+        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest@2a7686a7]" started-at="2026-04-30T14:23:29 IST" name="reportclosewindows" finished-at="2026-04-30T14:23:29 IST" duration-ms="88" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportclosewindows -->
-        <test-method signature="DeleteErrorMarkedErrorTest()[pri:5, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:22:05 IST" name="DeleteErrorMarkedErrorTest" finished-at="2026-04-24T16:22:09 IST" duration-ms="3798" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteErrorMarkedErrorTest -->
-        <test-method is-config="true" signature="reportclosewindows()[pri:0, instance:com.test.emergency.test.TC_032_ER_IOChartTest@45905bff]" started-at="2026-04-24T16:22:09 IST" name="reportclosewindows" finished-at="2026-04-24T16:22:09 IST" duration-ms="160" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reportclosewindows -->
-      </class> <!-- com.test.emergency.test.TC_032_ER_IOChartTest -->
+      </class> <!-- com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.emergency.test.TC_032_ER_IOChartTest">
+      <class name="com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest">
         <methods>
           <include name="reportclosewindows"/>
-          <include name="DeleteErrorMarkedErrorTest"/>
           <include name="launchBrowser"/>
+          <include name="ErSaveNurseCarePlanTest" invocation-numbers="0"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.emergency.test.TC_032_ER_IOChartTest -->
+      </class> <!-- com.test.emergency.test.TC_036_Er_Order_NurseCarePlanTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

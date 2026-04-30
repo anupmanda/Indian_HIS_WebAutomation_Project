@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
@@ -96,6 +97,8 @@ public class CommanUtill extends GeneralBrowserSetting {
 	public static void resetStepCounter() {
 	    stepCounter = 1;
 	}
+
+	private WebDriverWait wait;
 
 	
 	
@@ -2311,7 +2314,683 @@ public class CommanUtill extends GeneralBrowserSetting {
 		 	Thread.sleep(3000);
 		   CommanUtill.clickByJSFunction(CLickHomePage, "Clicked on The HomePage");
 		 }
+		 
+ //======================= Asutosh 27-04-2026 Nursing ===================================================
+		 
+		 public static void selectSecondOptionIfPresent(String dropdownXPath, String elementName) {
+			    try {
+			        By byLocator = By.xpath(dropdownXPath);
 
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+			        WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
 
+			        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			        js.executeScript(
+			                "arguments[0].setAttribute('style','border:3px solid blue; background:yellow;');",
+			                dropdown);
+
+			        Thread.sleep(300);
+
+			        js.executeScript(
+			                "arguments[0].setAttribute('style', arguments[1]);",
+			                dropdown, "");
+
+			        dropdown.click();
+			        Thread.sleep(300);
+
+			        try {
+
+			            Select select = new Select(dropdown);
+			            List<WebElement> options = select.getOptions();
+
+			            if (options.size() > 1) {
+			                WebElement secondOption = options.get(1);
+
+			                js.executeScript(
+			                        "arguments[0].setAttribute('style','border:3px solid blue; background:yellow;');",
+			                        secondOption);
+
+			                Thread.sleep(200);
+
+			                select.selectByIndex(1);
+
+			                logger.log(Status.INFO, "Second option selected from: " + elementName);
+			                System.out.println("Second option selected from: " + elementName);
+
+			            } else {
+			                System.out.println("Second option not available in: " + elementName);
+			            }
+
+			        } catch (Exception e) {
+
+			            List<WebElement> options = dropdown.findElements(By.xpath(".//option|.//li"));
+
+			            if (options.size() > 1) {
+			                WebElement secondOption = options.get(1);
+
+			                js.executeScript(
+			                        "arguments[0].setAttribute('style','border:3px solid blue; background:yellow;');",
+			                        secondOption);
+
+			                Thread.sleep(200);
+
+			                secondOption.click();
+
+			                logger.log(Status.INFO, "Second option clicked from: " + elementName);
+			                System.out.println("Second option clicked from: " + elementName);
+
+			            } else {
+			                System.out.println("Second option not available in custom dropdown: " + elementName);
+			            }
+			        }
+
+			    } catch (Exception e) {
+			        logger.log(Status.INFO, elementName + " dropdown not present, skipping...");
+			        System.out.println(elementName + " dropdown not present, skipping...");
+			    }
+			}
+		 public  void clickOnGreenPatient() {
+
+			    logger.log(Status.INFO, "Started clicking on GREEN patient");
+			    log.info("Started clicking on GREEN patient");
+
+			    this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+			    try {
+			        wait.until(ExpectedConditions.presenceOfElementLocated(
+			                By.xpath("//div[contains(@class,'patient-card')]")));
+
+			        logger.log(Status.INFO, "Patient cards are present on screen");
+			        log.info("Patient cards are present on screen");
+
+			        List<WebElement> greenPatients = driver.findElements(
+			                By.xpath("//div[contains(@class,'patient-card') and contains(@class,'occupied')]"));
+
+			        logger.log(Status.INFO, "Total GREEN patients found: " + greenPatients.size());
+			        log.info("Total GREEN patients found: " + greenPatients.size());
+
+			        if (greenPatients.isEmpty()) {
+			            logger.log(Status.FAIL, "No GREEN patient found to click");
+			            log.error("No GREEN patient found to click");
+			            throw new RuntimeException("❌ No GREEN patient found");
+			        }
+
+			        WebElement greenPatient = greenPatients.get(0);
+
+			        ((JavascriptExecutor) driver).executeScript(
+			                "arguments[0].scrollIntoView({block:'center'});", greenPatient);
+
+			        logger.log(Status.INFO, "Scrolled to GREEN patient");
+			        log.info("Scrolled to GREEN patient");
+
+			        ((JavascriptExecutor) driver).executeScript(
+			                "arguments[0].click();", greenPatient);
+
+			        logger.log(Status.PASS, "GREEN patient clicked successfully");
+			        log.info("GREEN patient clicked successfully");
+
+			    } catch (Exception e) {
+			        logger.log(Status.FAIL, "Failed to click GREEN patient: " + e.getMessage());
+			        log.error("Failed to click GREEN patient", e);
+			        throw e;
+			    }
+			}
+
+		 public static void clickByJSFunctionScroll(String xmlPath, String fieldName) throws IOException, InterruptedException
+		 {
+		     try
+		     {
+		         System.out.println("Start Clicking (JS) on (" + fieldName + ")");
+		         logger.log(Status.INFO, "Start Clicking (JS) on (" + fieldName + ")");
+		         passedScreenShotPics(driver); 
+
+		         WebElement element = driver.findElement(By.xpath(xmlPath));
+
+		         // 🔥 Scroll into view (center)
+		         ((JavascriptExecutor) driver).executeScript(
+		                 "arguments[0].scrollIntoView({block:'center'});", element);
+
+		         Thread.sleep(200);
+
+		         // 🔥 Highlight
+		         ((JavascriptExecutor) driver).executeScript(
+		             "arguments[0].setAttribute('style', 'background: yellow; border: 2px solid blue;');", element);
+		         Thread.sleep(300);
+
+		         // 🔥 JS Click
+		         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
+		         passedScreenShotPics(driver);   // Capture after click
+		         Thread.sleep(300);
+
+		         // 🔥 Remove highlight (clean UI)
+		         ((JavascriptExecutor) driver).executeScript(
+		                 "arguments[0].setAttribute('style','');", element);
+
+		         System.out.println("XPath-->> (" + xmlPath + ")");
+		         logger.log(Status.INFO, "( " + xmlPath + " )");
+		         System.out.println("Clicked (JS) on (" + fieldName + ")");
+		         logger.log(Status.INFO, "Clicked (JS) on (" + fieldName + ")");
+		         log.info("Clicked (JS) on (" + fieldName + ")");
+		         Thread.sleep(300);
+		     }
+		     catch (Exception E)
+		     {
+		         System.out.println(xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
+		         logger.log(Status.INFO, xmlPath + ": Not able to locate or click (JS) web element...");
+		         failureScreenShotPics(driver);  // Capture failure
+		         Thread.sleep(500);
+		         logger.log(Status.FAIL, xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
+		         System.out.println("Error while Clicking (JS) on the web element... " + E.getMessage());
+		         Assert.fail("Error while Clicking (JS) on the web element... ");
+		     }
+		 }
+		 public static void selectSecondOptionFromDropdown(String dropdownXPath) {
+
+			    try {
+			        logger.log(Status.INFO, "Started selecting second option from dropdown");
+			        log.info("Started selecting second option from dropdown. XPath: " + dropdownXPath);
+
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			        WebElement dropdown = wait.until(
+			                ExpectedConditions.elementToBeClickable(By.xpath(dropdownXPath))
+			        );
+
+			        JavascriptExecutor js = (JavascriptExecutor) driver;
+			        js.executeScript(
+			                "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                dropdown
+			        );
+
+			        dropdown.click();
+			        Thread.sleep(500);
+
+			        try {
+
+			            Select select = new Select(dropdown);
+			            List<WebElement> options = select.getOptions();
+
+			            logger.log(Status.INFO, "Dropdown option count: " + options.size());
+			            log.info("Dropdown option count: " + options.size());
+
+			            if (options.size() > 1) {
+			                WebElement secondOption = options.get(1);
+
+			                js.executeScript(
+			                        "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                        secondOption
+			                );
+
+			                select.selectByIndex(1);
+
+			                logger.log(Status.PASS,
+			                        "Second option selected using Select class: " + secondOption.getText());
+			                log.info("Second option selected using Select class: " + secondOption.getText());
+
+			            } else {
+			                throw new RuntimeException("Second option not available in dropdown");
+			            }
+
+			        } catch (Exception e) {
+			      
+			            logger.log(Status.WARNING,
+			                    "Select class failed, trying custom dropdown handling");
+			            log.warn("Select class failed, trying custom dropdown handling", e);
+
+			            List<WebElement> options = dropdown.findElements(By.xpath(".//option|.//li|.//*"));
+			            logger.log(Status.INFO, "Custom dropdown option count: " + options.size());
+			            log.info("Custom dropdown option count: " + options.size());
+
+			            if (options.size() > 1) {
+			                WebElement secondOption = options.get(1);
+
+			                js.executeScript(
+			                        "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                        secondOption
+			                );
+
+			                secondOption.click();
+
+			                logger.log(Status.PASS,
+			                        "Second option clicked using custom dropdown: " + secondOption.getText());
+			                log.info("Second option clicked using custom dropdown: " + secondOption.getText());
+
+			            } else {
+			                throw new RuntimeException("Second option not available in custom dropdown");
+			            }
+			        }
+
+			        js.executeScript(
+			                "arguments[0].style.background=''; arguments[0].style.border='';",
+			                dropdown
+			        );
+
+			        logger.log(Status.INFO, "Dropdown second option selection completed");
+			        log.info("Dropdown second option selection completed");
+
+			    } catch (Exception e) {
+			        logger.log(Status.FAIL,
+			                "Dropdown second option selection failed: " + e.getMessage());
+			        log.error("Dropdown second option selection failed", e);
+			        throw new RuntimeException("Dropdown second option selection failed", e);
+			    }
+			}
+		 public static String generateRandomMobileNumber1(int length) {
+			    String digits = "0123456789";
+			    StringBuilder mobile = new StringBuilder();
+			    
+			    for (int i = 0; i < length; i++) {
+			        int index = (int) (Math.random() * digits.length());
+			        mobile.append(digits.charAt(index));
+			    }
+			    
+			    return mobile.toString();
+			}
+		 public static void switchToLatestWindow(WebDriver driver) {
+
+			    String parentWindow = driver.getWindowHandle(); // current window
+
+			    Set<String> allWindows = driver.getWindowHandles();
+
+			    for (String window : allWindows) {
+			        if (!window.equals(parentWindow)) {
+			            driver.switchTo().window(window);
+			            break;
+			        }
+			    }
+			}
+		 public static void selectSecondOptionFromAnyDropdown(String selectHOPI) {
+
+			    logger.log(Status.INFO, "Started dropdown selection: " + selectHOPI);
+			    log.info("Started dropdown selection: " + selectHOPI);
+			    System.out.println("▶ Started dropdown selection: " + selectHOPI);
+
+			    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+			    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			    try {
+
+			        By locator = By.xpath(selectHOPI);
+
+			        // 1️⃣ find element anywhere in DOM
+			        WebElement dropdown = wait.until(
+			                ExpectedConditions.presenceOfElementLocated(locator)
+			        );
+
+			        // 🔥 SCROLL (improved)
+			        js.executeScript(
+			                "arguments[0].scrollIntoView({block:'center', inline:'nearest'});",
+			                dropdown
+			        );
+
+			        // 3️⃣ wait visible
+			        wait.until(ExpectedConditions.visibilityOf(dropdown));
+
+			        // 4️⃣ try normal click, fallback JS click
+			        try {
+			            dropdown.click();
+			        } catch (Exception e) {
+			            js.executeScript("arguments[0].click();", dropdown);
+			        }
+
+			        // 5️⃣ wrap into Select
+			        Select select = new Select(dropdown);
+
+			        // 6️⃣ select second option
+			        select.selectByIndex(1);
+
+			        // 🔥 SCROLL selected value into view (after selection)
+			        WebElement selectedOption = select.getFirstSelectedOption();
+			        js.executeScript(
+			                "arguments[0].scrollIntoView({block:'center', inline:'nearest'});",
+			                selectedOption
+			        );
+
+			        String selected = selectedOption.getText();
+
+			        System.out.println("--------------------------------------------------");
+			        System.out.println("Dropdown XPath : " + selectHOPI);
+			        System.out.println("Selected Value  : " + selected);
+			        System.out.println("--------------------------------------------------");
+
+			        logger.log(Status.PASS, "Dropdown selected successfully: " + selected);
+			        log.info("Dropdown selected successfully: " + selected);
+
+			    } catch (Exception e) {
+
+			        logger.log(Status.WARNING, "Dropdown selection failed: " + selectHOPI);
+			        log.warn("Dropdown selection failed: " + selectHOPI, e);
+
+			        System.out.println("❌ Dropdown selection failed: " + selectHOPI);
+			        e.printStackTrace();
+			    }
+			}
+		 public static void switchToFirstTab(WebDriver driver) {
+			    Set<String> handles = driver.getWindowHandles();
+			    List<String> tabs = new ArrayList<>(handles);
+			    
+			    if (tabs.size() > 0) {
+			        driver.switchTo().window(tabs.get(0));
+			    } else {
+			        System.out.println("No tabs available");
+			    }
+			}
+		 public static void hardRefresh(WebDriver driver) {
+			    JavascriptExecutor js = (JavascriptExecutor) driver;
+			    js.executeScript("location.reload(true);");
+			}
+		 public static void clickByJSFunctionNoScreenShot(String xmlPath, String fieldName) throws IOException, InterruptedException
+		 {
+		     try
+		     {
+		         System.out.println("Start Clicking (JS) on (" + fieldName + ")");
+		         logger.log(Status.INFO, "Start Clicking (JS) on (" + fieldName + ")");
+		       //  passedScreenShotPics(driver); 
+
+		         WebElement element = driver.findElement(By.xpath(xmlPath));
+
+		         ((JavascriptExecutor) driver).executeScript(
+		             "arguments[0].setAttribute('style', 'background: yellow; border: 2px solid blue;');", element);
+		         Thread.sleep(300);
+
+		         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
+		       //  passedScreenShotPics(driver);   // Capture after click
+		         Thread.sleep(300);
+
+		         System.out.println("XPath-->> (" + xmlPath + ")");
+		         logger.log(Status.INFO, "( " + xmlPath + " )");
+		         System.out.println("Clicked (JS) on (" + fieldName + ")");
+		         logger.log(Status.INFO, "Clicked (JS) on (" + fieldName + ")");
+		         log.info("Clicked (JS) on (" + fieldName + ")");
+		         Thread.sleep(300);
+		     }
+		     catch (Exception E)
+		     {
+		         System.out.println(xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
+		         logger.log(Status.INFO, xmlPath + ": Not able to locate or click (JS) web element...");
+		        // failureScreenShotPics(driver);  // Capture failure
+		         Thread.sleep(500);
+		         logger.log(Status.FAIL, xmlPath + ": Not able to locate or click (JS) web element for field (" + fieldName + ")");
+		         System.out.println("Error while Clicking (JS) on the web element... " + E.getMessage());
+		         Assert.fail("Error while Clicking (JS) on the web element... ");
+		     }
+		 }
+		 public static void selectThirdOptionWithHighlight(String dropdownLocator) throws InterruptedException {
+
+			    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+			    WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(dropdownLocator)));
+			    dropdown.click();
+
+			    WebElement dropdownContainer = wait.until(ExpectedConditions
+			            .visibilityOfElementLocated(By.xpath("//div[contains(@id,'floatingDropdown')]")));
+
+			    List<WebElement> options = dropdownContainer.findElements(
+			            By.xpath(".//div[contains(@class,'freq-row')]"));
+
+			    if (options.size() < 3) {
+			        throw new RuntimeException("Less than 3 options available in dropdown");
+			    }
+
+			    WebElement thirdOption = options.get(2);
+
+			    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			    js.executeScript(
+			            "arguments[0].style.backgroundColor='yellow';" +
+			            "arguments[0].style.border='2px solid blue';", 
+			            thirdOption);
+
+			    Thread.sleep(500);
+
+			    js.executeScript(
+			            "arguments[0].style.backgroundColor='';" +
+			            "arguments[0].style.border='';", 
+			            thirdOption);
+
+			    wait.until(ExpectedConditions.elementToBeClickable(thirdOption)).click();
+			}
+		 public static void selectFirstOptionFromDropdown(String dropdownXPath) {
+
+			    try {
+			        logger.log(Status.INFO, "Started selecting first option from dropdown");
+			        log.info("Started selecting first option from dropdown. XPath: " + dropdownXPath);
+
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			        WebElement dropdown = wait.until(
+			                ExpectedConditions.elementToBeClickable(By.xpath(dropdownXPath))
+			        );
+
+			        JavascriptExecutor js = (JavascriptExecutor) driver;
+			        js.executeScript(
+			                "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                dropdown
+			        );
+
+			        dropdown.click();
+			        Thread.sleep(500);
+
+			        try {
+
+			            Select select = new Select(dropdown);
+			            List<WebElement> options = select.getOptions();
+
+			            logger.log(Status.INFO, "Dropdown option count: " + options.size());
+			            log.info("Dropdown option count: " + options.size());
+
+			            if (options.size() > 0) {
+			                WebElement firstOption = options.get(0);
+
+			                js.executeScript(
+			                        "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                        firstOption
+			                );
+
+			                select.selectByIndex(0);
+
+			                logger.log(Status.PASS,
+			                        "First option selected using Select class: " + firstOption.getText());
+			                log.info("First option selected using Select class: " + firstOption.getText());
+
+			            } else {
+			                throw new RuntimeException("First option not available in dropdown");
+			            }
+
+			        } catch (Exception e) {
+
+			            logger.log(Status.WARNING,
+			                    "Select class failed, trying custom dropdown handling");
+			            log.warn("Select class failed, trying custom dropdown handling", e);
+
+			            List<WebElement> options = dropdown.findElements(By.xpath(".//option|.//li|.//*"));
+			            logger.log(Status.INFO, "Custom dropdown option count: " + options.size());
+			            log.info("Custom dropdown option count: " + options.size());
+
+			            if (options.size() > 0) {
+			                WebElement firstOption = options.get(0);
+
+			                js.executeScript(
+			                        "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                        firstOption
+			                );
+
+			                firstOption.click();
+
+			                logger.log(Status.PASS,
+			                        "First option clicked using custom dropdown: " + firstOption.getText());
+			                log.info("First option clicked using custom dropdown: " + firstOption.getText());
+
+			            } else {
+			                throw new RuntimeException("First option not available in custom dropdown");
+			            }
+			        }
+
+			        js.executeScript(
+			                "arguments[0].style.background=''; arguments[0].style.border='';",
+			                dropdown
+			        );
+
+			        logger.log(Status.INFO, "Dropdown first option selection completed");
+			        log.info("Dropdown first option selection completed");
+
+			    } catch (Exception e) {
+			        logger.log(Status.FAIL,
+			                "Dropdown first option selection failed: " + e.getMessage());
+			        log.error("Dropdown first option selection failed", e);
+			        throw new RuntimeException("Dropdown first option selection failed", e);
+			    }
+			}
+		 public static void closeNewlyOpenedWindow() {
+			    String mainWindow = driver.getWindowHandle();
+
+			    Set<String> allWindows = driver.getWindowHandles();
+			    for (String win : allWindows) {
+			        if (!win.equals(mainWindow)) {
+			            driver.switchTo().window(win);
+			            driver.close();
+			            break;
+			        }
+			    }
+
+			    driver.switchTo().window(mainWindow);
+			}
+		 public static void switchToNewWindowMax(WebDriver driver) {
+
+			    String parentWindow = driver.getWindowHandle();
+
+			    Set<String> allWindows = driver.getWindowHandles();
+
+			    for (String window : allWindows) {
+			        if (!window.equals(parentWindow)) {
+			            driver.switchTo().window(window);
+			            driver.manage().window().maximize();
+			            return;
+			        }
+			    }
+
+			    throw new RuntimeException("New window/tab not found");
+			}
+		 public static void selectNthOptionFromDropdown(String dropdownXPath, int n) {
+			    try {
+			        logger.log(Status.INFO, "Started selecting " + n + "th option from dropdown");
+			        log.info("Started selecting " + n + "th option from dropdown. XPath: " + dropdownXPath);
+
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			        WebElement dropdown = wait.until(
+			                ExpectedConditions.elementToBeClickable(By.xpath(dropdownXPath))
+			        );
+
+			        JavascriptExecutor js = (JavascriptExecutor) driver;
+			        js.executeScript(
+			                "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                dropdown
+			        );
+
+			        dropdown.click();
+			        Thread.sleep(500);
+
+			        try {
+			            // Try Select class first
+			            Select select = new Select(dropdown);
+			            List<WebElement> options = select.getOptions();
+
+			            logger.log(Status.INFO, "Dropdown option count: " + options.size());
+			            log.info("Dropdown option count: " + options.size());
+
+			            if (options.size() >= n) {
+			                WebElement nthOption = options.get(n - 1); // 0-based index
+
+			                js.executeScript(
+			                        "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                        nthOption
+			                );
+
+			                select.selectByIndex(n - 1);
+
+			                logger.log(Status.PASS,
+			                        n + "th option selected using Select class: " + nthOption.getText());
+			                log.info(n + "th option selected using Select class: " + nthOption.getText());
+
+			            } else {
+			                throw new RuntimeException(n + "th option not available in dropdown");
+			            }
+
+			        } catch (Exception e) {
+			            // Fallback: custom handling for non-standard dropdowns
+			            logger.log(Status.WARNING,
+			                    "Select class failed, trying custom dropdown handling");
+			            log.warn("Select class failed, trying custom dropdown handling", e);
+
+			            List<WebElement> options = dropdown.findElements(By.xpath(".//option|.//li|.//*"));
+			            logger.log(Status.INFO, "Custom dropdown option count: " + options.size());
+			            log.info("Custom dropdown option count: " + options.size());
+
+			            if (options.size() >= n) {
+			                WebElement nthOption = options.get(n - 1);
+
+			                js.executeScript(
+			                        "arguments[0].style.background='yellow'; arguments[0].style.border='3px solid blue';",
+			                        nthOption
+			                );
+
+			                nthOption.click();
+
+			                logger.log(Status.PASS,
+			                        n + "th option clicked using custom dropdown: " + nthOption.getText());
+			                log.info(n + "th option clicked using custom dropdown: " + nthOption.getText());
+			            } else {
+			                throw new RuntimeException(n + "th option not available in custom dropdown");
+			            }
+			        }
+
+			        // Remove highlighting
+			        js.executeScript(
+			                "arguments[0].style.background=''; arguments[0].style.border='';",
+			                dropdown
+			        );
+
+			        logger.log(Status.INFO, "Dropdown " + n + "th option selection completed");
+			        log.info("Dropdown " + n + "th option selection completed");
+
+			    } catch (Exception e) {
+			        logger.log(Status.FAIL,
+			                "Dropdown " + n + "th option selection failed: " + e.getMessage());
+			        log.error("Dropdown " + n + "th option selection failed", e);
+			        throw new RuntimeException("Dropdown " + n + "th option selection failed", e);
+			    }
+			}
+		 public static void TextIfPresent(String locator, String elementName) {
+			    try {
+			        By byLocator = By.xpath(locator); 
+
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+			        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+
+			        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			        js.executeScript(
+			                "arguments[0].setAttribute('style', 'border: 3px solid blue; background: yellow;');",
+			                element);
+
+			        Thread.sleep(300); 
+
+			        js.executeScript(
+			                "arguments[0].setAttribute('style', arguments[1]);",
+			                element, "");
+
+			        Thread.sleep(100);
+
+			      CommanUtill.textEnter(locator, CommanUtill.generateRandomName(10));
+
+			        logger.log(Status.INFO, "Clicked on: " + elementName);
+			        System.out.println("Clicked on: " + elementName);
+
+			    } catch (Exception e) {
+			        logger.log(Status.INFO, elementName + " not present, skipping...");
+			        System.out.println(elementName + " not present, skipping...");
+			    }
+			}
  
 }

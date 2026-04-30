@@ -1,0 +1,18 @@
+2026-04-30 12:48:47 INFO  :461 - Start Entering...
+2026-04-30 12:48:47 INFO  :463 - //input[@id='txtLoginName']: Input Data : (sakti)
+2026-04-30 12:48:48 INFO  :469 - End Entering...
+2026-04-30 12:48:49 INFO  :461 - Start Entering...
+2026-04-30 12:48:49 INFO  :463 - //input[@id='txtPassword']: Input Data : (Admin@123)
+2026-04-30 12:48:49 INFO  :469 - End Entering...
+2026-04-30 12:48:49 INFO  :425 - Start Clicking on (Login Button)
+2026-04-30 12:48:50 INFO  :430 - ( //input[@id='btnLogin'] )
+2026-04-30 12:48:50 INFO  :432 - Clicked on (Login Button)
+2026-04-30 12:48:50 INFO  :425 - Start Clicking on (Login Yes)
+2026-04-30 12:48:51 INFO  :430 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2026-04-30 12:48:51 INFO  :432 - Clicked on (Login Yes)
+2026-04-30 12:48:58 INFO  :366 - Clicked on (Click On Emergency Dashbord)
+2026-04-30 12:49:02 INFO  :366 - Clicked on (EMERGENCY OPD(GROUND FLOOR))
+2026-04-30 12:49:04 INFO  :366 - Clicked on (Click On Er Order Tab)
+2026-04-30 12:49:07 INFO  :366 - Clicked on (Er Order Page)
+2026-04-30 12:49:12 INFO  :366 - Clicked on (Click On Nurse Notes Button)
+2026-04-30 12:49:24 INFO  :366 - Clicked on (Click On Add In Plush Icon Btn)
