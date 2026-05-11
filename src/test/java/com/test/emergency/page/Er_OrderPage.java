@@ -216,7 +216,7 @@ public class Er_OrderPage extends GeneralBrowserSetting {
 		WebElement enter_Er_No = driver.findElement(By.xpath(Er_Order_Patient_Search));;
 		enter_Er_No.sendKeys(Keys.ENTER);
 	}
-
+//searching Patient In Grreen Bed Occuiped
 	public void SearchAndClickTopGreenPatient() throws IOException, InterruptedException {
 
 	    logger.info("===== Search and Click TOP GREEN Patient =====");

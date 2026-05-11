@@ -5,6 +5,7 @@ package com.test.frontoffice.page;
 
 import java.awt.Window;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -13,6 +14,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.test.browser.setup.GeneralBrowserSetting;
 import com.test.ui.helper.CommanUtill;
@@ -200,6 +203,16 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 	//----------------------Alias----------------------------
 
 	protected static String alias_ckkbox = "//input[@id='chkalias']";
+	protected static String Alias_Actual_Name_Icon = "//a[@id='btndemographic']";
+	protected static String Alias_Actual_Titile_Drp = "//select[@id='ddltitle']";
+	protected static String Alias_Actual_First_Name = "//input[@id='txtfirstname']";
+	protected static String Alias_Actual_Middle_Name = "//input[@id='txtmiddlename textuppercase']";
+	protected static String Alias_Actual_Last_Name = "//input[@id='txtlastname']";
+	protected static String Alias_Actual_Dob = "//input[@id='_actdob']";
+	protected static String Alias_Actual_Mobile_No = "//input[@id='_actmobile']";
+	protected static String Alias_Actual_Name_Address = "//input[@id='_actaddress']";
+	protected static String Alias_Actual_Guardian_Name = "//input[@id='_actGuardian']";
+	protected static String Close_Alias_Actual = "//a[@id='btnclosealias']//i[@class='fa fa-times']";
 
 	//----------------------- Passport Details -----------------------
 
@@ -248,6 +261,32 @@ public class FrontOfficePatientRegistrationPage extends GeneralBrowserSetting{
 
 		CommanUtill.clickFunction(addPatient_meanu, add_patient);
 		CommanUtill.clickFunction(patient_registration_page, registration_page);
+	}
+	public void SelectAliasCheckBox(String Alias) throws IOException, InterruptedException {
+		
+		WebElement check_Box = driver.findElement(By.xpath(alias_ckkbox));
+		if(! check_Box.isSelected()) {
+			CommanUtill.clickFunction(alias_ckkbox, Alias);
+		}
+	}
+	public void ClickOnAliasIconBtn(String Alais_Icon) throws IOException, InterruptedException {
+		
+		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Alias_Actual_Name_Icon)));
+		CommanUtill.clickFunction(Alias_Actual_Name_Icon, Alais_Icon);
+	}
+	public void AliasAutualPatientDetails(int Title , String First_Name , String Middle_Name , String Last_Name , String Dob ,
+			String Mobile_No , String Address , String Guardian_Name , String Close) throws IOException, InterruptedException {
+		
+		CommanUtill.dropdownSelectByIndex(Alias_Actual_Titile_Drp, Title);
+		CommanUtill.textEnter(Alias_Actual_First_Name, 	First_Name);
+		CommanUtill.textEnter(Alias_Actual_Middle_Name, Middle_Name);
+		CommanUtill.textEnter(Alias_Actual_Last_Name, Last_Name);
+		CommanUtill.textEnter(Alias_Actual_Dob, Dob);
+		CommanUtill.textEnter(Alias_Actual_Mobile_No, Mobile_No);
+		CommanUtill.textEnter(Alias_Actual_Name_Address, Address);
+		CommanUtill.textEnter(Alias_Actual_Guardian_Name, Guardian_Name);
+		CommanUtill.clickFunction(Close_Alias_Actual, Close);
 	}
 
 	public void selectByTitleDropdown(String titleText) throws IOException, InterruptedException {

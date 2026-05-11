@@ -37,9 +37,11 @@ public class Pharmacy_IpIssuePage extends GeneralBrowserSetting {
 	protected static  String Ip_Issue_Tab = "//a[@id='Iptype']";
 	protected static  String Ip_Issue_Page = "//a[contains(text(),'IP Issue')][normalize-space()='IP Issue']";
 	protected static  String Enter_Ip_Number = "//input[@id='txtIPIDER']";
+	protected static  String Station_Indent_Orders_Check = "//input[@id='chkShowLoginSattionIndentOrders']";
 
 	//========================Pending Order Table ===================================
 	protected static  String Pending_Order_In_Table = "//table[@id='tblIpIssueDetail']//tbody//tr[contains(@style,'background-color:pink;')]";
+	protected static  String Pending_Order_In_Last_Row_Table = "//table[@id='tblIpIssueDetail']//tbody//tr[last()]";
 	protected static  String Currently_locked_Yes_Pop  = "//a[@id='IsLockedbtnyes']";
 
 	//========================== IP Issue Details =========================
@@ -85,6 +87,14 @@ public class Pharmacy_IpIssuePage extends GeneralBrowserSetting {
 		CommanUtill.textEnter(Enter_Ip_Number, ErNumber);
 		Er.sendKeys(Keys.ENTER);
 	}
+	public void CheckBoxShowLoginStationIndentOrders(String Uncheck_Box) throws IOException, InterruptedException {
+
+	    if (driver.findElement(By.xpath(Station_Indent_Orders_Check)).isSelected()) {
+	        CommanUtill.clickFunction(Station_Indent_Orders_Check, Uncheck_Box);
+	    }
+	}
+	
+	//Search In Er Number 
 	public void ClickOnPendingOrderInTable(String Table) throws IOException , InterruptedException {
 
 		WebDriverWait wait  = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -96,6 +106,19 @@ public class Pharmacy_IpIssuePage extends GeneralBrowserSetting {
 		System.out.println("Show Pending Drug Order In Pharmacy : " + Drug_Row);
 		CommanUtill.clickFunction(Pending_Order_In_Table, Table);
 	}
+	//Dynamic Last Row
+	public void ClickLastPendingOrderInTable(String Table) throws IOException , InterruptedException {
+
+		WebDriverWait wait  = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Pending_Order_In_Last_Row_Table)));
+		String Drug_Row = driver.findElement(By.xpath(Pending_Order_In_Last_Row_Table)).getText();
+		System.out.println("========== Select Ip Pending Drug Order In Table ==========");
+		logger.info("================= Select Ip Pending Drug Order In Table ====================");
+		logger.info(Drug_Row);
+		System.out.println("Show Pending Drug Order In Pharmacy : " + Drug_Row);
+		CommanUtill.clickFunction(Pending_Order_In_Last_Row_Table, Table);
+	}
+	
 //Dynamic row Select 
 	public void ClickOnEmergencyOPDRow(String value) throws IOException, InterruptedException {
 

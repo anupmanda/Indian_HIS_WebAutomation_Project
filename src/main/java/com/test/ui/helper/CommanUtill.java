@@ -2274,8 +2274,7 @@ public class CommanUtill extends GeneralBrowserSetting {
 			            DateTimeFormatter.ofPattern("dd/MMM/yyyy HH:mm:ss");
 
 			    return updatedDateTime.format(formatter);
-			    
-			    
+			      
 			}
 		 
 		 public static void closeAdmissionPopup(WebDriver driver) {

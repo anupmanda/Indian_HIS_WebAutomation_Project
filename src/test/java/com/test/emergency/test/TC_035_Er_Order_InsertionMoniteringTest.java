@@ -18,7 +18,7 @@ import com.test.ui.helper.CommanUtill;
  *
  * 29-Apr-2026
  */
-public class TC_35_Er_Order_InsertionMoniteringTest extends Er_Order_InsertionMoniteringPage {
+public class TC_035_Er_Order_InsertionMoniteringTest extends Er_Order_InsertionMoniteringPage {
 	
 	Er_Order_InsertionMoniteringPage Insertion_Monitering = new Er_Order_InsertionMoniteringPage();
 	Er_OrderPage ER_Order = new Er_OrderPage();

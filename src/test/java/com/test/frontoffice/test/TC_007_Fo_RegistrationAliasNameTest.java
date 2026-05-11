@@ -30,7 +30,7 @@ public class TC_007_Fo_RegistrationAliasNameTest extends FrontOfficePatientRegis
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	} 
 
-	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1)	
+	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1 , enabled = true)	
 		
 	public void AliasPatientRegistration(String Facility_Drp, String Station_Drp , String Passport_Number  , String Passport_Issue_date ,
 			String Passport_Expiry_date , String Passport_Issued_At, String Visa_Number ,String Visa_Vaild_From , String Visa_valid_to ,
@@ -52,6 +52,12 @@ public class TC_007_Fo_RegistrationAliasNameTest extends FrontOfficePatientRegis
 		}
 		
 	   frontofficeregistration.clickOnAddPatientMenu("AddPatient", "PatientRegistration");
+	   frontofficeregistration.SelectAliasCheckBox("Select Alais Check Box ");
+	   frontofficeregistration.ClickOnAliasIconBtn("Click On Alalis Icon Btn");
+	   
+	   frontofficeregistration.AliasAutualPatientDetails(3 , "Salman" , "Khan" ,"Title" ,"15-04-1998" , "9638527410" , "Noida", 
+			   "Not Define" ,"Close Alais Icon");
+	   
        frontofficeregistration.selectByTitleDropdown(title_drp);
 	
 		frontofficeregistration.enterOnFirstName(First_name_text);

@@ -4,8 +4,6 @@
 package com.test.emergency.test;
 
 import java.io.IOException;
-
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
