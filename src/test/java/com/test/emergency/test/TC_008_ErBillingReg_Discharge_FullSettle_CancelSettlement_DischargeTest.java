@@ -19,10 +19,15 @@ import com.test.ui.helper.CommanUtill;
  *
  * 30-Mar-2026
  */
-public class TC_008_Reg_Dis_Settle_Full_ErBillingTest extends Er_RegistrationPage{
+public class TC_008_ErBillingReg_Discharge_FullSettle_CancelSettlement_DischargeTest extends Er_RegistrationPage{
 
 	Er_RegistrationPage Registration = new Er_RegistrationPage();
-	ErBillingPage Er_Billing = new ErBillingPage();
+	ErBillingPage Er_Billing = new ErBillingPage(); 
+	
+	//======================= ================== =================== ====================== =================
+	//======================== 1.Registration  2. Discharge 3. Full Bill Settlement With Cheque =============
+	//======================== 4.Cancel Bill Settlement 5. Cancel Discharge =================================
+	//======================= ================== =================== ====================== =================
 
 	private final String sheetName = "ER_Registration_Page"; 
 	private final String sheetName_Er_Billing = "Er_Billing_Page"; 
@@ -152,7 +157,7 @@ public class TC_008_Reg_Dis_Settle_Full_ErBillingTest extends Er_RegistrationPag
 		Er_Billing.SelectByDischargeReason_DischargeSubTypeDrp(Discharge_Reason_Drp , Discharge_Sub_Type_Drp);
 		Er_Billing.EnterDischargeRemarks(Discharge_Remarks);
 		Er_Billing.DischargeOkBtn("ok Discharge the Icon Pop" ,"Patient Discharge Yes Pop");
-        Thread.sleep(1000);
+		Registration.handleDynamicPopup("Popup Message");
 	}
 	
 	@Test(priority = 5 ,enabled = true)
@@ -169,9 +174,62 @@ public class TC_008_Reg_Dis_Settle_Full_ErBillingTest extends Er_RegistrationPag
 	
 		Er_Billing.ClickOnReceiptBtn("Click On Bill Receipt Btn");
 		Er_Billing.YesBillSettlePop("Yes Bill Settle Pop");
-	    Thread.sleep(1500);
+	
 	    Er_Billing.OkBillSettledReceiptNo("Settled Bill Receipt No");
+	    Thread.sleep(1000);
+	    driver.navigate().refresh();
+	    
 	}
+	@Test(dataProvider = "BillingDataProvider" , priority = 6 ,enabled = true)	
+	public void EnterErNumberCancelTest (String facility_drp , String Station_drp , String Search_Frome_Date , String Search_To_Date , 
+			String Enter_Er_Number , String Company_type_Drp , String Company_Drp , String Rate_contract_Drp , String Policy_Number ,
+			String Auth_Claim_no , String Standard_Deductible , String Standard_Co_pay_Drp , String Co_Pay_Text , String Letter_no , 
+			String Letter_Date , String Employee_Number , String Certificate_number , String Bed_Entitlement , String Per_Day ,
+			String Account_Number , String IFSC_Code , String Bank_Branch ,String Corporate_company_Drp , String Insurance_Company_Drp ,
+			String Auth_Amount, String Credit_Limit , String Employee_Code, String Employee_Relation , String Issued_By , 
+			String Discharge_Reason_Drp , String Discharge_Sub_Type_Drp , String Discharge_Remarks
+			)
+					throws IOException, InvalidFormatException, InterruptedException{
+
+		logger = extent.createTest("Enter Er Number", "Enter Er Number Test Funcility");
+
+		Er_Billing.EnterErNumber(CommanUtill.capturedERNO);
+		Registration.handleDynamicPopup("Popup Message");
+	}
+	
+	@Test(priority = 7 ,enabled = true)
+	public void CancelBillSettlemetTest()throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("Cancel Bill Settlemt ", "Cancel Bill Settlemet Test Funcility");
+		
+		Er_Billing.ClickOnSettlementBtn("Click On Bill Settlement Btn");
+		Er_Billing.CancelBillSettlementBtn("Click On Cancel Bill Settlemt Btn");
+		Er_Billing.CancelBillSettlement_AuthDrp_RemarksText(5 ,"Cancel Bill Settlement" ,"Cancel Bill Settlemet Yes Pop");
+		
+		Registration.handleDynamicPopup("Popup Message");
+		Er_Billing.CloseBillSettlementPop("Close Bill Settlemet Pop");
+		
+		driver.navigate().refresh();
+	}
+	
+	@Test(priority = 8 ,enabled = true)
+	public void CancelDischargeTest() throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("Cancel Discharge Icon", "Cancel Discharge Test Funcility");
+		
+		Er_Billing.EnterErNumber(CommanUtill.capturedERNO);
+		Registration.handleDynamicPopup("Popup Message");
+		
+		Er_Billing.CancelDischargeBtn("Click on Cancel Discharge Btn");
+		Er_Billing.CancelDischarge_ReasonYesPop("Cancel Discharge Text" ,"Ok Cancel Discharge Icon");
+		Er_Billing.PatientCancelDischargeYesPop("Ok Cancel Discharge Pop");
+		
+		Registration.handleDynamicPopup("Popup Message");
+	}
+	
+	
+	
+	
 	
 
 

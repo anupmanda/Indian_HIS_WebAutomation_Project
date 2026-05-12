@@ -12,6 +12,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.test.emergency.page.ERDischargeNotificationPage;
+import com.test.emergency.page.Er_RegistrationPage;
 import com.test.readdata.ExcelSheetDataProvider;
 
 /**
@@ -22,6 +23,7 @@ import com.test.readdata.ExcelSheetDataProvider;
 public class TC_014_ERDischargeNotificationTest extends ERDischargeNotificationPage{
 
 	ERDischargeNotificationPage DischargeNotification = new ERDischargeNotificationPage();
+	Er_RegistrationPage Registration = new Er_RegistrationPage();
 	private final String sheetName = "Er_Discharge_Notification_Page";
 
 	@DataProvider(name = "DischargedNotificationDataProvider")
@@ -53,9 +55,10 @@ public class TC_014_ERDischargeNotificationTest extends ERDischargeNotificationP
 		DischargeNotification.SerachDateWisePatient("Click On Patient Search Btn");
 		Thread.sleep(1500);
 		DischargeNotification.SelectPatientTypeDrpAndEnterValueSerach(Patient_Type_Drp , Enter_Er_No ,"Search Patient");
-		Thread.sleep(1500);
+		
+		Registration.handleDynamicPopup("Popup Message");
 		DischargeNotification.clickOnExcelSheetIcon("Click On Excel Sheet Icon");
-		Thread.sleep(800);
+		
 		driver.navigate().refresh();
 		
 	}
@@ -71,13 +74,11 @@ public class TC_014_ERDischargeNotificationTest extends ERDischargeNotificationP
 		DischargeNotification.clickFirstWhiteRowAndPrintDetails("Click On Last White Row");
 		Assert.assertTrue(true, "First white background row clicked successfully");
 		DischargeNotification.YesAcknowledgedPop("Yes Pop Acknowledged Popup");
-		Thread.sleep(2000);
+		Registration.handleDynamicPopup("Discharge notification Acknowledged Yes Popop Message");
 
 		DischargeNotification.clickSameRowAgainAfterColorChange(sNo);
 		DischargeNotification.Yes_Pop_DischargeNotificationAcknowledgementBill("Yes Pop Billing Page"); 
-		
 		DischargeNotification.clickOnMenuIcon("Click On Menu Icon");
-
 	}
 	
 	@Test(dataProvider = "DischargedNotificationDataProvider", priority = 3 , enabled = true)

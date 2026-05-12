@@ -223,7 +223,7 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 
 	protected static String Enter_Er_No   =  "//input[@id='ERNo']";
 	protected static String Click_Modif_Btn   =  "//i[@class='fa fa-pencil-square']";
-	protected static String Reason_Modification   =  "//textarea[@id='_reasonForModification']";
+	protected static String Reason_Modification   =  "//select[@id='_reasonForModificationDDL']";
 	protected static String Modifiy_Save_Btn   =  "//a[@id='btnupdate']//i[@class='fa fa-save']";
 	//================================Patient Document===================================================
 	protected static String patient_Document_Btn   =  "//i[@class='fa fa-file']";
@@ -269,8 +269,12 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 	protected static String Save_Er_To_Ip_Pop   =  "//a[@id='PopSaveEmergencyPatient']//i[@class='fa fa-save']";
 	protected static String Save_admitted_Ok_Pop   =  "//a[@id='PatientAdmitIPID']";
 
-  //=====================Menu ===========================
+	//=====================Menu ===========================
 	protected static String menu_Icon   =  "//a[@id='showmenu']";
+
+	//==================== Pop Meassage =============================
+	protected String popupMessage = "//div[@id='gritter-notice-wrapper']//p";
+	protected String popupCloseBtn = "//div[@id='gritter-notice-wrapper']//div[@class='gritter-close']";
 
 
 
@@ -517,8 +521,8 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 		cash .until(ExpectedConditions.elementToBeClickable(By.xpath(Radio_Btn_Company_Insurance)));
 		CommanUtill.clickFunction(Radio_Btn_Company_Insurance, Company_Btn);
 	}
-	
-	
+
+
 	public void SchemeCheckBoxAndSelectScheme(String Scheme_Chkk_box , String Scheme_Drp_) throws IOException, InterruptedException{
 
 		WebElement scheme_Check_Box =  driver.findElement(By.xpath(Scheme_Check_Box));
@@ -732,26 +736,26 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 	}
 	//=======================================Save Btb ========================================
 	public void ErSaveBtnAndYespop(String save_Icon, String save_Yes_Popup) throws IOException, InterruptedException {
-		
-	    CommanUtill.clickFunction(Save_Btn, save_Icon);
-	    Thread.sleep(500);
 
-	    if (CommanUtill.isElementPresent(Save_Yes_Pop)) {
-	        CommanUtill.clickFunction(Save_Yes_Pop, save_Yes_Popup);
-	        System.out.println("Save Yes Popup Appeared and clicked");
-	    } else {
-	        System.out.println("Save Yes Popup did NOT appear");
-	    }
+		CommanUtill.clickFunction(Save_Btn, save_Icon);
+		Thread.sleep(500);
+
+		if (CommanUtill.isElementPresent(Save_Yes_Pop)) {
+			CommanUtill.clickFunction(Save_Yes_Pop, save_Yes_Popup);
+			System.out.println("Save Yes Popup Appeared and clicked");
+		} else {
+			System.out.println("Save Yes Popup did NOT appear");
+		}
 	}
 
 	public void ClickOnOkAfterSaveBtn(String ok) throws IOException, InterruptedException {
 
-		 if (CommanUtill.isElementPresent(Ok_pop)) {
-			 CommanUtill.clickFunction(Ok_pop, ok);
-			 System.out.println("Save Yes Popup Appeared and clicked");	       
-		    } else {
-		        System.out.println("Save Yes Popup did NOT appear");
-		    }
+		if (CommanUtill.isElementPresent(Ok_pop)) {
+			CommanUtill.clickFunction(Ok_pop, ok);
+			System.out.println("Save Yes Popup Appeared and clicked");	       
+		} else {
+			System.out.println("Save Yes Popup did NOT appear");
+		}
 	}
 
 	public String getUHIDOfPatient() {
@@ -836,15 +840,25 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 		WebElement ER_No = driver.findElement(By.xpath(Enter_Er_No));
 		ER_No.sendKeys(Keys.ENTER);
 	}
-	public void clickModifiyBtnAndReasonTextAndUpdate(String Click_Modifiy_Btn , String Reason_Text , String update_Icon)
-			throws IOException, InterruptedException {
+	public void clickErModifiyBtn(String Click_Modifiy_Btn ) throws IOException, InterruptedException {
 
 		WebDriverWait wait =new WebDriverWait(driver , Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Modif_Btn)));
 		CommanUtill.clickFunction(Click_Modif_Btn, Click_Modifiy_Btn);
-		CommanUtill.textEnter(Reason_Modification, Reason_Text);
-		CommanUtill.clickFunction(Modifiy_Save_Btn, update_Icon);  
+		
 	}
+	public void SelectByReasonModificationDrp(String Reason_Text) throws IOException, InterruptedException {
+		
+		CommanUtill.dropdownSelectByVisibleText(Reason_Modification, Reason_Text);	
+	}
+	public void SaveModifyBtn (String save_Modifiy_Btn ) throws IOException, InterruptedException {
+
+		WebDriverWait wait =new WebDriverWait(driver , Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Modif_Btn)));
+		CommanUtill.clickFunction(Modifiy_Save_Btn, save_Modifiy_Btn);  	
+	}
+	
+	
 	//==========================Patient Document =====================================
 	public void PatientDocumentIcon(String patient_Document_Icon) throws IOException, InterruptedException {
 
@@ -885,7 +899,7 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 		CommanUtill.clickFunction(Close_Patient_Document_pop, patient_Document_pop);
 	}
 	//============================Admit As Ip =====================================
-	
+
 	public void clickOnErToIpBtn(String Admit_Ip) throws IOException, InterruptedException { 
 
 		WebDriverWait wait =new WebDriverWait(driver , Duration.ofSeconds(10));
@@ -919,7 +933,7 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 		Consultant.until(ExpectedConditions.elementToBeClickable(By.xpath(Consultant_Diet_Btn)));
 		CommanUtill.clickFunction(Consultant_Diet_Btn, Consultant_Diet);
 	}
-	
+
 	public void ErToIp_PrimarySpecialityAndConsultantDrp(String Speciality_Drp ,String Consultant_Drp )
 			throws IOException, InterruptedException { 
 
@@ -983,12 +997,40 @@ public class Er_RegistrationPage extends GeneralBrowserSetting {
 		save_Icon.until(ExpectedConditions.elementToBeClickable(By.xpath(Save_admitted_Ok_Pop)));
 		CommanUtill.clickFunction(Save_admitted_Ok_Pop, Ok_Pop);
 	}
-   //===================================Menu Icon============================
+	//===================================Menu Icon============================
 	public void ClickMenuIcon(String menu) throws IOException, InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(menu_Icon)));
 		CommanUtill.clickFunction(menu_Icon, menu);
+	}
+
+	//============================= Pop Meassage ==================================
+	public void handleDynamicPopup(String Pop) throws IOException, InterruptedException {
+
+		logger.info("===== Handle Dynamic Popup =====");
+
+		try {
+			Thread.sleep(500);
+			if (CommanUtill.isElementPresent(popupMessage)) {
+				String message = driver.findElement(By.xpath(popupMessage)).getText().trim();
+				System.out.println("Popup Message: " + message);
+				logger.info("Popup Message: " + message);
+
+				// Close popup
+				if (CommanUtill.isElementPresent(popupCloseBtn)) {
+					CommanUtill.clickFunction(popupCloseBtn ,"");
+					logger.info("Popup closed successfully");
+				}
+
+			} else {
+				logger.info("Popup not displayed");
+				System.out.println("Popup not displayed");
+			}
+
+		} catch (Exception e) {
+			logger.info("Error while handling popup: " + e.getMessage());
+		}
 	}
 
 

@@ -23,8 +23,14 @@ import com.test.ui.helper.CommanUtill;
  *
  * 27-Mar-2026
  */
-public class TC_010_Reg_Misc_AmbulanceCharges_BillDetails_Discharge_BillSettledTest extends Er_RegistrationPage{
-
+public class TC_010_ErBillingReg_Misc_AmbulanceCharges_BillDetails_OtherTest extends Er_RegistrationPage{
+	
+	//======================= ================== =================== ====================== ==================
+    //===================== 1.Registration 2. Miscellaneous Charges 3. Ambulance MRD charges 4.Bill Details 
+	//                      5. Discharge 6.Bill Settlement With Cheque ======================================
+	//======================= ================== =================== ====================== ==================
+	
+	
 	Er_RegistrationPage Registration = new Er_RegistrationPage();
 	ErBillingPage Er_Billing = new ErBillingPage();
 	Er_Miscellaneous_ChargesPage MiscellaneousCharges = new Er_Miscellaneous_ChargesPage();

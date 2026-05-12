@@ -5,11 +5,15 @@ package com.test.emergency.test;
 
 import java.io.IOException;
 
+import javax.management.InvalidApplicationException;
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.test.emergency.page.ErBillingPage;
+import com.test.emergency.page.Er_DueSettlementPage;
 import com.test.emergency.page.Er_RegistrationPage;
 import com.test.readdata.ExcelSheetDataProvider;
 import com.test.ui.helper.CommanUtill;
@@ -19,13 +23,20 @@ import com.test.ui.helper.CommanUtill;
  *
  * 30-Mar-2026
  */
-public class TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest extends  Er_RegistrationPage{
+public class TC_009_Er_BillingReg_DueBillSrttled_DueSettlementPageTest extends  Er_RegistrationPage{
 
 	Er_RegistrationPage Registration = new Er_RegistrationPage();
 	ErBillingPage Er_Billing = new ErBillingPage();
+	Er_DueSettlementPage ErDueSettlement = new Er_DueSettlementPage();
 
 	private final String sheetName = "ER_Registration_Page"; 
 	private final String sheetName_Er_Billing = "Er_Billing_Page"; 
+	private final String sheetName_DueSettle = "Er_DueSettlement_Page";
+	
+	//======================= ================== =================== ====================== ==================
+	//================ 1.Registration  2. Discharge 3. Due Bill Settlement With Cash 4. Due Amount ===========
+	//================ 5.Due Settlement ======================================================================
+	//======================= ================== =================== ====================== ==================
 
 	@DataProvider(name = "ExcelUniversalDataProvider")
 	public Object[][] getData() throws IOException {
@@ -152,12 +163,13 @@ public class TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest extends  Er_Regis
 		Er_Billing.SelectByDischargeReason_DischargeSubTypeDrp(Discharge_Reason_Drp , Discharge_Sub_Type_Drp);
 		Er_Billing.EnterDischargeRemarks(Discharge_Remarks);
 		Er_Billing.DischargeOkBtn("ok Discharge the Icon Pop" ,"Patient Discharge Yes Pop");
-        Thread.sleep(1000);
+		Registration.handleDynamicPopup("Popup Message");
+        
 	}
 	@Test(priority = 5 ,enabled = true)
 	public void DueBillSettlementReceiptTest() throws IOException, InvalidFormatException, InterruptedException{
 
-		logger = extent.createTest("Due Bill Settlement", " Due Bill Settlement");
+		logger = extent.createTest("Due Bill Settlement", "Due Bill Settlement Test Funcility");
 
 		Er_Billing.ClickOnSettlementBtn("Click On Bill Settlement Btn");
 		Er_Billing.ClickOnCashFullBillSettlement("Click On Cash Btn");
@@ -170,8 +182,48 @@ public class TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest extends  Er_Regis
 
 		Er_Billing.ClickOnReceiptBtn("Click On Bill Receipt Btn");
 		Er_Billing.YesBillSettlePop("Yes Bill Settle Pop");
-		Thread.sleep(1500);
+		
 		Er_Billing.OkBillSettledReceiptNo("Settled Bill Receipt No");
+		Registration.ClickMenuIcon("Click On Menu Btn");
+		
+	}
+	//================================ ===================== ==================================
+
+	@DataProvider(name = "DueSettlementDataProvider")
+	public Object[][] getDueSettlementData() throws IOException {
+
+		System.out.println("====Fetching data from Excel sheet: " + sheetName_DueSettle + " ====");
+		return ExcelSheetDataProvider.getExcelData(sheetName_DueSettle);
+	}
+	
+	@Test(dataProvider = "DueSettlementDataProvider", priority = 6 , enabled = true)
+	public void EnterErNumberInChequeDueSettlementTest(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp , String Find_Patient_Frome_Date ,
+			String Find_Patient_To_Date ,String Company_Drp , String Serach_Company_Frome_Date , String Serach_Company_To_Date , 
+			String Enter_Due_Amount_Er_Number , String Enter_Cheque_Number , String Cheque_Issue_Date ,String Cheque_Bank_Name_Drp ,
+			String Cheque_Branch_Name , String Less_Amount_Due_Amount ,String  Enter_Rounding_Off_Settlement , String Remarks_Due_Settlement) 
+			throws IOException, InterruptedException, InvalidApplicationException {
+
+		logger = extent.createTest("Enter Er Number Due Settlement", " Remaing Due Settlement In Cheque Test Funcility");
+
+		ErDueSettlement.ErDueSettlementPage(" Er Due Settlement Page");
+		ErDueSettlement.ClickOnSearchByPatientBtn("Click On Search By Parient");
+		driver.navigate().refresh();
+		
+		ErDueSettlement.EnterERNumber(CommanUtill.capturedERNO);
+		ErDueSettlement.ClickDueDetailsTable("Click On Table In Search Er Number");
+		ErDueSettlement.ClickOnChequeButton("Click On Cheque Btn");
+		
+		ErDueSettlement.ChequeNumberIssueDateBankNameBramchName(Enter_Cheque_Number, Cheque_Issue_Date, Cheque_Bank_Name_Drp ,Cheque_Branch_Name);
+		ErDueSettlement.LessThanCurrentDueAmount(Less_Amount_Due_Amount);  //Less_Amount_Due_Amount
+		
+		JavascriptExecutor zoomIn = (JavascriptExecutor) driver;
+		zoomIn.executeScript("document.body.style.zoom='90%'");
+		ErDueSettlement.EnterDueRemarks(Remarks_Due_Settlement);
+		
+		Thread.sleep(1000);
+		ErDueSettlement.ClickOnSaveBtnAndYespop("Save Cash On Due Button" ,"Yes Save Pop");
+		Registration.handleDynamicPopup("Popup Message");
+		
 	}
 
 

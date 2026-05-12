@@ -6,6 +6,7 @@ package com.test.emergency.test;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -320,10 +321,21 @@ public class Er_RegistationTest extends Er_RegistrationPage{
 		@Test(priority = 10 ,enabled = false)
 		public void ModifyAndUpdateErPatientTest() throws IOException, InvalidFormatException, InterruptedException{
 		
-		logger = extent.createTest("Emergency Print Button", "Print Funcility Test");
-		Registration.enterErNumber(CommanUtill.capturedERNO);
-		
-		Registration.clickModifiyBtnAndReasonTextAndUpdate("Click On Modify Btn" ,"Reason Of Modification" ,"Update Save Btn");
+			Registration.enterErNumber(CommanUtill.capturedERNO);
+			JavascriptExecutor Top = (JavascriptExecutor) driver;
+			Top.executeScript("window.scrollTo(0, 0);");
+
+
+			Registration.clickErModifiyBtn("Click On Modify Btn");
+			
+			JavascriptExecutor Bottom = (JavascriptExecutor) driver;
+			Bottom.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+			Registration.SelectByReasonModificationDrp("Reason changed");
+
+			Registration.SaveModifyBtn("Click On Update Save Btn");
+
+			Registration.handleDynamicPopup("After Save Pop Message");
+			driver.navigate().refresh();
 }
 		
 		@Test(priority = 11 ,enabled = false)

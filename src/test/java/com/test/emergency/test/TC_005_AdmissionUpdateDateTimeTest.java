@@ -10,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.test.emergency.page.AdmissionUpdateDateTimePage;
+import com.test.emergency.page.Er_RegistrationPage;
 import com.test.readdata.ExcelSheetDataProvider;
 
 /**
@@ -20,6 +21,7 @@ import com.test.readdata.ExcelSheetDataProvider;
 public class TC_005_AdmissionUpdateDateTimeTest extends AdmissionUpdateDateTimePage {
 	
 	AdmissionUpdateDateTimePage Admission_Update_DateTime = new AdmissionUpdateDateTimePage();
+	Er_RegistrationPage Registration = new Er_RegistrationPage();
 	private final String sheetName = "Er_Admission_Update_DateTime"; 
 
 	@DataProvider(name = "AdmissionUpdateDateTimeDataProvider")
@@ -42,11 +44,13 @@ public class TC_005_AdmissionUpdateDateTimeTest extends AdmissionUpdateDateTimeP
 		JavascriptExecutor zoomIn = (JavascriptExecutor) driver;
 		zoomIn.executeScript("document.body.style.zoom='90%'");
 		
-		Admission_Update_DateTime.EnterErNumber("1508823");
+		Admission_Update_DateTime.EnterErNumber("1508815");
 		Admission_Update_DateTime.RadioBtnAdmissionDate("Radio Btn In Admission Date");
 		Admission_Update_DateTime.newAdmissionDateTime();  //New Admission Time
 		Thread.sleep(1500);
 		Admission_Update_DateTime.saveAdmissionDateAndTime("Change Current Patint Save Btn");
+		Registration.handleDynamicPopup("After Save Pop Message");
+
 		//driver.navigate().refresh();
 	}
 	
@@ -59,6 +63,6 @@ public class TC_005_AdmissionUpdateDateTimeTest extends AdmissionUpdateDateTimeP
 		JavascriptExecutor zoomIn = (JavascriptExecutor) driver;
 		zoomIn.executeScript("document.body.style.zoom='90%'");
 		
-		Admission_Update_DateTime.EnterErNumber("1508823");
+		Admission_Update_DateTime.EnterErNumber("1508815");
 	}
 }

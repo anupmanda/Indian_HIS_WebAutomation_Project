@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.emergency.test.TC_038_ER_Order_MARTest">
+      <class name="com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest">
         <methods>
-          <include name="ActiveMedication_ChangeScheduleInBackwardHoursTest" invocation-numbers="0"/>
           <include name="reportclosewindows"/>
-          <include name="ActiveMedication_ChangeScheduleTest" invocation-numbers="0"/>
+          <include name="EnterErNumberInChequeDueSettlementTest" invocation-numbers="0"/>
+          <include name="DueBillSettlementReceiptTest"/>
           <include name="launchBrowser"/>
           <include name="launch"/>
         </methods>
-      </class> <!-- com.test.emergency.test.TC_038_ER_Order_MARTest -->
+      </class> <!-- com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

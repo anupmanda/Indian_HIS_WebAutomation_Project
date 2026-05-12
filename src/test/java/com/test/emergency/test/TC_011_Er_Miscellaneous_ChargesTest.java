@@ -11,6 +11,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.test.emergency.page.Er_Miscellaneous_ChargesPage;
+import com.test.emergency.page.Er_RegistrationPage;
 import com.test.readdata.ExcelSheetDataProvider;
 
 
@@ -22,6 +23,7 @@ import com.test.readdata.ExcelSheetDataProvider;
 public class TC_011_Er_Miscellaneous_ChargesTest extends Er_Miscellaneous_ChargesPage{
 	
 	Er_Miscellaneous_ChargesPage MiscellaneousCharges = new Er_Miscellaneous_ChargesPage();
+	Er_RegistrationPage Registration = new Er_RegistrationPage();
 	
 	private final String sheetName_Miscellaneous = "Er_MiscellaneousCharges_Page";
 
@@ -38,7 +40,7 @@ public class TC_011_Er_Miscellaneous_ChargesTest extends Er_Miscellaneous_Charge
 			String Quenty_Text , String Select_Doctor_Name_Drp) 
 			throws IOException, InterruptedException, InvalidApplicationException {
 		
-		logger = extent.createTest("Check Current In Patient", "Er BillMiscellaneous Charges");
+		logger = extent.createTest("Check Current In Patient", "Er Miscellaneous Charges");
 		
 		MiscellaneousCharges.SelectByFacilityDrp(Dashborad_Facility_Drp);
 		MiscellaneousCharges.ClickOnErBillingDashboard("Click On Er Billing DashBorad" ,Ip_Billing_Station_Drp , "Station Yes Popup");
@@ -65,12 +67,12 @@ public class TC_011_Er_Miscellaneous_ChargesTest extends Er_Miscellaneous_Charge
 		
 		MiscellaneousCharges.clickOnPlushIcon("Click on Plush Icon");
 		MiscellaneousCharges.ClickOnsavebtnIcon_YesPop("Click on Save Btn") ;
+		Registration.handleDynamicPopup("After Save Bttun Popop");
 		
-		Thread.sleep(5000);
 		MiscellaneousCharges.RefreshMiscellaneousCharges("Refresh Page");		
 	}
 	
-	@Test(dataProvider = "MiscellaneousChargesDataProvider", priority = 3 , enabled = true)
+	@Test(dataProvider = "MiscellaneousChargesDataProvider", priority = 2 , enabled = true)
 	public void EnterUHID_IpNumber_MiscellaneousCharges(String Dashborad_Facility_Drp , String Ip_Billing_Station_Drp ,String Enter_Uhid , 
 			String  Enter_Ip_Number ,String From_Date , String To_Date, String Service_Drp , String  Description_Drp , String Amount_enter ,
 			String Quenty_Text , String Select_Doctor_Name_Drp) 
@@ -90,6 +92,7 @@ public class TC_011_Er_Miscellaneous_ChargesTest extends Er_Miscellaneous_Charge
 		
 		MiscellaneousCharges.clickOnPlushIcon("Click on Plush Icon");
 		MiscellaneousCharges.ClickOnsavebtnIcon_YesPop("Click on Save Btn") ;
+		Registration.handleDynamicPopup("After Save Bttun Popop");
 	}
 
 }

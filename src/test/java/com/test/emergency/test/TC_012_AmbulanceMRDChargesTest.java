@@ -10,6 +10,7 @@ import javax.management.InvalidApplicationException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.test.emergency.page.AmbulanceMRDChargesPage;
+import com.test.emergency.page.Er_RegistrationPage;
 import com.test.readdata.ExcelSheetDataProvider;
 import com.test.ui.helper.CommanUtill;
 
@@ -21,6 +22,7 @@ import com.test.ui.helper.CommanUtill;
 public class TC_012_AmbulanceMRDChargesTest extends AmbulanceMRDChargesPage{
 
 	AmbulanceMRDChargesPage AmbulanceMRDCharges = new AmbulanceMRDChargesPage();
+	Er_RegistrationPage Registration = new Er_RegistrationPage();
 	private final String sheetName_Ambulance = "Er_AmbulanceCharges_Page";
 
 	@DataProvider(name = "AmbulanceChargesDataProvider")
@@ -53,7 +55,7 @@ public class TC_012_AmbulanceMRDChargesTest extends AmbulanceMRDChargesPage{
 		
 		AmbulanceMRDCharges.ClickOnSeracPatientIcon("Click On Search Ambulance MRD Charges Current Patient In Table");
 		AmbulanceMRDCharges.SerachAndselectPatientInTable("Click On Ambulance MRD Charges Search In Table");
-		driver.navigate().refresh();
+		
 	}
 	
 	@Test(dataProvider = "AmbulanceChargesDataProvider", priority = 2 , enabled = true)
@@ -78,7 +80,7 @@ public class TC_012_AmbulanceMRDChargesTest extends AmbulanceMRDChargesPage{
 		AmbulanceMRDCharges.EnterItemQuentyAndReamrks(Item_Quenty , Remark + CommanUtill.randomDigits(3));
 		
 		AmbulanceMRDCharges.saveAmbulanceMRDchargesBtn("Save Ambulance MRD charges Btn" ,"Save Ambulance charges Yes Pop");	
-		Thread.sleep(1500);
+		Registration.handleDynamicPopup("After Save Bttun Popop");
 }
 	
 	@Test(dataProvider = "AmbulanceChargesDataProvider", priority = 3 , enabled = true)
@@ -90,6 +92,7 @@ public class TC_012_AmbulanceMRDChargesTest extends AmbulanceMRDChargesPage{
 		logger = extent.createTest("Ambulance MRD Charges ", "Er Ambulance MRD Charges Search In Table Test Funcility");
 		AmbulanceMRDCharges.SelectSubMenuTable("Click on Sub Menu Save Medical Record Charges Item");
 		AmbulanceMRDCharges.DeleteItem("Click On Delete Btn","Delete Yes Pop");
+		Registration.handleDynamicPopup("After Save Bttun Popop");
 	 }
 	
 }  

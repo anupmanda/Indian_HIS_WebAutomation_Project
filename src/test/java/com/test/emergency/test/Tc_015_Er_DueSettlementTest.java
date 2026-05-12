@@ -12,6 +12,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.test.emergency.page.Er_DueSettlementPage;
+import com.test.emergency.page.Er_RegistrationPage;
 import com.test.readdata.ExcelSheetDataProvider;
 
 /**
@@ -22,6 +23,7 @@ import com.test.readdata.ExcelSheetDataProvider;
 public class Tc_015_Er_DueSettlementTest extends Er_DueSettlementPage {
 	
 	Er_DueSettlementPage ErDueSettlement = new Er_DueSettlementPage();
+	Er_RegistrationPage Registration = new Er_RegistrationPage();
 	private final String sheetName_DueSettle = "Er_DueSettlement_Page";
 
 	@DataProvider(name = "DueSettlementDataProvider")
@@ -102,7 +104,7 @@ public class Tc_015_Er_DueSettlementTest extends Er_DueSettlementPage {
 		
 		Thread.sleep(1000);
 		ErDueSettlement.ClickOnSaveBtnAndYespop("Save Cash On Due Button" ,"Yes Save Pop");
-		Thread.sleep(1000);
+		Registration.handleDynamicPopup("Popup Message");
 		driver.navigate().refresh();
 		
 	}

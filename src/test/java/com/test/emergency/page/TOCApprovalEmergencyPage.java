@@ -28,9 +28,11 @@ public class TOCApprovalEmergencyPage extends GeneralBrowserSetting {
 	protected static  String Billing_Station_Drp = "//select[@id='Department']";
 	protected static  String Billing_Station_Yes_pop = "//a[@id='btn_yes_desh']";
 	protected static  String Billing_Station_No_pop = "//a[@id='btn_no_desh']";
+	
 	//=========================== TOC Approvel Emergency_page ================================
 	protected static  String Er_Billing_Meanu = "//span[normalize-space()='ER Billing']";
 	protected static  String TOC_Approvel_Page = "//a[normalize-space()='TOC Approval Emergency']";
+	
 	//==============================Save TOC =============================
 	protected static  String Enter_UHID = "//input[@id='_UHID']";
 	protected static  String Enter_IP_No = "//input[@id='_IPNO']";
@@ -43,6 +45,7 @@ public class TOCApprovalEmergencyPage extends GeneralBrowserSetting {
 	//==============================Check TOC Approval Date Wise =============================
 	protected static  String TOC_From_Date = "//input[@id='txtFromDate']";
 	protected static  String TOC_To_Date = "//input[@id='txtToDate']";
+	protected static  String Search_TOC_Mark_Patient = "//a[@id='DateWiseSearch']//i[@title='Search']";
 	protected static  String Check_Box_Approved_Orders = "//input[@id='chkApprovedOrders']";
 	
 
@@ -128,7 +131,7 @@ public class TOCApprovalEmergencyPage extends GeneralBrowserSetting {
 		}	
 	}
 	//==============================Check TOC Approval Date Wise =============================
-	public void FromDateFromCSearchApproved(String From_Date) throws IOException ,InterruptedException {
+	public void SeaechTOCApprovalFromeDate(String From_Date) throws IOException ,InterruptedException {
 
 		WebElement from_Date = driver.findElement(By.xpath(TOC_From_Date));
 		from_Date.sendKeys(Keys.CONTROL +"a");
@@ -136,7 +139,7 @@ public class TOCApprovalEmergencyPage extends GeneralBrowserSetting {
 		CommanUtill.textEnter(TOC_From_Date, From_Date);
 		from_Date.sendKeys(Keys.TAB);
 	}
-	public void FromDateTOCSearchApproved(String to_Date) throws IOException ,InterruptedException {
+	public void SeaechTOCApprovalToDate(String to_Date) throws IOException ,InterruptedException {
 
 		WebElement To_Date = driver.findElement(By.xpath(TOC_To_Date));
 		To_Date.sendKeys(Keys.CONTROL +"a");
@@ -152,4 +155,11 @@ public class TOCApprovalEmergencyPage extends GeneralBrowserSetting {
 		if(! check_Box.isSelected())
 		CommanUtill.clickFunction(Check_Box_Approved_Orders, CheckBox);
 	}
+	public void SearchTOCMarkPatientDateWise(String search_Icon)  throws IOException, InterruptedException {
+
+		WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Search_TOC_Mark_Patient)));
+		CommanUtill.clickFunction(Search_TOC_Mark_Patient, search_Icon);
+	}
+
 }

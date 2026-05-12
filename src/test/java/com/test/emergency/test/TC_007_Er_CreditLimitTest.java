@@ -32,43 +32,45 @@ public class TC_007_Er_CreditLimitTest extends ErCreditLimitPage {
 		return ExcelSheetDataProvider.getExcelData(sheetName);
 	}
 
-	@Test(dataProvider = "ErCreditLimitDataProvider" , priority = 4 ,enabled = true)	
+	@Test(dataProvider = "ErCreditLimitDataProvider" , priority = 4 , enabled = true)	
 	public void ErNewCreditLimitTest(String facility_drp , String Station_drp , String Enter_UHID , String Enter_Er_No , String Enter_New_Credit_Limit)
 					throws IOException, InvalidFormatException, InterruptedException{
 
 		logger = extent.createTest("New Credit Limit", "New Credit Limit Test Funcility");
-		New_CreditLimit.selectByFacilityDropdown(facility_drp);
-		New_CreditLimit.clickOnEmergencyDashbord_StationDrpYesPop("Emergency DashBord Button" , Station_drp, "Station On Yes Popup");
+		
+		//New_CreditLimit.selectByFacilityDropdown(facility_drp);
+		//New_CreditLimit.clickOnEmergencyDashbord_StationDrpYesPop("Emergency DashBord Button" , Station_drp, "Station On Yes Popup");
 
 		New_CreditLimit.ErCreditLimit("Emercency Button in side Icon","New Credit Limit Page");
 		
-		New_CreditLimit.EnterErNumber(Enter_Er_No);
-		//New_CreditLimit.EnterErNumber(CommanUtill.capturedERNO );
+		//New_CreditLimit.EnterErNumber(Enter_Er_No);
+		New_CreditLimit.EnterErNumber(CommanUtill.capturedERNO );
 		
-		New_CreditLimit.ExistingCreditLimit("Existing Credit Limit");
 		New_CreditLimit.enterNewCreditLimit(Enter_New_Credit_Limit);
 		New_CreditLimit.SaveNewCreditLimitBtn("Click On Save Btn" ,"Click On Yes Pop");
+		Registration.handleDynamicPopup("Meassage Popup");	
 	}
 	
-	@Test(priority = 5 ,enabled = true)
-	public void CheckCreditLimitChaneYaNot() 
+	@Test(dataProvider = "ErCreditLimitDataProvider" , priority = 5 ,enabled = true)
+	public void CheckCreditLimitChaneYaNot(String facility_drp , String Station_drp , String Enter_UHID , String Enter_Er_No , String Enter_New_Credit_Limit) 
 			throws IOException, InvalidFormatException, InterruptedException{
 		
 		logger = extent.createTest("New Credit Limit Updated", "New Credit Limit Updated Test Funcility");
 		Thread.sleep(2000);
-		New_CreditLimit.EnterErNumber(Enter_Er_No);
-		//New_CreditLimit.EnterErNumber(CommanUtill.capturedERNO );
+		//New_CreditLimit.EnterErNumber(Enter_Er_No);
+		
+		New_CreditLimit.EnterErNumber(CommanUtill.capturedERNO );
 	}
 	
 	private final String sheetName_ER_Registration = "ER_Registration_Page"; 
 
 	@DataProvider(name = "ExcelUniversalDataProvider")
 	public Object[][] getRegistrationData() throws IOException {
-		System.out.println("====Sheet Name_002 : " + sheetName_ER_Registration + "======");
+		System.out.println("====Sheet Name_02 : " + sheetName_ER_Registration + "======");
 		return ExcelSheetDataProvider.getExcelData(sheetName_ER_Registration);
 	}
 
-	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1 ,enabled = false)	
+	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 1 ,enabled = true)	
 	public void erDemogrphicDetailsTest(String facility_drp, String Station_drp, String title_drp, String First_Name, String 
 			Middle_Name, String Last_Name,	String gender_drp, String Enter_DOB, String enter_Age, String age_type, String Father_Name ,
 			String Spouse_Name ,  String MaritalStatus_drp, String Address, String City_Town_Drp, String Locality_po_Drp,String Other_Locality,
@@ -124,7 +126,7 @@ public class TC_007_Er_CreditLimitTest extends ErCreditLimitPage {
 		Registration.CheckBoxPatientFileRequest("File Req MRD.");
 	}
 
-	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 2 ,enabled = false)	
+	@Test(dataProvider = "ExcelUniversalDataProvider" , priority = 2 ,enabled = true)	
 	public void ErCompanyInsuranceDetailsTest(String facility_drp, String Station_drp, String title_drp, String First_Name, String 
 			Middle_Name, String Last_Name,	String gender_drp, String Enter_DOB, String enter_Age, String age_type, String Father_Name ,
 			String Spouse_Name ,  String MaritalStatus_drp, String Address, String City_Town_Drp, String Locality_po_Drp,String Other_Locality,
@@ -156,7 +158,7 @@ public class TC_007_Er_CreditLimitTest extends ErCreditLimitPage {
 		Registration.EnterPerDay(Per_Day);
 		
 	}
-	@Test(priority = 3 ,enabled = false)
+	@Test(priority = 3 ,enabled = true)
 	public void SaveEmergencyPatientTest() 
 			throws IOException, InvalidFormatException, InterruptedException{
 

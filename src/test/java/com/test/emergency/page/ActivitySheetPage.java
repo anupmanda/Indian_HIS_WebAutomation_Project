@@ -20,7 +20,7 @@ import com.test.ui.helper.CommanUtill;
  * 19-Mar-2026
  */
 public class ActivitySheetPage extends GeneralBrowserSetting {
-	
+
 	protected static String facility = "//select[@id='Facility']";
 	protected static String emergency_dashbord = "//li[@id='btn_Emergency']";
 	protected static String department_drp = "//select[@id='Department']";
@@ -28,20 +28,28 @@ public class ActivitySheetPage extends GeneralBrowserSetting {
 
 	protected static String emergency_side_button = "//span[normalize-space()='ER Registration']";
 	protected static String Activity_Sheet = "//a[normalize-space()='Activity Sheet']";
-	
+
 	protected static String Enter_UHID = "//input[@id='txtuhid']";
 	protected static String Enter_Er_No = "//input[@id='txterno']";
 	protected static String From_Date = "//input[@id='txtfrmdateactivity']";
 	protected static String To_Date = "//input[@id='txtodateact']";
 	protected static String Service_Name  = "//select[@id='ddlServiceName']";
 	protected static String Search_Patient = "//a[@id='btnPrintActivitySheet']//i[@class='fa fa-search']";
-	
-	
-	
-	
-	
-	
-	
+
+	//====================== Search Activity Sheet ===============================
+
+	protected static String Search_Activity_Sheet = "//a[@id='btnsearcherno']//i[@title='Search']";
+	protected static String Current_patients_Radio_Btn = "//input[@id='rbCurrentPatents']";
+	protected static String All_Ward_Check_Box = "//input[@id='cbAllWards']";
+	protected static String All_Radio_Btn = "//input[@id='rbAll']";
+	protected static String Admission_Discharge_Check_Box = "//input[@id='cbAdmission']";
+	protected static String Search_Frome_Date = "//input[@id='txtadmitDate']";
+	protected static String Search_To_Date = "//input[@id='txtadmittodate']";
+	protected static String All_Search_Btn = "//a[@id='search_Emergency']//i[@class='fa fa-search']";
+
+	protected static String Find_Patient_Pop_InSub_Table = "//table[@id='searchBillingTable']//tbody//tr[position()=2]";
+
+
 	public void selectByFacilityDropdown(String fieldName) throws IOException, InterruptedException {
 
 		CommanUtill.dropdownSelectByVisibleText(facility, fieldName);
@@ -59,49 +67,126 @@ public class ActivitySheetPage extends GeneralBrowserSetting {
 		CommanUtill.clickFunction(emergency_side_button, emergency_btn);
 		CommanUtill.clickFunction(Activity_Sheet, Activity_page);
 	}
-	
+
 	public void EnterUHID(String uhid_enter) throws IOException, InterruptedException { 
-		
+
 		WebElement uhid = driver.findElement(By.xpath(Enter_UHID));
 		CommanUtill.textEnter(Enter_UHID, uhid_enter);
 		uhid.sendKeys(Keys.ENTER);
 	}
-    public void EnterErNumber(String er_enter) throws IOException, InterruptedException { 
-		
+	public void EnterErNumber(String er_enter) throws IOException, InterruptedException { 
+
 		WebElement er = driver.findElement(By.xpath(Enter_Er_No));
 		CommanUtill.textEnter(Enter_Er_No, er_enter);
 		er.sendKeys(Keys.ENTER);
 	}
-    public void EnterFromeAndToDate(String From , String To) throws IOException, InterruptedException { 
-    	
-    	WebElement fromdate = driver.findElement(By.xpath(From_Date));
-    	fromdate.sendKeys(Keys.CONTROL + "a");
-    	fromdate.sendKeys(Keys.DELETE);
-    	CommanUtill.textEnter(From_Date, From);
-    	fromdate.sendKeys(Keys.TAB);
-    	
-    	WebElement todate = driver.findElement(By.xpath(To_Date));
-    	todate.sendKeys(Keys.CONTROL + "a");
-    	todate.sendKeys(Keys.DELETE);
-    	CommanUtill.textEnter(To_Date, To);
-    	todate.sendKeys(Keys.TAB);
-    }
-    public void selectByServiceNameDrp(String Service_Drp) throws IOException, InterruptedException { 
-    	
-    	WebDriverWait Service = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	Service.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Service_Name)));
-    	CommanUtill.dropdownSelectByVisibleText(Service_Name, Service_Drp);
-    }
-    
-   public void SearchActivitySheetBtn(String search_icon) throws IOException, InterruptedException { 
-    	
-    	WebDriverWait Service = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	Service.until(ExpectedConditions.elementToBeClickable(By.xpath(Search_Patient)));
-    	CommanUtill.clickFunction(Search_Patient, search_icon);
-    }
-    
-	
-	
-	
+	public void ServiceEnterFrome(String From) throws IOException, InterruptedException { 
+
+		WebElement fromdate = driver.findElement(By.xpath(From_Date));
+		fromdate.sendKeys(Keys.CONTROL + "a");
+		fromdate.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(From_Date, From);
+		fromdate.sendKeys(Keys.TAB);
+	}
+	public void ServiceToDate (String To) throws IOException, InterruptedException { 
+		WebElement todate = driver.findElement(By.xpath(To_Date));
+		todate.sendKeys(Keys.CONTROL + "a");
+		todate.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(To_Date, To);
+		todate.sendKeys(Keys.TAB);
+	}
+	public void selectByServiceNameDrp(String Service_Drp) throws IOException, InterruptedException { 
+
+		WebDriverWait Service = new WebDriverWait(driver, Duration.ofSeconds(10));
+		Service.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Service_Name)));
+		CommanUtill.dropdownSelectByVisibleText(Service_Name, Service_Drp);
+	}
+
+	public void SearchActivitySheetBtn(String search_icon) throws IOException, InterruptedException { 
+
+		WebDriverWait Service = new WebDriverWait(driver, Duration.ofSeconds(10));
+		Service.until(ExpectedConditions.elementToBeClickable(By.xpath(Search_Patient)));
+		CommanUtill.clickFunction(Search_Patient, search_icon);
+	}
+	//====================== Search Activity Sheet ===============================
+
+	public void FindPatientInTablePopBtn(String search_icon) throws IOException, InterruptedException { 
+
+		WebDriverWait search = new WebDriverWait(driver, Duration.ofSeconds(10));
+		search.until(ExpectedConditions.elementToBeClickable(By.xpath(Search_Activity_Sheet)));
+		CommanUtill.clickFunction(Search_Activity_Sheet, search_icon);
+	}
+	public void FindPatient_AllRadioBtn(String All) throws IOException, InterruptedException { 
+
+		WebElement Radio_Btn = driver.findElement(By.xpath(All_Radio_Btn));
+		if(! Radio_Btn.isSelected()) {
+			CommanUtill.clickFunction(All_Radio_Btn, All);
+		}
+	}
+	public void FindPatient_CurrentPatientsRadioBtn(String Current_Patient) throws IOException, InterruptedException { 
+
+		WebElement Radio_Btn = driver.findElement(By.xpath(Current_patients_Radio_Btn));
+		if(! Radio_Btn.isSelected()) {
+			CommanUtill.clickFunction(Current_patients_Radio_Btn, Current_Patient);
+		}
+	}
+	public void FindPatient_AllWardCheckBox(String All_Ward) throws IOException, InterruptedException { 
+
+		WebElement check_Box = driver.findElement(By.xpath(All_Ward_Check_Box));
+		if(! check_Box.isSelected()) {
+			CommanUtill.clickFunction(All_Ward_Check_Box, All_Ward);
+		}
+	}
+	public void FindPatient_AdmissionDischargeCheckBox(String AdmissionDischarge) throws IOException, InterruptedException { 
+
+		WebElement check_Box = driver.findElement(By.xpath(Admission_Discharge_Check_Box));
+		if(! check_Box.isSelected()) {
+			CommanUtill.clickFunction(Admission_Discharge_Check_Box, AdmissionDischarge);
+		}
+	}
+	public void SearchPatientEnterFrome(String FromDate) throws IOException, InterruptedException { 
+
+		WebElement fromdate = driver.findElement(By.xpath(Search_Frome_Date));
+		fromdate.sendKeys(Keys.CONTROL + "a");
+		fromdate.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(Search_Frome_Date, FromDate);
+		fromdate.sendKeys(Keys.TAB);
+	}	
+	public void SearchPatientEnterToDate(String ToDate) throws IOException, InterruptedException { 
+
+		WebElement todate = driver.findElement(By.xpath(Search_To_Date));
+		todate.sendKeys(Keys.CONTROL + "a");
+		todate.sendKeys(Keys.DELETE);
+		CommanUtill.textEnter(Search_To_Date, ToDate);
+		todate.sendKeys(Keys.TAB);
+	}
+	public void FindCurrentPatientBtn (String search_icon) throws IOException, InterruptedException { 
+
+		WebDriverWait search = new WebDriverWait(driver, Duration.ofSeconds(10));
+		search.until(ExpectedConditions.elementToBeClickable(By.xpath(All_Search_Btn)));
+		CommanUtill.clickFunction(All_Search_Btn, search_icon);
+	}
+	public void FindPatientInSubTablePop(String table) throws IOException, InterruptedException {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Find_Patient_Pop_InSub_Table)));
+
+		String rowData = driver.findElement(By.xpath(Find_Patient_Pop_InSub_Table)).getText().replace("\n", " | ");
+
+		String finalData = "===== Current In Patient Sub Table Row Data ===== | " + rowData;
+		System.out.println(finalData);
+		logger.info(finalData);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Find_Patient_Pop_InSub_Table)));
+		CommanUtill.clickFunction(Find_Patient_Pop_InSub_Table, table);
+
+	}
+
+
+
+
+
+
+
 
 }

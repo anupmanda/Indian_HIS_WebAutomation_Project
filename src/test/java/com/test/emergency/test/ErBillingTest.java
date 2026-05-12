@@ -441,4 +441,15 @@ public class ErBillingTest extends ErBillingPage {
 		Er_Billing.CloseFRRODetailsPop("Close FRRO Details Pop");
 	}
 	
+	@Test(priority = 23 ,enabled = true)
+	public void CancelBillSettlemetTest()throws IOException, InvalidFormatException, InterruptedException{
+		
+		logger = extent.createTest("Cancel Bill Settlemt ", "Cancel Bill Settlemet Test Funcility");
+		
+		Er_Billing.ClickOnSettlementBtn("Click On Bill Settlement Btn");
+		Er_Billing.CancelBillSettlementBtn("Click On Cancel Bill Settlemt Btn");
+		Er_Billing.CancelBillSettlement_AuthDrp_RemarksText(5 ,"Cancel Bill Settlement" ,"Cancel Bill Settlemet Yes Pop");
+		Er_Billing.CloseBillSettlementPop("Close Bill Settlemet Pop");
+	
+	}
     }
