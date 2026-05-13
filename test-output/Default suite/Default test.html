@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>18/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue May 12 17:45:31 IST 2026</td>
+<td>Started on:</td><td>Wed May 13 15:43:28 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>151 seconds (151645 ms)</td>
+<tr><td>Total time:</td><td>461 seconds (461862 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,93 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.PrintCompletedOrderTest()'><b>PrintCompletedOrderTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id=&apos;investigationlist&apos;]//tbody//tr[position()=1] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 148.0.7778.97, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\ANUP~1.DES\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59827}, goog:processID: 5332, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59827/devtoo..., se:cdpVersion: 148.0.7778.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3c51d4646454f6945bc0e26f1d8c3ca
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.test.emergency.page.Er_OrderPage.ClickOnCompletedOrderTable(Er_OrderPage.java:473)
+	at com.test.emergency.test.TC_017_Er_OrderTest.PrintCompletedOrderTest(TC_017_Er_OrderTest.java:128)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1163336956", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1163336956'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id=&apos;investigationlist&apos;]//tbody//tr[position()=1] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 148.0.7778.97, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\ANUP~1.DES\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59827}, goog:processID: 5332, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59827/devtoo..., se:cdpVersion: 148.0.7778.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3c51d4646454f6945bc0e26f1d8c3ca
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.test.emergency.page.Er_OrderPage.ClickOnCompletedOrderTable(Er_OrderPage.java:473)
+	at com.test.emergency.test.TC_017_Er_OrderTest.PrintCompletedOrderTest(TC_017_Er_OrderTest.java:128)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>31</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,35 +163,95 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest.DueBillSettlementReceiptTest()'><b>DueBillSettlementReceiptTest</b><br>Test class: com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest</td>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.CancelPendingDrugsOrderTest()'><b>CancelPendingDrugsOrderTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>17</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.PendingOrderSaveTest()'><b>PendingOrderSaveTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>10</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.NewRetunDrugTestFuncility()'><b>NewRetunDrugTestFuncility</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>45</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.GeneralOrderEntryTest()'><b>GeneralOrderEntryTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid, 2d echo, avin, 2, Procedure Charges, Employee101, Dialysis, Anup Gen Order Remarks, MATERIAL CENTRAL STORE, 00007-KAILASH, ABHIJEET SAWANT, ASHU_DOLO_650 CLINICAL NAME, ORAL, BD., 2, day, 3, Stat, Anup Drug Order, Application, 5, Normal, Discharge on Request, Er Discharged</td>
 <td></td>
 <td>19</td>
-<td>com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest@60a2630a</td></tr>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
 <tr>
-<td title='com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest.EnterErNumberInChequeDueSettlementTest()'><b>EnterErNumberInChequeDueSettlementTest</b><br>Test class: com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest<br>Parameters: SANITY HOSPITAL, Emergency, 31/03/2026, 02/04/2026, Healthindia Allied Services Pvt Ltd, 20/03/2026, 02/04/2026, 1508851, 123456, 02/04/2026, Airtel payment Bank, Noida, 10, 1, Anup Due Settlement</td>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.PharmacyIpIssueTest()'><b>PharmacyIpIssueTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, MATERIAL CENTRAL STORE</td>
 <td></td>
-<td>28</td>
-<td>com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest@60a2630a</td></tr>
+<td>69</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
 <tr>
-<td title='com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest.DischargeIconTest()'><b>DischargeIconTest</b><br>Test class: com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest<br>Parameters: SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Healthindia Allied Services Pvt Ltd, 123, 5241, 10, Amount, 2, 123456, 26/03/2026, 9876542, 524163, 50, 1, 52416352, Punb47521, Noida, fhg, No Data, 10, 50, 12456, Brother, Anup, Normal, Discharge on Request, Anup</td>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.SearchOccupiedPatientTest_2()'><b>SearchOccupiedPatientTest_2</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid, 2d echo, avin, 2, Procedure Charges, Employee101, Dialysis, Anup Gen Order Remarks, MATERIAL CENTRAL STORE, 00007-KAILASH, ABHIJEET SAWANT, ASHU_DOLO_650 CLINICAL NAME, ORAL, BD., 2, day, 3, Stat, Anup Drug Order, Application, 5, Normal, Discharge on Request, Er Discharged</td>
+<td></td>
+<td>20</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.InvestigationsOrderTest()'><b>InvestigationsOrderTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid, 2d echo, avin, 2, Procedure Charges, Employee101, Dialysis, Anup Gen Order Remarks, MATERIAL CENTRAL STORE, 00007-KAILASH, ABHIJEET SAWANT, ASHU_DOLO_650 CLINICAL NAME, ORAL, BD., 2, day, 3, Stat, Anup Drug Order, Application, 5, Normal, Discharge on Request, Er Discharged</td>
+<td></td>
+<td>25</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.DeleteGeneralOrderEntryTest()'><b>DeleteGeneralOrderEntryTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>8</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.SaveGeneralOrderEntryTest()'><b>SaveGeneralOrderEntryTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>4</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.NewDrugOrderTest()'><b>NewDrugOrderTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid, 2d echo, avin, 2, Procedure Charges, Employee101, Dialysis, Anup Gen Order Remarks, MATERIAL CENTRAL STORE, 00007-KAILASH, ABHIJEET SAWANT, ASHU_DOLO_650 CLINICAL NAME, ORAL, BD., 2, day, 3, Stat, Anup Drug Order, Application, 5, Normal, Discharge on Request, Er Discharged</td>
+<td></td>
+<td>62</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.PharmacyIpRetunTest()'><b>PharmacyIpRetunTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, MATERIAL CENTRAL STORE</td>
+<td></td>
+<td>21</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.CheckAndVerifyPendingNewRetunDrugTestFuncility()'><b>CheckAndVerifyPendingNewRetunDrugTestFuncility</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>1</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.CancleDischargedIntimationTestFuncility()'><b>CancleDischargedIntimationTestFuncility</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>13</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.PrintPendingDrugsOrderTest()'><b>PrintPendingDrugsOrderTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>33</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.CheckVerifyDrugsIssuedTest()'><b>CheckVerifyDrugsIssuedTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest</td>
+<td></td>
+<td>2</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.SearchOccupiedPatientTest_3()'><b>SearchOccupiedPatientTest_3</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid, 2d echo, avin, 2, Procedure Charges, Employee101, Dialysis, Anup Gen Order Remarks, MATERIAL CENTRAL STORE, 00007-KAILASH, ABHIJEET SAWANT, ASHU_DOLO_650 CLINICAL NAME, ORAL, BD., 2, day, 3, Stat, Anup Drug Order, Application, 5, Normal, Discharge on Request, Er Discharged</td>
+<td></td>
+<td>19</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.SearchOccupiedPatientTest()'><b>SearchOccupiedPatientTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid, 2d echo, avin, 2, Procedure Charges, Employee101, Dialysis, Anup Gen Order Remarks, MATERIAL CENTRAL STORE, 00007-KAILASH, ABHIJEET SAWANT, ASHU_DOLO_650 CLINICAL NAME, ORAL, BD., 2, day, 3, Stat, Anup Drug Order, Application, 5, Normal, Discharge on Request, Er Discharged</td>
+<td></td>
+<td>20</td>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
+<tr>
+<td title='com.test.emergency.test.TC_017_Er_OrderTest.EmergencyDischargeIntimationTest()'><b>EmergencyDischargeIntimationTest</b><br>Test class: com.test.emergency.test.TC_017_Er_OrderTest<br>Parameters: SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid, 2d echo, avin, 2, Procedure Charges, Employee101, Dialysis, Anup Gen Order Remarks, MATERIAL CENTRAL STORE, 00007-KAILASH, ABHIJEET SAWANT, ASHU_DOLO_650 CLINICAL NAME, ORAL, BD., 2, day, 3, Stat, Anup Drug Order, Application, 5, Normal, Discharge on Request, Er Discharged</td>
 <td></td>
 <td>12</td>
-<td>com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest@60a2630a</td></tr>
-<tr>
-<td title='com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest.EnterErNumberAndUHID()'><b>EnterErNumberAndUHID</b><br>Test class: com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest<br>Parameters: SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Healthindia Allied Services Pvt Ltd, 123, 5241, 10, Amount, 2, 123456, 26/03/2026, 9876542, 524163, 50, 1, 52416352, Punb47521, Noida, fhg, No Data, 10, 50, 12456, Brother, Anup, Normal, Discharge on Request, Anup</td>
-<td></td>
-<td>7</td>
-<td>com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest@60a2630a</td></tr>
-<tr>
-<td title='com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest.erDemogrphicDetailsTest()'><b>erDemogrphicDetailsTest</b><br>Test class: com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest<br>Parameters: SANITY HOSPITAL, Emergency, Mr., Sagar, Shama, Testing, Male, 19/09/2003, 23, Year(s), Hello, Hii, Single, Mauritania, Automaion, Testing, Hidden, 12345, Arabic, Emergency Services, Employee296, self, 5242521, 1, 963852, Anup@gmail.com, Hindu, Business, Bachleors, 91, 8565421589, Parwati, ABHA, 5415, PASSPORT NUMBER, ABC, Administration, Kushal, A (-ve), Doctor Referral, ER, EMERGENCY OPD(GROUND FLOOR), Normal, Good, Triage Level 1, No, abcdef, Fibroscan Scheme, Divyansh company, Divyansh Pvt Ltd, Healthindia Allied Services Pvt Ltd, 12345, 65432, 5, 2, 20, 17/03/2026, No Data, 10, 3, 12, 13, Anup, 1, Noida, Abhanpur, shahabad, Delhi, 8574965412, 1236547890, Anup_, Assault including Domestic, Grievance injury, 4512, Bus, Noida, Noida, Anup, 8574129632, 24514, Bhopal, 18/03/2026, 18/03/2026, Xyz, Pqr, Emergency, Anup, Brother, 8527419630, 2583697410, Shiv Sankar, 6352417890, DEUS1245, Ambulanc Othetr Details Test</td>
-<td></td>
-<td>65</td>
-<td>com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest@60a2630a</td></tr>
-<tr>
-<td title='com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest.SaveEmergencyPatientTest()'><b>SaveEmergencyPatientTest</b><br>Test class: com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest</td>
-<td></td>
-<td>5</td>
-<td>com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest@60a2630a</td></tr>
+<td>com.test.emergency.test.TC_017_Er_OrderTest@3f792b9b</td></tr>
 </table><p>
 </body>
 </html>

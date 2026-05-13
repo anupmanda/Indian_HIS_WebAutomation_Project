@@ -42,7 +42,7 @@ public class Er_DepositRefundPage extends GeneralBrowserSetting {
 	protected static  String Frome_Date = "//input[@id='txtadmitDate']";
 	protected static  String to_Date = "//input[@id='txtadmittodate']";
 	protected static  String Find_Patient = "//a[@id='search_Emergency']//i[@class='fa fa-search']";
-	protected static  String Click_Current_Patient_Table = "//table[@id='searchBillingTable']//tbody//tr[1]";
+	protected static  String Click_Current_Patient_Table = "//table[@id='searchBillingTable']//tbody//tr[position()=2]";
 
 	//============================ Deposit Refound ====================================
 	protected static  String Refresh_Icon = "//a[@id='Refresh']//i[@class='fa fa-refresh']";
@@ -270,7 +270,40 @@ public class Er_DepositRefundPage extends GeneralBrowserSetting {
 
 		CommanUtill.clickFunction(Click_Current_Patient_Table, click_Patient);
 	}
+	
+	// Global Variable Store
+	public static String patientSlNo;
+	public static String patientUHID;
+	public static String patientIPNo;
+	public static String patientTitleName;
 
+	public void ClickOnCurrentInPatientInTable(String click_Patient) throws IOException, InterruptedException {
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Click_Current_Patient_Table)));
+	    WebElement currentRow = driver.findElement(By.xpath(Click_Current_Patient_Table));
+
+	    patientSlNo = currentRow.findElement(By.xpath("./td[1]")).getText().trim();
+	    patientUHID = currentRow.findElement(By.xpath("./td[2]")).getText().trim();
+	    patientIPNo = currentRow.findElement(By.xpath("./td[3]")).getText().trim();
+	    patientTitleName = currentRow.findElement(By.xpath("./td[@title]")).getAttribute("title").trim();
+
+	    logger.info("================= Search Patient In Table ====================");
+	    
+	    logger.info("S.No : " + patientSlNo);
+	    logger.info("UHID : " + patientUHID);
+	    logger.info("IP No : " + patientIPNo);
+	    logger.info("Patient Title : " + patientTitleName);
+
+	    System.out.println("========== Search Patient Details ==========");
+	    System.out.println("S.No : " + patientSlNo);
+	    System.out.println("UHID : " + patientUHID);
+	    System.out.println("IP No : " + patientIPNo);
+	    System.out.println("Patient Title : " + patientTitleName);
+
+	    CommanUtill.clickFunction(Click_Current_Patient_Table, click_Patient);
+	}
+	
 	public void ClickOnRefreshBtn(String Refresh) throws IOException , InterruptedException {
 
 		if(CommanUtill.isElementPresent(Refresh_Icon)) {

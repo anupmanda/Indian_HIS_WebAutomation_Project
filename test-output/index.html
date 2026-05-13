@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse-369865743\testng-customsuite.xml</span>
+                    <span>C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse--772392962\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">19 methods, 1 failed,   18 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="PrintCompletedOrderTest">PrintCompletedOrderTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,32 +117,92 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest" class="method navigator-link" hash-for-method="DischargeIconTest(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)">DischargeIconTest(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="CancelPendingDrugsOrderTest">CancelPendingDrugsOrderTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest" class="method navigator-link" hash-for-method="DueBillSettlementReceiptTest">DueBillSettlementReceiptTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="CancleDischargedIntimationTestFuncility">CancleDischargedIntimationTestFuncility</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest" class="method navigator-link" hash-for-method="EnterErNumberAndUHID(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)">EnterErNumberAndUHID(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="CheckAndVerifyPendingNewRetunDrugTestFuncility">CheckAndVerifyPendingNewRetunDrugTestFuncility</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest" class="method navigator-link" hash-for-method="EnterErNumberInChequeDueSettlementTest(SANITY HOSPITAL, Emergency, 31/03/2026, 02/04/2026, Healthindia Allied Services Pvt Ltd, 20/03/2026,...)">EnterErNumberInChequeDueSettlementTest(SANITY HOSPITAL, Emergency, 31/03/2026, 02/04/2026, Healthindia Allied Services Pvt Ltd, 20/03/2026,...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="CheckVerifyDrugsIssuedTest">CheckVerifyDrugsIssuedTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest" class="method navigator-link" hash-for-method="SaveEmergencyPatientTest">SaveEmergencyPatientTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="DeleteGeneralOrderEntryTest">DeleteGeneralOrderEntryTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest" class="method navigator-link" hash-for-method="erDemogrphicDetailsTest(SANITY HOSPITAL, Emergency, Mr., Sagar, Shama, Testing, Male, 19/09/2003, 23, Year(s), Hello, Hii, S...)">erDemogrphicDetailsTest(SANITY HOSPITAL, Emergency, Mr., Sagar, Shama, Testing, Male, 19/09/2003, 23, Year(s), Hello, Hii, S...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="EmergencyDischargeIntimationTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">EmergencyDischargeIntimationTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="GeneralOrderEntryTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">GeneralOrderEntryTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="InvestigationsOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">InvestigationsOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="NewDrugOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">NewDrugOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="NewRetunDrugTestFuncility">NewRetunDrugTestFuncility</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="PendingOrderSaveTest">PendingOrderSaveTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="PharmacyIpIssueTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)">PharmacyIpIssueTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="PharmacyIpRetunTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)">PharmacyIpRetunTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="PrintPendingDrugsOrderTest">PrintPendingDrugsOrderTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="SaveGeneralOrderEntryTest">SaveGeneralOrderEntryTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="SearchOccupiedPatientTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">SearchOccupiedPatientTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="SearchOccupiedPatientTest_2(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">SearchOccupiedPatientTest_2(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.test.emergency.test.TC_017_Er_OrderTest" class="method navigator-link" hash-for-method="SearchOccupiedPatientTest_3(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">SearchOccupiedPatientTest_3(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -143,56 +217,198 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.test.emergency.test.TC_017_Er_OrderTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="DischargeIconTest(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)">
-                  </a> <!-- DischargeIconTest(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...) -->
-                  <span class="method-name">DischargeIconTest</span>
-                  <span class="parameters">(SANITY HOSPITAL,Emergency,19/03/2026,23/03/2026,1508833,Divyansh company,Divyansh Pvt Ltd,Healthindia Allied Services Pvt Ltd,123,5241,10,Amount,2,123456,26/03/2026,9876542,524163,50,1,52416352,Punb47521,Noida,fhg,No Data,10,50,12456,Brother,Anup,Normal,Discharge on Request,Anup)</span>
+                  <a name="PrintCompletedOrderTest">
+                  </a> <!-- PrintCompletedOrderTest -->
+                  <span class="method-name">PrintCompletedOrderTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //table[@id=&apos;investigationlist&apos;]//tbody//tr[position()=1] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 148.0.7778.97, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\ANUP~1.DES\AppData...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59827}, goog:processID: 5332, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59827/devtoo..., se:cdpVersion: 148.0.7778.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3c51d4646454f6945bc0e26f1d8c3ca
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.test.emergency.page.Er_OrderPage.ClickOnCompletedOrderTable(Er_OrderPage.java:473)
+	at com.test.emergency.test.TC_017_Er_OrderTest.PrintCompletedOrderTest(TC_017_Er_OrderTest.java:128)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.emergency.test.TC_017_Er_OrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CancelPendingDrugsOrderTest">
+                  </a> <!-- CancelPendingDrugsOrderTest -->
+                  <span class="method-name">CancelPendingDrugsOrderTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="DueBillSettlementReceiptTest">
-                  </a> <!-- DueBillSettlementReceiptTest -->
-                  <span class="method-name">DueBillSettlementReceiptTest</span>
+                  <a name="CancleDischargedIntimationTestFuncility">
+                  </a> <!-- CancleDischargedIntimationTestFuncility -->
+                  <span class="method-name">CancleDischargedIntimationTestFuncility</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="EnterErNumberAndUHID(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)">
-                  </a> <!-- EnterErNumberAndUHID(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...) -->
-                  <span class="method-name">EnterErNumberAndUHID</span>
-                  <span class="parameters">(SANITY HOSPITAL,Emergency,19/03/2026,23/03/2026,1508833,Divyansh company,Divyansh Pvt Ltd,Healthindia Allied Services Pvt Ltd,123,5241,10,Amount,2,123456,26/03/2026,9876542,524163,50,1,52416352,Punb47521,Noida,fhg,No Data,10,50,12456,Brother,Anup,Normal,Discharge on Request,Anup)</span>
+                  <a name="CheckAndVerifyPendingNewRetunDrugTestFuncility">
+                  </a> <!-- CheckAndVerifyPendingNewRetunDrugTestFuncility -->
+                  <span class="method-name">CheckAndVerifyPendingNewRetunDrugTestFuncility</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="EnterErNumberInChequeDueSettlementTest(SANITY HOSPITAL, Emergency, 31/03/2026, 02/04/2026, Healthindia Allied Services Pvt Ltd, 20/03/2026,...)">
-                  </a> <!-- EnterErNumberInChequeDueSettlementTest(SANITY HOSPITAL, Emergency, 31/03/2026, 02/04/2026, Healthindia Allied Services Pvt Ltd, 20/03/2026,...) -->
-                  <span class="method-name">EnterErNumberInChequeDueSettlementTest</span>
-                  <span class="parameters">(SANITY HOSPITAL,Emergency,31/03/2026,02/04/2026,Healthindia Allied Services Pvt Ltd,20/03/2026,02/04/2026,1508851,123456,02/04/2026,Airtel payment Bank,Noida,10,1,Anup Due Settlement)</span>
+                  <a name="CheckVerifyDrugsIssuedTest">
+                  </a> <!-- CheckVerifyDrugsIssuedTest -->
+                  <span class="method-name">CheckVerifyDrugsIssuedTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="SaveEmergencyPatientTest">
-                  </a> <!-- SaveEmergencyPatientTest -->
-                  <span class="method-name">SaveEmergencyPatientTest</span>
+                  <a name="DeleteGeneralOrderEntryTest">
+                  </a> <!-- DeleteGeneralOrderEntryTest -->
+                  <span class="method-name">DeleteGeneralOrderEntryTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="erDemogrphicDetailsTest(SANITY HOSPITAL, Emergency, Mr., Sagar, Shama, Testing, Male, 19/09/2003, 23, Year(s), Hello, Hii, S...)">
-                  </a> <!-- erDemogrphicDetailsTest(SANITY HOSPITAL, Emergency, Mr., Sagar, Shama, Testing, Male, 19/09/2003, 23, Year(s), Hello, Hii, S...) -->
-                  <span class="method-name">erDemogrphicDetailsTest</span>
-                  <span class="parameters">(SANITY HOSPITAL,Emergency,Mr.,Sagar,Shama,Testing,Male,19/09/2003,23,Year(s),Hello,Hii,Single,Mauritania,Automaion,Testing,Hidden,12345,Arabic,Emergency Services,Employee296,self,5242521,1,963852,Anup@gmail.com,Hindu,Business,Bachleors,91,8565421589,Parwati,ABHA,5415,PASSPORT NUMBER,ABC,Administration,Kushal,A (-ve),Doctor Referral,ER,EMERGENCY OPD(GROUND FLOOR),Normal,Good,Triage Level 1,No,abcdef,Fibroscan Scheme,Divyansh company,Divyansh Pvt Ltd,Healthindia Allied Services Pvt Ltd,12345,65432,5,2,20,17/03/2026,No Data,10,3,12,13,Anup,1,Noida,Abhanpur,shahabad,Delhi,8574965412,1236547890,Anup_,Assault including Domestic,Grievance injury,4512,Bus,Noida,Noida,Anup,8574129632,24514,Bhopal,18/03/2026,18/03/2026,Xyz,Pqr,Emergency,Anup,Brother,8527419630,2583697410,Shiv Sankar,6352417890,DEUS1245,Ambulanc Othetr Details Test)</span>
+                  <a name="EmergencyDischargeIntimationTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">
+                  </a> <!-- EmergencyDischargeIntimationTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...) -->
+                  <span class="method-name">EmergencyDischargeIntimationTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,EMERGENCY OPD(GROUND FLOOR),ER No,1508901,ABHIJEET SAWANT,Routine,abcd,Fluid,2d echo,avin,2,Procedure Charges,Employee101,Dialysis,Anup Gen Order Remarks,MATERIAL CENTRAL STORE,00007-KAILASH,ABHIJEET SAWANT,ASHU_DOLO_650 CLINICAL NAME,ORAL,BD.,2,day,3,Stat,Anup Drug Order,Application,5,Normal,Discharge on Request,Er Discharged)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="GeneralOrderEntryTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">
+                  </a> <!-- GeneralOrderEntryTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...) -->
+                  <span class="method-name">GeneralOrderEntryTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,EMERGENCY OPD(GROUND FLOOR),ER No,1508901,ABHIJEET SAWANT,Routine,abcd,Fluid,2d echo,avin,2,Procedure Charges,Employee101,Dialysis,Anup Gen Order Remarks,MATERIAL CENTRAL STORE,00007-KAILASH,ABHIJEET SAWANT,ASHU_DOLO_650 CLINICAL NAME,ORAL,BD.,2,day,3,Stat,Anup Drug Order,Application,5,Normal,Discharge on Request,Er Discharged)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="InvestigationsOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">
+                  </a> <!-- InvestigationsOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...) -->
+                  <span class="method-name">InvestigationsOrderTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,EMERGENCY OPD(GROUND FLOOR),ER No,1508901,ABHIJEET SAWANT,Routine,abcd,Fluid,2d echo,avin,2,Procedure Charges,Employee101,Dialysis,Anup Gen Order Remarks,MATERIAL CENTRAL STORE,00007-KAILASH,ABHIJEET SAWANT,ASHU_DOLO_650 CLINICAL NAME,ORAL,BD.,2,day,3,Stat,Anup Drug Order,Application,5,Normal,Discharge on Request,Er Discharged)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="NewDrugOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">
+                  </a> <!-- NewDrugOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...) -->
+                  <span class="method-name">NewDrugOrderTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,EMERGENCY OPD(GROUND FLOOR),ER No,1508901,ABHIJEET SAWANT,Routine,abcd,Fluid,2d echo,avin,2,Procedure Charges,Employee101,Dialysis,Anup Gen Order Remarks,MATERIAL CENTRAL STORE,00007-KAILASH,ABHIJEET SAWANT,ASHU_DOLO_650 CLINICAL NAME,ORAL,BD.,2,day,3,Stat,Anup Drug Order,Application,5,Normal,Discharge on Request,Er Discharged)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="NewRetunDrugTestFuncility">
+                  </a> <!-- NewRetunDrugTestFuncility -->
+                  <span class="method-name">NewRetunDrugTestFuncility</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PendingOrderSaveTest">
+                  </a> <!-- PendingOrderSaveTest -->
+                  <span class="method-name">PendingOrderSaveTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PharmacyIpIssueTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)">
+                  </a> <!-- PharmacyIpIssueTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE) -->
+                  <span class="method-name">PharmacyIpIssueTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,MATERIAL CENTRAL STORE)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PharmacyIpRetunTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)">
+                  </a> <!-- PharmacyIpRetunTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE) -->
+                  <span class="method-name">PharmacyIpRetunTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,MATERIAL CENTRAL STORE)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PrintPendingDrugsOrderTest">
+                  </a> <!-- PrintPendingDrugsOrderTest -->
+                  <span class="method-name">PrintPendingDrugsOrderTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SaveGeneralOrderEntryTest">
+                  </a> <!-- SaveGeneralOrderEntryTest -->
+                  <span class="method-name">SaveGeneralOrderEntryTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchOccupiedPatientTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">
+                  </a> <!-- SearchOccupiedPatientTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...) -->
+                  <span class="method-name">SearchOccupiedPatientTest</span>
+                  <span class="parameters">(SANITY HOSPITAL,EMERGENCY OPD(GROUND FLOOR),ER No,1508901,ABHIJEET SAWANT,Routine,abcd,Fluid,2d echo,avin,2,Procedure Charges,Employee101,Dialysis,Anup Gen Order Remarks,MATERIAL CENTRAL STORE,00007-KAILASH,ABHIJEET SAWANT,ASHU_DOLO_650 CLINICAL NAME,ORAL,BD.,2,day,3,Stat,Anup Drug Order,Application,5,Normal,Discharge on Request,Er Discharged)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchOccupiedPatientTest_2(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">
+                  </a> <!-- SearchOccupiedPatientTest_2(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...) -->
+                  <span class="method-name">SearchOccupiedPatientTest_2</span>
+                  <span class="parameters">(SANITY HOSPITAL,EMERGENCY OPD(GROUND FLOOR),ER No,1508901,ABHIJEET SAWANT,Routine,abcd,Fluid,2d echo,avin,2,Procedure Charges,Employee101,Dialysis,Anup Gen Order Remarks,MATERIAL CENTRAL STORE,00007-KAILASH,ABHIJEET SAWANT,ASHU_DOLO_650 CLINICAL NAME,ORAL,BD.,2,day,3,Stat,Anup Drug Order,Application,5,Normal,Discharge on Request,Er Discharged)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchOccupiedPatientTest_3(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)">
+                  </a> <!-- SearchOccupiedPatientTest_3(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...) -->
+                  <span class="method-name">SearchOccupiedPatientTest_3</span>
+                  <span class="parameters">(SANITY HOSPITAL,EMERGENCY OPD(GROUND FLOOR),ER No,1508901,ABHIJEET SAWANT,Routine,abcd,Fluid,2d echo,avin,2,Procedure Charges,Employee101,Dialysis,Anup Gen Order Remarks,MATERIAL CENTRAL STORE,00007-KAILASH,ABHIJEET SAWANT,ASHU_DOLO_650 CLINICAL NAME,ORAL,BD.,2,day,3,Stat,Anup Drug Order,Application,5,Normal,Discharge on Request,Er Discharged)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -200,7 +416,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse-369865743\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Anup.DESKTOP-V88DC5U\AppData\Local\Temp\testng-eclipse--772392962\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -209,7 +425,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest&quot;/&gt;
+      &lt;class name=&quot;com.test.emergency.test.TC_017_Er_OrderTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -249,36 +465,88 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(19);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'erDemogrphicDetailsTest')
-data.setCell(0, 2, 'com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest')
-data.setCell(0, 3, 65344);
+data.setCell(0, 1, 'PharmacyIpIssueTest')
+data.setCell(0, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(0, 3, 69330);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'EnterErNumberInChequeDueSettlementTest')
-data.setCell(1, 2, 'com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest')
-data.setCell(1, 3, 28036);
+data.setCell(1, 1, 'NewDrugOrderTest')
+data.setCell(1, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(1, 3, 62922);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'DueBillSettlementReceiptTest')
-data.setCell(2, 2, 'com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest')
-data.setCell(2, 3, 19627);
+data.setCell(2, 1, 'NewRetunDrugTestFuncility')
+data.setCell(2, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(2, 3, 45779);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'DischargeIconTest')
-data.setCell(3, 2, 'com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest')
-data.setCell(3, 3, 12063);
+data.setCell(3, 1, 'PrintPendingDrugsOrderTest')
+data.setCell(3, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(3, 3, 33182);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'EnterErNumberAndUHID')
-data.setCell(4, 2, 'com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest')
-data.setCell(4, 3, 7733);
+data.setCell(4, 1, 'PrintCompletedOrderTest')
+data.setCell(4, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(4, 3, 31501);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'SaveEmergencyPatientTest')
-data.setCell(5, 2, 'com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest')
-data.setCell(5, 3, 5800);
+data.setCell(5, 1, 'InvestigationsOrderTest')
+data.setCell(5, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(5, 3, 25286);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'PharmacyIpRetunTest')
+data.setCell(6, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(6, 3, 21476);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'SearchOccupiedPatientTest')
+data.setCell(7, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(7, 3, 20846);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'SearchOccupiedPatientTest_2')
+data.setCell(8, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(8, 3, 20037);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'SearchOccupiedPatientTest_3')
+data.setCell(9, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(9, 3, 19309);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'GeneralOrderEntryTest')
+data.setCell(10, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(10, 3, 19025);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'CancelPendingDrugsOrderTest')
+data.setCell(11, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(11, 3, 17649);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'CancleDischargedIntimationTestFuncility')
+data.setCell(12, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(12, 3, 13014);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'EmergencyDischargeIntimationTest')
+data.setCell(13, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(13, 3, 12398);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'PendingOrderSaveTest')
+data.setCell(14, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(14, 3, 10364);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'DeleteGeneralOrderEntryTest')
+data.setCell(15, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(15, 3, 8089);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'SaveGeneralOrderEntryTest')
+data.setCell(16, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(16, 3, 4774);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'CheckVerifyDrugsIssuedTest')
+data.setCell(17, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(17, 3, 2729);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'CheckAndVerifyPendingNewRetunDrugTestFuncility')
+data.setCell(18, 2, 'com.test.emergency.test.TC_017_Er_OrderTest')
+data.setCell(18, 3, 1333);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 7 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -304,62 +572,168 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.test.emergency.test.TC_009_Reg_Discharge_DueBillSrttled_ErBillingTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.test.emergency.test.TC_017_Er_OrderTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">launch</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">launchBrowser</span>
-                <span class="method-start">127 ms</span>
+                <span class="method-start">188 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">erDemogrphicDetailsTest(SANITY HOSPITAL, Emergency, Mr., Sagar, Shama, Testing, Male, 19/09/2003, 23, Year(s), Hello, Hii, S...)</span>
-                <span class="method-start">10350 ms</span>
+                <span class="method-name">SearchOccupiedPatientTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</span>
+                <span class="method-start">14229 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">75694 ms</span>
+                <span class="method-start">35103 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">SaveEmergencyPatientTest</span>
-                <span class="method-start">76365 ms</span>
+                <span class="method-name">InvestigationsOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</span>
+                <span class="method-start">37719 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">82165 ms</span>
+                <span class="method-start">63010 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">EnterErNumberAndUHID(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)</span>
-                <span class="method-start">82968 ms</span>
+                <span class="method-name">PendingOrderSaveTest</span>
+                <span class="method-start">63138 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">90703 ms</span>
+                <span class="method-start">73502 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">DischargeIconTest(SANITY HOSPITAL, Emergency, 19/03/2026, 23/03/2026, 1508833, Divyansh company, Divyansh Pvt Ltd, Hea...)</span>
-                <span class="method-start">91390 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">PrintCompletedOrderTest</span>
+                <span class="method-start">73598 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">103457 ms</span>
+                <span class="method-start">105111 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">DueBillSettlementReceiptTest</span>
-                <span class="method-start">103521 ms</span>
+                <span class="method-name">GeneralOrderEntryTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</span>
+                <span class="method-start">106278 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">123148 ms</span>
+                <span class="method-start">125303 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">EnterErNumberInChequeDueSettlementTest(SANITY HOSPITAL, Emergency, 31/03/2026, 02/04/2026, Healthindia Allied Services Pvt Ltd, 20/03/2026,...)</span>
-                <span class="method-start">123657 ms</span>
+                <span class="method-name">SaveGeneralOrderEntryTest</span>
+                <span class="method-start">125399 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">reportclosewindows</span>
-                <span class="method-start">151699 ms</span>
+                <span class="method-start">130173 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">DeleteGeneralOrderEntryTest</span>
+                <span class="method-start">130207 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">138300 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">NewDrugOrderTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</span>
+                <span class="method-start">139067 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">201998 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">PrintPendingDrugsOrderTest</span>
+                <span class="method-start">202120 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">235305 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">CancelPendingDrugsOrderTest</span>
+                <span class="method-start">235384 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">253033 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">PharmacyIpIssueTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)</span>
+                <span class="method-start">253889 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">323219 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SearchOccupiedPatientTest_2(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</span>
+                <span class="method-start">323932 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">343969 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">CheckVerifyDrugsIssuedTest</span>
+                <span class="method-start">344033 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">346768 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">NewRetunDrugTestFuncility</span>
+                <span class="method-start">346817 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">392599 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">PharmacyIpRetunTest(SANITY HOSPITAL, MATERIAL CENTRAL STORE)</span>
+                <span class="method-start">393234 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">414710 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SearchOccupiedPatientTest_3(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</span>
+                <span class="method-start">415222 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">434531 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">CheckAndVerifyPendingNewRetunDrugTestFuncility</span>
+                <span class="method-start">434635 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">435968 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">EmergencyDischargeIntimationTest(SANITY HOSPITAL, EMERGENCY OPD(GROUND FLOOR), ER No, 1508901, ABHIJEET SAWANT, Routine, abcd, Fluid,...)</span>
+                <span class="method-start">436464 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">448869 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">CancleDischargedIntimationTestFuncility</span>
+                <span class="method-start">448931 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">reportclosewindows</span>
+                <span class="method-start">461947 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

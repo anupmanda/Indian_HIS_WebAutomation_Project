@@ -71,6 +71,9 @@ public class Er_DueSettlementPage extends GeneralBrowserSetting {
 	protected static  String Company_To_Date = "//input[@id='txtToDate']";
 	protected static  String Search_Company_Search_Btn = "//i[@id='btnSBCSearch']";
 	
+    //======================== Search Compant Date Wise In Due Amount ==================
+	protected static  String Search_Company_Date_Wise_Sub_Table = "//table[@id='tblDueDetail']//tbody//tr[last()]";
+	
 	 //======================== Print Btn ===============================
 	protected static  String Print_Btn = "//i[@class='fa fa-print']";
 	protected static  String Print_Receipt_no_Drp = "//select[@id='drdReceiptEMDS']";
@@ -85,7 +88,7 @@ public class Er_DueSettlementPage extends GeneralBrowserSetting {
 
 		CommanUtill.dropdownSelectByVisibleText(Facility_Dashbord_Drp, facility_Drp);
 	}
-	public void ClickOnErBillingDashboard(String Er_Billing , String Station_drp ,String Station_Yes_Pop)
+	public void ClickOnErDashboard(String Er_Billing , String Station_drp ,String Station_Yes_Pop)
 			throws IOException , InvalidApplicationException, InterruptedException {
 
 		CommanUtill.clickFunction(Er_Billing_dashboard, Er_Billing);
@@ -153,6 +156,52 @@ public class Er_DueSettlementPage extends GeneralBrowserSetting {
 		CommanUtill.clickFunction(Click_Discharged_Patient_Table, click_Patient);
 	}
 	
+	 //======================== Search Compant Date Wise In Due Amount ==================
+	
+	// Global Variable Store
+	public static String dueSettlementERNo;
+	public static String dueSettlementBillNo;
+
+	public void ClickOnSearchCompanyDateSubTable (String Due_Amount_Table) throws IOException, InterruptedException {
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Search_Company_Date_Wise_Sub_Table)));
+
+	    WebElement currentRow = driver.findElement(By.xpath(Search_Company_Date_Wise_Sub_Table));
+
+	    String erNo = currentRow.findElement(By.xpath("./td[@ctype='ERNo']")).getText().trim();
+	    String billNo = currentRow.findElement(By.xpath("./td[@ctype='BillNo']")).getText().trim();
+	    String dischargeDate = currentRow.findElement(By.xpath("./td[@ctype='DischargeDate']")).getText().trim();
+	    String billAmount = currentRow.findElement(By.xpath("./td[@ctype='BillAmount']")).getText().trim();
+	    String dueAmount = currentRow.findElement(By.xpath("./td[@ctype='DueAmount']")).getText().trim();
+	    String settledDate = currentRow.findElement(By.xpath("./td[@ctype='SettledDate']")).getText().trim();
+	    String operator = currentRow.findElement(By.xpath("./td[@ctype='Opertator']")).getText().trim();
+
+	    dueSettlementERNo = erNo;
+	    dueSettlementBillNo = billNo;
+
+	    logger.info("================= Due Amount In Table ====================");
+
+	    logger.info("ER No : " + erNo);
+	    logger.info("Bill No : " + billNo);
+	    logger.info("Discharge Date : " + dischargeDate);
+	    logger.info("Bill Amount : " + billAmount);
+	    logger.info("Due Amount : " + dueAmount);
+	    logger.info("Settled Date : " + settledDate);
+	    logger.info("Operator : " + operator);
+
+	    System.out.println("========== Due Settlement Table Details ==========");
+	    System.out.println("ER No : " + erNo);
+	    System.out.println("Bill No : " + billNo);
+	    System.out.println("Discharge Date : " + dischargeDate);
+	    System.out.println("Bill Amount : " + billAmount);
+	    System.out.println("Due Amount : " + dueAmount);
+	    System.out.println("Settled Date : " + settledDate);
+	    System.out.println("Operator : " + operator);
+
+	    CommanUtill.clickFunction(Search_Company_Date_Wise_Sub_Table, Due_Amount_Table);
+	}
+		
 	public void NotBillSettedOkPop(String ok_pop) throws IOException , InterruptedException { 
 		
 		if(CommanUtill.isElementPresent(Not_Bill_Setted_Ok_Pop)) {
@@ -321,7 +370,7 @@ public class Er_DueSettlementPage extends GeneralBrowserSetting {
 		date.sendKeys(Keys.CONTROL+"a");
 		date.sendKeys(Keys.DELETE);
 		CommanUtill.textEnter(Company_Frome_Date, From_Date);
-		date.sendKeys(Keys.TAB);
+		//date.sendKeys(Keys.TAB);
 	}
    public void EnterToDateCompanyBy(String To_Date) throws IOException , InterruptedException { 
 		
