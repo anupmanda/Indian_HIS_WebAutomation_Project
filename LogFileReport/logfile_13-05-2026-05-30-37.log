@@ -1,0 +1,27 @@
+2026-05-13 17:30:43 INFO  :461 - Start Entering...
+2026-05-13 17:30:43 INFO  :463 - //input[@id='txtLoginName']: Input Data : (sakti)
+2026-05-13 17:30:44 INFO  :469 - End Entering...
+2026-05-13 17:30:44 INFO  :461 - Start Entering...
+2026-05-13 17:30:44 INFO  :463 - //input[@id='txtPassword']: Input Data : (Admin@123)
+2026-05-13 17:30:45 INFO  :469 - End Entering...
+2026-05-13 17:30:45 INFO  :425 - Start Clicking on (Login Button)
+2026-05-13 17:30:46 INFO  :430 - ( //input[@id='btnLogin'] )
+2026-05-13 17:30:46 INFO  :432 - Clicked on (Login Button)
+2026-05-13 17:30:46 INFO  :425 - Start Clicking on (Login Yes)
+2026-05-13 17:30:48 INFO  :430 - ( //a[@id='btnYesAlreadyLogedinPopup'] )
+2026-05-13 17:30:48 INFO  :432 - Clicked on (Login Yes)
+2026-05-13 17:30:56 INFO  :366 - Clicked on (Click On Er Billing DashBorad)
+2026-05-13 17:31:01 INFO  :366 - Clicked on (Station Yes Popup)
+2026-05-13 17:31:03 INFO  :366 - Clicked on ( Er Due Settlement Page)
+2026-05-13 17:31:06 INFO  :366 - Clicked on (Click On Company By Search Btn)
+2026-05-13 17:31:10 INFO  :366 - Clicked on (Click Serach Btn)
+2026-05-13 17:31:11 INFO  :366 - Clicked on (Click On Due Amount In Table)
+2026-05-13 17:31:16 INFO  :366 - Clicked on (Click On Search By Parient)
+2026-05-13 17:31:19 INFO  :366 - Clicked on (Click On Table In Search Er Number)
+2026-05-13 17:31:20 INFO  :366 - Clicked on (Click On Cheque Btn)
+2026-05-13 17:31:33 INFO  :366 - Clicked on (Save Cash On Due Button)
+2026-05-13 17:31:35 INFO  :366 - Clicked on (Yes Save Pop)
+2026-05-13 17:31:37 INFO  :366 - Clicked on ()
+2026-05-13 17:31:40 INFO  :366 - Clicked on (Click On Search By Parient)
+2026-05-13 17:31:44 INFO  :366 - Clicked on (Click On Print Btn)
+2026-05-13 17:31:46 INFO  :366 - Clicked on (Print Recipt Number Yes Pop)

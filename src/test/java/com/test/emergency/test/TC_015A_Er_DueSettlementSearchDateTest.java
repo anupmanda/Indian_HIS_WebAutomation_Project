@@ -98,7 +98,7 @@ public class TC_015A_Er_DueSettlementSearchDateTest extends Er_DueSettlementPage
 		
 		ErDueSettlement.ClickOnDueSettledPrintBtn("Click On Print Btn");
 		ErDueSettlement.SelectByReceiptNoDrpAndYesPop(0 ,"Print Recipt Number Yes Pop");
-		Registration.handleDynamicPopup("Popup Message");
+	
 		
 	}
 }
